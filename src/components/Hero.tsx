@@ -143,7 +143,7 @@ export default function Hero() {
           y: fgTranslateY,
           transformStyle: "preserve-3d"
         }}
-        className="relative z-20 container mx-auto px-6 flex flex-col items-center justify-center text-center mt-16"
+        className="relative z-20 container mx-auto px-6 flex flex-col items-center justify-center text-center mt-32 md:mt-16"
       >
         
         {/* Staggered Text Reveal */}
