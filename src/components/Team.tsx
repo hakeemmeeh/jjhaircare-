@@ -59,11 +59,11 @@ export default function Team() {
               className="min-w-[280px] md:min-w-0 snap-start group bg-white/70 backdrop-blur-md rounded-[2rem] p-6 pb-8 flex flex-col gap-6 text-center items-center border border-jj-black/5 shadow-sm hover:-translate-y-2 hover:bg-white hover:border-jj-gold/30 transition-all duration-500 will-change-transform cursor-pointer"
             >
               <div className="w-32 h-32 rounded-full overflow-hidden border border-jj-olive/50 relative">
-                <div className="absolute inset-0 border-[3px] border-jj-gold rounded-full scale-110 opacity-0 group-hover:scale-100 group-hover:opacity-100 transition-all duration-500 z-10 box-border pointer-events-none" />
+                <div className="absolute inset-0 border-[3px] border-jj-gold rounded-full scale-100 opacity-100 md:scale-110 md:opacity-0 md:group-hover:scale-100 md:group-hover:opacity-100 transition-all duration-500 z-10 box-border pointer-events-none" />
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover md:grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
                 />
               </div>
 

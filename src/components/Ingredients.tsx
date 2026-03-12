@@ -114,7 +114,7 @@ export default function Ingredients() {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-full h-full object-cover grayscale mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700"
+                  className="w-full h-full object-cover md:grayscale md:mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700"
                 />
               </div>
             </motion.div>

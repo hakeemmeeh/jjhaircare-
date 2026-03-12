@@ -100,7 +100,7 @@ export default function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative h-screen w-full flex items-center justify-center overflow-hidden bg-gradient-nude"
+      className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude pb-24 md:pb-0"
       style={{ perspective: 1200 }}
     >
       
@@ -171,7 +171,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.8, ease: "easeOut" }}
-          className="text-lg md:text-2xl text-jj-charcoal/80 font-light tracking-wide max-w-2xl mb-16"
+          className="text-lg md:text-2xl text-jj-charcoal/80 font-light tracking-wide max-w-2xl mb-8 md:mb-16"
         >
           Premium natural hair care — crafted for your crown. Discover the essence of true hydration and growth.
         </motion.p>
@@ -179,7 +179,7 @@ export default function Hero() {
         {/* Stats Section with Depth */}
         <motion.div 
           style={{ transform: "translateZ(20px)" }}
-          className="grid grid-cols-3 gap-8 md:gap-16 text-center border-t border-jj-black/10 pt-10"
+          className="grid grid-cols-3 gap-4 md:gap-16 text-center border-t border-jj-black/10 pt-6 md:pt-10 mb-12"
         >
           {stats.map((stat, index) => (
             <motion.div
@@ -199,26 +199,26 @@ export default function Hero() {
             </motion.div>
           ))}
         </motion.div>
-      </motion.div>
 
-      {/* Scroll Indicator */}
-      <motion.button
-        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.8, duration: 1 }}
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors"
-      >
-        <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-[0.3em]">
-          Scroll to Discover
-        </span>
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        {/* Scroll Indicator */}
+        <motion.button
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.8, duration: 1 }}
+          className="flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30 relative"
         >
-          <ChevronDown className="w-6 h-6 text-jj-charcoal/80" />
-        </motion.div>
-      </motion.button>
+          <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-[0.3em]">
+            Scroll to Discover
+          </span>
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+          >
+            <ChevronDown className="w-6 h-6 text-jj-charcoal/80" />
+          </motion.div>
+        </motion.button>
+      </motion.div>
 
     </section>
   );
