@@ -37,7 +37,7 @@ const ingredients = [
 
 export default function Ingredients() {
   return (
-    <section id="ingredients" className="py-32 bg-jj-ivory relative overflow-hidden">
+    <section id="ingredients" className="py-32 bg-gradient-nude relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12">
         <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
           <motion.div
