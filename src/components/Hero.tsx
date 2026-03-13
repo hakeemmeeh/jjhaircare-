@@ -100,7 +100,7 @@ export default function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude pb-24 md:pb-0"
+      className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude"
       style={{ perspective: 1200 }}
     >
       
@@ -143,7 +143,7 @@ export default function Hero() {
           y: fgTranslateY,
           transformStyle: "preserve-3d"
         }}
-        className="relative z-20 container mx-auto px-6 flex flex-col items-center justify-center text-center mt-32 md:mt-16"
+        className="relative z-20 container mx-auto px-6 flex flex-col items-center justify-center text-center mt-24 md:mt-16"
       >
         
         {/* Staggered Text Reveal */}
@@ -152,7 +152,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-            className="font-serif font-bold text-6xl md:text-7xl lg:text-8xl xl:text-9xl text-jj-black mb-6 tracking-tight leading-[1.05]"
+            className="font-serif font-bold text-5xl md:text-7xl lg:text-8xl xl:text-9xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.05]"
           >
             Where Nature <br />
             <motion.span 

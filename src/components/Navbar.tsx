@@ -94,11 +94,11 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={clsx("md:hidden p-2", textColor)}
-            onClick={() => setMobileMenuOpen(true)}
-            aria-label="Open Menu"
+            className={clsx("md:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-black" : textColor)}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Menu"
           >
-            <Menu className="w-6 h-6" />
+            {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
       </header>
@@ -107,32 +107,25 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
-            initial={{ opacity: 0, y: "-100%" }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: "-100%" }}
-            transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[60] bg-jj-black flex flex-col justify-center items-center"
+            initial={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
+            animate={{ clipPath: "circle(150% at calc(100% - 2.5rem) 2.5rem)" }}
+            exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
+            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[55] bg-jj-ivory flex flex-col justify-center items-center"
           >
-            <button
-              className="absolute top-6 right-6 text-white p-2"
-              onClick={() => setMobileMenuOpen(false)}
-              aria-label="Close Menu"
-            >
-              <X className="w-8 h-8 hover:text-jj-nude transition-colors" />
-            </button>
-
-            <ul className="flex flex-col items-center gap-8 text-center">
-              {navLinks.map((link) => (
+            <ul className="flex flex-col items-center gap-6 text-center">
+              {navLinks.map((link, i) => (
                 <motion.li
                   key={link.name}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
                 >
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="font-serif text-4xl text-white hover:text-jj-nude transition-colors"
+                    className="font-serif text-4xl md:text-5xl text-jj-black hover:text-jj-olive transition-colors block"
                   >
                     {link.name}
                   </Link>
@@ -141,10 +134,11 @@ export default function Navbar() {
               <motion.li
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
-                className="mt-8"
+                exit={{ opacity: 0, y: -20 }}
+                transition={{ delay: 0.1 + navLinks.length * 0.05, duration: 0.4 }}
+                className="mt-6"
               >
-                <button className="bg-jj-nude text-jj-black font-medium px-8 py-4 rounded-sm uppercase tracking-wider text-lg w-full">
+                <button className="bg-jj-black text-white font-medium px-10 py-4 rounded-full uppercase tracking-wider text-lg w-full hover:bg-jj-olive transition-colors">
                   Shop Now
                 </button>
               </motion.li>
