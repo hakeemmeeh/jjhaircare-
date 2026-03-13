@@ -111,7 +111,7 @@ export default function Navbar() {
             animate={{ clipPath: "circle(150% at calc(100% - 2.5rem) 2.5rem)" }}
             exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[55] bg-jj-ivory flex flex-col justify-center items-center"
+            className="fixed inset-0 z-[55] bg-gradient-nude flex flex-col justify-center items-center"
           >
             <ul className="flex flex-col items-center gap-6 text-center">
               {navLinks.map((link, i) => (
