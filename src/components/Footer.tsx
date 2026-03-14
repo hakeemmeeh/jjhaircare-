@@ -57,10 +57,10 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-xl mb-6 text-white">Support</h4>
             <ul className="space-y-4 text-white/60 font-light">
-              <li><a href="#" className="hover:text-jj-nude transition-colors">FAQ</a></li>
-              <li><a href="#" className="hover:text-jj-nude transition-colors">Shipping Policy</a></li>
-              <li><a href="#" className="hover:text-jj-nude transition-colors">Returns & Exchanges</a></li>
-              <li><a href="#" className="hover:text-jj-nude transition-colors">Wholesale</a></li>
+              <li><Link href="/faq" className="hover:text-jj-nude transition-colors">FAQ</Link></li>
+              <li><Link href="/shipping" className="hover:text-jj-nude transition-colors">Shipping Policy</Link></li>
+              <li><Link href="/returns" className="hover:text-jj-nude transition-colors">Returns & Exchanges</Link></li>
+              <li><Link href="/contact" className="hover:text-jj-nude transition-colors">Wholesale</Link></li>
             </ul>
           </div>
 
@@ -70,9 +70,11 @@ export default function Footer() {
             <p className="text-white/60 font-light mb-6">
               Subscribe to receive updates, access to exclusive deals, and more.
             </p>
-            <form className="flex flex-col gap-4" onSubmit={(e) => e.preventDefault()}>
+            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="flex flex-col gap-4">
               <input
                 type="email"
+                name="email"
+                required
                 placeholder="Enter your email"
                 className="bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-jj-nude transition-colors placeholder:text-white/30"
               />
@@ -83,6 +85,7 @@ export default function Footer() {
                 Subscribe
               </button>
             </form>
+            <p className="text-white/40 text-xs mt-4">Get 10% off your first order when you join.</p>
           </div>
 
         </div>
@@ -90,8 +93,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/40 text-sm font-light">
           <p>© {new Date().getFullYear()} JJHairCare. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

@@ -3,6 +3,11 @@ import AboutSection from "@/components/About";
 import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 
+export const metadata = {
+  title: 'About Us — Our Story & Team',
+  description: 'Meet the naturalists, chemists, and hair care obsessives behind JJHairCare. Learn how we craft premium natural products from ethically sourced ingredients.',
+};
+
 export default function AboutPage() {
   return (
     <main className="bg-jj-ivory min-h-screen flex flex-col">

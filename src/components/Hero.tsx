@@ -25,11 +25,13 @@ function Counter({
     damping: 60,
     stiffness: 100,
   });
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, { once: false, margin: "-50px" });
 
   useEffect(() => {
     if (isInView) {
       motionValue.set(value);
+    } else {
+      motionValue.set(0);
     }
   }, [motionValue, isInView, value]);
 
@@ -200,24 +202,25 @@ export default function Hero() {
           ))}
         </motion.div>
 
-        {/* Scroll Indicator */}
-        <motion.button
-          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.8, duration: 1 }}
-          className="flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30 relative"
+      {/* Scroll Indicator */}
+      <motion.button
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.8, duration: 1 }}
+        className="flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30 relative mt-auto"
+        aria-label="Scroll down to discover more"
+      >
+        <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-[0.3em]">
+          Scroll to Discover
+        </span>
+        <motion.div
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
-          <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-[0.3em]">
-            Scroll to Discover
-          </span>
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
-          >
-            <ChevronDown className="w-6 h-6 text-jj-charcoal/80" />
-          </motion.div>
-        </motion.button>
+          <ChevronDown className="w-6 h-6 text-jj-charcoal/80" />
+        </motion.div>
+      </motion.button>
       </motion.div>
 
     </section>
