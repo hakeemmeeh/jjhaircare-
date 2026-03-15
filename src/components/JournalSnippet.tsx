@@ -19,7 +19,7 @@ export default function JournalSnippet() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-            className="w-full md:w-1/2 relative"
+            className="w-full md:w-1/2 relative overflow-hidden md:overflow-visible px-4 md:px-0"
           >
             {/* Elegant framing around the image */}
             <div className="absolute -inset-4 border border-jj-gold/30 rounded-sm translate-x-4 translate-y-4 -z-10" />

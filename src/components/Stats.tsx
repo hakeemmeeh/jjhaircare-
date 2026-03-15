@@ -66,7 +66,7 @@ export default function Stats() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-32 bg-jj-nude/5 blur-[80px]" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-10 text-center">
+        <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 text-center [&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-1">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

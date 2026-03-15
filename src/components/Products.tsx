@@ -39,7 +39,7 @@ export default function Products() {
   return (
     <section id="shop" className="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-jj-ivory to-jj-black/10 z-20 rounded-t-[3rem] relative -mt-4 border-t border-jj-black/10">
       <div className="max-w-7xl mx-auto">
-        <div className="mb-20 flex flex-col md:flex-row justify-between items-end gap-6 border-b border-jj-black/10 pb-8">
+        <div className="mb-20 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
           <div>
             <h2 className="text-5xl md:text-7xl font-serif text-jj-black mb-4">
               The Collection.
@@ -48,7 +48,7 @@ export default function Products() {
               Every formula. Every texture. Every curl type.
             </p>
           </div>
-          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-gold px-8 py-4 text-white hover:bg-transparent hover:text-jj-black rounded-full font-serif transition-colors text-center inline-block cursor-pointer">
+          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-gold px-8 py-4 text-white hover:bg-transparent hover:text-jj-black rounded-full font-serif transition-colors text-center inline-block cursor-pointer self-start md:self-auto">
             View All Products
           </Link>
         </div>
