@@ -8,7 +8,7 @@ const testimonials = [
     quote: "The Hair Oil completely transformed my curls. My hair has never been this soft and defined.",
     name: "Amara K.",
     designation: "4C Coils",
-    src: "https://images.unsplash.com/photo-1531123897727-8f129e1bf98c?q=80&w=800&auto=format&fit=crop",
+    src: "https://images.unsplash.com/photo-1542596594-649edbc13630?q=80&w=800&auto=format&fit=crop",
   },
   {
     quote: "I've tried dozens of products, and JJHairCare is the only brand I trust with my locs. The Hair Butter is everything.",
