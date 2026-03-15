@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
+import { motion } from "framer-motion";
 
 const products = [
   {
@@ -46,44 +48,54 @@ export default function Products() {
               Every formula. Every texture. Every curl type.
             </p>
           </div>
-          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-gold px-8 py-4 text-white hover:bg-transparent hover:text-jj-black rounded-full font-serif transition-colors text-center inline-block">
+          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-gold px-8 py-4 text-white hover:bg-transparent hover:text-jj-black rounded-full font-serif transition-colors text-center inline-block cursor-pointer">
             View All Products
           </Link>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {products.map((product) => (
-            <Link
+          {products.map((product, index) => (
+            <motion.div
               key={product.name}
-              href={`/products/${product.slug}`}
-              className="group relative bg-[#EBE3D5] rounded-[2rem] p-6 pb-24 overflow-hidden mt-6 lg:mt-12 h-fit border border-transparent hover:border-jj-black/20 transition-colors block cursor-pointer shadow-sm hover:shadow-md"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
+              className="mt-6 lg:mt-12"
             >
-              <div className="w-full aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-jj-olive/20 relative">
-                <img
-                  src={product.image}
-                  alt={product.name}
-                  className="w-full h-full object-cover md:grayscale md:mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700"
-                />
-              </div>
-
-              <div className="mt-8 flex flex-col gap-2 relative z-10">
-                <div className="flex justify-between items-start gap-4">
-                  <h3 className="font-sans text-2xl font-bold text-jj-black group-hover:text-jj-gold transition-colors">
-                    {product.name}
-                  </h3>
-                  <span className="font-mono text-jj-gold font-medium mt-1">
-                    {product.price}
-                  </span>
+              <Link
+                href={`/products/${product.slug}`}
+                className="group relative bg-[#EBE3D5] rounded-[2rem] p-6 pb-24 overflow-hidden h-fit border border-transparent hover:border-jj-black/20 transition-colors block cursor-pointer shadow-sm hover:shadow-md"
+              >
+                <div className="w-full aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-jj-olive/20 relative">
+                  <Image
+                    src={product.image}
+                    alt={product.name}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-all duration-700"
+                  />
                 </div>
-                <p className="text-jj-black/60 font-serif leading-relaxed text-sm">
-                  {product.description}
-                </p>
-              </div>
 
-              <button className="absolute bottom-6 left-6 right-6 bg-jj-black text-white font-sans font-bold py-4 rounded-xl translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 hover:bg-jj-gold">
-                View Details
-              </button>
-            </Link>
+                <div className="mt-8 flex flex-col gap-2 relative z-10">
+                  <div className="flex justify-between items-start gap-4">
+                    <h3 className="font-sans text-2xl font-bold text-jj-black group-hover:text-jj-gold transition-colors">
+                      {product.name}
+                    </h3>
+                    <span className="font-mono text-jj-gold font-medium mt-1">
+                      {product.price}
+                    </span>
+                  </div>
+                  <p className="text-jj-black/60 font-serif leading-relaxed text-sm">
+                    {product.description}
+                  </p>
+                </div>
+
+                <span className="absolute bottom-6 left-6 right-6 bg-jj-black text-white font-sans font-bold py-4 rounded-xl text-center translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
+                  View Details
+                </span>
+              </Link>
+            </motion.div>
           ))}
         </div>
       </div>

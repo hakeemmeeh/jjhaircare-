@@ -35,7 +35,7 @@ export default function Testimonials() {
     <section id="testimonials" className="py-32 bg-gradient-nude relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
         <div className="text-center mb-12 flex flex-col items-center">
-          <p className="text-xs tracking-[3.5px] uppercase text-[#a0784c] mb-2 text-center font-serif">
+          <p className="text-xs tracking-[3.5px] uppercase text-jj-gold mb-2 text-center font-serif">
             Testimonials
           </p>
           <motion.h2
@@ -43,16 +43,16 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-3xl md:text-4xl font-medium text-[#2c1810] mb-4 text-center"
+            className="text-3xl md:text-4xl font-medium text-jj-charcoal mb-4 text-center"
           >
             Crowned by Our Community
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-[#6b5440] mb-12 text-center max-w-lg"
+            className="text-jj-charcoal/70 mb-12 text-center max-w-lg"
           >
             Real stories from real crowns.
           </motion.p>
@@ -63,12 +63,12 @@ export default function Testimonials() {
             testimonials={testimonials}
             autoplay={true}
             colors={{
-              name: "#2c1810",
-              designation: "#a0784c",
-              testimony: "#3d2b1f",
-              arrowBackground: "#3d2b1f",
-              arrowForeground: "#faf5ef",
-              arrowHoverBackground: "#c9a96e",
+              name: "var(--color-jj-charcoal)",
+              designation: "var(--color-jj-gold)",
+              testimony: "var(--color-jj-charcoal)",
+              arrowBackground: "var(--color-jj-charcoal)",
+              arrowForeground: "var(--color-jj-ivory)",
+              arrowHoverBackground: "var(--color-jj-gold)",
             }}
             fontSizes={{
               name: "28px",

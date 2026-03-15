@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Droplets, Sparkles, ShieldCheck } from "lucide-react";
+import Link from "next/link";
 
 const features = [
   {
@@ -26,10 +27,10 @@ export default function Features() {
     <section className="py-24 bg-jj-black text-white relative overflow-hidden">
       {/* Decorative gradient */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-jj-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-      
+
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="text-center mb-16">
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -59,8 +60,7 @@ export default function Features() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
-                whileHover={{ y: -10 }}
-                className="bg-jj-charcoal/40 border border-white/10 p-10 rounded-xl hover:border-jj-gold/40 hover:bg-jj-charcoal/60 transition-all duration-300 group"
+                className="bg-jj-charcoal/40 border border-white/10 p-10 rounded-xl hover:border-jj-gold/40 hover:bg-jj-charcoal/60 hover:shadow-[0_8px_30px_rgba(184,150,78,0.08)] transition-all duration-300 group"
               >
                 <div className="w-14 h-14 bg-jj-nude/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-jj-nude transition-colors duration-300">
                   <Icon className="w-7 h-7 text-jj-nude group-hover:text-jj-black transition-colors duration-300" />
@@ -73,6 +73,25 @@ export default function Features() {
             );
           })}
         </div>
+
+        {/* Section CTA */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="mt-16 flex flex-col items-center gap-4 text-center"
+        >
+          <p className="text-white/50 text-sm uppercase tracking-widest font-light">
+            See what goes into every bottle
+          </p>
+          <Link
+            href="/ingredients"
+            className="inline-flex items-center gap-3 border border-jj-nude/50 text-jj-nude hover:bg-jj-nude hover:text-jj-black px-8 py-4 rounded-sm uppercase tracking-widest text-sm font-medium transition-all duration-300 cursor-pointer hover:shadow-[0_4px_20px_rgba(196,168,130,0.3)]"
+          >
+            Explore Our Ingredients
+          </Link>
+        </motion.div>
       </div>
     </section>
   );
