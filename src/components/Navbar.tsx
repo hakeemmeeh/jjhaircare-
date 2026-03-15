@@ -82,14 +82,14 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <button className={clsx(
-              "font-medium px-6 py-2.5 rounded-sm uppercase tracking-wider text-sm transition-all",
-              isSolid 
+            <Link href="/products" className={clsx(
+              "font-medium px-6 py-2.5 rounded-sm uppercase tracking-wider text-sm transition-all cursor-pointer",
+              isSolid
                 ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
                 : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"
             )}>
               Shop Now
-            </button>
+            </Link>
           </nav>
 
           {/* Mobile Menu Toggle */}
@@ -138,9 +138,9 @@ export default function Navbar() {
                 transition={{ delay: 0.1 + navLinks.length * 0.05, duration: 0.4 }}
                 className="mt-6"
               >
-                <button className="bg-jj-black text-white font-medium px-10 py-4 rounded-full uppercase tracking-wider text-lg w-full hover:bg-jj-olive transition-colors">
+                <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="bg-jj-black text-white font-medium px-10 py-4 rounded-full uppercase tracking-wider text-lg w-full hover:bg-jj-olive transition-colors cursor-pointer text-center block">
                   Shop Now
-                </button>
+                </Link>
               </motion.li>
             </ul>
           </motion.div>
