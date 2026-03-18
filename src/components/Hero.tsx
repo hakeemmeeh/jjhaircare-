@@ -1,7 +1,7 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -63,6 +63,22 @@ function Counter({
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
+
+  const rotatingText = [
+    "Meets Beauty.",
+    "Restores Curls.",
+    "Seals Moisture.",
+    "Promotes Growth.",
+    "Nourishes Deeply.",
+  ];
+  const [titleIndex, setTitleIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % rotatingText.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
 
   // 3D Parallax Mouse Tracking — disabled when user prefers reduced motion
   const mouseX = useMotionValue(0);
@@ -161,14 +177,22 @@ export default function Hero() {
               className="font-serif font-bold text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.05]"
             >
               Where Nature <br />
-              <motion.span
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.6, ease: [0.16, 1, 0.3, 1] }}
-                className="text-jj-olive italic inline-block font-extrabold"
-              >
-                Meets Beauty
-              </motion.span>
+              <span className="text-jj-olive italic inline-block font-extrabold relative">
+                <AnimatePresence mode="popLayout">
+                  <motion.span
+                    key={titleIndex}
+                    initial={{ opacity: 0, y: 40 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -40 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="inline-block whitespace-nowrap"
+                  >
+                    {rotatingText[titleIndex]}
+                  </motion.span>
+                </AnimatePresence>
+                {/* Invisible placeholder for height/width to prevent layout shift */}
+                <span className="invisible pointer-events-none whitespace-nowrap block h-0">Nourishes Deeply.</span>
+              </span>
             </motion.h1>
           </div>
 
