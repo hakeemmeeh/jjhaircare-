@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence, useScroll, useMotionTemplate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Image from "next/image";
@@ -97,6 +97,10 @@ export default function Hero() {
   const bgTranslateX = useTransform(smoothX, [-0.5, 0.5], ["30px", "-30px"]);
   const bgTranslateY = useTransform(smoothY, [-0.5, 0.5], ["30px", "-30px"]);
 
+  const { scrollY } = useScroll();
+  const parallaxYBg = useTransform(scrollY, [0, 1000], [0, 200]);
+  const parallaxYFg = useTransform(scrollY, [0, 1000], [0, -100]);
+
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     if (prefersReducedMotion || !containerRef.current) return;
     const { left, top, width, height } = containerRef.current.getBoundingClientRect();
@@ -122,7 +126,7 @@ export default function Hero() {
 
       {/* Decorative Background Elements */}
       <motion.div
-        style={prefersReducedMotion ? {} : { x: bgTranslateX, y: bgTranslateY }}
+        style={prefersReducedMotion ? {} : { x: bgTranslateX, y: bgTranslateY, translateY: parallaxYBg }}
         className="absolute inset-0 pointer-events-none"
       >
         {/* Faded background image — optimized via Next.js Image */}
@@ -162,22 +166,22 @@ export default function Hero() {
         style={
           prefersReducedMotion
             ? {}
-            : { rotateX, rotateY, x: fgTranslateX, y: fgTranslateY, transformStyle: "preserve-3d" }
+            : { rotateX, rotateY, x: fgTranslateX, y: fgTranslateY, translateY: parallaxYFg, transformStyle: "preserve-3d" }
         }
-        className="relative z-20 container mx-auto px-6 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        className="relative z-20 container mx-auto px-4 md:px-6 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
       >
 
         {/* Left: Text + CTA + Stats */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left">
-          <div style={prefersReducedMotion ? {} : { transform: "translateZ(60px)" }}>
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left overflow-visible max-w-[100vw]">
+          <div style={prefersReducedMotion ? {} : { transform: "translateZ(60px)" }} className="w-full">
             <motion.h1
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif font-bold text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] md:leading-[1.05]"
+              className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] pt-4 w-full"
             >
-              Where Nature <br />
-              <span className="text-jj-olive italic inline-block font-extrabold relative w-full text-center lg:text-left mt-2">
+              Where Nature <br className="hidden md:block" />
+              <span className="text-jj-olive italic inline-block font-extrabold relative w-full text-center lg:text-left mt-1 md:mt-4 h-[1.2em]">
                 <AnimatePresence mode="popLayout">
                   <motion.span
                     key={titleIndex}
@@ -201,7 +205,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: prefersReducedMotion ? 0 : 1, delay: prefersReducedMotion ? 0 : 0.8, ease: "easeOut" }}
-            className="text-lg md:text-xl text-jj-charcoal/80 font-light tracking-wide max-w-lg mb-8"
+            className="text-lg md:text-xl text-jj-charcoal/80 font-light tracking-wide max-w-lg mb-8 mt-4 md:mt-0"
           >
             Premium natural hair care — crafted for your crown. Discover the essence of true hydration and growth.
           </motion.p>
@@ -262,7 +266,25 @@ export default function Hero() {
           style={prefersReducedMotion ? {} : { transform: "translateZ(30px)" }}
           className="hidden lg:flex items-center justify-center"
         >
-          <div className="relative w-[420px] h-[520px] rounded-2xl overflow-hidden shadow-2xl border border-white/60">
+          <motion.div 
+            className="relative w-[420px] h-[520px] rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
+            style={prefersReducedMotion ? {} : {
+              rotateX: useTransform(smoothY, [-0.5, 0.5], ["10deg", "-10deg"]),
+              rotateY: useTransform(smoothX, [-0.5, 0.5], ["-10deg", "10deg"]),
+              transformStyle: "preserve-3d"
+            }}
+          >
+            {/* Dynamic Glare Effect */}
+            <motion.div
+              className="absolute inset-0 z-20 pointer-events-none mix-blend-overlay transition-opacity duration-300"
+              style={prefersReducedMotion ? {} : {
+                background: useMotionTemplate`radial-gradient(
+                  circle at ${useTransform(smoothX, [-0.5, 0.5], [0, 100])}% ${useTransform(smoothY, [-0.5, 0.5], [0, 100])}%,
+                  rgba(255,255,255,0.4) 0%,
+                  transparent 50%
+                )`
+              }}
+            />
             <Image
               src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1200&auto=format&fit=crop"
               alt="JJHairCare natural hair care products"
@@ -272,11 +294,14 @@ export default function Hero() {
               sizes="420px"
             />
             {/* Overlay badge */}
-            <div className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl px-5 py-4 shadow-lg">
+            <motion.div 
+              style={prefersReducedMotion ? {} : { transform: "translateZ(40px)" }}
+              className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl px-5 py-4 shadow-lg z-30"
+            >
               <p className="font-serif text-jj-black text-lg font-semibold leading-tight">100% Natural Ingredients</p>
               <p className="text-jj-charcoal/60 text-sm mt-1">No sulphates · No parabens · Vegan</p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </motion.div>
 
       </motion.div>
