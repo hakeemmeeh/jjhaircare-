@@ -174,10 +174,10 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif font-bold text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.05]"
+              className="font-serif font-bold text-5xl md:text-7xl lg:text-7xl xl:text-8xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] md:leading-[1.05]"
             >
               Where Nature <br />
-              <span className="text-jj-olive italic inline-block font-extrabold relative">
+              <span className="text-jj-olive italic inline-block font-extrabold relative w-full text-center lg:text-left mt-2">
                 <AnimatePresence mode="popLayout">
                   <motion.span
                     key={titleIndex}
@@ -185,13 +185,13 @@ export default function Hero() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -40 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="inline-block whitespace-nowrap"
+                    className="inline-block whitespace-nowrap absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0"
                   >
                     {rotatingText[titleIndex]}
                   </motion.span>
                 </AnimatePresence>
-                {/* Invisible placeholder for height/width to prevent layout shift */}
-                <span className="invisible pointer-events-none whitespace-nowrap block h-0">Nourishes Deeply.</span>
+                {/* Invisible placeholder for height/width to prevent layout shift. Scaled up slightly to prevent longest word from clipping */}
+                <span className="invisible pointer-events-none whitespace-nowrap block">Nourishes Deeply.</span>
               </span>
             </motion.h1>
           </div>
