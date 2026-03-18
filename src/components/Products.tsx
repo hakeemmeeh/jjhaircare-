@@ -57,23 +57,27 @@ export default function Products() {
           {products.map((product, index) => (
             <motion.div
               key={product.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 50, rotateX: 15, scale: 0.95 }}
+              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: index * 0.12, ease: "easeOut" }}
+              transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              style={{ perspective: 1000 }}
               className="mt-6 lg:mt-12"
             >
               <Link
                 href={`/products/${product.slug}`}
-                className="group relative bg-[#EBE3D5] rounded-[2rem] p-6 pb-24 overflow-hidden h-fit border border-transparent hover:border-jj-black/20 transition-colors block cursor-pointer shadow-sm hover:shadow-md"
+                className="group relative bg-[#EBE3D5] rounded-[2rem] p-6 pb-24 overflow-hidden h-fit border border-transparent hover:border-jj-black/20 transition-colors block cursor-pointer shadow-sm hover:shadow-2xl"
               >
+                {/* Subtle shine effect on hover */}
+                <div className="absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-overlay" />
+
                 <div className="w-full aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-jj-olive/20 relative">
                   <Image
                     src={product.image}
                     alt={product.name}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-105 transition-all duration-700"
+                    className="object-cover group-hover:scale-110 transition-all duration-700"
                   />
                 </div>
 

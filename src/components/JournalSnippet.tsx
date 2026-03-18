@@ -1,13 +1,24 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 
 export default function JournalSnippet() {
+  const containerRef = useRef<HTMLElement>(null);
+  const prefersReducedMotion = useReducedMotion();
+  
+  const { scrollYProgress } = useScroll({
+    target: containerRef,
+    offset: ["start end", "end start"]
+  });
+
+  const imageY = useTransform(scrollYProgress, [0, 1], ["-15%", "15%"]);
+
   return (
-    <section className="py-32 bg-jj-ivory relative overflow-hidden">
+    <section ref={containerRef} className="py-32 bg-jj-ivory relative overflow-hidden">
       {/* Decorative accent elements */}
       <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-jj-sand/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
 
@@ -24,14 +35,19 @@ export default function JournalSnippet() {
             {/* Elegant framing around the image */}
             <div className="absolute -inset-4 border border-jj-gold/30 rounded-sm translate-x-4 translate-y-4 -z-10" />
 
-            <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl">
-              <Image
-                src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop"
-                alt="Mixing natural ingredients"
-                fill
-                sizes="(max-width: 768px) 100vw, 50vw"
-                className="object-cover hover:scale-105 transition-transform duration-[1.5s]"
-              />
+            <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl group">
+              <motion.div
+                style={prefersReducedMotion ? {} : { y: imageY, scale: 1.25 }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop"
+                  alt="Mixing natural ingredients"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover group-hover:scale-[1.03] transition-transform duration-[2s] ease-out"
+                />
+              </motion.div>
               <div className="absolute inset-0 bg-jj-black/5 mix-blend-overlay pointer-events-none" />
             </div>
           </motion.div>
@@ -62,15 +78,31 @@ export default function JournalSnippet() {
               </p>
             </div>
 
-            <Link
-              href="/journal"
-              className="inline-flex items-center gap-4 text-jj-black hover:text-jj-nude transition-colors group uppercase tracking-widest text-sm font-medium cursor-pointer"
+            <motion.div
+              whileHover="hover"
+              className="inline-block mt-4"
             >
-              <span className="border-b border-jj-black group-hover:border-jj-nude pb-1 transition-colors">Read the Full Story</span>
-              <div className="w-10 h-10 rounded-full border border-jj-black/20 flex items-center justify-center group-hover:border-jj-nude transition-colors">
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </div>
-            </Link>
+              <Link
+                href="/journal"
+                className="inline-flex items-center gap-4 text-jj-black hover:text-jj-nude transition-colors group uppercase tracking-widest text-sm font-medium cursor-pointer"
+              >
+                <span className="border-b border-jj-black group-hover:border-jj-nude pb-1 transition-colors">Read the Full Story</span>
+                <motion.div 
+                  variants={{
+                    hover: { scale: 1.1 }
+                  }}
+                  className="w-10 h-10 rounded-full border border-jj-black/20 flex items-center justify-center group-hover:border-jj-nude transition-colors"
+                >
+                  <motion.div
+                    variants={{
+                      hover: { x: [0, 5, 0], transition: { repeat: Infinity, duration: 1 } }
+                    }}
+                  >
+                    <ArrowRight className="w-4 h-4" />
+                  </motion.div>
+                </motion.div>
+              </Link>
+            </motion.div>
           </motion.div>
 
         </div>
