@@ -95,14 +95,35 @@ A core interaction pattern to add a premium feel to images:
 - **Section Padding:** Typically `pt-32 pb-24` for standard content pages (like FAQ, Shipping) to clear the fixed navbar.
 - **Container Boundaries:** `container mx-auto px-6 md:px-12` or `max-w-7xl mx-auto` to constrain maximum width and provide healthy side margins on mobile.
 
-## 7. Animation & Transitions
+## 7. Luxury Animations & Transitions (Iteration 2)
 
-Built extensively with `framer-motion`:
-- **Scroll Reveals:** Almost all text elements stagger into view when scrolled into the viewport.
-  - Pattern: `initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}` (use `whileInView` for scroll triggers).
-- **Parallax & 3D (Hero):** Uses `useMotionValue`, `useSpring`, and `useTransform` tied to `onMouseMove` to tilt text and shift background elements in 3D space.
-- **Animated Counters:** Uses `framer-motion` `useSpring` and `Intl.NumberFormat` to count up from zero. Uses `useInView({ once: false })` to reset to zero and re-animate every time it enters the viewport.
-- **Hamburger Menu:** Uses `clipPath: "circle(0% at ...)"` to `clipPath: "circle(150% at ...)"` for an elegant, expanding circular reveal.
+The website employs advanced, high-end interactions built with `framer-motion` and `lenis`:
+
+**1. Smooth Scrolling (Lenis):**
+- Site-wide momentum scrolling configured via `SmoothScrollProvider` in `layout.tsx`.
+- Provides a buttery, high-end "heavy" scroll feel that enhances all other scroll-linked animations.
+
+**2. "Deck of Cards" Section Stacking:**
+- Replaces traditional linear scrolling on the Homepage and About page.
+- As the user scrolls, the current section remains `sticky`, and the next section slides up *over* it.
+- **Implementation:** `sticky top-0 z-[X]` on the base container, with subsequent sections using `relative z-[X+1] -mt-[100vh] rounded-t-[3rem] shadow-[0_-30px_50px_rgba(0,0,0,0.1)]`.
+
+**3. 3D Circular Rotating Gallery:**
+- The Desktop Collection section uses a massive `150vh` to `250vh` scroll container.
+- Maps `scrollYProgress` to a `rotateY` 3D transform (e.g., `[0, -135]`), creating a cylindrical spinning product showcase.
+- Items are positioned in 3D space using `transform: rotateY(Xdeg) translateZ(480px)` and `transformStyle: "preserve-3d"`.
+
+**4. Cinematic Image Unmasking:**
+- Uses the custom `<ImageReveal>` component.
+- When an image enters the viewport, a solid-color masking div (`bg-jj-ivory`) slides out of the way (`y: "-100%"`), while the image underneath simultaneously performs a slow zoom-out (`scale: 1.2` to `1`).
+
+**5. Magnetic Buttons:**
+- Key Call-To-Action buttons are wrapped in a `<MagneticButton>` component.
+- Uses `useMotionValue` and `useSpring` tied to `onMouseMove` to subtly pull the button toward the user's cursor on hover, creating a premium tactile feel.
+
+**6. Staggered Text Reveals:**
+- Uses the `<TextReveal>` component to split headers into words.
+- Words are masked by `overflow-hidden` wrappers and slide up (`y: "110%"` to `"0%"`) using a custom cubic-bezier ease `[0.16, 1, 0.3, 1]` for an editorial reveal effect.
 
 ## 8. SEO & Data Standards
 - **Global Metadata:** Next.js `metadata` object in `layout.tsx` handles fallback titles, OpenGraph images, and default descriptions.

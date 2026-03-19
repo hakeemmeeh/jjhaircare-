@@ -12,7 +12,7 @@ export default function Home() {
       <Navbar />
       
       {/* 1. Sticky Hero */}
-      <div className="sticky top-0 z-0 h-screen overflow-hidden">
+      <div className="md:sticky md:top-0 z-0 md:h-screen md:overflow-hidden">
         <Hero />
       </div>
 
