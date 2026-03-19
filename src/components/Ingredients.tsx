@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import ImageReveal from "@/components/ImageReveal";
 
 const ingredients = [
   {
@@ -111,11 +112,13 @@ export default function Ingredients() {
               </div>
 
               <div className="flex-1 w-full rounded-2xl overflow-hidden relative min-h-[150px] bg-[#EBE3D5]">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="w-full h-full object-cover md:grayscale md:mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700"
-                />
+                <ImageReveal maskColor="bg-[#EBE3D5]" className="w-full h-full">
+                  <img
+                    src={item.image}
+                    alt={item.name}
+                    className="w-full h-full object-cover md:grayscale md:mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:scale-[1.05] transition-all duration-700"
+                  />
+                </ImageReveal>
               </div>
             </motion.div>
             );

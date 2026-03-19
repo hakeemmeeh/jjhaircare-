@@ -8,14 +8,38 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="bg-jj-ivory min-h-screen">
+    <main className="bg-jj-ivory min-h-screen relative">
       <Navbar />
-      <Hero />
-      <Features />
-      <JournalSnippet />
-      <Products />
-      <Testimonials />
-      <Footer />
+      
+      {/* 1. Sticky Hero */}
+      <div className="sticky top-0 z-0 h-screen overflow-hidden">
+        <Hero />
+      </div>
+
+      {/* 2. Overlapping Features */}
+      <div className="relative z-10 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.3)] bg-jj-black">
+        <Features />
+      </div>
+
+      {/* 3. Overlapping Journal */}
+      <div className="relative z-20 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-jj-ivory">
+        <JournalSnippet />
+      </div>
+
+      {/* 4. Overlapping Products */}
+      <div className="relative z-30 -mt-12 rounded-t-[3rem] shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-[#EBE3D5]">
+        <Products />
+      </div>
+
+      {/* 5. Overlapping Testimonials */}
+      <div className="relative z-40 -mt-12 md:-mt-[100vh] rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-gradient-nude">
+        <Testimonials />
+      </div>
+
+      {/* 6. Footer */}
+      <div className="relative z-50 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.2)] bg-jj-black">
+        <Footer />
+      </div>
     </main>
   );
 }

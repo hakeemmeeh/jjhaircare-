@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
+import MagneticButton from "@/components/MagneticButton";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -82,14 +83,16 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <Link href="/products" className={clsx(
-              "font-medium px-6 py-2.5 rounded-sm uppercase tracking-wider text-sm transition-all cursor-pointer",
-              isSolid
-                ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
-                : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"
-            )}>
-              Shop Now
-            </Link>
+            <MagneticButton>
+              <Link href="/products" className={clsx(
+                "font-medium px-6 py-2.5 rounded-sm uppercase tracking-wider text-sm transition-all cursor-pointer block",
+                isSolid
+                  ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
+                  : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"
+              )}>
+                Shop Now
+              </Link>
+            </MagneticButton>
           </nav>
 
           {/* Mobile Menu Toggle */}

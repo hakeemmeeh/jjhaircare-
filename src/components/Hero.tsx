@@ -6,6 +6,8 @@ import { ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
+import MagneticButton from "@/components/MagneticButton";
+
 const stats = [
   { value: 10000, suffix: "+", label: "Happy Customers", isDecimal: false },
   { value: 100, suffix: "%", label: "Natural Ingredients", isDecimal: false },
@@ -168,7 +170,7 @@ export default function Hero() {
             ? {}
             : { rotateX, rotateY, x: fgTranslateX, y: fgTranslateY, translateY: parallaxYFg, transformStyle: "preserve-3d" }
         }
-        className="relative z-20 container mx-auto px-4 md:px-6 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
+        className="relative z-20 container mx-auto px-4 md:px-6 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 lg:gap-12 items-center"
       >
 
         {/* Left: Text + CTA + Stats */}
@@ -178,7 +180,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-6xl xl:text-7xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] pt-4 w-full"
+              className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] pt-4 w-full"
             >
               Where Nature <br className="hidden md:block" />
               <span className="text-jj-olive italic inline-block font-extrabold relative w-full text-center lg:text-left mt-1 md:mt-4 h-[1.2em]">
@@ -218,18 +220,22 @@ export default function Hero() {
             transition={{ duration: prefersReducedMotion ? 0 : 0.8, delay: prefersReducedMotion ? 0 : 1, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-4 mb-12 md:mb-16 w-full sm:w-auto"
           >
-            <Link
-              href="/products"
-              className="bg-jj-black text-white font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:bg-jj-olive transition-colors duration-300 cursor-pointer text-center"
-            >
-              Shop Now
-            </Link>
-            <Link
-              href="/ingredients"
-              className="relative border border-jj-olive/50 text-jj-olive font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:border-jj-olive hover:bg-jj-olive hover:text-white hover:shadow-[0_4px_20px_rgba(122,139,111,0.35)] transition-all duration-300 cursor-pointer text-center"
-            >
-              Our Ingredients
-            </Link>
+            <MagneticButton>
+              <Link
+                href="/products"
+                className="bg-jj-black text-white font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:bg-jj-olive transition-colors duration-300 cursor-pointer text-center block w-full sm:w-auto"
+              >
+                Shop Now
+              </Link>
+            </MagneticButton>
+            <MagneticButton>
+              <Link
+                href="/ingredients"
+                className="relative border border-jj-olive/50 text-jj-olive font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:border-jj-olive hover:bg-jj-olive hover:text-white hover:shadow-[0_4px_20px_rgba(122,139,111,0.35)] transition-all duration-300 cursor-pointer text-center block w-full sm:w-auto"
+              >
+                Our Ingredients
+              </Link>
+            </MagneticButton>
           </motion.div>
 
           {/* Stats */}

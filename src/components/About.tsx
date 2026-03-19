@@ -23,7 +23,7 @@ const pillars = [
 
 export default function About() {
   return (
-    <section id="about" className="py-32 bg-gradient-nude relative overflow-hidden">
+    <section id="about" className="min-h-[100dvh] flex items-center justify-center py-24 md:py-32 bg-gradient-nude relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-jj-sand/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-jj-rose/10 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3" />

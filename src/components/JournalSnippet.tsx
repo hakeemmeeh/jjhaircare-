@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import { useRef } from "react";
+import ImageReveal from "@/components/ImageReveal";
 
 export default function JournalSnippet() {
   const containerRef = useRef<HTMLElement>(null);
@@ -35,20 +36,22 @@ export default function JournalSnippet() {
             {/* Elegant framing around the image */}
             <div className="absolute -inset-4 border border-jj-gold/30 rounded-sm translate-x-4 translate-y-4 -z-10" />
 
-            <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl group">
-              <motion.div
-                style={prefersReducedMotion ? {} : { y: imageY, scale: 1.25 }}
-                className="absolute inset-0"
-              >
-                <Image
-                  src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop"
-                  alt="Mixing natural ingredients"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover group-hover:scale-[1.03] transition-transform duration-[2s] ease-out"
-                />
-              </motion.div>
-              <div className="absolute inset-0 bg-jj-black/5 mix-blend-overlay pointer-events-none" />
+            <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl group w-full h-full block">
+              <ImageReveal maskColor="bg-jj-ivory" className="absolute inset-0">
+                <motion.div
+                  style={prefersReducedMotion ? {} : { y: imageY, scale: 1.25 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop"
+                    alt="Mixing natural ingredients"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    className="object-cover group-hover:scale-[1.03] transition-transform duration-[2s] ease-out"
+                  />
+                </motion.div>
+                <div className="absolute inset-0 bg-jj-black/5 mix-blend-overlay pointer-events-none" />
+              </ImageReveal>
             </div>
           </motion.div>
 
