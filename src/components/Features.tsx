@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
-import { Droplets, Sparkles, ShieldCheck } from "lucide-react";
+import { Droplets, Sparkles, ShieldCheck, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { useRef } from "react";
 
@@ -98,6 +98,8 @@ function FeatureCard({ feature, index }: { feature: any; index: number }) {
 }
 
 export default function Features() {
+  const prefersReducedMotion = useReducedMotion();
+
   return (
     <section className="py-24 bg-jj-black text-white relative overflow-hidden">
       {/* Decorative gradient */}
@@ -131,23 +133,47 @@ export default function Features() {
           ))}
         </div>
 
-        {/* Section CTA */}
+        {/* Editorial strip — ingredients (ZettaJoule-style “latest” row, dark theme) */}
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
+          initial={prefersReducedMotion ? false : { opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-16 flex flex-col items-center gap-4 text-center"
+          viewport={{ once: true, margin: "-40px" }}
+          transition={{ duration: prefersReducedMotion ? 0 : 0.6, delay: prefersReducedMotion ? 0 : 0.15, ease: [0.16, 1, 0.3, 1] }}
+          className="mt-16 max-w-5xl mx-auto"
         >
-          <p className="text-white/50 text-sm uppercase tracking-widest font-light">
-            See what goes into every bottle
-          </p>
-          <Link
-            href="/ingredients"
-            className="inline-flex items-center gap-3 border border-jj-nude/50 text-jj-nude hover:bg-jj-nude hover:text-jj-black px-8 py-4 rounded-sm uppercase tracking-widest text-sm font-medium transition-all duration-300 cursor-pointer hover:shadow-[0_4px_20px_rgba(196,168,130,0.3)]"
-          >
-            Explore Our Ingredients
-          </Link>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between sm:gap-4 rounded-sm border border-white/15 bg-white/5 px-4 py-3 backdrop-blur-md shadow-[0_8px_40px_rgba(0,0,0,0.25)] md:px-5 md:py-3.5">
+            <div className="flex min-w-0 flex-col gap-1 sm:flex-row sm:items-center sm:gap-4 md:gap-6">
+              <time
+                dateTime="2026-03-01"
+                className="shrink-0 font-mono text-[10px] uppercase tracking-[0.2em] text-white/45 md:text-xs"
+              >
+                Mar 2026
+              </time>
+              <span className="hidden h-3 w-px shrink-0 bg-white/20 sm:block" aria-hidden />
+              <span className="font-mono text-[10px] uppercase tracking-[0.25em] text-jj-gold md:text-xs">
+                Ingredients
+              </span>
+              <p className="font-serif text-sm font-medium leading-snug text-white/95 md:text-base line-clamp-2 sm:line-clamp-1">
+                Shea, botanical oils &amp; clean formulas — see what goes into every bottle.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-wrap items-center gap-3 sm:justify-end">
+              <Link
+                href="/ingredients"
+                className="group inline-flex items-center gap-2 font-sans text-xs font-semibold uppercase tracking-[0.2em] text-jj-nude transition-colors hover:text-white md:text-sm"
+              >
+                Explore ingredients
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden />
+              </Link>
+              <span className="hidden h-3 w-px bg-white/20 sm:block" aria-hidden />
+              <Link
+                href="/ingredients"
+                className="font-sans text-[11px] uppercase tracking-widest text-white/50 underline-offset-4 transition-colors hover:text-jj-gold hover:underline md:text-xs"
+              >
+                View all
+              </Link>
+            </div>
+          </div>
         </motion.div>
       </div>
     </section>
