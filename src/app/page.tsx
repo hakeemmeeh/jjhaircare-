@@ -32,7 +32,7 @@ export default function Home() {
       </div>
 
       {/* 5. Overlapping Testimonials */}
-      <div className="relative z-40 -mt-12 md:-mt-[100vh] rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-gradient-nude">
+      <div className="relative z-40 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-gradient-nude">
         <Testimonials />
       </div>
 
