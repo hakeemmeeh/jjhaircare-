@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import ProductsSection from "@/components/Products";
 import Footer from "@/components/Footer";
+import ProductsZoomParallaxIntro from "@/components/ProductsZoomParallaxIntro";
 
 export const metadata = {
   title: 'Shop The Collection — Hair Oil, Butter, Mask & Mist',
@@ -9,10 +11,15 @@ export const metadata = {
 
 export default function ProductsPage() {
   return (
-    <main className="bg-jj-black min-h-screen flex flex-col">
+    <main className="min-h-screen bg-jj-black">
       <Navbar />
-      <div className="pt-24 flex-1">
-        <ProductsSection />
+      <Suspense fallback={<div className="min-h-[100dvh] bg-jj-black" aria-hidden />}>
+        <ProductsZoomParallaxIntro />
+      </Suspense>
+      <div className="relative z-30 -mt-12 rounded-t-[3rem] shadow-[0_-24px_48px_rgba(0,0,0,0.12)] overflow-hidden">
+        <Suspense fallback={<div className="min-h-[50vh]" aria-hidden />}>
+          <ProductsSection />
+        </Suspense>
       </div>
       <Footer />
     </main>

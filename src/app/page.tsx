@@ -1,6 +1,8 @@
+import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Features from "@/components/Features";
+import HairGoals from "@/components/HairGoals";
 import JournalSnippet from "@/components/JournalSnippet";
 import Products from "@/components/Products";
 import Testimonials from "@/components/Testimonials";
@@ -21,6 +23,11 @@ export default function Home() {
         <Features />
       </div>
 
+      {/* 2b. Shop by hair goal — after Features */}
+      <div className="relative z-[15] -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-gradient-nude">
+        <HairGoals />
+      </div>
+
       {/* 3. Overlapping Journal */}
       <div className="relative z-20 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-jj-ivory">
         <JournalSnippet />
@@ -28,7 +35,9 @@ export default function Home() {
 
       {/* 4. Overlapping Products */}
       <div className="relative z-30 -mt-12 rounded-t-[3rem] shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-[#EBE3D5]">
-        <Products />
+        <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
+          <Products />
+        </Suspense>
       </div>
 
       {/* 5. Overlapping Testimonials */}
