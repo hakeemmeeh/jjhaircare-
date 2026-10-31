@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { whatsappOrderUrl } from "@/data/site-config";
 import { PRODUCTS } from "@/data/products";
+import ZoomImage from "@/components/ZoomImage";
 
 type ProductDetail = {
   name: string;
@@ -147,13 +148,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             
             {/* Left: Product Image */}
             <div className="w-full lg:w-1/2">
-              <div className={`${product.imageAspect ?? "aspect-[4/5]"} relative rounded-sm overflow-hidden bg-jj-black/5`}>
-                <img 
-                  src={product.image} 
-                  alt={product.name}
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
+              <ZoomImage
+                src={product.image}
+                alt={product.name}
+                className={`${product.imageAspect ?? "aspect-[4/5]"} rounded-sm bg-jj-black/5`}
+              />
             </div>
 
             {/* Right: Product Details */}
@@ -241,7 +240,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     <img
                       src={PRODUCTS.find((p) => p.slug === relatedProduct.slug)?.image ?? relatedProduct.image}
                       alt={relatedProduct.name}
-                      className="w-full h-full object-cover md:grayscale md:mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   
