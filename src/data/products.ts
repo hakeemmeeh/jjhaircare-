@@ -20,8 +20,7 @@ export const PRODUCTS: Product[] = [
     slug: "hair-mask",
     description: "Intensive restorative treatment for deep nourishment.",
     price: "$35",
-    image:
-      "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=800&auto=format&fit=crop",
+    image: "/images/scalp-detox-mask.jpg",
   },
   {
     name: "Hair Oil",
@@ -36,8 +35,7 @@ export const PRODUCTS: Product[] = [
     slug: "hair-butter",
     description: "Rich, creamy moisture sealant for lasting softness.",
     price: "$32",
-    image:
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop",
+    image: "/images/hibiscus-hair-butter.jpg",
   },
 ];
 

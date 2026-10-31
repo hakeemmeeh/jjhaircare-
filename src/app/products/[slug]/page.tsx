@@ -29,7 +29,7 @@ const products = [
     description: "A weekly deep conditioning treatment that reverses damage, restores elasticity, and delivers intense hydration to over-processed, dry, or heat-damaged hair. Leave it on, let it work — your curls will thank you.",
     price: "$35",
     size: "250g / 8.8 oz",
-    image: "https://images.unsplash.com/photo-1629198688000-71f23e745b6e?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/scalp-detox-mask.jpg",
     benefits: [
       "Reverses damage from heat, colour, and chemical processing",
       "Restores elasticity and reduces breakage by up to 70%",
@@ -65,7 +65,7 @@ const products = [
     description: "A thick, whipped butter that seals moisture deep into every strand. Formulated with unrefined shea butter and beeswax to provide long-lasting hydration and definition, especially for thicker textures that need extra love.",
     price: "$32",
     size: "200g / 7 oz",
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/hibiscus-hair-butter.jpg",
     benefits: [
       "Seals in moisture for up to 3 days between wash days",
       "Defines curls and coils without crunchiness",

@@ -292,10 +292,10 @@ export default function Hero() {
               }}
             />
             <Image
-              src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=1200&auto=format&fit=crop"
+              src="/images/collection-hero.jpg"
               alt="JJHairCare natural hair care products"
               fill
-              className="object-cover"
+              className="object-cover object-[62%_center]"
               priority
               sizes="420px"
             />
