@@ -66,6 +66,7 @@ const products = [
     price: "$32",
     size: "200g / 7 oz",
     image: "/images/hibiscus-hair-butter.jpg",
+    imageAspect: "aspect-[3/2]", // wide banner — show it uncropped
     benefits: [
       "Seals in moisture for up to 3 days between wash days",
       "Defines curls and coils without crunchiness",
@@ -127,7 +128,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             
             {/* Left: Product Image */}
             <div className="w-full lg:w-1/2">
-              <div className="aspect-[4/5] relative rounded-sm overflow-hidden bg-jj-black/5">
+              <div className={`${product.imageAspect ?? "aspect-[4/5]"} relative rounded-sm overflow-hidden bg-jj-black/5`}>
                 <img 
                   src={product.image} 
                   alt={product.name}
