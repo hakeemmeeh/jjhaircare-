@@ -18,6 +18,7 @@ export const PRODUCTS: Product[] = [
   {
     name: "Scalp Detox Mask",
     slug: "scalp-detox-mask",
+    price: "KES 1,500",
     description: "A natural deep-cleansing treatment that removes build-up and soothes the scalp.",
     image: "/images/scalp-detox-mask-v2.jpg",
   },

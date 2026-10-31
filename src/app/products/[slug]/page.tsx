@@ -41,6 +41,7 @@ const products: ProductDetail[] = [
   {
     name: "JJHairCare Scalp Detox Mask",
     slug: "scalp-detox-mask",
+    price: "KES 1,500",
     tagline: "Cleanse. Detox. Revive.",
     description: "A natural deep cleansing treatment designed to remove build-up, soothe the scalp and promote healthy, strong hair growth. Healthy scalp, stronger hair.",
     size: "Natural powder mask",
