@@ -62,9 +62,9 @@ export default function Contact() {
                         </a>
                       </div>
                       <div>
-                        <h4 className="text-jj-nude text-sm uppercase tracking-widest mb-2">Phone</h4>
-                        <a href="tel:+10000000000" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
-                          +1 (800) 123-4567
+                        <h4 className="text-jj-nude text-sm uppercase tracking-widest mb-2">Phone / WhatsApp</h4>
+                        <a href="https://wa.me/254743600499" target="_blank" rel="noopener noreferrer" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
+                          +254 743 600 499
                         </a>
                       </div>
                     </div>

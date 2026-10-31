@@ -3,7 +3,7 @@
  * (e.g. "2547XXXXXXXX"). Until it is set, the order button opens WhatsApp with the
  * message pre-filled and lets the customer pick the contact.
  */
-export const WHATSAPP_NUMBER = "";
+export const WHATSAPP_NUMBER = "254743600499";
 
 export function whatsappOrderUrl(message: string): string {
   const text = encodeURIComponent(message);
