@@ -41,7 +41,7 @@ export const PRODUCTS: Product[] = [
     slug: "hair-mist",
     price: "KES 1,500",
     description: "Refresh. Nourish. Shine. A natural hair mist for hair care all day.",
-    image: "/images/hair-mist.jpg",
+    image: "/images/hair-mist-card-v2.jpg",
   },
 ];
 
