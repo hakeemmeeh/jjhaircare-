@@ -66,7 +66,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden xl:flex items-center gap-8">
             <ul className="flex items-center gap-8">
               {navLinks.map((link) => (
                 <li key={link.name}>
@@ -84,7 +84,7 @@ export default function Navbar() {
             </ul>
             <MagneticButton>
               <Link href="/products" className={clsx(
-                "font-medium px-6 py-2.5 rounded-sm uppercase tracking-wider text-sm transition-all cursor-pointer block",
+                "font-medium px-6 py-2.5 rounded-sm uppercase tracking-wider text-sm transition-all cursor-pointer block whitespace-nowrap",
                 isSolid
                   ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
                   : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"
@@ -96,7 +96,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={clsx("md:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-black" : textColor)}
+            className={clsx("xl:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-black" : textColor)}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
           >
