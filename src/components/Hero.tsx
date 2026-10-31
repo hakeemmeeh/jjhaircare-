@@ -8,6 +8,12 @@ import Link from "next/link";
 
 import MagneticButton from "@/components/MagneticButton";
 
+const SHOWCASE = [
+  { src: "/images/herbal-hair-oil-v2.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
+  { src: "/images/scalp-detox-mask-v2.jpg", alt: "JJ Haircare Scalp Detox Mask — cleanse, detox, revive", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
+  { src: "/images/moringa-hair-butter-v2.jpg", alt: "JJ Haircare Moringa Hair Butter — nourish, strengthen, grow", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
+];
+
 const stats = [
   { value: 100, suffix: "%", label: "Natural Ingredients", isDecimal: false },
   { value: 4, suffix: "", label: "Signature Products", isDecimal: false },
@@ -73,6 +79,13 @@ export default function Hero() {
     "Nourishes Deeply.",
   ];
   const [titleIndex, setTitleIndex] = useState(0);
+  const [showcaseIndex, setShowcaseIndex] = useState(0);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const id = setInterval(() => setShowcaseIndex((i) => (i + 1) % SHOWCASE.length), 4500);
+    return () => clearInterval(id);
+  }, [prefersReducedMotion]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -272,7 +285,7 @@ export default function Hero() {
           className="hidden lg:flex items-center justify-center"
         >
           <motion.div 
-            className="relative w-[420px] h-[520px] rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
+            className="relative w-[440px] h-[440px] rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
             style={prefersReducedMotion ? {} : {
               rotateX: useTransform(smoothY, [-0.5, 0.5], ["10deg", "-10deg"]),
               rotateY: useTransform(smoothX, [-0.5, 0.5], ["-10deg", "10deg"]),
@@ -290,22 +303,39 @@ export default function Hero() {
                 )`
               }}
             />
-            <Image
-              src="/images/collection-hero.jpg"
-              alt="JJHairCare natural hair care products"
-              fill
-              className="object-cover object-[62%_center]"
-              priority
-              sizes="420px"
-            />
-            {/* Overlay badge */}
-            <motion.div 
-              style={prefersReducedMotion ? {} : { transform: "translateZ(40px)" }}
-              className="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-sm rounded-xl px-5 py-4 shadow-lg z-30"
-            >
-              <p className="font-serif text-jj-black text-lg font-semibold leading-tight">100% Natural Ingredients</p>
-              <p className="text-jj-charcoal/60 text-sm mt-1">No sulphates · No parabens · Vegan</p>
-            </motion.div>
+            <Link href={SHOWCASE[showcaseIndex].href} className="absolute inset-0 block" aria-label={`Shop ${SHOWCASE[showcaseIndex].name}`}>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={SHOWCASE[showcaseIndex].src}
+                  initial={{ opacity: prefersReducedMotion ? 1 : 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: prefersReducedMotion ? 1 : 0 }}
+                  transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={SHOWCASE[showcaseIndex].src}
+                    alt={SHOWCASE[showcaseIndex].alt}
+                    fill
+                    className="object-cover"
+                    priority
+                    sizes="440px"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </Link>
+            {/* Dots */}
+            <div className="absolute bottom-4 left-0 right-0 z-30 flex justify-center gap-2">
+              {SHOWCASE.map((item, i) => (
+                <button
+                  key={item.src}
+                  type="button"
+                  aria-label={`Show ${item.name}`}
+                  onClick={() => setShowcaseIndex(i)}
+                  className={`h-2 rounded-full transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-jj-black/30"}`}
+                />
+              ))}
+            </div>
           </motion.div>
         </motion.div>
 
