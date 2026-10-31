@@ -60,20 +60,20 @@ export default function Navbar() {
             <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-black border border-white/10 shadow-sm">
               <Image src="/logo.png" alt="JJHairCare Logo" fill className="object-cover" />
             </div>
-            <span className="font-serif text-2xl md:text-3xl tracking-wider">
+            <span className="font-serif text-2xl md:text-3xl lg:text-2xl xl:text-3xl tracking-wider">
               JJHairCare
             </span>
           </Link>
 
           {/* Desktop Nav */}
-          <nav className="hidden xl:flex items-center gap-8">
-            <ul className="flex items-center gap-8">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
+            <ul className="flex items-center gap-5 xl:gap-8">
               {navLinks.map((link) => (
-                <li key={link.name}>
+                <li key={link.name} className={link.name === "Home" ? "hidden xl:block" : undefined}>
                   <Link
                     href={link.href}
                     className={clsx(
-                      "text-sm uppercase tracking-widest transition-colors",
+                      "text-xs xl:text-sm uppercase tracking-wider xl:tracking-widest whitespace-nowrap transition-colors",
                       isSolid ? "text-white/80 hover:text-jj-nude" : "text-jj-black/80 hover:text-jj-black"
                     )}
                   >
@@ -84,7 +84,7 @@ export default function Navbar() {
             </ul>
             <MagneticButton>
               <Link href="/products" className={clsx(
-                "font-medium px-6 py-2.5 rounded-sm uppercase tracking-wider text-sm transition-all cursor-pointer block whitespace-nowrap",
+                "font-medium px-4 xl:px-6 py-2.5 rounded-sm uppercase tracking-wider text-xs xl:text-sm transition-all cursor-pointer block whitespace-nowrap",
                 isSolid
                   ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
                   : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"
@@ -96,7 +96,7 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
-            className={clsx("xl:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-black" : textColor)}
+            className={clsx("lg:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-black" : textColor)}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label="Toggle Menu"
           >
