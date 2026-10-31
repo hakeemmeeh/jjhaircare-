@@ -1,7 +1,7 @@
 const teamMembers = [
   { name: "Umi Hussein", role: "Founder", initials: "UH" },
-  { name: "Zeitun Ibrahim", role: "Founder", initials: "ZI" },
-  { name: "Dr. Muleha Hussein", role: "Founder", initials: "MH" },
+  { name: "Zeitun Ibrahim", role: "Founder · Operations", initials: "ZI" },
+  { name: "Dr. Muleha Hussein", role: "Founder · Marketing", initials: "MH" },
 ];
 
 export default function Team() {
