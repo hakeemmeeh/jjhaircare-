@@ -2,6 +2,7 @@
 
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import Link from "next/link";
+import { whatsappOrderUrl } from "@/data/site-config";
 import Image from "next/image";
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -71,30 +72,20 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Newsletter */}
+          {/* Updates via WhatsApp */}
           <div>
-            <h4 className="font-serif text-xl mb-6 text-white">Join the Crown Club</h4>
+            <h4 className="font-serif text-xl mb-6 text-white">Stay in the loop</h4>
             <p className="text-white/60 font-light mb-6">
-              Subscribe to receive updates, access to exclusive deals, and more.
+              Message us on WhatsApp to hear first about new products and offers.
             </p>
-            <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="flex flex-col gap-4">
-              <label htmlFor="footer-email" className="sr-only">Email address</label>
-              <input
-                id="footer-email"
-                type="email"
-                name="email"
-                required
-                placeholder="Enter your email"
-                className="bg-transparent border-b border-white/20 pb-3 text-white focus:outline-none focus:border-jj-nude transition-colors placeholder:text-white/30"
-              />
-              <button
-                type="submit"
-                className="bg-jj-nude hover:bg-jj-gold text-jj-black font-medium py-3 px-6 rounded-sm uppercase tracking-widest text-sm transition-colors self-start mt-2 cursor-pointer"
-              >
-                Subscribe
-              </button>
-            </form>
-            <p className="text-white/40 text-xs mt-4">Get 10% off your first order when you join.</p>
+            <a
+              href={whatsappOrderUrl("Hi JJ Haircare, please add me to your updates.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-jj-nude hover:bg-jj-gold text-jj-black font-medium py-3 px-6 rounded-sm uppercase tracking-widest text-sm transition-colors"
+            >
+              Join on WhatsApp
+            </a>
           </div>
 
         </div>

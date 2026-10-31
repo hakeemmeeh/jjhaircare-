@@ -4,6 +4,14 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import { whatsappOrderUrl } from "@/data/site-config";
+
+function sendToWhatsApp(e: React.FormEvent<HTMLFormElement>) {
+  e.preventDefault();
+  const f = new FormData(e.currentTarget);
+  const text = `Hi JJ Haircare! I'm ${f.get("name")} (${f.get("email")}).\nSubject: ${f.get("subject")}\n\n${f.get("message")}`;
+  window.open(whatsappOrderUrl(text), "_blank", "noopener,noreferrer");
+}
 
 export default function ContactPage() {
   return (
@@ -29,7 +37,7 @@ export default function ContactPage() {
             {/* Left Column - Contact Form */}
             <div className="bg-white/70 backdrop-blur-md border border-jj-black/5 rounded-[2rem] p-8 md:p-12 shadow-sm"
             >
-              <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="flex flex-col gap-6">
+              <form onSubmit={sendToWhatsApp} className="flex flex-col gap-6">
                 <div>
                   <label htmlFor="name" className="block text-sm uppercase tracking-widest font-mono text-jj-gold mb-2">Full Name</label>
                   <input
@@ -85,7 +93,7 @@ export default function ContactPage() {
                   type="submit"
                   className="mt-4 bg-jj-black hover:bg-jj-olive text-white font-medium rounded-full px-8 py-4 uppercase tracking-wider text-sm transition-all text-center w-full md:w-auto self-start"
                 >
-                  Send Message
+                  Send via WhatsApp
                 </button>
               </form>
             </div>

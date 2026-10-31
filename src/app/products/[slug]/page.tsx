@@ -96,6 +96,21 @@ const products: ProductDetail[] = [
   },
 ];
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const product = products.find((p) => p.slug === slug);
+  if (!product) return {};
+  const name = product.name.replace("JJHairCare ", "");
+  const title = product.price ? `${name} — ${product.price}` : name;
+  const description = `${product.tagline} ${product.description}`;
+  return {
+    title,
+    description,
+    openGraph: { type: "website", title, description, images: [{ url: product.image, alt: name }] },
+    twitter: { card: "summary_large_image", title, description, images: [product.image] },
+  };
+}
+
 export async function generateStaticParams() {
   return products.map((product) => ({
     slug: product.slug,

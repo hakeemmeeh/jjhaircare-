@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import BackToTop from "@/components/BackToTop";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import "./globals.css";
 
@@ -20,17 +21,17 @@ export const metadata = {
     default: 'JJHairCare | Premium Natural Hair Care — Where Nature Meets Beauty',
     template: '%s | JJHairCare',
   },
-  description: 'Handcrafted, 100% natural hair care products made with ethically sourced shea butter, castor oil, and botanicals. Sulfate-free, paraben-free, cruelty-free.',
-  keywords: ['natural hair care', 'shea butter hair products', 'organic hair oil', 'natural hair butter', 'cruelty free hair care', 'black hair care', 'curly hair products', '4C hair', 'loc care', 'natural hair growth'],
+  description: 'Natural hair care from Nairobi — Herbal Hair Oil, Scalp Detox Mask, Hibiscus and Moringa Hair Butter, and Hair Mist. Order on WhatsApp.',
+  keywords: ['natural hair care', 'herbal hair oil', 'hair butter', 'scalp detox mask', 'hair mist', 'natural hair Kenya', 'hair care Nairobi'],
   openGraph: {
     type: 'website',
-    locale: 'en_US',
+    locale: 'en_KE',
     siteName: 'JJHairCare',
     title: 'JJHairCare | Premium Natural Hair Care',
-    description: 'Handcrafted, 100% natural hair care. Ethically sourced. Sulfate-free. Cruelty-free.',
+    description: 'Natural hair care from Nairobi. Order on WhatsApp.',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/images/og-jjhaircare.jpg',
         width: 1200,
         height: 630,
         alt: 'JJHairCare — Where Nature Meets Beauty',
@@ -40,12 +41,11 @@ export const metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'JJHairCare | Premium Natural Hair Care',
-    description: 'Handcrafted, 100% natural hair care. Ethically sourced. Sulfate-free. Cruelty-free.',
-    images: ['/og-image.jpg'],
+    description: 'Natural hair care from Nairobi. Order on WhatsApp.',
+    images: ['/images/og-jjhaircare.jpg'],
   },
   icons: {
     icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
   },
   robots: {
     index: true,
@@ -66,6 +66,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           {children}
           <BackToTop />
+          <WhatsAppButton />
         </SmoothScrollProvider>
       </body>
     </html>
