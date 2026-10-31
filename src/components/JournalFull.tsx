@@ -1,16 +1,9 @@
-"use client";
-
-import { motion } from "framer-motion";
 
 export default function JournalFull() {
   return (
     <section className="py-32 bg-gradient-nude relative">
       <div className="container mx-auto px-6 md:px-12 max-w-5xl">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-          className="text-center mb-20"
+        <div className="text-center mb-20"
         >
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-[1px] w-12 bg-jj-nude" />
@@ -23,20 +16,16 @@ export default function JournalFull() {
             <span className="italic text-jj-olive">the Kitchen.</span>
           </h1>
           
-          <div className="w-full aspect-video md:aspect-[21/9] relative rounded-sm overflow-hidden border border-jj-gold/30 shadow-2xl mb-16">
+          <div className="max-w-sm mx-auto aspect-[1199/1312] relative rounded-sm overflow-hidden border border-jj-gold/30 shadow-lg mb-16">
             <img 
-              src="/images/herbal-hair-oil.jpg" 
-              alt="JJ Haircare Herbal Hair Oil" 
-              className="w-full h-full object-cover scale-[1.02]"
+              src="/images/scalp-detox-mask.jpg" 
+              alt="JJ Haircare Scalp Detox Mask" 
+              className="w-full h-full object-cover "
             />
           </div>
-        </motion.div>
+        </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          className="mx-auto max-w-3xl text-xl md:text-2xl text-jj-charcoal/80 font-light leading-relaxed space-y-8"
+        <div className="mx-auto max-w-3xl text-xl md:text-2xl text-jj-charcoal/80 font-light leading-relaxed space-y-8"
         >
           <p className="first-letter:font-serif first-letter:text-7xl first-letter:font-bold first-letter:text-jj-black first-letter:float-left first-letter:mr-4 first-letter:mt-2">
             Long before the luxurious bottles and global shipping, JJHairCare was just a collection of raw shea butter, pure oils, and a deep desire for something better. 
@@ -75,7 +64,7 @@ export default function JournalFull() {
               Welcome to JJHairCare. Where nature meets beauty.
             </p>
           </div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

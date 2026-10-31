@@ -2,7 +2,6 @@
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { motion } from "framer-motion";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 
@@ -15,32 +14,20 @@ export default function ContactPage() {
           
           {/* Hero Section */}
           <div className="mb-16 md:mb-24 flex flex-col gap-6 text-left">
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-5xl md:text-7xl font-serif text-jj-black"
+            <h1 className="text-5xl md:text-7xl font-serif text-jj-black"
             >
               Let's <span className="italic text-jj-nude">Talk.</span>
-            </motion.h1>
-            <motion.p 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="font-sans text-jj-black/70 text-lg md:text-xl max-w-2xl"
+            </h1>
+            <p className="font-sans text-jj-black/70 text-lg md:text-xl max-w-2xl"
             >
               Whether you have a question about our formulations, need regimen advice, or want to explore wholesale partnerships — we're here.
-            </motion.p>
+            </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
             
             {/* Left Column - Contact Form */}
-            <motion.div
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-white/70 backdrop-blur-md border border-jj-black/5 rounded-[2rem] p-8 md:p-12 shadow-sm"
+            <div className="bg-white/70 backdrop-blur-md border border-jj-black/5 rounded-[2rem] p-8 md:p-12 shadow-sm"
             >
               <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="flex flex-col gap-6">
                 <div>
@@ -101,14 +88,10 @@ export default function ContactPage() {
                   Send Message
                 </button>
               </form>
-            </motion.div>
+            </div>
 
             {/* Right Column - Contact Details */}
-            <motion.div
-              initial={{ opacity: 0, x: 40 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col justify-between py-4"
+            <div className="flex flex-col justify-between py-4"
             >
               <div className="space-y-12">
                 <div>
@@ -163,7 +146,7 @@ export default function ContactPage() {
                 </Link>
               </div>
 
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

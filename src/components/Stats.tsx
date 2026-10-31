@@ -41,7 +41,7 @@ function Counter({
           }).format(latest);
         } else {
           ref.current.textContent = Intl.NumberFormat("en-US").format(
-            Math.floor(latest)
+            Math.round(latest)
           );
         }
       }

@@ -10,23 +10,13 @@ export const metadata = {
 
 export default function AboutPage() {
   return (
-    <main className="bg-jj-ivory min-h-screen relative">
+    <main className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
-      
-      {/* 1. Sticky About Section */}
-      <div className="md:sticky md:top-0 z-0 md:h-screen md:overflow-hidden">
+      <div className="flex-1">
         <AboutSection />
-      </div>
-      
-      {/* 2. Overlapping Team Section */}
-      <div className="relative z-10 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-[#f9f7f4]">
         <Team />
       </div>
-
-      {/* 3. Footer */}
-      <div className="relative z-20 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.2)] bg-jj-black">
-        <Footer />
-      </div>
+      <Footer />
     </main>
   );
 }

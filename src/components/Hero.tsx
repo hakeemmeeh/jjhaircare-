@@ -52,7 +52,7 @@ function Counter({
           }).format(latest);
         } else {
           ref.current.textContent = Intl.NumberFormat("en-US").format(
-            Math.floor(latest)
+            Math.round(latest)
           );
         }
       }
@@ -143,17 +143,6 @@ export default function Hero() {
         style={prefersReducedMotion ? {} : { x: bgTranslateX, y: bgTranslateY, translateY: parallaxYBg }}
         className="absolute inset-0 pointer-events-none"
       >
-        {/* Faded background image — optimized via Next.js Image */}
-        <div className="absolute inset-0 z-0 opacity-[0.18] mix-blend-multiply">
-          <Image
-            src="/images/collection-hero.jpg"
-            alt=""
-            fill
-            className="object-cover grayscale"
-            priority={false}
-            sizes="100vw"
-          />
-        </div>
 
         <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-white/30 rounded-full blur-[100px] pointer-events-none" />
         <div className="absolute bottom-[10%] left-[5%] w-[600px] h-[600px] bg-jj-rose/15 rounded-full blur-[120px] pointer-events-none" />
@@ -332,7 +321,7 @@ export default function Hero() {
                   type="button"
                   aria-label={`Show ${item.name}`}
                   onClick={() => setShowcaseIndex(i)}
-                  className={`h-2 rounded-full transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-jj-black/30"}`}
+                  className={`h-2 rounded-full transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-white/80 ring-1 ring-jj-black/20"}`}
                 />
               ))}
             </div>

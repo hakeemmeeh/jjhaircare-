@@ -1,25 +1,18 @@
-import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
-import ProductsSection from "@/components/Products";
+import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
-import ProductsZoomParallaxIntro from "@/components/ProductsZoomParallaxIntro";
 
 export const metadata = {
   title: 'Shop The Collection — Hair Oil, Butter, Mask & Mist',
-  description: 'Explore JJ Haircare: Herbal Hair Oil, Scalp Detox Mask, Hibiscus Hair Butter and Moringa Hair Butter — natural hair care from Nairobi.',
+  description: 'Explore JJ Haircare: Herbal Hair Oil, Scalp Detox Mask, Hibiscus Hair Butter, Moringa Hair Butter and Hair Mist — natural hair care from Nairobi.',
 };
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-jj-black">
+    <main className="min-h-screen bg-jj-ivory flex flex-col">
       <Navbar />
-      <Suspense fallback={<div className="min-h-[100dvh] bg-jj-black" aria-hidden />}>
-        <ProductsZoomParallaxIntro />
-      </Suspense>
-      <div className="relative z-30 -mt-12 rounded-t-[3rem] shadow-[0_-24px_48px_rgba(0,0,0,0.12)] overflow-hidden">
-        <Suspense fallback={<div className="min-h-[50vh]" aria-hidden />}>
-          <ProductsSection />
-        </Suspense>
+      <div className="flex-1">
+        <ProductGrid />
       </div>
       <Footer />
     </main>

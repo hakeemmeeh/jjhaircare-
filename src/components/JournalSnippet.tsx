@@ -43,8 +43,8 @@ export default function JournalSnippet() {
                   className="absolute inset-0"
                 >
                   <Image
-                    src="/images/herbal-hair-oil.jpg"
-                    alt="JJ Haircare Herbal Hair Oil"
+                    src="/images/scalp-detox-mask.jpg"
+                    alt="JJ Haircare Scalp Detox Mask"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-[2s] ease-out"

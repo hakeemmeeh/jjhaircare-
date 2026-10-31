@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { whatsappOrderUrl } from "@/data/site-config";
+import { PRODUCTS } from "@/data/products";
 
 type ProductDetail = {
   name: string;
@@ -238,7 +239,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 >
                   <div className="w-full aspect-square overflow-hidden rounded-[1.5rem] bg-[#EBE3D5] relative">
                     <img
-                      src={relatedProduct.image}
+                      src={PRODUCTS.find((p) => p.slug === relatedProduct.slug)?.image ?? relatedProduct.image}
                       alt={relatedProduct.name}
                       className="w-full h-full object-cover md:grayscale md:mix-blend-multiply group-hover:grayscale-0 group-hover:mix-blend-normal group-hover:scale-105 transition-all duration-700"
                     />
