@@ -55,7 +55,6 @@ export default function Footer() {
               <li><Link href="/about" className="hover:text-jj-nude transition-colors">About Us</Link></li>
               <li><Link href="/journal" className="hover:text-jj-nude transition-colors">Journal</Link></li>
               <li><Link href="/products" className="hover:text-jj-nude transition-colors">Shop</Link></li>
-              <li><Link href="/ingredients" className="hover:text-jj-nude transition-colors">Ingredients</Link></li>
               <li><Link href="/testimonials" className="hover:text-jj-nude transition-colors">Testimonials</Link></li>
               <li><Link href="/contact" className="hover:text-jj-nude transition-colors">Contact</Link></li>
             </ul>

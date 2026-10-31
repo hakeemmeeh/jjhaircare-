@@ -9,30 +9,26 @@ const goals = [
   {
     title: "Deep hydration",
     line: "For thirsty strands that need lasting moisture.",
-    href: "/products?goal=hydration",
-    image:
-      "https://images.unsplash.com/photo-1522338242992-e1a54906a8da?q=80&w=800&auto=format&fit=crop",
+    href: "/products/hibiscus-hair-butter",
+    image: "/images/hibiscus-hair-butter.jpg",
   },
   {
     title: "Growth & strength",
     line: "Edges, length, and resilience without heaviness.",
-    href: "/products?goal=growth",
-    image:
-      "https://images.unsplash.com/photo-1608248597279-f99d160bfcbc?q=80&w=800&auto=format&fit=crop",
+    href: "/products/herbal-hair-oil",
+    image: "/images/herbal-hair-oil-bottle.jpg",
   },
   {
     title: "Scalp balance",
     line: "Refresh the root—clarity without stripping.",
-    href: "/products?goal=scalp",
-    image:
-      "https://images.unsplash.com/photo-1571875257727-256c39da42af?q=80&w=800&auto=format&fit=crop",
+    href: "/products/scalp-detox-mask",
+    image: "/images/scalp-detox-mask.jpg",
   },
   {
     title: "Shine & definition",
     line: "Frizz down, brilliance up—lightweight finish.",
-    href: "/products?goal=shine",
-    image:
-      "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop",
+    href: "/products/hair-mist",
+    image: "/images/hair-mist.jpg",
   },
 ];
 
@@ -75,8 +71,7 @@ export default function HairGoals() {
             >
               <Link
                 href={goal.href}
-                scroll={false}
-                className="group flex flex-col h-full rounded-[1.25rem] border border-jj-black/10 bg-white/80 overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-md hover:border-jj-gold/30 cursor-pointer"
+                                className="group flex flex-col h-full rounded-[1.25rem] border border-jj-black/10 bg-white/80 overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-md hover:border-jj-gold/30 cursor-pointer"
               >
                 <div className="relative aspect-[4/3] bg-[#EBE3D5]">
                   <Image

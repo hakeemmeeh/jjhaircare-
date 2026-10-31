@@ -4,8 +4,8 @@ import Team from "@/components/Team";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'About Us — Our Story & Team',
-  description: 'Meet the naturalists, chemists, and hair care obsessives behind JJHairCare. Learn how we craft premium natural products from ethically sourced ingredients.',
+  title: 'About Us — Our Story & Founders',
+  description: 'Meet the founders behind JJ Haircare and the story of our natural hair care from Nairobi.',
 };
 
 export default function AboutPage() {

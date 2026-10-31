@@ -43,8 +43,8 @@ export default function JournalSnippet() {
                   className="absolute inset-0"
                 >
                   <Image
-                    src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=800&auto=format&fit=crop"
-                    alt="Mixing natural ingredients"
+                    src="/images/herbal-hair-oil.jpg"
+                    alt="JJ Haircare Herbal Hair Oil"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-[2s] ease-out"

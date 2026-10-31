@@ -25,8 +25,8 @@ export default function JournalFull() {
           
           <div className="w-full aspect-video md:aspect-[21/9] relative rounded-sm overflow-hidden border border-jj-gold/30 shadow-2xl mb-16">
             <img 
-              src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1600&auto=format&fit=crop" 
-              alt="Mixing natural ingredients" 
+              src="/images/herbal-hair-oil.jpg" 
+              alt="JJ Haircare Herbal Hair Oil" 
               className="w-full h-full object-cover scale-[1.02]"
             />
           </div>

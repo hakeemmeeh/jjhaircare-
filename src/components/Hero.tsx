@@ -133,7 +133,7 @@ export default function Hero() {
         {/* Faded background image — optimized via Next.js Image */}
         <div className="absolute inset-0 z-0 opacity-[0.18] mix-blend-multiply">
           <Image
-            src="https://images.unsplash.com/photo-1620916297397-a4a5402a3c6c?q=80&w=2500&auto=format&fit=crop"
+            src="/images/collection-hero.jpg"
             alt=""
             fill
             className="object-cover grayscale"
@@ -229,10 +229,10 @@ export default function Hero() {
             </MagneticButton>
             <MagneticButton>
               <Link
-                href="/ingredients"
+                href="/about"
                 className="relative border border-jj-olive/50 text-jj-olive font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:border-jj-olive hover:bg-jj-olive hover:text-white hover:shadow-[0_4px_20px_rgba(122,139,111,0.35)] transition-all duration-300 cursor-pointer text-center block w-full sm:w-auto"
               >
-                Our Ingredients
+                Our Story
               </Link>
             </MagneticButton>
           </motion.div>
