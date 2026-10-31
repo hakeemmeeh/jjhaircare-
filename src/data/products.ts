@@ -27,7 +27,7 @@ export const PRODUCTS: Product[] = [
     slug: "hibiscus-hair-butter",
     price: "KES 1,500",
     description: "Deep nourishment, lasting shine — with hibiscus extract, shea butter and aloe vera.",
-    image: "/images/hibiscus-hair-butter-card.jpg",
+    image: "/images/hibiscus-hair-butter-card-v2.jpg",
   },
   {
     name: "Moringa Hair Butter",

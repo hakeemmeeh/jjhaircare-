@@ -59,7 +59,7 @@ const products: ProductDetail[] = [
     tagline: "Deep Nourishment. Lasting Shine.",
     description: "A rich, creamy hair butter made with hibiscus extract, shea butter, aloe vera and natural oils for deep moisture, natural shine and stronger hair.",
     size: "Hair butter",
-    image: "/images/hibiscus-hair-butter.jpg",
+    image: "/images/hibiscus-hair-butter-v2.jpg",
     imageAspect: "aspect-[3/2]", // wide banner — show it uncropped
     benefits: ["Deep moisturization", "Adds natural shine", "Reduces breakage", "Strengthens hair"],
     ingredients: "Made with hibiscus extract, shea butter, aloe vera and natural oils — 100% natural ingredients. The full list is printed on the jar.",

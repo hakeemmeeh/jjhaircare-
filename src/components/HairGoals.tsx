@@ -10,7 +10,7 @@ const goals = [
     title: "Deep hydration",
     line: "For thirsty strands that need lasting moisture.",
     href: "/products/hibiscus-hair-butter",
-    image: "/images/hibiscus-hair-butter-card.jpg",
+    image: "/images/hibiscus-hair-butter-card-v2.jpg",
   },
   {
     title: "Growth & strength",
