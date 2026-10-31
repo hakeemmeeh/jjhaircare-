@@ -33,14 +33,14 @@ export const PRODUCTS: Product[] = [
     name: "Moringa Hair Butter",
     slug: "moringa-hair-butter",
     price: "KES 1,500",
-    description: "Natural nourishment for healthy hair, from our hair butter range.",
+    description: "A rich, creamy moringa butter that deeply moisturises, strengthens and leaves hair soft.",
     image: "/images/moringa-hair-butter-v2.jpg",
   },
   {
     name: "Hair Mist",
     slug: "hair-mist",
     price: "KES 1,500",
-    description: "Refresh. Nourish. Shine. A natural hair mist for hair care all day.",
+    description: "A lightweight everyday mist that refreshes, adds shine and tames frizz.",
     image: "/images/hair-mist-card-v2.jpg",
   },
 ];
