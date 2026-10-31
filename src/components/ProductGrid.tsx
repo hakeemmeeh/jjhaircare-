@@ -24,6 +24,9 @@ export default function ProductGrid() {
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover transition-transform duration-500 ease-out group-hover:scale-105"
                 />
+                <span className="absolute bottom-4 left-4 right-4 bg-jj-black text-white text-center text-sm font-bold py-3 rounded-xl transition-all duration-500 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100">
+                  View Details
+                </span>
               </div>
               <div className="mt-5 flex items-start justify-between gap-4">
                 <h2 className="font-sans text-xl font-semibold text-jj-black group-hover:text-jj-gold transition-colors">
@@ -33,7 +36,6 @@ export default function ProductGrid() {
                   {product.price ?? ""}
                 </span>
               </div>
-              <p className="mt-2 text-sm text-jj-charcoal/70 leading-relaxed">{product.description}</p>
             </Link>
           ))}
         </div>

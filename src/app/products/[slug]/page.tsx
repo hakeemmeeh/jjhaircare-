@@ -182,8 +182,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <p className="text-xl md:text-2xl text-jj-olive font-medium mb-2">{product.price ?? "Message us for price"}</p>
               <p className="text-sm font-mono text-jj-gold uppercase tracking-widest mb-8">{product.size}</p>
               
-              <h3 className="text-xl font-serif text-jj-black mb-4">{product.tagline}</h3>
-              <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-10">
+              <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-8">
                 {product.description}
               </p>
 
@@ -191,50 +190,56 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name.replace("JJHairCare ", "")}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full md:w-auto text-center bg-jj-black hover:bg-jj-nude text-white hover:text-jj-black font-medium px-12 py-5 rounded-sm uppercase tracking-widest text-sm transition-all duration-300 mb-16 shadow-lg hover:shadow-xl"
+                className="inline-block w-full md:w-auto text-center bg-jj-black hover:bg-jj-nude text-white hover:text-jj-black font-medium px-12 py-5 rounded-sm uppercase tracking-widest text-sm transition-all duration-300 mb-10 shadow-lg hover:shadow-xl"
               >
                 Order on WhatsApp{product.price ? ` — ${product.price}` : ""}
               </a>
 
-              {/* Accordion / Details sections */}
-              <div className="space-y-8 border-t border-jj-black/10 pt-8">
-                
-                <div>
-                  <h3 className="font-serif text-2xl text-jj-black mb-4">Key Benefits</h3>
-                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
-                    {product.benefits.map((benefit, i) => (
-                      <li key={i} className="flex items-center gap-3 text-jj-charcoal/70 font-light">
-                        <div className="w-1.5 h-1.5 rounded-full bg-jj-nude flex-shrink-0" />
-                        {benefit}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="border-t border-jj-black/10 pt-8">
-                  <h3 className="font-serif text-2xl text-jj-black mb-4">How to Use</h3>
-                  <div className="text-jj-charcoal/70 font-light leading-relaxed space-y-2">
-                    {product.howToUse.split('\n').map((step, i) => (
-                      <p key={i}>{step}</p>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="border-t border-jj-black/10 pt-8">
-                  <h3 className="font-serif text-2xl text-jj-black mb-4">Full Ingredient List</h3>
-                  <p className="text-jj-charcoal/70 font-light leading-relaxed">
-                    {product.ingredients}
-                  </p>
-                </div>
-
-                <div className="border-t border-jj-black/10 pt-8">
-                  <h3 className="font-serif text-2xl text-jj-black mb-4">Not sure what's right for you?</h3>
-                  <p className="text-jj-charcoal/70 font-light leading-relaxed">
-                    {product.hairTypes}
-                  </p>
-                </div>
-
+              {/* Collapsible details */}
+              <div className="border-t border-jj-black/10">
+                {[
+                  {
+                    title: "Key Benefits",
+                    body: (
+                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {product.benefits.map((benefit, i) => (
+                          <li key={i} className="flex items-center gap-3 text-jj-charcoal/70 font-light">
+                            <div className="w-1.5 h-1.5 rounded-full bg-jj-nude flex-shrink-0" />
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    ),
+                  },
+                  {
+                    title: "How to Use",
+                    body: (
+                      <div className="text-jj-charcoal/70 font-light leading-relaxed space-y-2">
+                        {product.howToUse.split("\n").map((step, i) => (
+                          <p key={i}>{step}</p>
+                        ))}
+                      </div>
+                    ),
+                  },
+                  {
+                    title: "Ingredients",
+                    body: <p className="text-jj-charcoal/70 font-light leading-relaxed">{product.ingredients}</p>,
+                  },
+                  {
+                    title: "Good for",
+                    body: <p className="text-jj-charcoal/70 font-light leading-relaxed">{product.hairTypes}</p>,
+                  },
+                ].map((item) => (
+                  <details key={item.title} className="group border-b border-jj-black/10">
+                    <summary className="flex items-center justify-between cursor-pointer list-none py-5 font-serif text-xl text-jj-black [&::-webkit-details-marker]:hidden">
+                      {item.title}
+                      <span className="text-2xl text-jj-gold leading-none transition-transform group-open:rotate-45">+</span>
+                    </summary>
+                    <div className="pb-6">{item.body}</div>
+                  </details>
+                ))}
               </div>
+
             </div>
           </div>
 
