@@ -27,8 +27,7 @@ export const PRODUCTS: Product[] = [
     slug: "hair-oil",
     description: "Nourishing blend of natural oils for scalp and strands.",
     price: "$38",
-    image:
-      "https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=800&auto=format&fit=crop",
+    image: "/images/herbal-hair-oil.jpg",
   },
   {
     name: "Hair Butter",

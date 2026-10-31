@@ -47,7 +47,7 @@ const products = [
     description: "Our signature Hair Oil is a lightweight yet deeply nourishing blend designed to stimulate the scalp, reduce breakage, and restore natural shine. Cold-pressed and handcrafted in small batches to preserve maximum potency.",
     price: "$38",
     size: "100ml / 3.4 fl oz",
-    image: "https://images.unsplash.com/photo-1617897903246-719242758050?q=80&w=1200&auto=format&fit=crop",
+    image: "/images/herbal-hair-oil.jpg",
     benefits: [
       "Stimulates scalp circulation and promotes healthy growth",
       "Reduces breakage and strengthens strands from root to tip",
