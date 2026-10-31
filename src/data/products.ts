@@ -13,13 +13,13 @@ export const PRODUCTS: Product[] = [
     slug: "herbal-hair-oil",
     price: "KES 1,000",
     description: "Nourish. Strengthen. Grow. A 100% natural herbal oil for scalp and strands.",
-    image: "/images/herbal-hair-oil-bottle.jpg",
+    image: "/images/herbal-hair-oil-v2.jpg",
   },
   {
     name: "Scalp Detox Mask",
     slug: "scalp-detox-mask",
     description: "A natural deep-cleansing treatment that removes build-up and soothes the scalp.",
-    image: "/images/scalp-detox-mask.jpg",
+    image: "/images/scalp-detox-mask-v2.jpg",
   },
   {
     name: "Hibiscus Hair Butter",
@@ -33,7 +33,7 @@ export const PRODUCTS: Product[] = [
     slug: "moringa-hair-butter",
     price: "KES 1,500",
     description: "Natural nourishment for healthy hair, from our hair butter range.",
-    image: "/images/moringa-hair-butter.jpg",
+    image: "/images/moringa-hair-butter-v2.jpg",
   },
   {
     name: "Hair Mist",

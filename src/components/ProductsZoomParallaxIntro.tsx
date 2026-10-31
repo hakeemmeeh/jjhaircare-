@@ -15,13 +15,14 @@ const TILE_LAYOUT = [
   "[&>div]:!-top-[8vh] [&>div]:!-left-[22vw] [&>div]:!h-[44vh] [&>div]:!w-[22vw]",
   "[&>div]:!top-[2vh] [&>div]:!left-[18vw] [&>div]:!h-[28vh] [&>div]:!w-[28vw]",
   "[&>div]:!top-[26vh] [&>div]:!-left-[8vw] [&>div]:!h-[26vh] [&>div]:!w-[22vw]",
+  "[&>div]:!top-[24vh] [&>div]:!left-[24vw] [&>div]:!h-[26vh] [&>div]:!w-[24vw]",
 ] as const;
 
 const P1 = 0.45;
 const P2 = 0.75;
 
-const PARALLAX_SCALE_START = [0.72, 0.78, 0.82, 0.76] as const;
-const PARALLAX_SCALE_END = [1.1, 1.22, 1.06, 1.14] as const;
+const PARALLAX_SCALE_START = [0.72, 0.78, 0.82, 0.76, 0.8] as const;
+const PARALLAX_SCALE_END = [1.1, 1.22, 1.06, 1.14, 1.12] as const;
 
 function focusSlugFromSearch(searchParams: ReturnType<typeof useSearchParams>) {
   const g = searchParams.get("goal")?.toLowerCase();
@@ -87,7 +88,7 @@ function ReducedIntro() {
             <a
               key={product.slug}
               href="#shop"
-              className="relative aspect-[4/5] rounded-2xl overflow-hidden block ring-1 ring-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-jj-gold"
+              className="relative aspect-square rounded-2xl overflow-hidden block ring-1 ring-white/15 focus:outline-none focus-visible:ring-2 focus-visible:ring-jj-gold"
             >
               <Image
                 src={product.image}
@@ -154,17 +155,19 @@ function ProductsZoomParallaxIntroParallax() {
   const scale1 = useTransform(progress, (p) => scaleForTile(p, 1, focusIndex, false));
   const scale2 = useTransform(progress, (p) => scaleForTile(p, 2, focusIndex, false));
   const scale3 = useTransform(progress, (p) => scaleForTile(p, 3, focusIndex, false));
+  const scale4 = useTransform(progress, (p) => scaleForTile(p, 4, focusIndex, false));
 
   const opacity0 = useTransform(progress, (p) => opacityForTile(p, 0, focusIndex, false));
   const opacity1 = useTransform(progress, (p) => opacityForTile(p, 1, focusIndex, false));
   const opacity2 = useTransform(progress, (p) => opacityForTile(p, 2, focusIndex, false));
   const opacity3 = useTransform(progress, (p) => opacityForTile(p, 3, focusIndex, false));
+  const opacity4 = useTransform(progress, (p) => opacityForTile(p, 4, focusIndex, false));
 
   const textOpacity = useTransform(progress, (p) => copyOpacity(p, false));
   const textY = useTransform(progress, (p) => (p < P2 ? 0 : -20 * ((p - P2) / (1 - P2))));
 
-  const scales = [scale0, scale1, scale2, scale3];
-  const opacities = [opacity0, opacity1, opacity2, opacity3];
+  const scales = [scale0, scale1, scale2, scale3, scale4];
+  const opacities = [opacity0, opacity1, opacity2, opacity3, opacity4];
 
   return (
     <div ref={containerRef} className={`relative w-full ${TRACK_HEIGHT_CLASS}`}>

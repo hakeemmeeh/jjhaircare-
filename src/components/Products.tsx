@@ -149,7 +149,7 @@ export default function Products() {
               >
                 <div className="absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-overlay" />
 
-                <div className="w-full aspect-[4/5] overflow-hidden rounded-[1.5rem] bg-jj-olive/20 relative">
+                <div className="w-full aspect-square overflow-hidden rounded-[1.5rem] bg-jj-olive/20 relative">
                   <Image
                     src={product.image}
                     alt={product.name}

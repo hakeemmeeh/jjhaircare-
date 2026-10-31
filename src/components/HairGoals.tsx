@@ -16,13 +16,13 @@ const goals = [
     title: "Growth & strength",
     line: "Edges, length, and resilience without heaviness.",
     href: "/products/herbal-hair-oil",
-    image: "/images/herbal-hair-oil-bottle.jpg",
+    image: "/images/herbal-hair-oil-v2.jpg",
   },
   {
     title: "Scalp balance",
     line: "Refresh the root—clarity without stripping.",
     href: "/products/scalp-detox-mask",
-    image: "/images/scalp-detox-mask.jpg",
+    image: "/images/scalp-detox-mask-v2.jpg",
   },
   {
     title: "Shine & definition",
@@ -73,7 +73,7 @@ export default function HairGoals() {
                 href={goal.href}
                                 className="group flex flex-col h-full rounded-[1.25rem] border border-jj-black/10 bg-white/80 overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-md hover:border-jj-gold/30 cursor-pointer"
               >
-                <div className="relative aspect-[4/3] bg-[#EBE3D5]">
+                <div className="relative aspect-square bg-[#EBE3D5]">
                   <Image
                     src={goal.image}
                     alt={goal.title}
