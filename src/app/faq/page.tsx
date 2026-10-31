@@ -10,11 +10,11 @@ import clsx from "clsx";
 const faqs = [
   {
     question: "What hair types are your products made for?",
-    answer: "All natural hair types — 2A waves to 4C coils, locs, and protective styles. Hair Butter suits thicker textures (3C–4C), Hair Oil works across all types, Hair Mist is a daily refresh for any texture, and Hair Mask is a weekly deep treatment for dry or damaged hair."
+    answer: "Our products are made for natural hair. Message us on WhatsApp and we'll recommend the right routine for your hair type and goals."
   },
   {
     question: "Are your products natural, cruelty-free, and vegan?",
-    answer: "100% natural and cruelty-free — always. Every product is free from sulfates, parabens, silicones, and artificial dyes. Hair Mist, Hair Oil, and Hair Mask are fully vegan. Hair Butter contains ethically sourced beeswax, so it is not vegan."
+    answer: "Our products are made with 100% natural ingredients. The full ingredient list is printed on every jar, bottle and pouch — or message us and we'll send it to you."
   },
   {
     question: "How do shipping and returns work?",

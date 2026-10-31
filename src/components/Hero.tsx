@@ -9,7 +9,6 @@ import Link from "next/link";
 import MagneticButton from "@/components/MagneticButton";
 
 const stats = [
-  { value: 10000, suffix: "+", label: "Happy Customers", isDecimal: false },
   { value: 100, suffix: "%", label: "Natural Ingredients", isDecimal: false },
   { value: 4, suffix: "", label: "Signature Products", isDecimal: false },
 ];
@@ -241,7 +240,7 @@ export default function Hero() {
           {/* Stats */}
           <motion.div
             style={prefersReducedMotion ? {} : { transform: "translateZ(20px)" }}
-            className="grid grid-cols-3 text-center w-full max-w-md lg:max-w-full"
+            className="grid grid-cols-2 text-center w-full max-w-md"
           >
             {stats.map((stat, index) => (
               <motion.div

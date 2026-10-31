@@ -2,46 +2,42 @@ export type Product = {
   name: string;
   slug: string;
   description: string;
-  price: string;
+  /** Leave empty until real prices are confirmed — the site then shows "Message for price". */
+  price?: string;
   image: string;
 };
 
 export const PRODUCTS: Product[] = [
   {
-    name: "Hair Mist",
-    slug: "hair-mist",
-    description: "Refreshing botanical mist for daily hydration and shine.",
-    price: "$24",
-    image:
-      "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=800&auto=format&fit=crop",
-  },
-  {
-    name: "Hair Mask",
-    slug: "hair-mask",
-    description: "Intensive restorative treatment for deep nourishment.",
-    price: "$35",
-    image: "/images/scalp-detox-mask.jpg",
-  },
-  {
-    name: "Hair Oil",
-    slug: "hair-oil",
-    description: "Nourishing blend of natural oils for scalp and strands.",
-    price: "$38",
+    name: "Herbal Hair Oil",
+    slug: "herbal-hair-oil",
+    description: "Nourish. Strengthen. Grow. A 100% natural herbal oil for scalp and strands.",
     image: "/images/herbal-hair-oil.jpg",
   },
   {
-    name: "Hair Butter",
-    slug: "hair-butter",
-    description: "Rich, creamy moisture sealant for lasting softness.",
-    price: "$32",
+    name: "Scalp Detox Mask",
+    slug: "scalp-detox-mask",
+    description: "A natural deep-cleansing treatment that removes build-up and soothes the scalp.",
+    image: "/images/scalp-detox-mask.jpg",
+  },
+  {
+    name: "Hibiscus Hair Butter",
+    slug: "hibiscus-hair-butter",
+    description: "Deep nourishment, lasting shine — with hibiscus extract, shea butter and aloe vera.",
     image: "/images/hibiscus-hair-butter.jpg",
+  },
+  {
+    name: "Moringa Hair Butter",
+    slug: "moringa-hair-butter",
+    description: "Natural nourishment for healthy hair, from our hair butter range.",
+    image: "/images/moringa-hair-butter.jpg",
   },
 ];
 
 /** Query `?goal=` on `/products` → scroll + highlight this card slug. */
 export const GOAL_TO_PRODUCT_SLUG: Record<string, string> = {
-  hydration: "hair-butter",
-  growth: "hair-oil",
-  scalp: "hair-mist",
-  shine: "hair-oil",
+  hydration: "hibiscus-hair-butter",
+  growth: "herbal-hair-oil",
+  scalp: "scalp-detox-mask",
+  shine: "hibiscus-hair-butter",
 };

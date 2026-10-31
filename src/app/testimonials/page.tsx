@@ -3,8 +3,8 @@ import TestimonialsSection from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'Testimonials — Crowned by Our Community',
-  description: 'Real stories from our community. See how JJHairCare products have transformed curls, coils, and locs across the world.',
+  title: 'Real Results — JJ Haircare',
+  description: 'See JJ Haircare on real hair. Follow our community on TikTok and Instagram for results, routines and new arrivals.',
 };
 
 export default function TestimonialsPage() {

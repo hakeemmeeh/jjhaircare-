@@ -26,7 +26,7 @@ const PARALLAX_SCALE_END = [1.1, 1.22, 1.06, 1.14] as const;
 function focusSlugFromSearch(searchParams: ReturnType<typeof useSearchParams>) {
   const g = searchParams.get("goal")?.toLowerCase();
   if (g && GOAL_TO_PRODUCT_SLUG[g]) return GOAL_TO_PRODUCT_SLUG[g];
-  return "hair-oil";
+  return "herbal-hair-oil";
 }
 
 function scaleForTile(

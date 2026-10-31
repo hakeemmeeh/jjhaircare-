@@ -4,11 +4,8 @@ import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import { useEffect, useRef } from "react";
 
 const stats = [
-  { value: 10000, suffix: "+", label: "Happy Customers", isDecimal: false },
   { value: 100, suffix: "%", label: "Natural Ingredients", isDecimal: false },
   { value: 4, suffix: "", label: "Signature Products", isDecimal: false },
-  { value: 30, suffix: "+", label: "Countries Shipped To", isDecimal: false },
-  { value: 4.9, suffix: "★", label: "Average Rating", isDecimal: true },
 ];
 
 function Counter({
@@ -66,7 +63,7 @@ export default function Stats() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-32 bg-jj-nude/5 blur-[80px]" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-10 text-center [&>*:last-child]:col-span-2 lg:[&>*:last-child]:col-span-1">
+        <div className="grid grid-cols-2 gap-10 text-center max-w-2xl mx-auto">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

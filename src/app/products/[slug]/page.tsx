@@ -1,81 +1,75 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
+import { whatsappOrderUrl } from "@/data/site-config";
 
-// Re-using the same products array for lookup (in a real app, this would be a DB fetch)
-const products = [
+type ProductDetail = {
+  name: string;
+  slug: string;
+  tagline: string;
+  description: string;
+  price?: string;
+  size: string;
+  image: string;
+  imageAspect?: string;
+  benefits: string[];
+  ingredients: string;
+  howToUse: string;
+  hairTypes: string;
+};
+
+const ASK_US = "Message us on WhatsApp and we'll guide you to the right routine for your hair.";
+
+// Details below come from the JJ Haircare packaging and brand artwork. Add prices (KES) as `price`.
+const products: ProductDetail[] = [
   {
-    name: "JJHairCare Hair Mist",
-    slug: "hair-mist",
-    tagline: "Refreshing botanical mist for daily hydration and shine.",
-    description: "Your everyday hydration hero. A feather-light botanical mist that refreshes curls, adds instant shine, and keeps hair moisturised between wash days. Spray and go — no buildup, no residue, just soft, happy hair.",
-    price: "$24",
-    size: "150ml / 5 fl oz",
-    image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?q=80&w=1200&auto=format&fit=crop",
-    benefits: [
-      "Instant moisture boost any time of day",
-      "Revives and refreshes second and third day curls",
-      "Lightweight formula — zero buildup or greasiness",
-      "Smells incredible (rose, lavender, and citrus blend)"
-    ],
-    ingredients: "Distilled Water, Aloe Vera Juice, Rose Water, Vegetable Glycerin, Jojoba Oil, Lavender Essential Oil, Sweet Orange Essential Oil, Vitamin B5",
-    howToUse: "1. Shake well before each use\n2. Hold 6-8 inches from hair and mist evenly\n3. Scrunch curls gently to reactivate definition\n4. Use daily or as needed. Works on dry or damp hair.",
-    hairTypes: "All types — 2A to 4C, locs, braids, and protective styles"
-  },
-  {
-    name: "JJHairCare Hair Mask",
-    slug: "hair-mask",
-    tagline: "Intensive restorative treatment for deep nourishment.",
-    description: "A weekly deep conditioning treatment that reverses damage, restores elasticity, and delivers intense hydration to over-processed, dry, or heat-damaged hair. Leave it on, let it work — your curls will thank you.",
-    price: "$35",
-    size: "250g / 8.8 oz",
-    image: "/images/scalp-detox-mask.jpg",
-    benefits: [
-      "Reverses damage from heat, colour, and chemical processing",
-      "Restores elasticity and reduces breakage by up to 70%",
-      "Deeply penetrates the hair shaft for lasting moisture",
-      "Leaves hair silky, manageable, and defined"
-    ],
-    ingredients: "Shea Butter, Avocado Oil, Baobab Oil, Honey, Aloe Vera Juice, Hydrolyzed Wheat Protein, Rosemary Extract, Vitamin E",
-    howToUse: "1. After shampooing, apply generously to damp hair from roots to ends\n2. Cover with a plastic cap or warm towel\n3. Leave on for 20-30 minutes (or overnight for extra repair)\n4. Rinse thoroughly with cool water. Use once a week.",
-    hairTypes: "All types — especially damaged, colour-treated, or heat-styled hair"
-  },
-  {
-    name: "JJHairCare Hair Oil",
-    slug: "hair-oil",
-    tagline: "Nourishing blend of natural oils for scalp and strands.",
-    description: "Our signature Hair Oil is a lightweight yet deeply nourishing blend designed to stimulate the scalp, reduce breakage, and restore natural shine. Cold-pressed and handcrafted in small batches to preserve maximum potency.",
-    price: "$38",
-    size: "100ml / 3.4 fl oz",
+    name: "JJHairCare Herbal Hair Oil",
+    slug: "herbal-hair-oil",
+    tagline: "Nourish. Strengthen. Grow.",
+    description: "A 100% natural herbal hair oil made to nourish the scalp, strengthen hair and support healthy growth, while adding natural shine.",
+    size: "200ml",
     image: "/images/herbal-hair-oil.jpg",
-    benefits: [
-      "Stimulates scalp circulation and promotes healthy growth",
-      "Reduces breakage and strengthens strands from root to tip",
-      "Adds brilliant shine without heaviness or greasiness",
-      "Soothes dry, itchy scalp"
-    ],
-    ingredients: "Jamaican Black Castor Oil, Argan Oil, Jojoba Oil, Sweet Almond Oil, Tea Tree Essential Oil, Rosemary Essential Oil, Vitamin E",
-    howToUse: "1. Apply 3-5 drops to fingertips\n2. Massage into scalp in circular motions for 2-3 minutes\n3. Work remaining oil through mid-lengths and ends\n4. Use 2-3 times per week. Can be applied to damp or dry hair.",
-    hairTypes: "All types — 2A to 4C, locs, and protective styles"
+    benefits: ["Nourishes the scalp", "Strengthens hair", "Promotes hair growth", "Adds natural shine"],
+    ingredients: "100% natural ingredients. The full ingredient list is printed on the bottle.",
+    howToUse: "Pour a small amount into your palm and work it through your scalp and hair.",
+    hairTypes: ASK_US,
   },
   {
-    name: "JJHairCare Hair Butter",
-    slug: "hair-butter",
-    tagline: "Rich, creamy moisture sealant for lasting softness.",
-    description: "A thick, whipped butter that seals moisture deep into every strand. Formulated with unrefined shea butter and beeswax to provide long-lasting hydration and definition, especially for thicker textures that need extra love.",
-    price: "$32",
-    size: "200g / 7 oz",
+    name: "JJHairCare Scalp Detox Mask",
+    slug: "scalp-detox-mask",
+    tagline: "Deep Cleanse. Refresh. Rebalance.",
+    description: "A natural deep cleansing and nourishing treatment designed to remove build-up, soothe the scalp and promote healthy, strong hair growth.",
+    size: "Natural powder mask",
+    image: "/images/scalp-detox-mask.jpg",
+    benefits: ["Detoxifies the scalp", "Reduces dandruff & itchiness", "Nourishes hair follicles", "Promotes healthy hair growth"],
+    ingredients: "Natural ingredients. The full ingredient list is printed on the pouch.",
+    howToUse: "1. Mix with water or your favourite carrier (e.g. aloe vera)\n2. Apply to scalp and hair\n3. Leave for 20–30 mins\n4. Rinse thoroughly",
+    hairTypes: ASK_US,
+  },
+  {
+    name: "JJHairCare Hibiscus Hair Butter",
+    slug: "hibiscus-hair-butter",
+    tagline: "Deep Nourishment. Lasting Shine.",
+    description: "A rich, creamy hair butter made with hibiscus extract, shea butter, aloe vera and natural oils for deep moisture, natural shine and stronger hair.",
+    size: "Hair butter",
     image: "/images/hibiscus-hair-butter.jpg",
     imageAspect: "aspect-[3/2]", // wide banner — show it uncropped
-    benefits: [
-      "Seals in moisture for up to 3 days between wash days",
-      "Defines curls and coils without crunchiness",
-      "Protects edges and ends from dryness and breakage",
-      "Rich, creamy texture melts on contact"
-    ],
-    ingredients: "Unrefined Shea Butter, Mango Butter, Beeswax, Coconut Oil, Jamaican Black Castor Oil, Lavender Essential Oil, Vitamin E",
-    howToUse: "1. Scoop a small amount and warm between palms\n2. Apply to freshly washed, damp hair section by section\n3. Use the LOC or LCO method — apply after your leave-in and oil\n4. Style as desired. Reapply to dry areas between wash days.",
-    hairTypes: "Best for 3B–4C curls, coils, and locs"
+    benefits: ["Deep moisturization", "Adds natural shine", "Reduces breakage", "Strengthens hair"],
+    ingredients: "Made with hibiscus extract, shea butter, aloe vera and natural oils — 100% natural ingredients. The full list is printed on the jar.",
+    howToUse: "Warm a small amount between your palms and work it through your hair, focusing on the lengths and ends.",
+    hairTypes: ASK_US,
+  },
+  {
+    name: "JJHairCare Moringa Hair Butter",
+    slug: "moringa-hair-butter",
+    tagline: "Natural nourishment for healthy hair.",
+    description: "Part of the JJ Haircare hair butter range, made with 100% natural ingredients.",
+    size: "Hair butter",
+    image: "/images/moringa-hair-butter.jpg",
+    benefits: ["100% natural ingredients", "Part of the JJ Haircare butter range"],
+    ingredients: "100% natural ingredients. The full ingredient list is printed on the jar.",
+    howToUse: "Warm a small amount between your palms and work it through your hair.",
+    hairTypes: ASK_US,
   },
 ];
 
@@ -103,14 +97,18 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       '@type': 'Brand',
       name: 'JJHairCare',
     },
-    offers: {
-      '@type': 'Offer',
-      url: `https://jjhaircare.vercel.app/products/${product.slug}`,
-      priceCurrency: 'USD',
-      price: product.price.replace('$', ''),
-      availability: 'https://schema.org/InStock',
-      itemCondition: 'https://schema.org/NewCondition',
-    },
+    ...(product.price
+      ? {
+          offers: {
+            '@type': 'Offer',
+            url: `https://jjhaircare.vercel.app/products/${product.slug}`,
+            priceCurrency: 'KES',
+            price: product.price.replace(/[^0-9.]/g, ''),
+            availability: 'https://schema.org/InStock',
+            itemCondition: 'https://schema.org/NewCondition',
+          },
+        }
+      : {}),
   };
 
   return (
@@ -145,7 +143,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </div>
 
               <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-2">{product.name}</h1>
-              <p className="text-xl md:text-2xl text-jj-olive font-medium mb-2">{product.price}</p>
+              <p className="text-xl md:text-2xl text-jj-olive font-medium mb-2">{product.price ?? "Message us for price"}</p>
               <p className="text-sm font-mono text-jj-gold uppercase tracking-widest mb-8">{product.size}</p>
               
               <h3 className="text-xl font-serif text-jj-black mb-4">{product.tagline}</h3>
@@ -153,9 +151,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 {product.description}
               </p>
 
-              <button className="w-full md:w-auto bg-jj-black hover:bg-jj-nude text-white hover:text-jj-black font-medium px-12 py-5 rounded-sm uppercase tracking-widest text-sm transition-all duration-300 mb-16 shadow-lg hover:shadow-xl">
-                Add to Cart — {product.price}
-              </button>
+              <a
+                href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name.replace("JJHairCare ", "")}.`)}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block w-full md:w-auto text-center bg-jj-black hover:bg-jj-nude text-white hover:text-jj-black font-medium px-12 py-5 rounded-sm uppercase tracking-widest text-sm transition-all duration-300 mb-16 shadow-lg hover:shadow-xl"
+              >
+                Order on WhatsApp{product.price ? ` — ${product.price}` : ""}
+              </a>
 
               {/* Accordion / Details sections */}
               <div className="space-y-8 border-t border-jj-black/10 pt-8">
@@ -189,7 +192,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 </div>
 
                 <div className="border-t border-jj-black/10 pt-8">
-                  <h3 className="font-serif text-2xl text-jj-black mb-4">Hair Types</h3>
+                  <h3 className="font-serif text-2xl text-jj-black mb-4">Not sure what's right for you?</h3>
                   <p className="text-jj-charcoal/70 font-light leading-relaxed">
                     {product.hairTypes}
                   </p>
@@ -203,7 +206,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div className="mt-32 border-t border-jj-black/10 pt-24">
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl md:text-5xl text-jj-black mb-4">Complete Your <span className="italic text-jj-nude">Routine</span></h2>
-              <p className="text-jj-charcoal/70">Pair it with these community favorites.</p>
+              <p className="text-jj-charcoal/70">More from JJ Haircare.</p>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -226,9 +229,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       <h3 className="font-sans text-xl font-bold text-jj-black group-hover:text-jj-gold transition-colors">
                         {relatedProduct.name.replace('JJHairCare ', '')}
                       </h3>
-                      <span className="font-mono text-jj-gold font-medium mt-1">
-                        {relatedProduct.price}
-                      </span>
+                      {relatedProduct.price && (
+                        <span className="font-mono text-jj-gold font-medium mt-1">
+                          {relatedProduct.price}
+                        </span>
+                      )}
                     </div>
                   </div>
 

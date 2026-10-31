@@ -6,7 +6,7 @@ import ProductsZoomParallaxIntro from "@/components/ProductsZoomParallaxIntro";
 
 export const metadata = {
   title: 'Shop The Collection — Hair Oil, Butter, Mask & Mist',
-  description: 'Explore our full range of handcrafted natural hair care products. Hair Oil, Hair Butter, Hair Mask, and Hair Mist — formulated for every curl type.',
+  description: 'Explore JJ Haircare: Herbal Hair Oil, Scalp Detox Mask, Hibiscus Hair Butter and Moringa Hair Butter — natural hair care from Nairobi.',
 };
 
 export default function ProductsPage() {

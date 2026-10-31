@@ -164,9 +164,11 @@ export default function Products() {
                     <h3 className="font-sans text-2xl font-bold text-jj-black group-hover:text-jj-gold transition-colors">
                       {product.name}
                     </h3>
-                    <span className="font-mono text-jj-gold font-medium mt-1">
-                      {product.price}
-                    </span>
+                    {product.price && (
+                      <span className="font-mono text-jj-gold font-medium mt-1">
+                        {product.price}
+                      </span>
+                    )}
                   </div>
                   <p className="text-jj-black/60 font-serif leading-relaxed text-sm">
                     {product.description}
