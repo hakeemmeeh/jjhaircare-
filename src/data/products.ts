@@ -13,7 +13,7 @@ export const PRODUCTS: Product[] = [
     slug: "herbal-hair-oil",
     price: "KES 1,000",
     description: "Nourish. Strengthen. Grow. A 100% natural herbal oil for scalp and strands.",
-    image: "/images/herbal-hair-oil.jpg",
+    image: "/images/herbal-hair-oil-bottle.jpg",
   },
   {
     name: "Scalp Detox Mask",
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     name: "Hair Mist",
     slug: "hair-mist",
     price: "KES 1,500",
-    description: "A natural hair mist from the JJ Haircare range.",
+    description: "Refresh. Nourish. Shine. A natural hair mist for hair care all day.",
     image: "/images/hair-mist.jpg",
   },
 ];
