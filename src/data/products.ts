@@ -2,7 +2,7 @@ export type Product = {
   name: string;
   slug: string;
   description: string;
-  /** Leave empty until real prices are confirmed — the site then shows "Message for price". */
+  /** Shown as-is. Leave unset to show "Message us for price". */
   price?: string;
   image: string;
 };
@@ -11,6 +11,7 @@ export const PRODUCTS: Product[] = [
   {
     name: "Herbal Hair Oil",
     slug: "herbal-hair-oil",
+    price: "KES 1,000",
     description: "Nourish. Strengthen. Grow. A 100% natural herbal oil for scalp and strands.",
     image: "/images/herbal-hair-oil.jpg",
   },
@@ -23,14 +24,23 @@ export const PRODUCTS: Product[] = [
   {
     name: "Hibiscus Hair Butter",
     slug: "hibiscus-hair-butter",
+    price: "KES 1,500",
     description: "Deep nourishment, lasting shine — with hibiscus extract, shea butter and aloe vera.",
     image: "/images/hibiscus-hair-butter.jpg",
   },
   {
     name: "Moringa Hair Butter",
     slug: "moringa-hair-butter",
+    price: "KES 1,500",
     description: "Natural nourishment for healthy hair, from our hair butter range.",
     image: "/images/moringa-hair-butter.jpg",
+  },
+  {
+    name: "Hair Mist",
+    slug: "hair-mist",
+    price: "KES 1,500",
+    description: "A natural hair mist from the JJ Haircare range.",
+    image: "/images/hair-mist.jpg",
   },
 ];
 

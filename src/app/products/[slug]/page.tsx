@@ -20,11 +20,12 @@ type ProductDetail = {
 
 const ASK_US = "Message us on WhatsApp and we'll guide you to the right routine for your hair.";
 
-// Details below come from the JJ Haircare packaging and brand artwork. Add prices (KES) as `price`.
+// Details below come from the JJ Haircare packaging and brand artwork.
 const products: ProductDetail[] = [
   {
     name: "JJHairCare Herbal Hair Oil",
     slug: "herbal-hair-oil",
+    price: "KES 1,000",
     tagline: "Nourish. Strengthen. Grow.",
     description: "A 100% natural herbal hair oil made to nourish the scalp, strengthen hair and support healthy growth, while adding natural shine.",
     size: "200ml",
@@ -49,6 +50,7 @@ const products: ProductDetail[] = [
   {
     name: "JJHairCare Hibiscus Hair Butter",
     slug: "hibiscus-hair-butter",
+    price: "KES 1,500",
     tagline: "Deep Nourishment. Lasting Shine.",
     description: "A rich, creamy hair butter made with hibiscus extract, shea butter, aloe vera and natural oils for deep moisture, natural shine and stronger hair.",
     size: "Hair butter",
@@ -62,6 +64,7 @@ const products: ProductDetail[] = [
   {
     name: "JJHairCare Moringa Hair Butter",
     slug: "moringa-hair-butter",
+    price: "KES 1,500",
     tagline: "Natural nourishment for healthy hair.",
     description: "Part of the JJ Haircare hair butter range, made with 100% natural ingredients.",
     size: "Hair butter",
@@ -69,6 +72,19 @@ const products: ProductDetail[] = [
     benefits: ["100% natural ingredients", "Part of the JJ Haircare butter range"],
     ingredients: "100% natural ingredients. The full ingredient list is printed on the jar.",
     howToUse: "Warm a small amount between your palms and work it through your hair.",
+    hairTypes: ASK_US,
+  },
+  {
+    name: "JJHairCare Hair Mist",
+    slug: "hair-mist",
+    price: "KES 1,500",
+    tagline: "Natural care for your hair.",
+    description: "A natural hair mist from the JJ Haircare range.",
+    size: "Hair mist",
+    image: "/images/hair-mist.jpg",
+    benefits: ["Part of the JJ Haircare natural range"],
+    ingredients: "The full ingredient list is printed on the bottle.",
+    howToUse: "Hold the bottle a little away from your hair and mist evenly.",
     hairTypes: ASK_US,
   },
 ];
