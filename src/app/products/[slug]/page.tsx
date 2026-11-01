@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { whatsappOrderUrl } from "@/data/site-config";
 import { PRODUCTS } from "@/data/products";
-import ZoomImage from "@/components/ZoomImage";
+import ProductGallery from "@/components/ProductGallery";
 
 type ProductDetail = {
   name: string;
@@ -13,6 +13,7 @@ type ProductDetail = {
   price?: string;
   size: string;
   image: string;
+  gallery?: string[];
   imageAspect?: string;
   benefits: string[];
   ingredients: string;
@@ -45,8 +46,8 @@ const products: ProductDetail[] = [
     tagline: "Cleanse. Detox. Revive.",
     description: "A natural deep cleansing treatment designed to remove build-up, soothe the scalp and promote healthy, strong hair growth. Healthy scalp, stronger hair.",
     size: "Natural powder mask",
-    image: "/images/scalp-detox-mask-v2.jpg",
-    imageAspect: "aspect-square",
+    image: "/images/scalp-detox-tube-v3.jpg",
+    imageAspect: "aspect-[3/2]",
     benefits: ["Deep cleansing", "Removes build-up", "Soothes the scalp", "Promotes healthy hair growth", "Restores natural shine"],
     ingredients: "Natural ingredients. The full ingredient list is printed on the pouch.",
     howToUse: "1. Apply to clean scalp and hair\n2. Massage gently and leave for 20–30 minutes\n3. Rinse thoroughly with lukewarm water\n4. Use 1–2 times a week for best results",
@@ -164,10 +165,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             
             {/* Left: Product Image */}
             <div className="w-full lg:w-1/2">
-              <ZoomImage
-                src={product.image}
+              <ProductGallery
+                images={[product.image, ...(product.gallery ?? [])]}
                 alt={product.name}
-                className={`${product.imageAspect ?? "aspect-[4/5]"} rounded-sm bg-jj-black/5`}
+                aspect={product.imageAspect ?? "aspect-[4/5]"}
               />
             </div>
 

@@ -22,7 +22,7 @@ const goals = [
     title: "Scalp balance",
     line: "Refresh the root—clarity without stripping.",
     href: "/products/scalp-detox-mask",
-    image: "/images/scalp-detox-mask-v2.jpg",
+    image: "/images/scalp-detox-tube-card-v3.jpg",
   },
   {
     title: "Shine & definition",
