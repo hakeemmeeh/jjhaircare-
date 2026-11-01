@@ -14,7 +14,7 @@ const faqs = [
   },
   {
     question: "Are your products natural, cruelty-free, and vegan?",
-    answer: "Our products are made with 100% natural ingredients. The full ingredient list is printed on every jar, bottle and pouch — or message us and we'll send it to you."
+    answer: "Our products are made with 100% natural ingredients. The full ingredient list is printed on every jar, bottle and tube — or message us and we'll send it to you."
   },
   {
     question: "How do shipping and returns work?",
