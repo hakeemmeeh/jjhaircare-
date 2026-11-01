@@ -47,6 +47,7 @@ const products: ProductDetail[] = [
     description: "A scalp detox mask infused with honey and neem that cleanses build-up, hydrates and helps repair — for a healthier scalp and stronger hair.",
     size: "100ml scalp mask",
     image: "/images/scalp-detox-tube-v3.jpg",
+    gallery: ["/images/scalp-detox-gallery-3-v3.jpg", "/images/scalp-detox-gallery-2-v3.jpg"],
     imageAspect: "aspect-[3/2]",
     benefits: ["Detoxifies the scalp", "Removes build-up", "Hydrates", "Helps repair dry, stressed hair", "Infused with honey and neem"],
     ingredients: "Infused with honey and neem. The full ingredient list is printed on the tube.",
