@@ -171,7 +171,7 @@ export default function Hero() {
             ? {}
             : { rotateX, rotateY, x: fgTranslateX, y: fgTranslateY, translateY: parallaxYFg, transformStyle: "preserve-3d" }
         }
-        className="relative z-20 container max-w-7xl mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center"
+        className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-8 items-center"
       >
 
         {/* Left: Text + CTA + Stats */}
@@ -181,7 +181,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] pt-4 w-full"
+              className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-8xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] pt-4 w-full"
             >
               Where Nature <br className="hidden md:block" />
               <span className="text-jj-olive italic inline-block font-extrabold relative w-full text-center lg:text-left mt-1 md:mt-4 h-[1.2em]">
@@ -274,7 +274,7 @@ export default function Hero() {
           className="hidden lg:flex items-center justify-center"
         >
           <motion.div 
-            className="relative w-[420px] h-[420px] xl:w-[520px] xl:h-[520px] 2xl:w-[580px] 2xl:h-[580px] rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
+            className="relative w-full max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
             style={prefersReducedMotion ? {} : {
               rotateX: useTransform(smoothY, [-0.5, 0.5], ["10deg", "-10deg"]),
               rotateY: useTransform(smoothX, [-0.5, 0.5], ["-10deg", "10deg"]),
@@ -308,7 +308,7 @@ export default function Hero() {
                     fill
                     className="object-cover"
                     priority
-                    sizes="(min-width: 1536px) 580px, (min-width: 1280px) 520px, 420px"
+                    sizes="(min-width: 1536px) 720px, (min-width: 1280px) 560px, 460px"
                   />
                 </motion.div>
               </AnimatePresence>
