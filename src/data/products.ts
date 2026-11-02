@@ -20,7 +20,7 @@ export const PRODUCTS: Product[] = [
     slug: "scalp-detox-mask",
     price: "KES 1,500",
     description: "A honey and neem scalp mask that detoxifies, hydrates and repairs.",
-    image: "/images/scalp-detox-tube-card-v3.jpg",
+    image: "/images/scalp-detox-face-v4.jpg",
   },
   {
     name: "Hibiscus Hair Butter",

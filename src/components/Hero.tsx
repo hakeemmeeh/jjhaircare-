@@ -10,7 +10,7 @@ import MagneticButton from "@/components/MagneticButton";
 
 const SHOWCASE = [
   { src: "/images/herbal-hair-oil-v2.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
-  { src: "/images/scalp-detox-tube-card-v3.jpg", alt: "JJ Haircare Scalp Detox Mask — cleanse, detox, revive", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
+  { src: "/images/scalp-detox-face-v4.jpg", alt: "JJ Haircare Scalp Detox Mask — cleanse, detox, revive", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
   { src: "/images/moringa-hair-butter-v2.jpg", alt: "JJ Haircare Moringa Hair Butter — nourish, strengthen, grow", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
 ];
 

@@ -22,7 +22,7 @@ const goals = [
     title: "Scalp balance",
     line: "Refresh the root—clarity without stripping.",
     href: "/products/scalp-detox-mask",
-    image: "/images/scalp-detox-tube-card-v3.jpg",
+    image: "/images/scalp-detox-face-v4.jpg",
   },
   {
     title: "Shine & definition",
@@ -71,25 +71,34 @@ export default function HairGoals() {
             >
               <Link
                 href={goal.href}
-                                className="group flex flex-col h-full rounded-[1.25rem] border border-jj-black/10 bg-white/80 overflow-hidden shadow-sm transition-shadow duration-300 hover:shadow-md hover:border-jj-gold/30 cursor-pointer"
+                className="group relative flex flex-col h-full overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
               >
-                <div className="relative aspect-square bg-[#EBE3D5]">
+                <div className="relative aspect-square overflow-hidden">
                   <Image
                     src={goal.image}
                     alt={goal.title}
                     fill
                     sizes="(max-width: 768px) 78vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
                   />
                 </div>
-                <div className="flex flex-col flex-1 p-5">
-                  <h3 className="font-serif text-xl md:text-2xl text-jj-black group-hover:text-jj-olive transition-colors">
+                <div className="relative flex-1 overflow-hidden px-5 pt-5 pb-24">
+                  <Image
+                    src={goal.image}
+                    alt=""
+                    fill
+                    sizes="25vw"
+                    aria-hidden
+                    className="object-cover scale-150 blur-2xl opacity-70"
+                  />
+                  <div className="absolute inset-0 bg-jj-black/55" />
+                  <h3 className="relative font-sans text-xl font-semibold text-white leading-tight">
                     {goal.title}
                   </h3>
-                  <p className="mt-2 text-sm text-jj-charcoal/75 leading-relaxed flex-1">
+                  <p className="relative mt-3 text-sm text-white/70 leading-relaxed line-clamp-2">
                     {goal.line}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-jj-black group-hover:gap-2 transition-all">
+                  <span className="absolute bottom-5 left-5 right-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-sm font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
                     Shop
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </span>
