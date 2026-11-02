@@ -16,7 +16,7 @@ const goals = [
     title: "Growth & strength",
     line: "Edges, length, and resilience without heaviness.",
     href: "/products/herbal-hair-oil",
-    image: "/images/herbal-hair-oil-v2.jpg",
+    image: "/images/herbal-oil-face-v5.jpg",
   },
   {
     title: "Scalp balance",

@@ -13,7 +13,7 @@ export const PRODUCTS: Product[] = [
     slug: "herbal-hair-oil",
     price: "KES 1,000",
     description: "Nourish. Strengthen. Grow. A 100% natural herbal oil for scalp and strands.",
-    image: "/images/herbal-hair-oil-v2.jpg",
+    image: "/images/herbal-oil-face-v5.jpg",
   },
   {
     name: "Scalp Detox Mask",
