@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
 import { whatsappOrderUrl } from "@/data/site-config";
 import { PRODUCTS } from "@/data/products";
+import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
 
 type ProductDetail = {
@@ -253,37 +254,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {products.filter(p => p.slug !== product.slug).slice(0, 3).map((relatedProduct) => (
-                <a
-                  key={relatedProduct.name}
-                  href={`/products/${relatedProduct.slug}`}
-                  className="group relative bg-white/70 backdrop-blur-md rounded-[2rem] p-6 pb-20 overflow-hidden border border-transparent hover:border-jj-black/20 transition-colors block cursor-pointer shadow-sm hover:shadow-md"
-                >
-                  <div className="w-full aspect-square overflow-hidden rounded-[1.5rem] bg-[#EBE3D5] relative">
-                    <img
-                      src={PRODUCTS.find((p) => p.slug === relatedProduct.slug)?.image ?? relatedProduct.image}
-                      alt={relatedProduct.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
-                  
-                  <div className="mt-6 flex flex-col gap-2 relative z-10">
-                    <div className="flex justify-between items-start gap-4">
-                      <h3 className="font-sans text-xl font-bold text-jj-black group-hover:text-jj-gold transition-colors">
-                        {relatedProduct.name.replace('JJHairCare ', '')}
-                      </h3>
-                      {relatedProduct.price && (
-                        <span className="font-mono text-jj-gold font-medium mt-1">
-                          {relatedProduct.price}
-                        </span>
-                      )}
-                    </div>
-                  </div>
-
-                  <button className="absolute bottom-6 left-6 right-6 bg-jj-black text-white font-sans font-bold py-3 rounded-xl translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 hover:bg-jj-gold text-sm">
-                    View Details
-                  </button>
-                </a>
+              {PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 3).map((related) => (
+                <ProductCard key={related.slug} product={related} sizes="(max-width: 768px) 100vw, 33vw" />
               ))}
             </div>
           </div>

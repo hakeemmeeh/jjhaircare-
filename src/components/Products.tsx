@@ -1,11 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import ProductCard from "@/components/ProductCard";
 import MagneticButton from "@/components/MagneticButton";
 import { GOAL_TO_PRODUCT_SLUG, PRODUCTS, type Product } from "@/data/products";
 
@@ -143,42 +143,7 @@ export default function Products() {
               transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
               style={{ perspective: 1000 }}
             >
-              <Link
-                href={`/products/${product.slug}`}
-                className="group relative bg-[#EBE3D5] rounded-[2rem] p-6 pb-24 overflow-hidden h-fit border border-transparent hover:border-jj-black/20 transition-colors block cursor-pointer shadow-sm hover:shadow-2xl"
-              >
-                <div className="absolute inset-0 z-20 bg-gradient-to-tr from-transparent via-white/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none mix-blend-overlay" />
-
-                <div className="w-full aspect-square overflow-hidden rounded-[1.5rem] bg-jj-olive/20 relative">
-                  <Image
-                    src={product.image}
-                    alt={product.name}
-                    fill
-                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover group-hover:scale-110 transition-all duration-700"
-                  />
-                </div>
-
-                <div className="mt-8 flex flex-col gap-2 relative z-10">
-                  <div className="flex justify-between items-start gap-4">
-                    <h3 className="font-sans text-2xl font-bold text-jj-black group-hover:text-jj-gold transition-colors">
-                      {product.name}
-                    </h3>
-                    {product.price && (
-                      <span className="font-mono text-jj-gold font-medium mt-1">
-                        {product.price}
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-jj-black/60 font-serif leading-relaxed text-sm">
-                    {product.description}
-                  </p>
-                </div>
-
-                <span className="absolute bottom-6 left-6 right-6 bg-jj-black text-white font-sans font-bold py-4 rounded-xl text-center translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
-                  View Details
-                </span>
-              </Link>
+              <ProductCard product={product} />
             </motion.div>
           </div>
         ))}
