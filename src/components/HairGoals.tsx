@@ -28,7 +28,7 @@ const goals = [
     title: "Shine & definition",
     line: "Frizz down, brilliance up—lightweight finish.",
     href: "/products/hair-mist",
-    image: "/images/hair-mist-card-v2.jpg",
+    image: "/images/hair-mist-face-v6.jpg",
   },
 ];
 
