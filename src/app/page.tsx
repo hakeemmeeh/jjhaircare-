@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import Marquee from "@/components/Marquee";
 import AboutSnippet from "@/components/AboutSnippet";
 import Features from "@/components/Features";
 import HairGoals from "@/components/HairGoals";
@@ -21,6 +22,7 @@ export default function Home() {
 
       {/* 1b. About */}
       <div className="relative z-10 -mt-12 pb-16 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-jj-ivory">
+        <Marquee />
         <AboutSnippet />
       </div>
 

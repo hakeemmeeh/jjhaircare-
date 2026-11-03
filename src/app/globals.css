@@ -64,3 +64,17 @@ body {
     display: none;
   }
 }
+
+/* Scrolling tagline strip */
+@keyframes jj-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.jj-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: jj-marquee 38s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .jj-marquee-track { animation: none; }
+}

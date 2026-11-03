@@ -1,36 +1,32 @@
 import Image from "next/image";
 import Link from "next/link";
 
+/** Our Story: big statement band, with the collection banner overlapping it below. */
 export default function AboutSnippet() {
   return (
-    <section id="about" className="pt-28 pb-24 bg-jj-ivory">
-      <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-16 items-center max-w-6xl">
-        <div className="relative aspect-[1672/941] rounded-2xl overflow-hidden">
+    <section id="about" className="bg-jj-ivory pb-20 md:pb-28">
+      <div className="bg-[#26301F] px-6 md:px-12 pt-20 md:pt-28 pb-40 md:pb-56 text-center">
+        <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-6">Our Story</p>
+        <h2 className="font-serif text-3xl md:text-5xl lg:text-6xl text-white leading-tight max-w-4xl mx-auto">
+          Natural hair care, <span className="italic text-jj-gold">made in Nairobi</span> — built by three founders who believe healthy hair starts with simple, plant-based care.
+        </h2>
+        <Link
+          href="/about"
+          className="inline-block mt-10 text-sm uppercase tracking-[0.2em] text-white border-b border-jj-gold pb-1 hover:text-jj-gold transition-colors"
+        >
+          Read our story →
+        </Link>
+      </div>
+
+      <div className="px-6 md:px-12 -mt-24 md:-mt-40">
+        <div className="relative mx-auto max-w-6xl aspect-[1672/941] overflow-hidden rounded-3xl shadow-2xl">
           <Image
             src="/images/about-banner-v3.jpg"
-            alt="The JJ Haircare collection"
+            alt="The JJ Haircare collection: scalp detox mask, hair mist, herbal hair oil, moringa and hibiscus hair butter"
             fill
-            sizes="(min-width: 768px) 50vw, 100vw"
+            sizes="(min-width: 1280px) 1152px, 100vw"
             className="object-cover"
           />
-        </div>
-        <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Our Story</p>
-          <h2 className="font-serif text-3xl md:text-5xl text-jj-black leading-tight mb-6">
-            Rooted in Nature. <span className="italic text-jj-olive">Made in Nairobi.</span>
-          </h2>
-          <p className="text-jj-charcoal/80 font-light leading-relaxed text-lg mb-4">
-            JJ Haircare is a natural hair care brand built by three founders who believe healthy hair starts with simple, plant-based care. From our herbal oil to our butters, mask and mist, every product is made to nourish your scalp and strands.
-          </p>
-          <p className="text-jj-charcoal/80 font-light leading-relaxed text-lg mb-8">
-            Where nature meets beauty — and where you can order straight on WhatsApp.
-          </p>
-          <Link
-            href="/about"
-            className="inline-block bg-jj-black text-white text-sm uppercase tracking-wider px-8 py-3 rounded-sm hover:bg-jj-olive transition-colors"
-          >
-            Read our story
-          </Link>
         </div>
       </div>
     </section>
