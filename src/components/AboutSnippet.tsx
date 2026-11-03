@@ -7,7 +7,7 @@ export default function AboutSnippet() {
       <div className="container mx-auto px-6 md:px-12 grid md:grid-cols-[1.2fr_1fr] gap-10 md:gap-16 items-center max-w-6xl">
         <div className="relative aspect-[1672/941] rounded-2xl overflow-hidden">
           <Image
-            src="/images/about-banner-v2.jpg"
+            src="/images/about-banner-v3.jpg"
             alt="The JJ Haircare collection"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
