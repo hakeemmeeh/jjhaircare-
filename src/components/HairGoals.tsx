@@ -55,7 +55,7 @@ export default function HairGoals() {
           </p>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto pb-2 snap-x snap-mandatory md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible hide-scroll -mx-2 px-2 md:mx-0 md:px-0">
+        <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory -mx-6 px-[calc((100vw-min(80vw,340px))/2)] md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible hide-scroll">
           {goals.map((goal, index) => (
             <motion.div
               key={goal.title}
@@ -67,7 +67,7 @@ export default function HairGoals() {
                 delay: prefersReducedMotion ? 0 : index * 0.06,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="min-w-[78vw] sm:min-w-[260px] md:min-w-0 snap-start"
+              className="w-[80vw] max-w-[340px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink"
             >
               <Link
                 href={goal.href}
