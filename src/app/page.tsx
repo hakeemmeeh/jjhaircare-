@@ -5,6 +5,7 @@ import Marquee from "@/components/Marquee";
 import AboutSnippet from "@/components/AboutSnippet";
 import Features from "@/components/Features";
 import HairGoals from "@/components/HairGoals";
+import FeaturedProduct from "@/components/FeaturedProduct";
 import JournalSnippet from "@/components/JournalSnippet";
 import Products from "@/components/Products";
 import Testimonials from "@/components/Testimonials";
@@ -34,6 +35,11 @@ export default function Home() {
       {/* 2b. Shop by hair goal — after Features */}
       <div className="relative z-[15] -mt-12 pb-16 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-gradient-nude">
         <HairGoals />
+      </div>
+
+      {/* 2c. Featured product spotlight */}
+      <div className="relative z-[18] -mt-12 pb-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-[#26301F]">
+        <FeaturedProduct />
       </div>
 
       {/* 3. Overlapping Journal */}
