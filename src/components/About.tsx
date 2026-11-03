@@ -15,7 +15,7 @@ const rows = [
     eyebrow: "Crafted with intention",
     title: "Made in Nairobi, for everyday crown care",
     text: "JJ Haircare is built by three founders who wanted healthier hair to feel simple. From the herbal oil to the butters, mask and mist, each product is made to fit a routine you will actually keep.",
-    image: "/images/herbal-hair-oil-v2.jpg",
+    image: "/images/herbal-oil-face-v5.jpg",
     alt: "JJ Haircare Herbal Hair Oil",
     aspect: "aspect-square",
     position: "object-center",
