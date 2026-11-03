@@ -13,7 +13,7 @@ export default function AboutSnippet() {
           </h2>
           <Link
             href="/about"
-            className="self-start mt-10 text-sm uppercase tracking-[0.2em] text-white border-b border-jj-gold pb-1 hover:text-jj-gold transition-colors"
+            className="self-start mt-8 py-3 text-sm uppercase tracking-[0.2em] text-white border-b border-jj-gold hover:text-jj-gold transition-colors"
           >
             Read our story →
           </Link>

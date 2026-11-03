@@ -52,12 +52,12 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-xl mb-6 text-white">Explore</h4>
             <ul className="space-y-4 text-white/60 font-light">
-              <li><Link href="/" className="hover:text-jj-nude transition-colors">Home</Link></li>
-              <li><Link href="/about" className="hover:text-jj-nude transition-colors">About Us</Link></li>
-              <li><Link href="/journal" className="hover:text-jj-nude transition-colors">Journal</Link></li>
-              <li><Link href="/products" className="hover:text-jj-nude transition-colors">Shop</Link></li>
-              <li><Link href="/testimonials" className="hover:text-jj-nude transition-colors">Testimonials</Link></li>
-              <li><Link href="/contact" className="hover:text-jj-nude transition-colors">Contact</Link></li>
+              <li><Link href="/" className="inline-block py-2 hover:text-jj-nude transition-colors">Home</Link></li>
+              <li><Link href="/about" className="inline-block py-2 hover:text-jj-nude transition-colors">About Us</Link></li>
+              <li><Link href="/journal" className="inline-block py-2 hover:text-jj-nude transition-colors">Journal</Link></li>
+              <li><Link href="/products" className="inline-block py-2 hover:text-jj-nude transition-colors">Shop</Link></li>
+              <li><Link href="/testimonials" className="inline-block py-2 hover:text-jj-nude transition-colors">Testimonials</Link></li>
+              <li><Link href="/contact" className="inline-block py-2 hover:text-jj-nude transition-colors">Contact</Link></li>
             </ul>
           </div>
 
@@ -65,10 +65,10 @@ export default function Footer() {
           <div>
             <h4 className="font-serif text-xl mb-6 text-white">Support</h4>
             <ul className="space-y-4 text-white/60 font-light">
-              <li><Link href="/faq" className="hover:text-jj-nude transition-colors">FAQ</Link></li>
-              <li><Link href="/shipping" className="hover:text-jj-nude transition-colors">Shipping Policy</Link></li>
-              <li><Link href="/returns" className="hover:text-jj-nude transition-colors">Returns & Exchanges</Link></li>
-              <li><Link href="/contact" className="hover:text-jj-nude transition-colors">Wholesale</Link></li>
+              <li><Link href="/faq" className="inline-block py-2 hover:text-jj-nude transition-colors">FAQ</Link></li>
+              <li><Link href="/shipping" className="inline-block py-2 hover:text-jj-nude transition-colors">Shipping Policy</Link></li>
+              <li><Link href="/returns" className="inline-block py-2 hover:text-jj-nude transition-colors">Returns & Exchanges</Link></li>
+              <li><Link href="/contact" className="inline-block py-2 hover:text-jj-nude transition-colors">Wholesale</Link></li>
             </ul>
           </div>
 
@@ -93,8 +93,8 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/40 text-sm font-light">
           <p>© {new Date().getFullYear()} JJHairCare. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            <Link href="/privacy" className="inline-block py-2 hover:text-white transition-colors">Privacy Policy</Link>
+            <Link href="/terms" className="inline-block py-2 hover:text-white transition-colors">Terms of Service</Link>
           </div>
         </div>
       </div>

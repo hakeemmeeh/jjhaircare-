@@ -15,6 +15,20 @@ const playfair = Playfair_Display({
   subsets: ["latin"],
 });
 
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "JJ Haircare",
+  url: "https://jjhaircare.vercel.app",
+  logo: "https://jjhaircare.vercel.app/logo.png",
+  description: "Natural hair care from Nairobi, Kenya.",
+  address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
+  sameAs: [
+    "https://www.instagram.com/jj_haircareke",
+    "https://www.tiktok.com/@jj_herbal_haircare",
+  ],
+};
+
 export const metadata = {
   metadataBase: new URL('https://jjhaircare.vercel.app'),
   title: {
@@ -64,6 +78,10 @@ export default function RootLayout({
         className={`${inter.variable} ${playfair.variable} antialiased`}
       >
         <SmoothScrollProvider>
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          />
           {children}
           <BackToTop />
           <WhatsAppButton />
