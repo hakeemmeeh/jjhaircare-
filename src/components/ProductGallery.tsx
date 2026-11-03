@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import ZoomImage from "./ZoomImage";
@@ -33,7 +34,7 @@ export default function ProductGallery({
   };
 
   if (!many) {
-    return <ZoomImage src={images[0]} alt={alt} className={`${aspect} rounded-sm bg-jj-black/5`} />;
+    return <ZoomImage src={images[0]} alt={alt} priority className={`${aspect} rounded-sm bg-jj-black/5`} />;
   }
 
   return (
@@ -46,7 +47,7 @@ export default function ProductGallery({
         >
           {images.map((src, i) => (
             <div key={src} className="min-w-full snap-center">
-              <ZoomImage src={src} alt={`${alt} — photo ${i + 1}`} className={`${aspect} bg-jj-black/5`} />
+              <ZoomImage src={src} alt={`${alt} — photo ${i + 1}`} priority={i === 0} className={`${aspect} bg-jj-black/5`} />
             </div>
           ))}
         </div>
@@ -89,8 +90,7 @@ export default function ProductGallery({
               i === index ? "border-jj-gold" : "border-transparent hover:border-jj-black/20"
             }`}
           >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt="" className="w-full h-full object-cover" />
+            <Image src={src} alt="" fill sizes="120px" className="object-cover" />
           </button>
         ))}
       </div>

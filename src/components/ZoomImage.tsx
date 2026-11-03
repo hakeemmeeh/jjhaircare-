@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useRef, useState } from "react";
 
 /**
@@ -11,11 +12,15 @@ export default function ZoomImage({
   alt,
   className = "",
   zoom = 2,
+  sizes = "(min-width: 1024px) 50vw, 100vw",
+  priority = false,
 }: {
   src: string;
   alt: string;
   className?: string;
   zoom?: number;
+  sizes?: string;
+  priority?: boolean;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const [origin, setOrigin] = useState("50% 50%");
@@ -38,12 +43,14 @@ export default function ZoomImage({
       onMouseMove={onMove}
       className={`relative overflow-hidden lg:cursor-zoom-in ${className}`}
     >
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
+      <Image
         src={src}
         alt={alt}
+        fill
+        sizes={sizes}
+        priority={priority}
         draggable={false}
-        className="w-full h-full object-cover transition-transform duration-300 ease-out"
+        className="object-cover transition-transform duration-300 ease-out"
         style={{
           transformOrigin: origin,
           transform: active ? `scale(${zoom})` : "scale(1)",

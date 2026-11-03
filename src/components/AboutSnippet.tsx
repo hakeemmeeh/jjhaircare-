@@ -18,13 +18,13 @@ export default function AboutSnippet() {
             Read our story →
           </Link>
         </div>
-        <div className="relative aspect-[1672/941] md:aspect-auto md:min-h-[460px]">
+        <div className="relative aspect-[1024/941] md:aspect-auto md:min-h-[480px]">
           <Image
-            src="/images/about-banner-v3.jpg"
+            src="/images/about-products-v3.jpg"
             alt="The JJ Haircare collection: scalp detox mask, hair mist, herbal hair oil, moringa and hibiscus hair butter"
             fill
             sizes="(min-width: 768px) 50vw, 100vw"
-            className="object-cover object-right"
+            className="object-cover object-center"
           />
         </div>
       </div>
