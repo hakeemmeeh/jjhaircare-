@@ -1,5 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Leaf, Sparkles, Heart } from "lucide-react";
+
+const pillars = [
+  { icon: Leaf, title: "100% Natural", description: "Only clean, plant-based ingredients. Nothing artificial, ever." },
+  { icon: Sparkles, title: "Handcrafted", description: "Small-batch formulations for maximum potency and freshness." },
+  { icon: Heart, title: "Cruelty-Free", description: "Never tested on animals. Always kind to the planet." },
+];
 
 const rows = [
   {
@@ -32,8 +39,18 @@ export default function About() {
             <span className="italic text-jj-olive">Crafted with Purpose.</span>
           </h1>
           <p className="text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed">
-            JJHairCare was born from a belief that your hair deserves the purest, most powerful ingredients nature has to offer. We celebrate the beauty of natural hair in all its forms.
+            JJHairCare was born from a belief that your hair deserves the purest, most powerful ingredients nature has to offer. Every product is handcrafted with ethically sourced botanicals, essential oils, and butters — free from sulfates, parabens, and silicones. We celebrate the beauty of natural hair in all its forms.
           </p>
+        </div>
+
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-6 mb-20 md:mb-28">
+          {pillars.map(({ icon: Icon, title, description }) => (
+            <div key={title} className="text-center rounded-3xl bg-white/60 p-8 shadow-sm">
+              <Icon className="mx-auto mb-4 h-8 w-8 text-jj-gold" />
+              <h3 className="font-serif text-xl text-jj-black mb-2">{title}</h3>
+              <p className="text-sm text-jj-charcoal/80 font-light leading-relaxed">{description}</p>
+            </div>
+          ))}
         </div>
 
         <div className="max-w-6xl mx-auto space-y-20 md:space-y-28">
