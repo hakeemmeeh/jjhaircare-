@@ -16,7 +16,7 @@ export default function ProductCard({
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group relative block overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
     >
       {/* Full-bleed image */}
       <div className="relative aspect-square overflow-hidden">
@@ -30,7 +30,7 @@ export default function ProductCard({
       </div>
 
       {/* Glass panel */}
-      <div className="relative overflow-hidden px-5 pt-5 pb-24">
+      <div className="relative flex-1 overflow-hidden px-5 pt-5 pb-24">
         <Image
           src={product.image}
           alt=""

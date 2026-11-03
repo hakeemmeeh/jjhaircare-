@@ -255,9 +255,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <p className="text-jj-charcoal/70">More from JJ Haircare.</p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {PRODUCTS.filter((p) => p.slug !== product.slug).slice(0, 3).map((related) => (
-                <ProductCard key={related.slug} product={related} sizes="(max-width: 768px) 100vw, 33vw" />
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {PRODUCTS.filter((p) => p.slug !== product.slug).map((related) => (
+                <ProductCard key={related.slug} product={related} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
               ))}
             </div>
           </div>
