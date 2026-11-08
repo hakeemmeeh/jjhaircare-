@@ -20,7 +20,7 @@ export default function TermsPage() {
             <p>By using jjhaircare.com, you agree to these terms.</p>
             <p>Prices are in USD unless stated otherwise and may change without notice. We may cancel orders due to pricing errors or suspected fraud. All site content (text, images, logos, design) is our intellectual property — do not reproduce without permission.</p>
             <p>Our products are for external hair and scalp use only. Always patch test before first use. Liability for any product claim is limited to the purchase price. By submitting reviews or testimonials, you grant us permission to use that content on our platforms.</p>
-            <p>These terms are governed by the laws of Kenya. Questions? Email <a href="mailto:legal@jjhaircare.com">legal@jjhaircare.com</a>.</p>
+            <p>These terms are governed by the laws of Kenya. Questions? Email <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a>.</p>
           </div>
         </div>
       </div>

@@ -29,7 +29,7 @@ export default function ShippingPage() {
             </ul>
 
             <p>International orders may be subject to customs duties — these are the buyer's responsibility.</p>
-            <p>If your package is damaged or lost, email <a href="mailto:support@jjhaircare.com">support@jjhaircare.com</a> within 7 days and we'll reship or refund in full.</p>
+            <p>If your package is damaged or lost, email <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a> within 7 days and we'll reship or refund in full.</p>
           </div>
         </div>
       </div>

@@ -20,7 +20,7 @@ export default function PrivacyPage() {
             <p>JJHairCare collects your name, email, shipping address, and payment info when you place an order. We also collect basic browsing data (browser type, pages visited) via cookies and analytics.</p>
             <p>We use this data to fulfill orders, send shipping updates, and improve our site. Marketing emails are only sent if you subscribe — unsubscribe anytime.</p>
             <p>We never sell your data. We share it only with payment processors, shipping providers, and analytics tools (anonymized) as needed to operate.</p>
-            <p>You can request access, correction, or deletion of your data at any time by emailing <a href="mailto:privacy@jjhaircare.com">privacy@jjhaircare.com</a>. We use SSL encryption to protect your information. This policy may be updated — changes will be posted here.</p>
+            <p>You can request access, correction, or deletion of your data at any time by emailing <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a>. We use SSL encryption to protect your information. This policy may be updated — changes will be posted here.</p>
           </div>
         </div>
       </div>

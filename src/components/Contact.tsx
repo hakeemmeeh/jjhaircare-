@@ -51,8 +51,8 @@ export default function Contact() {
                     <div className="space-y-8">
                       <div>
                         <h4 className="text-jj-nude text-sm uppercase tracking-widest mb-2">Email</h4>
-                        <a href="mailto:hello@jjhaircare.com" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
-                          hello@jjhaircare.com
+                        <a href="mailto:jjherbal744@gmail.com" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
+                          jjherbal744@gmail.com
                         </a>
                       </div>
                       <div>

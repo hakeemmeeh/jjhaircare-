@@ -18,11 +18,11 @@ const faqs = [
   },
   {
     question: "How do shipping and returns work?",
-    answer: "We ship to 40+ countries. Orders process in 1–3 business days, with free shipping on orders over $100 internationally or KES 5,000 domestically. Returns accepted within 30 days on unopened products — email support@jjhaircare.com to start. Damaged items are replaced free, no return needed."
+    answer: "We ship to 40+ countries. Orders process in 1–3 business days, with free shipping on orders over $100 internationally or KES 5,000 domestically. Returns accepted within 30 days on unopened products — email jjherbal744@gmail.com to start. Damaged items are replaced free, no return needed."
   },
   {
     question: "Do you offer wholesale?",
-    answer: "Yes — we work with salons, boutiques, and retailers. Email wholesale@jjhaircare.com for pricing and minimum order details."
+    answer: "Yes — we work with salons, boutiques, and retailers. Email jjherbal744@gmail.com for pricing and minimum order details."
   }
 ];
 

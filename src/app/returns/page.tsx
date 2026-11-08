@@ -21,7 +21,7 @@ export default function ReturnsPage() {
 
             <h3 className="text-2xl mt-12 mb-6">How it Works</h3>
             <ol className="space-y-3 mb-8">
-              <li>Email <a href="mailto:support@jjhaircare.com">support@jjhaircare.com</a> with your order number.</li>
+              <li>Email <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a> with your order number.</li>
               <li>We'll reply within 24 hours with return instructions.</li>
               <li>Ship the item back (tracked). Refund processes within 5–7 business days of receipt.</li>
             </ol>

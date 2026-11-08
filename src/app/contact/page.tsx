@@ -105,25 +105,17 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-serif text-3xl text-jj-black mb-6">Get in Touch</h3>
                   <div className="space-y-6">
-                    <a href="mailto:hello@jjhaircare.com" className="flex items-center gap-4 text-jj-charcoal/80 hover:text-jj-nude transition-colors group">
+                    <a href="mailto:jjherbal744@gmail.com" className="flex items-center gap-4 text-jj-charcoal/80 hover:text-jj-nude transition-colors group">
                       <div className="w-12 h-12 rounded-full border border-jj-black/10 flex items-center justify-center group-hover:border-jj-nude transition-colors">
                         <Mail className="w-5 h-5" />
                       </div>
                       <div>
-                        <p className="text-sm font-mono text-jj-gold uppercase tracking-widest">Customer Support</p>
-                        <p className="text-lg">hello@jjhaircare.com</p>
+                        <p className="text-sm font-mono text-jj-gold uppercase tracking-widest">Support & Wholesale</p>
+                        <p className="text-lg">jjherbal744@gmail.com</p>
                       </div>
                     </a>
 
-                    <a href="mailto:wholesale@jjhaircare.com" className="flex items-center gap-4 text-jj-charcoal/80 hover:text-jj-nude transition-colors group">
-                      <div className="w-12 h-12 rounded-full border border-jj-black/10 flex items-center justify-center group-hover:border-jj-nude transition-colors">
-                        <Phone className="w-5 h-5" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-mono text-jj-gold uppercase tracking-widest">Wholesale</p>
-                        <p className="text-lg">wholesale@jjhaircare.com</p>
-                      </div>
-                    </a>
+                    
                     
                     <div className="flex items-center gap-4 text-jj-charcoal/80">
                       <div className="w-12 h-12 rounded-full border border-jj-black/10 flex items-center justify-center">
