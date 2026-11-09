@@ -107,8 +107,10 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
   const name = product.name.replace("JJHairCare ", "");
-  const title = product.price ? `${name} — ${product.price}` : name;
-  const description = clip(`${product.tagline} ${product.description}`, 155);
+  const title = `${name} in Nairobi, Kenya`;
+  const lead = `${name}${product.price ? ` (${product.price})` : ""}, made in Nairobi. `;
+  const tail = " Order on WhatsApp.";
+  const description = lead + clip(product.description, 155 - lead.length - tail.length) + tail;
   return {
     title: seoTitle(title),
     description,
