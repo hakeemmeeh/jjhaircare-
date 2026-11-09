@@ -29,40 +29,40 @@ export default function Home() {
       </div>
 
       {/* 1b. About */}
-      <div className="relative z-10 pb-16 overflow-hidden bg-jj-ivory">
+      <div className="relative z-10 overflow-hidden bg-jj-ivory">
         <Marquee />
         <AboutSnippet />
       </div>
 
       {/* 2. Overlapping Features */}
-      <div className="relative z-[12] pb-16 overflow-hidden bg-jj-black">
+      <div className="relative z-[12] overflow-hidden bg-jj-black">
         <Features />
       </div>
 
       {/* 2b. Shop by hair goal — after Features */}
-      <div className="relative z-[15] pb-16 overflow-hidden bg-gradient-nude">
+      <div className="relative z-[15] overflow-hidden bg-gradient-nude">
         <HairGoals />
       </div>
 
       {/* 2c. Featured product spotlight */}
-      <div className="relative z-[18] pb-12 overflow-hidden bg-[#26301F]">
+      <div className="relative z-[18] overflow-hidden bg-[#26301F]">
         <FeaturedProduct />
       </div>
 
       {/* 3. Overlapping Journal */}
-      <div className="relative z-20 pb-16 overflow-hidden bg-jj-ivory">
+      <div className="relative z-20 overflow-hidden bg-jj-ivory">
         <JournalSnippet />
       </div>
 
       {/* 4. Overlapping Products */}
-      <div className="relative z-30 pb-16 bg-[#EBE3D5]">
+      <div className="relative z-30 bg-[#EBE3D5]">
         <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
           <Products />
         </Suspense>
       </div>
 
       {/* 5. Overlapping Testimonials */}
-      <div className="relative z-40 pb-16 overflow-hidden bg-gradient-nude">
+      <div className="relative z-40 overflow-hidden bg-gradient-nude">
         <Testimonials />
       </div>
 

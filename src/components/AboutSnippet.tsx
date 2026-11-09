@@ -4,7 +4,7 @@ import Link from "next/link";
 /** Our Story: statement panel beside the full, uncropped collection banner. */
 export default function AboutSnippet() {
   return (
-    <section id="about" className="bg-jj-ivory px-0 py-12 md:py-16">
+    <section id="about" className="bg-jj-ivory px-0 py-10 md:py-12">
       <div className="w-full grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] overflow-hidden bg-[#26301F]">
         <div className="flex flex-col justify-center px-6 md:px-12 xl:px-20 py-12 lg:py-8">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-6">Our Story</p>
