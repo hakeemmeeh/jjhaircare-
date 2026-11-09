@@ -43,6 +43,9 @@ export default function ProductGallery({
         <div
           ref={track}
           onScroll={onScroll}
+          tabIndex={0}
+          role="region"
+          aria-label="Product images"
           className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-sm [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {images.map((src, i) => (

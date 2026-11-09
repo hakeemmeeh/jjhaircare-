@@ -2,7 +2,7 @@ import { clip, seoTitle } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
-import { whatsappOrderUrl } from "@/data/site-config";
+import { whatsappOrderUrl, WHATSAPP_NUMBER, PHONE_DISPLAY } from "@/data/site-config";
 import { PRODUCTS } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
@@ -184,15 +184,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="w-full lg:w-1/2 lg:py-10">
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-[1px] w-12 bg-jj-nude" />
-                <h4 className="text-jj-nude text-sm uppercase tracking-[0.2em] font-medium">Shop The Collection</h4>
+                <p className="text-jj-nude text-sm uppercase tracking-[0.2em] font-medium">Natural hair care · Nairobi, Kenya</p>
               </div>
 
               <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-2">{product.name}</h1>
               <p className="text-xl md:text-2xl text-jj-olive font-medium mb-2">{product.price ?? "Message us for price"}</p>
               <p className="text-sm font-mono text-jj-gold uppercase tracking-widest mb-8">{product.size}</p>
               
-              <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-8">
+              <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-4">
                 {product.description}
+              </p>
+              <p className="text-base text-jj-charcoal/70 font-light leading-relaxed mb-8">
+                Made in Nairobi, Kenya. Order on WhatsApp or call{" "}
+                <a href={`tel:+${WHATSAPP_NUMBER}`} className="underline underline-offset-4 hover:text-jj-black">
+                  {PHONE_DISPLAY}
+                </a>
+                .
               </p>
 
               <a
