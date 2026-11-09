@@ -3,8 +3,9 @@ import ProductGrid from "@/components/ProductGrid";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'Shop The Collection — Hair Oil, Butter, Mask & Mist',
+  title: 'Shop Natural Hair Oil, Butter, Mask & Mist',
   description: 'Explore JJ Haircare: Herbal Hair Oil, Scalp Detox Mask, Hibiscus Hair Butter, Moringa Hair Butter and Hair Mist — natural hair care from Nairobi.',
+  alternates: { canonical: '/products' },
 };
 
 export default function ProductsPage() {

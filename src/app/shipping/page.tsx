@@ -2,8 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'Shipping Policy',
-  description: 'Free shipping on orders over $50. We ship worldwide from Nairobi. Learn about delivery times, tracking, and international shipping.',
+  title: 'Shipping Policy — Delivery & Tracking',
+  description: 'Delivery times, tracking and shipping information for JJHairCare orders from Nairobi, Kenya. Ask us on WhatsApp for delivery to your area.',
+  alternates: { canonical: '/shipping' },
 };
 
 export default function ShippingPage() {

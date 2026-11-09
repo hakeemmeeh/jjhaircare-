@@ -5,7 +5,8 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: 'About Us — Our Story & Founders',
-  description: 'Meet the founders behind JJ Haircare and the story of our natural hair care from Nairobi.',
+  description: 'Meet the three founders behind JJ Haircare and the story of our natural, plant-based hair care made in Nairobi, Kenya.',
+  alternates: { canonical: '/about' },
 };
 
 export default function AboutPage() {

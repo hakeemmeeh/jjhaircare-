@@ -5,6 +5,7 @@ const nextConfig: NextConfig = {
     return [{ source: "/ingredients", destination: "/products", permanent: false }];
   },
   images: {
+    formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
         protocol: "https",

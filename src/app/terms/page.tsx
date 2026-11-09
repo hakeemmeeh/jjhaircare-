@@ -2,8 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'Terms of Service',
-  description: 'Terms and conditions for using the JJHairCare website and purchasing our products.',
+  title: 'Terms of Service — Using Our Website',
+  description: 'Terms and conditions for using the JJHairCare website and ordering our natural hair care products.',
+  alternates: { canonical: '/terms' },
 };
 
 export default function TermsPage() {

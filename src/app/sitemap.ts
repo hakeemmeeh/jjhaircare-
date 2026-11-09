@@ -1,7 +1,8 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL as BASE } from "@/lib/seo";
 import { PRODUCTS } from "@/data/products";
 
-const BASE = "https://jjhaircare.vercel.app";
+
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const pages = ["", "/products", "/about", "/journal", "/testimonials", "/contact", "/faq", "/shipping", "/returns", "/privacy", "/terms"];

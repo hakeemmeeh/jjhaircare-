@@ -47,7 +47,7 @@ export default function About() {
           {pillars.map(({ icon: Icon, title, description }) => (
             <div key={title} className="text-center rounded-3xl bg-white/60 p-8 shadow-sm">
               <Icon className="mx-auto mb-4 h-8 w-8 text-jj-gold" />
-              <h3 className="font-serif text-xl text-jj-black mb-2">{title}</h3>
+              <h2 className="font-serif text-xl text-jj-black mb-2">{title}</h2>
               <p className="text-sm text-jj-charcoal/80 font-light leading-relaxed">{description}</p>
             </div>
           ))}

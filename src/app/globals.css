@@ -2,14 +2,14 @@
 
 @theme {
   --color-jj-black: #0A0A0A;
-  --color-jj-nude: #C4A882;
+  --color-jj-nude: #80623A;
   --color-jj-nude-pink: #D4B5A0;
   --color-jj-sand: #CEAD8A;
   --color-jj-rose: #C9A99B;
-  --color-jj-gold: #B8964E;
+  --color-jj-gold: #86661E;
   --color-jj-ivory: #F7F2EC;
   --color-jj-charcoal: #1A1A1A;
-  --color-jj-olive: #7A8B6F;
+  --color-jj-olive: #5A6A50;
 
   --font-serif: var(--font-playfair);
   --font-sans: var(--font-inter);
@@ -77,4 +77,17 @@ body {
 }
 @media (prefers-reduced-motion: reduce) {
   .jj-marquee-track { animation: none; }
+}
+
+/* Accent colours are deepened for text on light backgrounds (WCAG AA). On dark surfaces the
+   original lighter shades are restored so they stay readable there. */
+.bg-jj-black *,
+.bg-jj-charcoal *,
+footer *,
+[class*="bg-jj-black"] *,
+[class*="26301F"] *,
+[class*="bg-black"] * {
+  --color-jj-nude: #C4A882;
+  --color-jj-gold: #B8964E;
+  --color-jj-olive: #7A8B6F;
 }

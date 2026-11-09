@@ -29,7 +29,7 @@ export default function Footer() {
                 JJHairCare
               </span>
             </Link>
-            <p className="text-white/60 font-light italic mb-8">
+            <p className="text-white/70 font-light italic mb-8">
               &ldquo;Where Nature Meets Beauty&rdquo;
             </p>
             <div className="flex gap-4">
@@ -50,8 +50,8 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="font-serif text-xl mb-6 text-white">Explore</h4>
-            <ul className="space-y-4 text-white/60 font-light">
+            <h2 className="font-serif text-xl mb-6 text-white">Explore</h2>
+            <ul className="space-y-4 text-white/70 font-light">
               <li><Link href="/" className="inline-block py-2 hover:text-jj-nude transition-colors">Home</Link></li>
               <li><Link href="/about" className="inline-block py-2 hover:text-jj-nude transition-colors">About Us</Link></li>
               <li><Link href="/journal" className="inline-block py-2 hover:text-jj-nude transition-colors">Journal</Link></li>
@@ -63,8 +63,8 @@ export default function Footer() {
 
           {/* Support Links */}
           <div>
-            <h4 className="font-serif text-xl mb-6 text-white">Support</h4>
-            <ul className="space-y-4 text-white/60 font-light">
+            <h2 className="font-serif text-xl mb-6 text-white">Support</h2>
+            <ul className="space-y-4 text-white/70 font-light">
               <li><Link href="/faq" className="inline-block py-2 hover:text-jj-nude transition-colors">FAQ</Link></li>
               <li><Link href="/shipping" className="inline-block py-2 hover:text-jj-nude transition-colors">Shipping Policy</Link></li>
               <li><Link href="/returns" className="inline-block py-2 hover:text-jj-nude transition-colors">Returns & Exchanges</Link></li>
@@ -74,8 +74,8 @@ export default function Footer() {
 
           {/* Updates via WhatsApp */}
           <div>
-            <h4 className="font-serif text-xl mb-6 text-white">Stay in the loop</h4>
-            <p className="text-white/60 font-light mb-6">
+            <h2 className="font-serif text-xl mb-6 text-white">Stay in the loop</h2>
+            <p className="text-white/70 font-light mb-6">
               Message us on WhatsApp to hear first about new products and offers.
             </p>
             <a
@@ -90,7 +90,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/40 text-sm font-light">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/65 text-sm font-light">
           <p>© {new Date().getFullYear()} JJHairCare. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="inline-block py-2 hover:text-white transition-colors">Privacy Policy</Link>

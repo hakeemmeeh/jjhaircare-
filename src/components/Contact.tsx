@@ -50,19 +50,19 @@ export default function Contact() {
                     <h2 className="font-serif text-4xl text-white mb-10">Get in Touch</h2>
                     <div className="space-y-8">
                       <div>
-                        <h4 className="text-jj-nude text-sm uppercase tracking-widest mb-2">Email</h4>
+                        <p className="text-jj-nude text-sm uppercase tracking-widest mb-2">Email</p>
                         <a href="mailto:jjherbal744@gmail.com" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
                           jjherbal744@gmail.com
                         </a>
                       </div>
                       <div>
-                        <h4 className="text-jj-nude text-sm uppercase tracking-widest mb-2">Social</h4>
+                        <p className="text-jj-nude text-sm uppercase tracking-widest mb-2">Social</p>
                         <a href="#" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
                           @jjhaircare
                         </a>
                       </div>
                       <div>
-                        <h4 className="text-jj-nude text-sm uppercase tracking-widest mb-2">Phone / WhatsApp</h4>
+                        <p className="text-jj-nude text-sm uppercase tracking-widest mb-2">Phone / WhatsApp</p>
                         <a href="https://wa.me/254743600499" target="_blank" rel="noopener noreferrer" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
                           +254 743 600 499
                         </a>

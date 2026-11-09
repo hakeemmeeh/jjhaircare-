@@ -1,3 +1,4 @@
+import { clip, seoTitle } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
@@ -107,10 +108,11 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!product) return {};
   const name = product.name.replace("JJHairCare ", "");
   const title = product.price ? `${name} — ${product.price}` : name;
-  const description = `${product.tagline} ${product.description}`;
+  const description = clip(`${product.tagline} ${product.description}`, 155);
   return {
-    title,
+    title: seoTitle(title),
     description,
+    alternates: { canonical: `/products/${product.slug}` },
     openGraph: { type: "website", title, description, images: [{ url: product.image, alt: name }] },
     twitter: { card: "summary_large_image", title, description, images: [product.image] },
   };

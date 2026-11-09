@@ -3,8 +3,9 @@ import JournalFull from "@/components/JournalFull";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'The Journal — How It All Began',
-  description: 'From a tiny kitchen to a global brand. Read the origin story of JJHairCare and our mission to bring pure, natural care to every crown.',
+  title: 'Our Journal — How JJ Haircare Began',
+  description: 'The origin story of JJ Haircare: how three founders in Nairobi set out to bring simple, plant-based hair care to every crown.',
+  alternates: { canonical: '/journal' },
 };
 
 export default function JournalPage() {

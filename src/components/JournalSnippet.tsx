@@ -64,7 +64,7 @@ export default function JournalSnippet() {
           >
             <div className="flex items-center gap-4 mb-6">
               <div className="h-[1px] w-12 bg-jj-nude" />
-              <h4 className="text-jj-nude text-sm uppercase tracking-[0.2em] font-medium">The Journal</h4>
+              <p className="text-jj-nude text-sm uppercase tracking-[0.2em] font-medium">The Journal</p>
             </div>
 
             <h2 className="font-serif text-5xl md:text-6xl lg:text-7xl text-jj-black mb-8 leading-[1.1]">

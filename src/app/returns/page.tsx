@@ -2,8 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'Returns & Exchanges',
-  description: 'Not satisfied? Return unopened products within 30 days for a full refund. Learn about our hassle-free returns process.',
+  title: 'Returns & Exchanges — Our Policy',
+  description: 'How returns and exchanges work for JJHairCare products, and how to contact us if something is wrong with your order.',
+  alternates: { canonical: '/returns' },
 };
 
 export default function ReturnsPage() {

@@ -17,22 +17,38 @@ const playfair = Playfair_Display({
 
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "JJ Haircare",
-  url: "https://jjhaircare.vercel.app",
-  logo: "https://jjhaircare.vercel.app/logo.png",
-  description: "Natural hair care from Nairobi, Kenya.",
-  address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
-  sameAs: [
-    "https://www.instagram.com/jj_haircareke",
-    "https://www.tiktok.com/@jj_herbal_haircare",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://jjhaircare.vercel.app/#website",
+      name: "JJ Haircare",
+      alternateName: ["JJHairCare", "JJ Herbal Haircare"],
+      url: "https://jjhaircare.vercel.app/",
+      inLanguage: "en-KE",
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://jjhaircare.vercel.app/#organization",
+      name: "JJ Haircare",
+      url: "https://jjhaircare.vercel.app/",
+      logo: "https://jjhaircare.vercel.app/logo.png",
+      description: "Natural, plant-based hair care made in Nairobi, Kenya.",
+      email: "jjherbal744@gmail.com",
+      telephone: "+254743600499",
+      address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
+      areaServed: "KE",
+      sameAs: [
+        "https://www.instagram.com/jj_haircareke",
+        "https://www.tiktok.com/@jj_herbal_haircare",
+      ],
+    },
   ],
 };
 
 export const metadata = {
   metadataBase: new URL('https://jjhaircare.vercel.app'),
   title: {
-    default: 'JJHairCare | Premium Natural Hair Care — Where Nature Meets Beauty',
+    default: 'JJ Haircare | Natural Hair Care in Nairobi, Kenya',
     template: '%s | JJHairCare',
   },
   description: 'Natural hair care from Nairobi — Herbal Hair Oil, Scalp Detox Mask, Hibiscus and Moringa Hair Butter, and Hair Mist. Order on WhatsApp.',

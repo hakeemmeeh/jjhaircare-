@@ -19,7 +19,8 @@ const channels = [
   },
 ];
 
-export default function Testimonials() {
+export default function Testimonials({ asPage = false }: { asPage?: boolean }) {
+  const Heading = asPage ? motion.h1 : motion.h2;
   return (
     <section id="testimonials" className="py-32 bg-gradient-nude relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
@@ -27,7 +28,7 @@ export default function Testimonials() {
           <p className="text-xs tracking-[3.5px] uppercase text-jj-gold mb-2 text-center font-serif">
             Real Results
           </p>
-          <motion.h2
+          <Heading
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -35,7 +36,7 @@ export default function Testimonials() {
             className="text-3xl md:text-4xl font-medium text-jj-charcoal mb-4 text-center"
           >
             See It On Real Hair
-          </motion.h2>
+          </Heading>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}

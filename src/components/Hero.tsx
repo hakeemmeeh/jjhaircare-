@@ -178,11 +178,13 @@ export default function Hero() {
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left overflow-visible max-w-[100vw]">
           <div style={prefersReducedMotion ? {} : { transform: "translateZ(60px)" }} className="w-full">
             <motion.h1
-              initial={{ opacity: 0, y: 40 }}
+              initial={false}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-8xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] pt-4 w-full"
             >
+              <span className="sr-only">JJ Haircare — natural hair care from Nairobi, Kenya</span>
+              <span aria-hidden="true" className="contents">
               Where Nature <br className="hidden md:block" />
               <span className="text-jj-olive italic inline-block font-extrabold relative w-full text-center lg:text-left mt-1 md:mt-4 h-[1.2em]">
                 <AnimatePresence mode="popLayout">
@@ -200,12 +202,13 @@ export default function Hero() {
                 {/* Invisible placeholder for height/width to prevent layout shift. Scaled up slightly to prevent longest word from clipping */}
                 <span className="invisible pointer-events-none whitespace-nowrap block">Nourishes Deeply.</span>
               </span>
+              </span>
             </motion.h1>
           </div>
 
           <motion.p
             style={prefersReducedMotion ? {} : { transform: "translateZ(40px)" }}
-            initial={{ opacity: 0, y: 20 }}
+            initial={false}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: prefersReducedMotion ? 0 : 1, delay: prefersReducedMotion ? 0 : 0.8, ease: "easeOut" }}
             className="text-lg md:text-xl text-jj-charcoal/80 font-light tracking-wide max-w-lg mb-8 mt-4 md:mt-0"
@@ -337,7 +340,7 @@ export default function Hero() {
         animate={{ opacity: 1 }}
         transition={{ delay: prefersReducedMotion ? 0 : 1.8, duration: prefersReducedMotion ? 0 : 1 }}
         className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30"
-        aria-label="Scroll down to discover more"
+        aria-label="Scroll to Discover"
       >
         <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-[0.3em]">
           Scroll to Discover

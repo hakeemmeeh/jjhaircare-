@@ -2,8 +2,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: 'Privacy Policy',
-  description: 'How JJHairCare collects, uses, and protects your personal information.',
+  title: 'Privacy Policy — How We Handle Your Data',
+  description: 'How JJHairCare collects, uses, and protects your personal information when you browse the site or place an order.',
+  alternates: { canonical: '/privacy' },
 };
 
 export default function PrivacyPage() {
