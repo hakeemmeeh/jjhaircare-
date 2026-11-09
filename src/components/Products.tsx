@@ -106,7 +106,7 @@ export default function Products() {
   return (
     <section
       id="shop"
-      className="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-jj-ivory to-jj-black/10 z-20 rounded-t-[3rem] relative -mt-4 border-t border-jj-black/10"
+      className="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-jj-ivory to-jj-black/10 z-20 relative border-t border-jj-black/10"
     >
       <div className="max-w-7xl mx-auto">
       <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">

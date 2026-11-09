@@ -29,45 +29,45 @@ export default function Home() {
       </div>
 
       {/* 1b. About */}
-      <div className="relative z-10 -mt-12 pb-16 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-jj-ivory">
+      <div className="relative z-10 pb-16 overflow-hidden bg-jj-ivory">
         <Marquee />
         <AboutSnippet />
       </div>
 
       {/* 2. Overlapping Features */}
-      <div className="relative z-[12] -mt-12 pb-16 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.3)] bg-jj-black">
+      <div className="relative z-[12] pb-16 overflow-hidden bg-jj-black">
         <Features />
       </div>
 
       {/* 2b. Shop by hair goal — after Features */}
-      <div className="relative z-[15] -mt-12 pb-16 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-gradient-nude">
+      <div className="relative z-[15] pb-16 overflow-hidden bg-gradient-nude">
         <HairGoals />
       </div>
 
       {/* 2c. Featured product spotlight */}
-      <div className="relative z-[18] -mt-12 pb-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-[#26301F]">
+      <div className="relative z-[18] pb-12 overflow-hidden bg-[#26301F]">
         <FeaturedProduct />
       </div>
 
       {/* 3. Overlapping Journal */}
-      <div className="relative z-20 -mt-12 pb-16 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-jj-ivory">
+      <div className="relative z-20 pb-16 overflow-hidden bg-jj-ivory">
         <JournalSnippet />
       </div>
 
       {/* 4. Overlapping Products */}
-      <div className="relative z-30 -mt-12 pb-16 rounded-t-[3rem] shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-[#EBE3D5]">
+      <div className="relative z-30 pb-16 bg-[#EBE3D5]">
         <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
           <Products />
         </Suspense>
       </div>
 
       {/* 5. Overlapping Testimonials */}
-      <div className="relative z-40 -mt-12 pb-16 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.1)] bg-gradient-nude">
+      <div className="relative z-40 pb-16 overflow-hidden bg-gradient-nude">
         <Testimonials />
       </div>
 
       {/* 6. Footer */}
-      <div className="relative z-50 -mt-12 rounded-t-[3rem] overflow-hidden shadow-[0_-30px_50px_rgba(0,0,0,0.2)] bg-jj-black">
+      <div className="relative z-50 overflow-hidden bg-jj-black">
         <Footer />
       </div>
     </main>
