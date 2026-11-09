@@ -12,9 +12,9 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: { absolute: "JJ Haircare | Natural Hair Care in Nairobi, Kenya" },
+  title: { absolute: "Natural Hair Care in Nairobi, Kenya | JJ Haircare" },
   description:
-    "Herbal Hair Oil, Scalp Detox Mask, Hibiscus & Moringa Hair Butter and Hair Mist — natural hair care made in Nairobi. Order on WhatsApp.",
+    "Natural hair care made in Nairobi, Kenya: herbal hair oil, hair butters, scalp detox mask and hair mist. Order on WhatsApp or call 0743 600 499.",
   alternates: { canonical: "/" },
 };
 

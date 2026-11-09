@@ -48,7 +48,7 @@ const organizationJsonLd = {
 export const metadata = {
   metadataBase: new URL('https://jjhaircare.vercel.app'),
   title: {
-    default: 'JJ Haircare | Natural Hair Care in Nairobi, Kenya',
+    default: 'Natural Hair Care in Nairobi, Kenya | JJ Haircare',
     template: '%s | JJHairCare',
   },
   description: 'Natural hair care from Nairobi — Herbal Hair Oil, Scalp Detox Mask, Hibiscus and Moringa Hair Butter, and Hair Mist. Order on WhatsApp.',

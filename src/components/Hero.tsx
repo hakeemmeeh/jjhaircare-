@@ -1,12 +1,12 @@
 "use client";
 
-import { motion, useInView, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence, useScroll, useMotionTemplate } from "framer-motion";
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence, useScroll, useMotionTemplate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import MagneticButton from "@/components/MagneticButton";
+import { WHATSAPP_NUMBER, whatsappOrderUrl, PHONE_DISPLAY } from "@/data/site-config";
 
 const SHOWCASE = [
   { src: "/images/herbal-oil-face-v5.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
@@ -14,71 +14,10 @@ const SHOWCASE = [
   { src: "/images/moringa-hair-butter-v2.jpg", alt: "JJ Haircare Moringa Hair Butter — nourish, strengthen, grow", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
 ];
 
-const stats = [
-  { value: 100, suffix: "%", label: "Natural Ingredients", isDecimal: false },
-  { value: 4, suffix: "", label: "Signature Products", isDecimal: false },
-];
-
-function Counter({
-  value,
-  suffix,
-  isDecimal,
-}: {
-  value: number;
-  suffix: string;
-  isDecimal: boolean;
-}) {
-  const ref = useRef<HTMLSpanElement>(null);
-  const motionValue = useMotionValue(0);
-  const springValue = useSpring(motionValue, {
-    damping: 60,
-    stiffness: 100,
-  });
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
-
-  useEffect(() => {
-    if (isInView) {
-      motionValue.set(value);
-    }
-  }, [motionValue, isInView, value]);
-
-  useEffect(() => {
-    springValue.on("change", (latest) => {
-      if (ref.current) {
-        if (isDecimal) {
-          ref.current.textContent = Intl.NumberFormat("en-US", {
-            minimumFractionDigits: 1,
-            maximumFractionDigits: 1,
-          }).format(latest);
-        } else {
-          ref.current.textContent = Intl.NumberFormat("en-US").format(
-            Math.round(latest)
-          );
-        }
-      }
-    });
-  }, [springValue, isDecimal]);
-
-  return (
-    <div className="flex items-baseline justify-center font-serif text-4xl md:text-5xl lg:text-6xl text-jj-black mb-1">
-      <span ref={ref}>0</span>
-      <span>{suffix}</span>
-    </div>
-  );
-}
-
 export default function Hero() {
   const containerRef = useRef<HTMLElement>(null);
   const prefersReducedMotion = useReducedMotion();
 
-  const rotatingText = [
-    "Meets Beauty.",
-    "Restores Curls.",
-    "Seals Moisture.",
-    "Promotes Growth.",
-    "Nourishes Deeply.",
-  ];
-  const [titleIndex, setTitleIndex] = useState(0);
   const [showcaseIndex, setShowcaseIndex] = useState(0);
 
   useEffect(() => {
@@ -86,13 +25,6 @@ export default function Hero() {
     const id = setInterval(() => setShowcaseIndex((i) => (i + 1) % SHOWCASE.length), 4500);
     return () => clearInterval(id);
   }, [prefersReducedMotion]);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTitleIndex((prev) => (prev + 1) % rotatingText.length);
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
 
   // 3D Parallax Mouse Tracking — disabled when user prefers reduced motion
   const mouseX = useMotionValue(0);
@@ -102,18 +34,11 @@ export default function Hero() {
   const smoothX = useSpring(mouseX, springConfig);
   const smoothY = useSpring(mouseY, springConfig);
 
-  const rotateX = useTransform(smoothY, [-0.5, 0.5], ["5deg", "-5deg"]);
-  const rotateY = useTransform(smoothX, [-0.5, 0.5], ["-5deg", "5deg"]);
-
-  const fgTranslateX = useTransform(smoothX, [-0.5, 0.5], ["-30px", "30px"]);
-  const fgTranslateY = useTransform(smoothY, [-0.5, 0.5], ["-30px", "30px"]);
-
   const bgTranslateX = useTransform(smoothX, [-0.5, 0.5], ["30px", "-30px"]);
   const bgTranslateY = useTransform(smoothY, [-0.5, 0.5], ["30px", "-30px"]);
 
   const { scrollY } = useScroll();
   const parallaxYBg = useTransform(scrollY, [0, 1000], [0, 200]);
-  const parallaxYFg = useTransform(scrollY, [0, 1000], [0, -100]);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
     if (prefersReducedMotion || !containerRef.current) return;
@@ -165,107 +90,57 @@ export default function Hero() {
       </motion.div>
 
       {/* Main Content — split layout on desktop */}
-      <motion.div
-        style={
-          prefersReducedMotion
-            ? {}
-            : { rotateX, rotateY, x: fgTranslateX, y: fgTranslateY, translateY: parallaxYFg, transformStyle: "preserve-3d" }
-        }
-        className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-8 items-center"
-      >
+      <div className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-8 items-center">
 
-        {/* Left: Text + CTA + Stats */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left overflow-visible max-w-[100vw]">
-          <div style={prefersReducedMotion ? {} : { transform: "translateZ(60px)" }} className="w-full">
-            <motion.h1
-              initial={false}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="font-serif font-bold text-5xl sm:text-6xl md:text-7xl lg:text-5xl xl:text-6xl 2xl:text-8xl text-jj-black mb-4 md:mb-6 tracking-tight leading-[1.1] pt-4 w-full"
+        {/* Left: who / what / why / how — one clear path to contact */}
+        <div className="flex flex-col items-start text-left max-w-xl lg:max-w-none">
+          {/* Eyebrow: primary category + primary location */}
+          <p className="mb-5 flex items-center gap-3 font-mono text-[11px] sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-jj-olive">
+            <span aria-hidden="true" className="h-px w-8 bg-jj-olive/60" />
+            Herbal hair care · Nairobi, Kenya
+          </p>
+
+          <h1 className="font-serif font-bold text-[2.5rem] leading-[1.08] sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-jj-black tracking-tight mb-6">
+            Natural hair care,{" "}
+            <span className="block italic text-jj-olive">made in Nairobi.</span>
+          </h1>
+
+          <p className="text-base sm:text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed max-w-md mb-8 md:mb-10">
+            Herbal oil, butters, a scalp mask and hair mist for natural, curly and coily hair.
+          </p>
+
+          {/* CTAs: 1 order, 2 call, 3 browse */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
+            <a
+              href={whatsappOrderUrl("Hi JJ Haircare, I'd like to place an order.")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-6 py-4 min-h-[52px] rounded-sm uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
             >
-              <span className="sr-only">JJ Haircare — natural hair care from Nairobi, Kenya</span>
-              <span aria-hidden="true" className="contents">
-              Where Nature <br className="hidden md:block" />
-              <span className="text-jj-olive italic inline-block font-extrabold relative w-full text-center lg:text-left mt-1 md:mt-4 h-[1.2em]">
-                <AnimatePresence mode="popLayout">
-                  <motion.span
-                    key={titleIndex}
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -40 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                    className="inline-block whitespace-nowrap absolute left-1/2 -translate-x-1/2 lg:left-0 lg:translate-x-0"
-                  >
-                    {rotatingText[titleIndex]}
-                  </motion.span>
-                </AnimatePresence>
-                {/* Invisible placeholder for height/width to prevent layout shift. Scaled up slightly to prevent longest word from clipping */}
-                <span className="invisible pointer-events-none whitespace-nowrap block">Nourishes Deeply.</span>
-              </span>
-              </span>
-            </motion.h1>
+              <MessageCircle className="w-5 h-5" aria-hidden="true" />
+              Order on WhatsApp
+            </a>
+            <a
+              href={`tel:+${WHATSAPP_NUMBER}`}
+              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-6 py-4 min-h-[52px] rounded-sm uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
+            >
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              Call {PHONE_DISPLAY}
+            </a>
           </div>
 
-          <motion.p
-            style={prefersReducedMotion ? {} : { transform: "translateZ(40px)" }}
-            initial={false}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 1, delay: prefersReducedMotion ? 0 : 0.8, ease: "easeOut" }}
-            className="text-lg md:text-xl text-jj-charcoal/80 font-light tracking-wide max-w-lg mb-8 mt-4 md:mt-0"
+          <Link
+            href="/products"
+            className="inline-flex items-center gap-2 py-2 text-sm font-medium uppercase tracking-widest text-jj-black underline-offset-8 hover:underline"
           >
-            Premium natural hair care — crafted for your crown. Discover the essence of true hydration and growth.
-          </motion.p>
+            Shop the collection <span aria-hidden="true">→</span>
+          </Link>
 
-          {/* CTA Buttons */}
-          <motion.div
-            style={prefersReducedMotion ? {} : { transform: "translateZ(50px)" }}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: prefersReducedMotion ? 0 : 0.8, delay: prefersReducedMotion ? 0 : 1, ease: "easeOut" }}
-            className="flex flex-col sm:flex-row gap-4 mb-12 md:mb-16 w-full sm:w-auto"
-          >
-            <MagneticButton>
-              <Link
-                href="/products"
-                className="bg-jj-black text-white font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:bg-jj-olive transition-colors duration-300 cursor-pointer text-center block w-full sm:w-auto"
-              >
-                Shop Now
-              </Link>
-            </MagneticButton>
-            <MagneticButton>
-              <Link
-                href="/about"
-                className="relative border border-jj-olive/50 text-jj-olive font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:border-jj-olive hover:bg-jj-olive hover:text-white hover:shadow-[0_4px_20px_rgba(122,139,111,0.35)] transition-all duration-300 cursor-pointer text-center block w-full sm:w-auto"
-              >
-                Our Story
-              </Link>
-            </MagneticButton>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            style={prefersReducedMotion ? {} : { transform: "translateZ(20px)" }}
-            className="grid grid-cols-2 text-center w-full max-w-md"
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: prefersReducedMotion ? 0 : 0.6, delay: prefersReducedMotion ? 0 : 1.2 + index * 0.15 }}
-                className="px-4"
-              >
-                <Counter
-                  value={stat.value}
-                  suffix={stat.suffix}
-                  isDecimal={stat.isDecimal}
-                />
-                <p className="text-jj-charcoal/60 text-xs md:text-sm uppercase tracking-widest mt-2 font-medium">
-                  {stat.label}
-                </p>
-              </motion.div>
-            ))}
-          </motion.div>
+          {/* Proof */}
+          <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm uppercase tracking-widest text-jj-charcoal/70">
+            <li>100% natural ingredients</li>
+            <li>5 signature products</li>
+          </ul>
         </div>
 
         {/* Right: Product Image */}
@@ -331,7 +206,7 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-      </motion.div>
+      </div>
 
       {/* Scroll Indicator */}
       <motion.button
@@ -339,7 +214,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: prefersReducedMotion ? 0 : 1.8, duration: prefersReducedMotion ? 0 : 1 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30"
         aria-label="Scroll to Discover"
       >
         <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-[0.3em]">
