@@ -4,11 +4,11 @@ import Link from "next/link";
 /** Our Story: statement panel beside the full, uncropped collection banner. */
 export default function AboutSnippet() {
   return (
-    <section id="about" className="bg-jj-ivory px-4 md:px-8 py-16 md:py-24">
-      <div className="mx-auto max-w-[1500px] grid lg:grid-cols-[minmax(0,0.75fr)_minmax(0,1.6fr)] overflow-hidden rounded-3xl shadow-2xl bg-[#26301F]">
-        <div className="flex flex-col justify-center px-8 md:px-12 py-12 lg:py-10">
+    <section id="about" className="bg-jj-ivory px-0 py-12 md:py-16">
+      <div className="w-full grid lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.6fr)] overflow-hidden bg-[#26301F]">
+        <div className="flex flex-col justify-center px-6 md:px-12 xl:px-20 py-12 lg:py-8">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-6">Our Story</p>
-          <h2 className="font-serif text-3xl md:text-4xl lg:text-3xl xl:text-4xl text-white leading-snug">
+          <h2 className="font-serif text-3xl md:text-4xl lg:text-2xl xl:text-3xl text-white leading-snug">
             Natural hair care, <span className="italic text-jj-gold">made in Nairobi</span> — built by three founders who believe healthy hair starts with simple, plant-based care.
           </h2>
           <Link
