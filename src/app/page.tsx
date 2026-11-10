@@ -10,6 +10,9 @@ import JournalSnippet from "@/components/JournalSnippet";
 import Products from "@/components/Products";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import DeliveryStrip from "@/components/DeliveryStrip";
+import SocialStrip from "@/components/SocialStrip";
+import FaqTeaser from "@/components/FaqTeaser";
 
 export const metadata = {
   title: { absolute: "Natural Hair Care in Nairobi, Kenya | JJ Haircare" },
@@ -61,9 +64,24 @@ export default function Home() {
         </Suspense>
       </div>
 
+      {/* 4b. Ordering and delivery */}
+      <div className="relative z-[35] overflow-hidden bg-jj-ivory">
+        <DeliveryStrip />
+      </div>
+
       {/* 5. Overlapping Testimonials */}
       <div className="relative z-40 overflow-hidden bg-gradient-nude">
         <Testimonials />
+      </div>
+
+      {/* 5b. Social strip */}
+      <div className="relative z-[45] overflow-hidden bg-jj-ivory">
+        <SocialStrip />
+      </div>
+
+      {/* 5c. FAQ teaser */}
+      <div className="relative z-[48] overflow-hidden bg-[#EBE3D5]">
+        <FaqTeaser />
       </div>
 
       {/* 6. Footer */}
