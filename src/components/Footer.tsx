@@ -66,7 +66,7 @@ export default function Footer() {
             <h2 className="font-serif text-xl mb-6 text-white">Support</h2>
             <ul className="space-y-4 text-white/70 font-light">
               <li><Link href="/faq" className="inline-block py-2 hover:text-jj-nude transition-colors">FAQ</Link></li>
-              <li><Link href="/shipping" className="inline-block py-2 hover:text-jj-nude transition-colors">Shipping Policy</Link></li>
+              <li><Link href="/shipping" className="inline-block py-2 hover:text-jj-nude transition-colors">Delivery</Link></li>
               <li><Link href="/returns" className="inline-block py-2 hover:text-jj-nude transition-colors">Returns & Exchanges</Link></li>
               <li><Link href="/contact" className="inline-block py-2 hover:text-jj-nude transition-colors">Wholesale</Link></li>
             </ul>

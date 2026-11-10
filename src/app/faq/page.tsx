@@ -17,8 +17,8 @@ const faqs = [
     answer: "Our products are made with 100% natural ingredients. The full ingredient list is printed on every jar, bottle and tube — or message us and we'll send it to you."
   },
   {
-    question: "How do shipping and returns work?",
-    answer: "We ship to 40+ countries. Orders process in 1–3 business days, with free shipping on orders over $100 internationally or KES 5,000 domestically. Returns accepted within 30 days on unopened products — email jjherbal744@gmail.com to start. Damaged items are replaced free, no return needed."
+    question: "How does delivery work?",
+    answer: "We deliver by rider within Nairobi and by parcel to other towns. Message us on WhatsApp with your location and we'll confirm the delivery cost and timing before you pay. For returns, see our Returns page."
   },
   {
     question: "Do you offer wholesale?",

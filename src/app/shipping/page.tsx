@@ -1,37 +1,87 @@
+import Link from "next/link";
+import { Bike, Package, MessageCircle, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { WHATSAPP_NUMBER, PHONE_DISPLAY, whatsappOrderUrl } from "@/data/site-config";
 
 export const metadata = {
-  title: 'Shipping Policy — Delivery & Tracking',
-  description: 'Delivery times, tracking and shipping information for JJHairCare orders from Nairobi, Kenya. Ask us on WhatsApp for delivery to your area.',
-  alternates: { canonical: '/shipping' },
+  title: "Delivery in Nairobi & Across Kenya",
+  description:
+    "How JJ Haircare delivers: rider delivery within Nairobi and parcel delivery to other towns. Message us on WhatsApp to confirm delivery to your area.",
+  alternates: { canonical: "/shipping" },
 };
+
+const steps = [
+  { title: "Message us", text: "Tell us what you'd like and your location on WhatsApp." },
+  { title: "We confirm", text: "We confirm your order, the delivery cost and when to expect it." },
+  { title: "We deliver", text: "A rider brings it to you in Nairobi, or we send it by parcel to your town." },
+];
 
 export default function ShippingPage() {
   return (
     <main className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
       <div className="pt-32 pb-24 flex-1">
-        <div className="container mx-auto px-6 md:px-12 max-w-4xl">
-          <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-8">Shipping <span className="italic text-jj-nude">Policy</span></h1>
-          
-          <div className="prose prose-lg text-jj-charcoal/80 font-sans prose-headings:font-serif prose-headings:text-jj-black prose-a:text-jj-nude hover:prose-a:text-jj-gold transition-colors">
-            <p className="text-sm tracking-widest uppercase font-mono text-jj-gold mb-12">Last updated: March 2026</p>
+        <div className="container mx-auto px-6 md:px-12 max-w-5xl">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-4">Delivery</p>
+          <h1 className="font-serif text-4xl md:text-6xl text-jj-black mb-6 leading-tight">
+            Delivery in Nairobi <span className="italic text-jj-olive">&amp; across Kenya</span>
+          </h1>
+          <p className="text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed max-w-2xl mb-14">
+            We deliver by rider in Nairobi and by parcel to other towns. Message us your location and we&apos;ll confirm the cost and timing before you pay.
+          </p>
 
-            <p>Orders are processed within 1–3 business days. All shipments include tracking sent to your email.</p>
-
-            <h3 className="text-2xl mt-12 mb-6">Rates & Delivery Times</h3>
-            <ul className="space-y-3 mb-8">
-              <li><strong>Kenya Standard (5–7 days):</strong> KES 300 | <strong>Express (2–3 days):</strong> KES 600</li>
-              <li><strong>East Africa (5–10 days):</strong> $8 | <strong>Rest of Africa (7–14 days):</strong> $12</li>
-              <li><strong>US, Canada, UK & Europe (10–18 days):</strong> $15</li>
-              <li><strong>Rest of World (14–21 days):</strong> $20</li>
-              <li><strong>Free shipping:</strong> orders over KES 5,000 (domestic) or $100 (international)</li>
-            </ul>
-
-            <p>International orders may be subject to customs duties — these are the buyer's responsibility.</p>
-            <p>If your package is damaged or lost, email <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a> within 7 days and we'll reship or refund in full.</p>
+          <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <section className="bg-white/70 p-8 md:p-10">
+              <Bike className="h-8 w-8 text-jj-gold mb-5" aria-hidden="true" />
+              <h2 className="font-serif text-2xl text-jj-black mb-3">In Nairobi — by rider</h2>
+              <p className="text-jj-charcoal/80 font-light leading-relaxed">
+                Most of our orders are delivered within Nairobi by a rider, straight to you. Send us your area on WhatsApp and we&apos;ll confirm the delivery fee and when it will arrive.
+              </p>
+            </section>
+            <section className="bg-white/70 p-8 md:p-10">
+              <Package className="h-8 w-8 text-jj-gold mb-5" aria-hidden="true" />
+              <h2 className="font-serif text-2xl text-jj-black mb-3">Outside Nairobi — by parcel</h2>
+              <p className="text-jj-charcoal/80 font-light leading-relaxed">
+                For other towns we send your order as a parcel. Tell us your town and we&apos;ll arrange it, then confirm the cost and how you&apos;ll collect it.
+              </p>
+            </section>
           </div>
+
+          <h2 className="font-serif text-3xl text-jj-black mb-8">How it works</h2>
+          <ol className="grid md:grid-cols-3 gap-6 mb-16">
+            {steps.map((s, i) => (
+              <li key={s.title} className="border-t-2 border-jj-gold pt-5">
+                <span className="font-mono text-sm text-jj-gold">0{i + 1}</span>
+                <h3 className="font-serif text-xl text-jj-black mt-2 mb-2">{s.title}</h3>
+                <p className="text-jj-charcoal/80 font-light leading-relaxed">{s.text}</p>
+              </li>
+            ))}
+          </ol>
+
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12">
+            <a
+              href={whatsappOrderUrl("Hi JJ Haircare, I'd like to place an order. My location is: ")}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-6 py-4 min-h-[52px] uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors"
+            >
+              <MessageCircle className="w-5 h-5" aria-hidden="true" />
+              Order on WhatsApp
+            </a>
+            <a
+              href={`tel:+${WHATSAPP_NUMBER}`}
+              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-6 py-4 min-h-[52px] uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors"
+            >
+              <Phone className="w-5 h-5" aria-hidden="true" />
+              Call {PHONE_DISPLAY}
+            </a>
+          </div>
+
+          <p className="text-jj-charcoal/70 font-light">
+            If anything arrives damaged or isn&apos;t right, message us straight away. See also our{" "}
+            <Link href="/returns" className="underline underline-offset-4 hover:text-jj-black">returns page</Link>.
+          </p>
         </div>
       </div>
       <Footer />
