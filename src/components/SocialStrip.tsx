@@ -14,7 +14,7 @@ const tiles = [
 /** Home strip: follow JJ Haircare on Instagram and TikTok. Tiles link to the profile. */
 export default function SocialStrip() {
   return (
-    <section aria-labelledby="social-heading" className="bg-jj-ivory py-14 md:py-20">
+    <section aria-labelledby="social-heading" className="bg-gradient-nude py-14 md:py-20">
       <div className="px-6 md:px-12">
       <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
         <div>
@@ -22,6 +22,9 @@ export default function SocialStrip() {
           <h2 id="social-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight">
             See JJ Haircare <span className="italic text-jj-olive">on your feed</span>
           </h2>
+          <p className="mt-4 max-w-xl text-jj-charcoal/80 font-light leading-relaxed">
+            Watch how to use each product, and follow for real results, routines and new arrivals from Nairobi.
+          </p>
         </div>
         <div className="flex flex-wrap gap-3">
           <a

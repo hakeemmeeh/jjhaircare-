@@ -8,7 +8,6 @@ import HairGoals from "@/components/HairGoals";
 import FeaturedProduct from "@/components/FeaturedProduct";
 import JournalSnippet from "@/components/JournalSnippet";
 import Products from "@/components/Products";
-import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import DeliveryStrip from "@/components/DeliveryStrip";
 import SocialStrip from "@/components/SocialStrip";
@@ -69,13 +68,8 @@ export default function Home() {
         <DeliveryStrip />
       </div>
 
-      {/* 5. Overlapping Testimonials */}
-      <div className="relative z-40 overflow-hidden bg-gradient-nude">
-        <Testimonials />
-      </div>
-
       {/* 5b. Social strip */}
-      <div className="relative z-[45] overflow-hidden bg-jj-ivory">
+      <div className="relative z-[45] overflow-hidden bg-gradient-nude">
         <SocialStrip />
       </div>
 
