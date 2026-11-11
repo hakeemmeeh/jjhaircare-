@@ -4,14 +4,8 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
+import OrderWizard from "@/components/OrderWizard";
 import { whatsappOrderUrl } from "@/data/site-config";
-
-function sendToWhatsApp(e: React.FormEvent<HTMLFormElement>) {
-  e.preventDefault();
-  const f = new FormData(e.currentTarget);
-  const text = `Hi JJ Haircare! I'm ${f.get("name")} (${f.get("email")}).\nSubject: ${f.get("subject")}\n\n${f.get("message")}`;
-  window.open(whatsappOrderUrl(text), "_blank", "noopener,noreferrer");
-}
 
 export default function ContactPage() {
   return (
@@ -28,74 +22,16 @@ export default function ContactPage() {
             </h1>
             <p className="font-sans text-jj-black/70 text-lg md:text-xl max-w-2xl"
             >
-              Whether you have a question about our formulations, need regimen advice, or want to explore wholesale partnerships — we're here.
+              Order in a few taps, ask about a product or talk wholesale. We reply on WhatsApp.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
             
             {/* Left Column - Contact Form */}
-            <div className="bg-white/70 backdrop-blur-md border border-jj-black/5 rounded-[2rem] p-8 md:p-12 shadow-sm"
+            <div id="order" className="scroll-mt-28 bg-white/70 backdrop-blur-md border border-jj-black/5 rounded-[2rem] p-6 md:p-12 shadow-sm"
             >
-              <form onSubmit={sendToWhatsApp} className="flex flex-col gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm uppercase tracking-widest font-mono text-jj-gold mb-2">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full bg-transparent border-b border-jj-black/20 pb-3 text-jj-black focus:outline-none focus:border-jj-nude transition-colors placeholder:text-jj-black/30"
-                    placeholder="Jane Doe"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="block text-sm uppercase tracking-widest font-mono text-jj-gold mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full bg-transparent border-b border-jj-black/20 pb-3 text-jj-black focus:outline-none focus:border-jj-nude transition-colors placeholder:text-jj-black/30"
-                    placeholder="jane@example.com"
-                  />
-                </div>
-
-                <div>
-                  <label htmlFor="subject" className="block text-sm uppercase tracking-widest font-mono text-jj-gold mb-2">Subject</label>
-                  <select
-                    id="subject"
-                    name="subject"
-                    className="w-full bg-transparent border-b border-jj-black/20 pb-3 text-jj-black focus:outline-none focus:border-jj-nude transition-colors appearance-none cursor-pointer"
-                  >
-                    <option value="General Inquiry">General Inquiry</option>
-                    <option value="Product Question">Product Question</option>
-                    <option value="Wholesale">Wholesale</option>
-                    <option value="Regimen Advice">Regimen Advice</option>
-                    <option value="Other">Other</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm uppercase tracking-widest font-mono text-jj-gold mb-2">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    required
-                    rows={4}
-                    className="w-full bg-transparent border-b border-jj-black/20 pb-3 text-jj-black focus:outline-none focus:border-jj-nude transition-colors placeholder:text-jj-black/30 resize-none"
-                    placeholder="How can we help you today?"
-                  ></textarea>
-                </div>
-
-                <button
-                  type="submit"
-                  className="mt-4 bg-jj-black hover:bg-jj-olive text-white font-medium rounded-full px-8 py-4 uppercase tracking-wider text-sm transition-all text-center w-full md:w-auto self-start"
-                >
-                  Send via WhatsApp
-                </button>
-              </form>
+              <OrderWizard />
             </div>
 
             {/* Right Column - Contact Details */}

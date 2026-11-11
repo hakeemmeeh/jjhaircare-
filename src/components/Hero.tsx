@@ -6,7 +6,7 @@ import { ChevronDown, MessageCircle, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
-import { WHATSAPP_NUMBER, whatsappOrderUrl, PHONE_DISPLAY } from "@/data/site-config";
+import { WHATSAPP_NUMBER, PHONE_DISPLAY } from "@/data/site-config";
 
 const SHOWCASE = [
   { src: "/images/herbal-oil-face-v5.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
@@ -111,15 +111,13 @@ export default function Hero() {
 
           {/* CTAs: 1 order, 2 call, 3 browse */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
-            <a
-              href={whatsappOrderUrl("Hi JJ Haircare, I'd like to place an order.")}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contact#order"
               className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-6 py-4 min-h-[52px] rounded-sm uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
             >
               <MessageCircle className="w-5 h-5" aria-hidden="true" />
               Order on WhatsApp
-            </a>
+            </Link>
             <a
               href={`tel:+${WHATSAPP_NUMBER}`}
               className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-6 py-4 min-h-[52px] rounded-sm uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
