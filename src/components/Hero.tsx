@@ -145,7 +145,7 @@ export default function Hero() {
 
         {/* Right: Product Image */}
         <motion.div
-          initial={{ opacity: 0, x: 40 }}
+          initial={false}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.4, ease: [0.16, 1, 0.3, 1] }}
           style={prefersReducedMotion ? {} : { transform: "translateZ(30px)" }}
@@ -171,7 +171,7 @@ export default function Hero() {
               }}
             />
             <Link href={SHOWCASE[showcaseIndex].href} className="absolute inset-0 block" aria-label={`Shop ${SHOWCASE[showcaseIndex].name}`}>
-              <AnimatePresence mode="wait">
+              <AnimatePresence mode="wait" initial={false}>
                 <motion.div
                   key={SHOWCASE[showcaseIndex].src}
                   initial={{ opacity: prefersReducedMotion ? 1 : 0 }}
@@ -192,15 +192,19 @@ export default function Hero() {
               </AnimatePresence>
             </Link>
             {/* Dots */}
-            <div className="absolute bottom-4 left-0 right-0 z-30 flex justify-center gap-2">
+            <div className="absolute bottom-4 left-0 right-0 z-30 flex justify-center gap-0">
               {SHOWCASE.map((item, i) => (
                 <button
                   key={item.src}
                   type="button"
                   aria-label={`Show ${item.name}`}
                   onClick={() => setShowcaseIndex(i)}
-                  className={`h-2 rounded-full transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-white/80 ring-1 ring-jj-black/20"}`}
-                />
+                  className="flex h-6 w-6 items-center justify-center"
+                >
+                  <span
+                    className={`block h-2 rounded-full transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-white/80 ring-1 ring-jj-black/20"}`}
+                  />
+                </button>
               ))}
             </div>
           </motion.div>
