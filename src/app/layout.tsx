@@ -36,7 +36,10 @@ const organizationJsonLd = {
       email: "jjherbal744@gmail.com",
       telephone: "+254743600499",
       address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
-      areaServed: "KE",
+      areaServed: [
+        { "@type": "City", name: "Nairobi" },
+        { "@type": "Country", name: "Kenya" },
+      ],
       sameAs: [
         "https://www.instagram.com/jj_haircareke",
         "https://www.tiktok.com/@jj_herbal_haircare",

@@ -7,9 +7,11 @@ import { WHATSAPP_NUMBER, PHONE_DISPLAY, whatsappOrderUrl } from "@/data/site-co
 export const metadata = {
   title: "Delivery in Nairobi & Across Kenya",
   description:
-    "How JJ Haircare delivers: rider delivery within Nairobi and parcel delivery to other towns. Message us on WhatsApp to confirm delivery to your area.",
+    "Rider delivery across Nairobi, including Westlands, Kilimani, Kileleshwa, Lavington, South B, South C and Eastleigh. Parcel delivery to other towns.",
   alternates: { canonical: "/shipping" },
 };
+
+const NAIROBI_AREAS = ["South C", "South B", "Westlands", "Kilimani", "Kileleshwa", "Hurlingham", "Lavington", "Eastleigh"];
 
 const steps = [
   { title: "Message us", text: "Tell us what you'd like and your location on WhatsApp." },
@@ -36,7 +38,7 @@ export default function ShippingPage() {
               <Bike className="h-8 w-8 text-jj-gold mb-5" aria-hidden="true" />
               <h2 className="font-serif text-2xl text-jj-black mb-3">In Nairobi — by rider</h2>
               <p className="text-jj-charcoal/80 font-light leading-relaxed">
-                Most of our orders are delivered within Nairobi by a rider, straight to you. Send us your area on WhatsApp and we&apos;ll confirm the delivery fee and when it will arrive.
+                Most of our orders are delivered within Nairobi by a rider, straight to you — from South C and South B to Westlands, Kilimani and Eastleigh. Send us your area on WhatsApp and we&apos;ll confirm the delivery fee and when it will arrive.
               </p>
             </section>
             <section className="bg-white/70 p-8 md:p-10">
@@ -47,6 +49,23 @@ export default function ShippingPage() {
               </p>
             </section>
           </div>
+
+          <section aria-labelledby="areas-heading" className="mb-16">
+            <h2 id="areas-heading" className="font-serif text-3xl text-jj-black mb-4">Areas we deliver to in Nairobi</h2>
+            <p className="text-jj-charcoal/80 font-light leading-relaxed max-w-2xl mb-6">
+              Our rider covers all of Nairobi. These are the areas we deliver to most often:
+            </p>
+            <ul className="flex flex-wrap gap-2.5">
+              {NAIROBI_AREAS.map((a) => (
+                <li key={a} className="border border-jj-black/20 bg-white/70 px-4 py-2 text-jj-black">
+                  {a}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-jj-charcoal/70 font-light">
+              Don&apos;t see your area? We still deliver there. Just tell us where you are when you order.
+            </p>
+          </section>
 
           <h2 className="font-serif text-3xl text-jj-black mb-8">How it works</h2>
           <ol className="grid md:grid-cols-3 gap-6 mb-16">
