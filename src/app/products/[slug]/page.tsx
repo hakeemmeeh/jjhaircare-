@@ -1,4 +1,5 @@
 import { clip, seoTitle } from "@/lib/seo";
+import { Bike, Check, MessageCircle, Package } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { notFound } from "next/navigation";
@@ -206,10 +207,22 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name.replace("JJHairCare ", "")}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block w-full md:w-auto text-center bg-jj-black hover:bg-jj-nude text-white hover:text-jj-black font-medium px-12 py-5 rounded-sm uppercase tracking-widest text-sm transition-all duration-300 mb-10 shadow-lg hover:shadow-xl"
+                className="inline-flex w-full md:w-auto items-center justify-center gap-2.5 rounded-full bg-jj-black hover:bg-jj-olive text-white font-medium px-10 py-5 uppercase tracking-widest text-sm transition-colors duration-300 shadow-lg"
               >
+                <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 Order on WhatsApp{product.price ? ` — ${product.price}` : ""}
               </a>
+
+              <ul className="mt-6 mb-10 grid gap-3 sm:grid-cols-2">
+                <li className="flex items-center gap-3 rounded-2xl border border-jj-black/10 bg-white/60 px-4 py-3">
+                  <Bike className="h-5 w-5 shrink-0 text-jj-gold" aria-hidden="true" />
+                  <span className="text-sm text-jj-charcoal/80"><strong className="font-medium text-jj-black">Nairobi:</strong> delivered by rider</span>
+                </li>
+                <li className="flex items-center gap-3 rounded-2xl border border-jj-black/10 bg-white/60 px-4 py-3">
+                  <Package className="h-5 w-5 shrink-0 text-jj-gold" aria-hidden="true" />
+                  <span className="text-sm text-jj-charcoal/80"><strong className="font-medium text-jj-black">Other towns:</strong> sent by parcel</span>
+                </li>
+              </ul>
 
               {/* Collapsible details */}
               <div className="border-t border-jj-black/10">
@@ -219,8 +232,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     body: (
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {product.benefits.map((benefit, i) => (
-                          <li key={i} className="flex items-center gap-3 text-jj-charcoal/70 font-light">
-                            <div className="w-1.5 h-1.5 rounded-full bg-jj-nude flex-shrink-0" />
+                          <li key={i} className="flex items-start gap-3 text-jj-charcoal/80 font-light">
+                            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-jj-black text-white">
+                              <Check className="h-3 w-3" aria-hidden="true" />
+                            </span>
                             {benefit}
                           </li>
                         ))}
@@ -230,11 +245,16 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                   {
                     title: "How to Use",
                     body: (
-                      <div className="text-jj-charcoal/70 font-light leading-relaxed space-y-2">
-                        {product.howToUse.split("\n").map((step, i) => (
-                          <p key={i}>{step}</p>
+                      <ol className="space-y-3 text-jj-charcoal/80 font-light leading-relaxed">
+                        {product.howToUse.split("\n").filter(Boolean).map((step, i) => (
+                          <li key={i} className="flex items-start gap-3">
+                            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-jj-black/30 font-mono text-xs text-jj-black">
+                              {i + 1}
+                            </span>
+                            <span>{step.replace(/^\s*\d+[.)]\s*/, "")}</span>
+                          </li>
                         ))}
-                      </div>
+                      </ol>
                     ),
                   },
                   {
@@ -245,11 +265,11 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     title: "Good for",
                     body: <p className="text-jj-charcoal/70 font-light leading-relaxed">{product.hairTypes}</p>,
                   },
-                ].map((item) => (
-                  <details key={item.title} className="group border-b border-jj-black/10">
-                    <summary className="flex items-center justify-between cursor-pointer list-none py-5 font-serif text-xl text-jj-black [&::-webkit-details-marker]:hidden">
+                ].map((item, i) => (
+                  <details key={item.title} open={i === 0} className="group border-b border-jj-black/10">
+                    <summary className="flex items-center justify-between cursor-pointer list-none py-5 min-h-[56px] font-serif text-xl text-jj-black [&::-webkit-details-marker]:hidden">
                       {item.title}
-                      <span className="text-2xl text-jj-gold leading-none transition-transform group-open:rotate-45">+</span>
+                      <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full border border-jj-black/15 text-xl text-jj-black leading-none transition-transform group-open:rotate-45">+</span>
                     </summary>
                     <div className="pb-6">{item.body}</div>
                   </details>

@@ -1,136 +1,74 @@
-"use client";
+import Link from "next/link";
+import { ArrowRight, Droplets, Flower2, Leaf, Sprout } from "lucide-react";
 
-import { motion, useMotionValue, useSpring, useTransform, useReducedMotion } from "framer-motion";
-import { Droplets, Sparkles, ShieldCheck } from "lucide-react";
-import { useRef } from "react";
-
-const features = [
+const ingredients = [
+  {
+    icon: Flower2,
+    name: "Hibiscus",
+    text: "With shea butter and aloe vera in our Hibiscus Hair Butter.",
+    href: "/products/hibiscus-hair-butter",
+    product: "Hibiscus Hair Butter",
+  },
+  {
+    icon: Leaf,
+    name: "Moringa",
+    text: "The heart of our rich, creamy Moringa Hair Butter.",
+    href: "/products/moringa-hair-butter",
+    product: "Moringa Hair Butter",
+  },
+  {
+    icon: Sprout,
+    name: "Honey & neem",
+    text: "Infused in the Scalp Detox Mask to detoxify, hydrate and repair.",
+    href: "/products/scalp-detox-mask",
+    product: "Scalp Detox Mask",
+  },
   {
     icon: Droplets,
-    title: "Deep Hydration",
-    description: "Our rich formulas penetrate the hair shaft to provide lasting moisture and prevent breakage.",
-  },
-  {
-    icon: Sparkles,
-    title: "Natural Shine",
-    description: "Cold-pressed oils restore your hair's natural luster without feeling heavy or greasy.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Strength & Protection",
-    description: "Fortify your strands against environmental damage and daily styling stress.",
+    name: "Herbal oils",
+    text: "A 100% natural blend in our Herbal Hair Oil, for scalp and strands.",
+    href: "/products/herbal-hair-oil",
+    product: "Herbal Hair Oil",
   },
 ];
 
-function FeatureCard({ feature, index }: { feature: any; index: number }) {
-  const prefersReducedMotion = useReducedMotion();
-  const cardRef = useRef<HTMLDivElement>(null);
-  
-  const mouseX = useMotionValue(0);
-  const mouseY = useMotionValue(0);
-
-  const smoothX = useSpring(mouseX, { damping: 30, stiffness: 200, mass: 1 });
-  const smoothY = useSpring(mouseY, { damping: 30, stiffness: 200, mass: 1 });
-
-  const rotateX = useTransform(smoothY, [-0.5, 0.5], ["10deg", "-10deg"]);
-  const rotateY = useTransform(smoothX, [-0.5, 0.5], ["-10deg", "10deg"]);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (prefersReducedMotion || !cardRef.current) return;
-    const { left, top, width, height } = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - left) / width - 0.5;
-    const y = (e.clientY - top) / height - 0.5;
-    mouseX.set(x);
-    mouseY.set(y);
-  };
-
-  const handleMouseLeave = () => {
-    mouseX.set(0);
-    mouseY.set(0);
-  };
-
-  const Icon = feature.icon;
-
-  return (
-    <motion.div
-      ref={cardRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      initial={{ opacity: 0, y: 40 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6, delay: index * 0.2, ease: "easeOut" }}
-      style={{ perspective: prefersReducedMotion ? undefined : 1000 }}
-      className="h-full"
-    >
-      <motion.div
-        style={prefersReducedMotion ? {} : { rotateX, rotateY, transformStyle: "preserve-3d" }}
-        className="bg-jj-charcoal/40 border border-white/10 p-10 rounded-xl hover:border-jj-gold/40 hover:bg-jj-charcoal/60 hover:shadow-[0_8px_30px_rgba(184,150,78,0.08)] transition-colors duration-300 group h-full flex flex-col"
-      >
-        <motion.div 
-          initial={{ scale: 0.8 }}
-          whileInView={{ scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5, delay: index * 0.2 + 0.3, type: "spring", bounce: 0.5 }}
-          style={prefersReducedMotion ? {} : { transform: "translateZ(30px)" }}
-          className="w-14 h-14 bg-jj-nude/10 rounded-full flex items-center justify-center mb-6 group-hover:bg-jj-nude group-hover:scale-110 group-hover:-translate-y-1 transition-all duration-300"
-        >
-          <Icon className="w-7 h-7 text-jj-nude group-hover:text-jj-black transition-colors duration-300" />
-        </motion.div>
-        
-        <motion.h3 
-          style={prefersReducedMotion ? {} : { transform: "translateZ(20px)" }}
-          className="font-serif text-2xl mb-4 text-white group-hover:text-jj-gold transition-colors"
-        >
-          {feature.title}
-        </motion.h3>
-        
-        <motion.p 
-          style={prefersReducedMotion ? {} : { transform: "translateZ(10px)" }}
-          className="text-white/60 font-light leading-relaxed flex-grow"
-        >
-          {feature.description}
-        </motion.p>
-      </motion.div>
-    </motion.div>
-  );
-}
-
+/** Home: what goes into the products, each card linking to the product it is in. */
 export default function Features() {
-  const prefersReducedMotion = useReducedMotion();
-
   return (
-    <section className="py-24 bg-jj-black text-white relative overflow-hidden">
-      {/* Decorative gradient */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-jj-gold/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2" />
-
-      <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="text-center mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="font-serif text-3xl md:text-5xl lg:text-6xl mb-4"
-          >
-            The <span className="italic text-jj-nude">JJHairCare</span> Difference
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-white/70 font-light max-w-2xl mx-auto text-lg"
-          >
-            Experience the transformative power of pure, natural ingredients.
-          </motion.p>
+    <section aria-labelledby="ingredients-heading" className="bg-[#EBE3D5] px-6 md:px-12 py-14 md:py-20">
+      <div className="mx-auto max-w-6xl">
+        <div className="max-w-2xl mb-10 md:mb-12">
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-olive mb-3">The JJ Haircare difference</p>
+          <h2 id="ingredients-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight mb-4">
+            Plant-based, <span className="italic text-jj-olive">and you can name every one</span>
+          </h2>
+          <p className="text-jj-charcoal/80 font-light leading-relaxed">
+            Our formulas start with ingredients from nature. Here is what goes into each product.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
-          {features.map((feature, index) => (
-            <FeatureCard key={feature.title} feature={feature} index={index} />
+        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {ingredients.map(({ icon: Icon, name, text, href, product }) => (
+            <li key={name}>
+              <Link
+                href={href}
+                className="group flex h-full items-start gap-4 rounded-2xl border border-jj-black/10 bg-white/70 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-jj-black/50 hover:shadow-lg lg:flex-col lg:gap-5 lg:p-6"
+              >
+                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-jj-black/5 text-jj-black transition-colors group-hover:bg-jj-black group-hover:text-white">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="flex flex-1 flex-col">
+                  <span className="font-serif text-xl text-jj-black">{name}</span>
+                  <span className="mt-1.5 text-jj-charcoal/80 font-light leading-relaxed">{text}</span>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm uppercase tracking-wider text-jj-black">
+                    {product}
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </span>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

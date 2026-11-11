@@ -125,12 +125,12 @@ export default function Products() {
         </MagneticButton>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="flex flex-wrap justify-center gap-8">
         {PRODUCTS.map((product, index) => (
           <div
             key={product.name}
             id={`product-${product.slug}`}
-            className={`mt-6 lg:mt-12 scroll-mt-28 rounded-[2rem] transition-[box-shadow,ring] duration-300 ${
+            className={`w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] mt-2 lg:mt-4 scroll-mt-28 rounded-[2rem] transition-[box-shadow,ring] duration-300 ${
               highlightedSlug === product.slug
                 ? "ring-2 ring-jj-gold ring-offset-2 ring-offset-jj-ivory shadow-lg"
                 : ""

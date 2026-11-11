@@ -37,7 +37,7 @@ export default function Home() {
       </div>
 
       {/* 2. Overlapping Features */}
-      <div className="relative z-[12] overflow-hidden bg-jj-black">
+      <div className="relative z-[12] overflow-hidden bg-[#EBE3D5]">
         <Features />
       </div>
 

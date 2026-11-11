@@ -59,7 +59,7 @@ export default function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude"
+      className="relative md:min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude"
       style={{ perspective: prefersReducedMotion ? undefined : 1200 }}
     >
 
@@ -90,7 +90,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Main Content — split layout on desktop */}
-      <div className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-8 items-center">
+      <div className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-14 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-8 lg:gap-8 items-center">
 
         {/* Left: who / what / why / how — one clear path to contact */}
         <div className="flex flex-col items-start text-left max-w-xl lg:max-w-none">

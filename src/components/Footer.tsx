@@ -1,6 +1,6 @@
 "use client";
 
-import { Facebook, Instagram, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 import Link from "next/link";
 import { whatsappOrderUrl } from "@/data/site-config";
 import Image from "next/image";
@@ -15,12 +15,12 @@ function TikTokIcon({ className }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-jj-black text-white pt-24 pb-8 border-t border-white/10">
+    <footer className="bg-jj-black text-white pt-16 lg:pt-24 pb-8 border-t border-white/10">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-16 mb-16 lg:mb-20">
 
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 group mb-6">
               <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-black border border-white/10 shadow-sm">
                 <Image src="/logo.png" alt="JJHairCare Logo" fill className="object-cover" />
@@ -38,12 +38,6 @@ export default function Footer() {
               </a>
               <a href="https://www.tiktok.com/@jj_herbal_haircare?_r=1&_t=ZS-94iGVNG2TJo" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
                 <TikTokIcon className="w-4 h-4" />
-              </a>
-              <a href="#" aria-label="Watch us on YouTube" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
-                <Youtube className="w-4 h-4" />
-              </a>
-              <a href="#" aria-label="Follow us on Facebook" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
-                <Facebook className="w-4 h-4" />
               </a>
             </div>
           </div>
@@ -73,7 +67,7 @@ export default function Footer() {
           </div>
 
           {/* Updates via WhatsApp */}
-          <div>
+          <div className="col-span-2 lg:col-span-1">
             <h2 className="font-serif text-xl mb-6 text-white">Stay in the loop</h2>
             <p className="text-white/70 font-light mb-6">
               Message us on WhatsApp to hear first about new products and offers.
