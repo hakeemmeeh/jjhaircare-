@@ -1,15 +1,39 @@
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Instagram } from "lucide-react";
+import { ArrowRight, Droplets, Heart, Instagram, Lightbulb, PlayCircle } from "lucide-react";
 import { SOCIALS } from "@/data/site-config";
 
+const TIKTOK = "https://www.tiktok.com/@jj_herbal_haircare";
+
+/** What we post, each tile opening a real video on our TikTok. */
 const tiles = [
-  "/images/herbal-oil-face-v5.jpg",
-  "/images/scalp-detox-face-v4.jpg",
-  "/images/hibiscus-hair-butter-card-v2.jpg",
-  "/images/moringa-hair-butter-v2.jpg",
-  "/images/hair-mist-face-v6.jpg",
-  "/images/about-banner-v3.jpg",
+  {
+    icon: PlayCircle,
+    label: "How-to guides",
+    text: "A guide on how to use our products.",
+    href: `${TIKTOK}/video/7470204098118225157`,
+    tone: "bg-[#26301F] text-white",
+  },
+  {
+    icon: Lightbulb,
+    label: "Hair care tips",
+    text: "Is your hair shedding or breaking? How to tell the difference.",
+    href: `${TIKTOK}/video/7699568326892129557`,
+    tone: "bg-[#E8D8B8] text-jj-black",
+  },
+  {
+    icon: Droplets,
+    label: "Routine advice",
+    text: "Why oil is not a moisturiser, and what your hair needs first.",
+    href: `${TIKTOK}/video/7705094188991401236`,
+    tone: "bg-jj-black text-white",
+  },
+  {
+    icon: Heart,
+    label: "Behind the brand",
+    text: "Lessons from building JJ Haircare, from our founder.",
+    href: `${TIKTOK}/video/7701399169507921172`,
+    tone: "bg-white text-jj-black",
+  },
 ];
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -23,7 +47,7 @@ function TikTokIcon({ className }: { className?: string }) {
 const socialBtn =
   "inline-flex items-center justify-center gap-2.5 rounded-full border border-jj-black/70 px-7 py-4 min-h-[52px] text-sm font-medium tracking-wide text-jj-black hover:bg-jj-black hover:text-white transition-colors";
 
-/** Home strip: where to find JJ Haircare on social media. The photo row is decorative. */
+/** Home strip: where to find JJ Haircare on social media, with four real videos to start with. */
 export default function SocialStrip() {
   return (
     <section aria-labelledby="social-heading" className="bg-gradient-nude pt-14 md:pt-20">
@@ -58,18 +82,34 @@ export default function SocialStrip() {
         </div>
       </div>
 
-      <ul aria-hidden="true" className="grid grid-cols-3 md:grid-cols-6">
-        {tiles.map((src) => (
-          <li key={src} className="relative aspect-square overflow-hidden">
-            <Image
-              src={src}
-              alt=""
-              fill
-              sizes="(min-width: 768px) 17vw, 34vw"
-              className={`object-cover ${src.includes("about-banner") ? "object-right" : ""}`}
-            />
-          </li>
-        ))}
+      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
+        {tiles.map(({ icon: Icon, label, text, href, tone }) => {
+          const dark = tone.includes("text-white");
+          return (
+            <li key={label}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`group flex h-full min-h-[200px] flex-col justify-between gap-8 p-7 md:p-8 lg:min-h-[260px] transition-opacity hover:opacity-90 ${tone}`}
+              >
+                <span
+                  className={`flex h-12 w-12 items-center justify-center rounded-full ${dark ? "bg-white/15" : "bg-jj-black/10"}`}
+                >
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span>
+                  <span className="block font-serif text-2xl leading-tight">{label}</span>
+                  <span className={`mt-2 block font-light leading-relaxed ${dark ? "text-white/80" : "text-jj-charcoal/80"}`}>{text}</span>
+                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider">
+                    Watch on TikTok
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                  </span>
+                </span>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </section>
   );
