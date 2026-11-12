@@ -1,11 +1,13 @@
+import { pageMeta } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: 'Privacy Policy — How We Handle Your Data',
-  description: 'How JJ Haircare collects, uses, and protects your personal information when you browse the site or place an order.',
-  alternates: { canonical: '/privacy' },
-};
+export const metadata = pageMeta({
+  title: "Privacy Policy — How We Handle Your Data",
+  description:
+    "How JJ Haircare collects, uses, and protects your personal information when you browse the site or place an order.",
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

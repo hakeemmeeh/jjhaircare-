@@ -1,15 +1,16 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Bike, Package, MessageCircle, Phone } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { WHATSAPP_NUMBER, PHONE_DISPLAY, whatsappOrderUrl } from "@/data/site-config";
 
-export const metadata = {
+export const metadata = pageMeta({
   title: "Delivery in Nairobi & Across Kenya",
   description:
     "Rider delivery across Nairobi, including Westlands, Kilimani, Kileleshwa, Lavington, South B, South C and Eastleigh. Parcel delivery to other towns.",
-  alternates: { canonical: "/shipping" },
-};
+  path: "/shipping",
+});
 
 const NAIROBI_AREAS = ["South C", "South B", "Westlands", "Kilimani", "Kileleshwa", "Hurlingham", "Lavington", "Eastleigh"];
 

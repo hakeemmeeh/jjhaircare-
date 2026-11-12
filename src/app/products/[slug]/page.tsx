@@ -1,4 +1,5 @@
-import { clip, seoTitle } from "@/lib/seo";
+import Link from "next/link";
+import { clip, seoTitle, SITE_URL } from "@/lib/seo";
 import { Bike, Check, MessageCircle, Package } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -116,7 +117,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title: seoTitle(title),
     description,
     alternates: { canonical: `/products/${product.slug}` },
-    openGraph: { type: "website", title, description, images: [{ url: product.image, alt: name }] },
+    openGraph: { type: "website", url: `/products/${product.slug}`, siteName: "JJ Haircare", locale: "en_KE", title, description, images: [{ url: product.image, alt: name }] },
     twitter: { card: "summary_large_image", title, description, images: [product.image] },
   };
 }
@@ -139,7 +140,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.name,
-    image: product.image,
+    image: [product.image, ...(product.gallery ?? [])].map((src) => `${SITE_URL}${src}`),
+    url: `${SITE_URL}/products/${product.slug}`,
     description: product.description,
     brand: {
       '@type': 'Brand',
@@ -149,7 +151,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       ? {
           offers: {
             '@type': 'Offer',
-            url: `https://jjhaircare.vercel.app/products/${product.slug}`,
+            url: `${SITE_URL}/products/${product.slug}`,
             priceCurrency: 'KES',
             price: product.price.replace(/[^0-9.]/g, ''),
             availability: 'https://schema.org/InStock',
@@ -159,8 +161,19 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       : {}),
   };
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: `${SITE_URL}/` },
+      { "@type": "ListItem", position: 2, name: "Products", item: `${SITE_URL}/products` },
+      { "@type": "ListItem", position: 3, name: product.name.replace("JJ Haircare ", ""), item: `${SITE_URL}/products/${product.slug}` },
+    ],
+  };
+
   return (
     <main className="bg-jj-ivory min-h-screen flex flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -183,6 +196,15 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
 
             {/* Right: Product Details */}
             <div className="w-full lg:w-1/2 lg:py-10">
+              <nav aria-label="Breadcrumb" className="mb-5 text-sm text-jj-charcoal/70">
+                <ol className="flex flex-wrap items-center gap-2">
+                  <li><Link href="/" className="inline-block py-1 hover:text-jj-black">Home</Link></li>
+                  <li aria-hidden="true">/</li>
+                  <li><Link href="/products" className="inline-block py-1 hover:text-jj-black">Products</Link></li>
+                  <li aria-hidden="true">/</li>
+                  <li aria-current="page" className="text-jj-black">{product.name.replace("JJ Haircare ", "")}</li>
+                </ol>
+              </nav>
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-[1px] w-12 bg-jj-nude" />
                 <p className="text-jj-nude text-sm uppercase tracking-[0.2em] font-medium">Natural hair care · Nairobi, Kenya</p>

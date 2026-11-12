@@ -1,3 +1,4 @@
+import { pageMeta } from "@/lib/seo";
 import Link from "next/link";
 import { Camera, MessageCircle, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -5,11 +6,12 @@ import Footer from "@/components/Footer";
 import SocialStrip from "@/components/SocialStrip";
 import { whatsappOrderUrl } from "@/data/site-config";
 
-export const metadata = {
-  title: 'Real Results on Real Hair',
-  description: 'See JJ Haircare on real hair. Follow our community on TikTok and Instagram for results, routines and new arrivals from Nairobi.',
-  alternates: { canonical: '/testimonials' },
-};
+export const metadata = pageMeta({
+  title: "Real Results on Real Hair",
+  description:
+    "See JJ Haircare on real hair. Follow our community on TikTok and Instagram for results, routines and new arrivals from Nairobi.",
+  path: "/testimonials",
+});
 
 const ways = [
   { icon: Camera, title: "Share a photo", text: "Send us a before and after, or tag us on Instagram or TikTok." },

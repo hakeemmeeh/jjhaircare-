@@ -36,15 +36,15 @@ export default function JournalSnippet() {
             {/* Elegant framing around the image */}
             <div className="absolute -inset-4 border border-jj-gold/30 rounded-sm translate-x-4 translate-y-4 -z-10" />
 
-            <div className="aspect-[4/5] relative rounded-sm overflow-hidden shadow-2xl group w-full h-full block">
+            <div className="aspect-[1672/941] relative rounded-sm overflow-hidden shadow-2xl group w-full block">
               <ImageReveal maskColor="bg-jj-ivory" className="absolute inset-0">
                 <motion.div
-                  style={prefersReducedMotion ? {} : { y: imageY, scale: 1.25 }}
+                  style={prefersReducedMotion ? {} : { y: imageY, scale: 1.08 }}
                   className="absolute inset-0"
                 >
                   <Image
-                    src="/images/scalp-detox-mask.jpg"
-                    alt="JJ Haircare Scalp Detox Mask"
+                    src="/images/about-banner-v3.jpg"
+                    alt="The JJ Haircare collection"
                     fill
                     sizes="(max-width: 768px) 100vw, 50vw"
                     className="object-cover group-hover:scale-[1.03] transition-transform duration-[2s] ease-out"
@@ -74,7 +74,7 @@ export default function JournalSnippet() {
 
             <div className="pl-6 border-l border-jj-gold/30 mb-10">
               <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-6">
-                Long before the luxurious bottles and global shipping, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better.
+                Long before the bottles and jars you see today, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better.
               </p>
               <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed">
                 We started by hand-whipping formulations in a tiny kitchen, searching for the perfect balance of moisture and strength for natural hair.

@@ -1,11 +1,13 @@
+import { pageMeta } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: 'Terms of Service — Using Our Website',
-  description: 'Terms and conditions for using the JJ Haircare website and ordering our natural hair care products.',
-  alternates: { canonical: '/terms' },
-};
+export const metadata = pageMeta({
+  title: "Terms of Service — Using Our Website",
+  description:
+    "Terms and conditions for using the JJ Haircare website and ordering our natural hair care products.",
+  path: "/terms",
+});
 
 export default function TermsPage() {
   return (

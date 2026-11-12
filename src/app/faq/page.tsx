@@ -5,9 +5,20 @@ import Footer from "@/components/Footer";
 import { faqs } from "@/data/faqs";
 import { whatsappOrderUrl } from "@/data/site-config";
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.question,
+    acceptedAnswer: { "@type": "Answer", text: f.answer },
+  })),
+};
+
 export default function FAQPage() {
   return (
     <main className="bg-jj-ivory min-h-screen flex flex-col">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
       <div className="pt-32 pb-24 flex-1 px-6 md:px-12">
         <div className="mx-auto max-w-6xl grid gap-12 lg:grid-cols-[0.8fr_1.4fr] lg:gap-20 items-start">

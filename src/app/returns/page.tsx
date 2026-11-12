@@ -1,11 +1,13 @@
+import { pageMeta } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const metadata = {
-  title: 'Returns & Exchanges — Our Policy',
-  description: 'How returns and exchanges work for JJ Haircare products, and how to contact us if something is wrong with your order.',
-  alternates: { canonical: '/returns' },
-};
+export const metadata = pageMeta({
+  title: "Returns & Exchanges — Our Policy",
+  description:
+    "How returns and exchanges work for JJ Haircare products, and how to contact us if something is wrong with your order.",
+  path: "/returns",
+});
 
 export default function ReturnsPage() {
   return (

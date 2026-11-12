@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
 import Link from "next/link";
 import OrderWizard from "@/components/OrderWizard";
-import { whatsappOrderUrl } from "@/data/site-config";
+import { PHONE_DISPLAY, WHATSAPP_NUMBER } from "@/data/site-config";
 
 export default function ContactPage() {
   return (
@@ -53,6 +53,16 @@ export default function ContactPage() {
 
                     
                     
+                    <a href={`tel:+${WHATSAPP_NUMBER}`} className="flex items-center gap-4 text-jj-charcoal/80 hover:text-jj-nude transition-colors group">
+                      <div className="w-12 h-12 rounded-full border border-jj-black/10 flex items-center justify-center group-hover:border-jj-nude transition-colors">
+                        <Phone className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-mono text-jj-gold uppercase tracking-widest">Call or WhatsApp</p>
+                        <p className="text-lg">{PHONE_DISPLAY}</p>
+                      </div>
+                    </a>
+
                     <div className="flex items-center gap-4 text-jj-charcoal/80">
                       <div className="w-12 h-12 rounded-full border border-jj-black/10 flex items-center justify-center">
                         <MapPin className="w-5 h-5" />

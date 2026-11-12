@@ -16,10 +16,10 @@ export default function JournalFull() {
             <span className="italic text-jj-olive">the Kitchen.</span>
           </h1>
           
-          <div className="max-w-sm mx-auto aspect-[1199/1312] relative rounded-sm overflow-hidden border border-jj-gold/30 shadow-lg mb-16">
+          <div className="max-w-3xl mx-auto aspect-[1672/941] relative rounded-sm overflow-hidden border border-jj-gold/30 shadow-lg mb-16">
             <img 
-              src="/images/scalp-detox-mask.jpg" 
-              alt="JJ Haircare Scalp Detox Mask" 
+              src="/images/about-banner-v3.jpg" 
+              alt="The JJ Haircare collection" 
               className="w-full h-full object-cover "
             />
           </div>
@@ -28,7 +28,7 @@ export default function JournalFull() {
         <div className="mx-auto max-w-3xl text-xl md:text-2xl text-jj-charcoal/80 font-light leading-relaxed space-y-8"
         >
           <p className="first-letter:font-serif first-letter:text-7xl first-letter:font-bold first-letter:text-jj-black first-letter:float-left first-letter:mr-4 first-letter:mt-2">
-            Long before the luxurious bottles and global shipping, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better. 
+            Long before the bottles and jars you see today, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better. 
           </p>
           <p>
             It started with frustration. Walking down store aisles, looking at shelves filled with products that promised moisture but delivered nothing but buildup and breakage. The ingredients lists were full of words we couldn't pronounce—sulfates, silicones, parabens—things that stripped our natural hair of its life and vitality.
