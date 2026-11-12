@@ -76,7 +76,7 @@ export default function Footer() {
               href={whatsappOrderUrl("Hi JJ Haircare, please add me to your updates.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-jj-nude hover:bg-jj-gold text-jj-black font-medium py-3 px-6 rounded-sm uppercase tracking-widest text-sm transition-colors"
+              className="inline-block bg-jj-nude hover:bg-jj-gold text-jj-black font-medium py-4 px-8 rounded-full uppercase tracking-widest text-sm transition-colors"
             >
               Join on WhatsApp
             </a>

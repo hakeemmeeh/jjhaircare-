@@ -34,13 +34,13 @@ export default function FeaturedProduct() {
               href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name}.`)}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-center bg-jj-gold text-jj-black font-medium px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:bg-white transition-colors"
+              className="text-center bg-jj-gold text-jj-black font-medium px-8 py-4 rounded-full uppercase tracking-widest text-sm hover:bg-white transition-colors"
             >
               Order on WhatsApp
             </a>
             <Link
               href={`/products/${product.slug}`}
-              className="text-center border border-white/40 text-white px-8 py-4 rounded-sm uppercase tracking-widest text-sm hover:border-jj-gold hover:text-jj-gold transition-colors"
+              className="text-center border border-white/40 text-white px-8 py-4 rounded-full uppercase tracking-widest text-sm hover:border-jj-gold hover:text-jj-gold transition-colors"
             >
               View details
             </Link>

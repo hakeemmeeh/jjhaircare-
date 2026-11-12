@@ -84,7 +84,7 @@ export default function Navbar() {
             </ul>
             <MagneticButton>
               <Link href="/products" className={clsx(
-                "font-medium px-4 xl:px-6 py-2.5 rounded-sm uppercase tracking-wider text-xs xl:text-sm transition-all cursor-pointer block whitespace-nowrap",
+                "font-medium px-5 xl:px-7 py-2.5 rounded-full uppercase tracking-wider text-xs xl:text-sm transition-all cursor-pointer block whitespace-nowrap",
                 isSolid
                   ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
                   : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"

@@ -33,7 +33,7 @@ export default function DeliveryStrip() {
               href={whatsappOrderUrl("Hi JJ Haircare, I'd like to place an order. My location is: ")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-6 py-4 min-h-[52px] uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors"
             >
               <MessageCircle className="w-5 h-5" aria-hidden="true" />
               Order on WhatsApp

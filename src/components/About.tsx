@@ -98,7 +98,7 @@ export default function About() {
               </p>
               <Link
                 href="/products"
-                className="inline-block bg-jj-black text-white text-sm uppercase tracking-wider px-8 py-3 rounded-sm hover:bg-jj-olive transition-colors"
+                className="inline-flex items-center justify-center rounded-full bg-jj-black text-white text-sm font-medium uppercase tracking-wider px-8 py-4 min-h-[52px] hover:bg-jj-olive transition-colors"
               >
                 Shop the collection
               </Link>

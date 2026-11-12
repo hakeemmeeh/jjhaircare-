@@ -19,7 +19,7 @@ export default function Contact() {
           </p>
           <button
             onClick={() => setIsOpen(true)}
-            className="bg-jj-black hover:bg-jj-nude text-white hover:text-jj-black font-medium px-10 py-5 rounded-sm uppercase tracking-widest text-sm transition-all duration-300"
+            className="bg-jj-black hover:bg-jj-nude text-white hover:text-jj-black font-medium px-10 py-5 rounded-full uppercase tracking-widest text-sm transition-all duration-300"
           >
             Get in Touch
           </button>
@@ -103,7 +103,7 @@ export default function Contact() {
                         <textarea rows={4} className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors resize-none"></textarea>
                       </div>
 
-                      <button type="submit" className="bg-jj-nude hover:bg-jj-gold text-jj-black font-medium px-10 py-4 rounded-sm uppercase tracking-widest text-sm transition-colors w-full md:w-auto">
+                      <button type="submit" className="bg-jj-nude hover:bg-jj-gold text-jj-black font-medium px-10 py-4 rounded-full uppercase tracking-widest text-sm transition-colors w-full md:w-auto">
                         Send Message
                       </button>
                     </form>

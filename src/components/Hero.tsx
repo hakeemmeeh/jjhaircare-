@@ -113,14 +113,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
             <Link
               href="/contact#order"
-              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-6 py-4 min-h-[52px] rounded-sm uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
             >
               Order now
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <a
               href={`tel:+${WHATSAPP_NUMBER}`}
-              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-6 py-4 min-h-[52px] rounded-sm uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               Call {PHONE_DISPLAY}

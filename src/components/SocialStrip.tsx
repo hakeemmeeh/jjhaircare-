@@ -1,71 +1,73 @@
 import Image from "next/image";
-import { Instagram } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Instagram } from "lucide-react";
 import { SOCIALS } from "@/data/site-config";
 
 const tiles = [
-  { src: "/images/herbal-oil-face-v5.jpg", alt: "Herbal Hair Oil" },
-  { src: "/images/scalp-detox-face-v4.jpg", alt: "Scalp Detox Mask" },
-  { src: "/images/hibiscus-hair-butter-card-v2.jpg", alt: "Hibiscus Hair Butter" },
-  { src: "/images/moringa-hair-butter-v2.jpg", alt: "Moringa Hair Butter" },
-  { src: "/images/hair-mist-face-v6.jpg", alt: "Hair Mist" },
-  { src: "/images/herbal-oil-pour-v5.jpg", alt: "Herbal Hair Oil being poured" },
+  "/images/herbal-oil-face-v5.jpg",
+  "/images/scalp-detox-face-v4.jpg",
+  "/images/hibiscus-hair-butter-card-v2.jpg",
+  "/images/moringa-hair-butter-v2.jpg",
+  "/images/hair-mist-face-v6.jpg",
+  "/images/about-banner-v3.jpg",
 ];
 
-/** Home strip: follow JJ Haircare on Instagram and TikTok. Tiles link to the profile. */
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.82a4.85 4.85 0 01-1-.13z" />
+    </svg>
+  );
+}
+
+const socialBtn =
+  "inline-flex items-center justify-center gap-2.5 rounded-full border border-jj-black/70 px-7 py-4 min-h-[52px] text-sm font-medium tracking-wide text-jj-black hover:bg-jj-black hover:text-white transition-colors";
+
+/** Home strip: where to find JJ Haircare on social media. The photo row is decorative. */
 export default function SocialStrip() {
   return (
-    <section aria-labelledby="social-heading" className="bg-gradient-nude py-14 md:py-20">
+    <section aria-labelledby="social-heading" className="bg-gradient-nude pt-14 md:pt-20">
       <div className="px-6 md:px-12">
-      <div className="mx-auto max-w-6xl flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
-        <div>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-3">Follow along</p>
-          <h2 id="social-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight">
-            See JJ Haircare <span className="italic text-jj-olive">on your feed</span>
-          </h2>
-          <p className="mt-4 max-w-xl text-jj-charcoal/80 font-light leading-relaxed">
-            Watch how to use each product, and follow for real results, routines and new arrivals from Nairobi.
-          </p>
+        <div className="mx-auto max-w-6xl flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
+          <div>
+            <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-3">Follow along</p>
+            <h2 id="social-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight">
+              Find us on <span className="italic text-jj-olive">Instagram and TikTok</span>
+            </h2>
+            <p className="mt-4 max-w-xl text-jj-charcoal/80 font-light leading-relaxed">
+              Follow JJ Haircare for how-to videos, routines and new arrivals from Nairobi.
+            </p>
+          </div>
+          <div className="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-3">
+            <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" className={socialBtn}>
+              <Instagram className="w-5 h-5" aria-hidden="true" />
+              <span><span className="sr-only">Instagram </span>@jj_haircareke</span>
+            </a>
+            <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" className={socialBtn}>
+              <TikTokIcon className="w-5 h-5" />
+              <span><span className="sr-only">TikTok </span>@jj_herbal_haircare</span>
+            </a>
+            <Link
+              href="/contact#order"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] uppercase tracking-wider text-sm hover:bg-jj-olive transition-colors"
+            >
+              Order now
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
-        <div className="flex flex-wrap gap-3">
-          <a
-            href={SOCIALS.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-jj-black/70 px-5 py-3 min-h-[48px] text-sm uppercase tracking-wider text-jj-black hover:bg-jj-black hover:text-white transition-colors"
-          >
-            <Instagram className="w-4 h-4" aria-hidden="true" /> @jj_haircareke
-          </a>
-          <a
-            href={SOCIALS.tiktok}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 border border-jj-black/70 px-5 py-3 min-h-[48px] text-sm uppercase tracking-wider text-jj-black hover:bg-jj-black hover:text-white transition-colors"
-          >
-            TikTok @jj_herbal_haircare
-          </a>
-        </div>
-      </div>
       </div>
 
-      <ul className="grid grid-cols-3 md:grid-cols-6">
-        {tiles.map((t) => (
-          <li key={t.src} className="relative aspect-square overflow-hidden group">
-            <a
-              href={SOCIALS.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label={`${t.alt} — open JJ Haircare on Instagram`}
-              className="absolute inset-0"
-            >
-              <Image
-                src={t.src}
-                alt=""
-                fill
-                sizes="(min-width: 768px) 17vw, 34vw"
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
-              />
-              <span className="absolute inset-0 bg-jj-black/0 group-hover:bg-jj-black/35 transition-colors" />
-            </a>
+      <ul aria-hidden="true" className="grid grid-cols-3 md:grid-cols-6">
+        {tiles.map((src) => (
+          <li key={src} className="relative aspect-square overflow-hidden">
+            <Image
+              src={src}
+              alt=""
+              fill
+              sizes="(min-width: 768px) 17vw, 34vw"
+              className={`object-cover ${src.includes("about-banner") ? "object-right" : ""}`}
+            />
           </li>
         ))}
       </ul>
