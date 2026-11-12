@@ -39,7 +39,7 @@ export default function About() {
             <span className="italic text-jj-olive">Crafted with Purpose.</span>
           </h1>
           <p className="text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed">
-            JJHairCare was born from a belief that your hair deserves the purest, most powerful ingredients nature has to offer. Every product is handcrafted with ethically sourced botanicals, essential oils, and butters — free from sulfates, parabens, and silicones. We celebrate the beauty of natural hair in all its forms.
+            JJ Haircare was born from a belief that your hair deserves the purest, most powerful ingredients nature has to offer. Every product is handcrafted with ethically sourced botanicals, essential oils, and butters — free from sulfates, parabens, and silicones. We celebrate the beauty of natural hair in all its forms.
           </p>
         </div>
 

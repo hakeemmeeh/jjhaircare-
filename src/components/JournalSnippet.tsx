@@ -74,7 +74,7 @@ export default function JournalSnippet() {
 
             <div className="pl-6 border-l border-jj-gold/30 mb-10">
               <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-6">
-                Long before the luxurious bottles and global shipping, JJHairCare was just a collection of raw shea butter, pure oils, and a deep desire for something better.
+                Long before the luxurious bottles and global shipping, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better.
               </p>
               <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed">
                 We started by hand-whipping formulations in a tiny kitchen, searching for the perfect balance of moisture and strength for natural hair.

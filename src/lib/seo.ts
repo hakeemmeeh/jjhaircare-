@@ -1,5 +1,5 @@
 export const SITE_URL = "https://jjhaircare.vercel.app";
-export const SITE_NAME = "JJHairCare";
+export const SITE_NAME = "JJ Haircare";
 const SUFFIX = ` | ${SITE_NAME}`;
 
 /** Drops the brand suffix (added by the root title template) conceptually: returns a title object

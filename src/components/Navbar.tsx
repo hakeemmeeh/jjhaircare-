@@ -58,10 +58,10 @@ export default function Navbar() {
             className={clsx("flex items-center gap-3 group", textColor)}
           >
             <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-black border border-white/10 shadow-sm">
-              <Image src="/logo.png" alt="JJHairCare Logo" fill className="object-cover" />
+              <Image src="/logo.png" alt="JJ Haircare Logo" fill className="object-cover" />
             </div>
             <span className="font-serif text-2xl md:text-3xl lg:text-2xl xl:text-3xl tracking-wider">
-              JJHairCare
+              JJ Haircare
             </span>
           </Link>
 

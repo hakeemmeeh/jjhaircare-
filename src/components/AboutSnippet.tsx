@@ -9,7 +9,7 @@ export default function AboutSnippet() {
         <div className="flex flex-col justify-center px-6 md:px-12 xl:px-20 py-12 lg:py-8">
           <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-6">Our Story</p>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-2xl xl:text-3xl text-white leading-snug">
-            Natural hair care, <span className="italic text-jj-gold">made in Nairobi</span> — built by three founders who believe healthy hair starts with simple, plant-based care.
+            Built by <span className="italic text-jj-gold">three founders</span> who believe healthy hair starts with simple, plant-based care.
           </h2>
           <Link
             href="/about"

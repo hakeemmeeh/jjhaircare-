@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: 'Returns & Exchanges — Our Policy',
-  description: 'How returns and exchanges work for JJHairCare products, and how to contact us if something is wrong with your order.',
+  description: 'How returns and exchanges work for JJ Haircare products, and how to contact us if something is wrong with your order.',
   alternates: { canonical: '/returns' },
 };
 

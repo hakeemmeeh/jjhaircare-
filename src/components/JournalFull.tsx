@@ -28,7 +28,7 @@ export default function JournalFull() {
         <div className="mx-auto max-w-3xl text-xl md:text-2xl text-jj-charcoal/80 font-light leading-relaxed space-y-8"
         >
           <p className="first-letter:font-serif first-letter:text-7xl first-letter:font-bold first-letter:text-jj-black first-letter:float-left first-letter:mr-4 first-letter:mt-2">
-            Long before the luxurious bottles and global shipping, JJHairCare was just a collection of raw shea butter, pure oils, and a deep desire for something better. 
+            Long before the luxurious bottles and global shipping, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better. 
           </p>
           <p>
             It started with frustration. Walking down store aisles, looking at shelves filled with products that promised moisture but delivered nothing but buildup and breakage. The ingredients lists were full of words we couldn't pronounce—sulfates, silicones, parabens—things that stripped our natural hair of its life and vitality.
@@ -55,13 +55,13 @@ export default function JournalFull() {
             At first, the products were just for personal use. But soon, friends started noticing the difference. Hair that had been dry for years was suddenly thriving. Breakage stopped. Shine returned. We started giving away small mason jars of our handcrafted hair butter. Word spread, and soon, those friends were asking for more, and bringing their friends along with them.
           </p>
           <p>
-            That was the moment JJHairCare was truly born. We realized that our community was starving for authentic, luxurious, natural care. We scaled up our operations, moving out of the kitchen, but we never compromised on the process. To this day, our formulations are crafted with that exact same intention and purity.
+            That was the moment JJ Haircare was truly born. We realized that our community was starving for authentic, luxurious, natural care. We scaled up our operations, moving out of the kitchen, but we never compromised on the process. To this day, our formulations are crafted with that exact same intention and purity.
           </p>
           
           <div className="pt-16 text-center">
             <div className="w-12 h-[1px] bg-jj-black/20 mx-auto mb-8" />
             <p className="font-serif italic text-2xl text-jj-black">
-              Welcome to JJHairCare. Where nature meets beauty.
+              Welcome to JJ Haircare. Where nature meets beauty.
             </p>
           </div>
         </div>

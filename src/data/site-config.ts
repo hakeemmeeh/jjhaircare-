@@ -13,8 +13,8 @@ export function whatsappOrderUrl(message: string): string {
 }
 
 export const SOCIALS = {
-  instagram: "https://www.instagram.com/jj_haircareke?igsh=MXB1b2t3MGFwYnkxMg==",
-  tiktok: "https://www.tiktok.com/@jj_herbal_haircare?_r=1&_t=ZS-94iGVNG2TJo",
+  instagram: "https://www.instagram.com/jj_haircareke",
+  tiktok: "https://www.tiktok.com/@jj_herbal_haircare",
 };
 
 /** Number shown to visitors (same line as WhatsApp). */

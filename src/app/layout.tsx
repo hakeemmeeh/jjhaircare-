@@ -48,33 +48,35 @@ const organizationJsonLd = {
   ],
 };
 
+export const viewport = { themeColor: '#0A0A0A' };
+
 export const metadata = {
   metadataBase: new URL('https://jjhaircare.vercel.app'),
   title: {
     default: 'Natural Hair Care in Nairobi, Kenya | JJ Haircare',
-    template: '%s | JJHairCare',
+    template: '%s | JJ Haircare',
   },
   description: 'Natural hair care from Nairobi — Herbal Hair Oil, Scalp Detox Mask, Hibiscus and Moringa Hair Butter, and Hair Mist. Order on WhatsApp.',
   keywords: ['natural hair care', 'herbal hair oil', 'hair butter', 'scalp detox mask', 'hair mist', 'natural hair Kenya', 'hair care Nairobi'],
   openGraph: {
     type: 'website',
     locale: 'en_KE',
-    siteName: 'JJHairCare',
-    title: 'JJHairCare | Premium Natural Hair Care',
-    description: 'Natural hair care from Nairobi. Order on WhatsApp.',
+    siteName: 'JJ Haircare',
+    title: 'Natural Hair Care in Nairobi, Kenya | JJ Haircare',
+    description: 'Herbal hair oil, hair butters, scalp detox mask and hair mist, made in Nairobi. Order on WhatsApp or call 0743 600 499.',
     images: [
       {
         url: '/images/og-jjhaircare.jpg',
         width: 1200,
         height: 630,
-        alt: 'JJHairCare — Where Nature Meets Beauty',
+        alt: 'JJ Haircare — Where Nature Meets Beauty',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'JJHairCare | Premium Natural Hair Care',
-    description: 'Natural hair care from Nairobi. Order on WhatsApp.',
+    title: 'Natural Hair Care in Nairobi, Kenya | JJ Haircare',
+    description: 'Herbal hair oil, hair butters, scalp detox mask and hair mist, made in Nairobi. Order on WhatsApp or call 0743 600 499.',
     images: ['/images/og-jjhaircare.jpg'],
   },
   icons: {

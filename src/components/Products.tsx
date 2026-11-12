@@ -111,11 +111,12 @@ export default function Products() {
       <div className="max-w-7xl mx-auto">
       <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
         <div>
-          <h2 className="text-5xl md:text-7xl font-serif text-jj-black mb-4">
-            The Collection.
+          <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-4">The collection</p>
+          <h2 className="text-4xl md:text-6xl font-serif text-jj-black mb-4 leading-tight">
+            Shop natural hair products
           </h2>
-          <p className="font-sans text-jj-black/60 md:text-xl tracking-wide max-w-sm">
-            Every formula. Every texture. Every curl type.
+          <p className="font-sans text-jj-black/70 md:text-xl max-w-xl">
+            Herbal hair oil, hair butters, a scalp detox mask and hair mist. From KES 1,000.
           </p>
         </div>
         <MagneticButton>

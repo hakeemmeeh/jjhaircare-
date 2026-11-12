@@ -23,20 +23,20 @@ export default function Footer() {
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 group mb-6">
               <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-black border border-white/10 shadow-sm">
-                <Image src="/logo.png" alt="JJHairCare Logo" fill className="object-cover" />
+                <Image src="/logo.png" alt="JJ Haircare Logo" fill className="object-cover" />
               </div>
               <span className="font-serif text-3xl text-white tracking-wider">
-                JJHairCare
+                JJ Haircare
               </span>
             </Link>
             <p className="text-white/70 font-light italic mb-8">
               &ldquo;Where Nature Meets Beauty&rdquo;
             </p>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/jj_haircareke?igsh=MXB1b2t3MGFwYnkxMg==" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
+              <a href="https://www.instagram.com/jj_haircareke" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://www.tiktok.com/@jj_herbal_haircare?_r=1&_t=ZS-94iGVNG2TJo" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
+              <a href="https://www.tiktok.com/@jj_herbal_haircare" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
                 <TikTokIcon className="w-4 h-4" />
               </a>
             </div>
@@ -85,7 +85,7 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/65 text-sm font-light">
-          <p>© {new Date().getFullYear()} JJHairCare. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} JJ Haircare. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="inline-block py-2 hover:text-white transition-colors">Privacy Policy</Link>
             <Link href="/terms" className="inline-block py-2 hover:text-white transition-colors">Terms of Service</Link>

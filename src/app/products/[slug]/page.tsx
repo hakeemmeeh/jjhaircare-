@@ -29,7 +29,7 @@ const ASK_US = "Message us on WhatsApp and we'll guide you to the right routine 
 // Details below come from the JJ Haircare packaging and brand artwork.
 const products: ProductDetail[] = [
   {
-    name: "JJHairCare Herbal Hair Oil",
+    name: "JJ Haircare Herbal Hair Oil",
     slug: "herbal-hair-oil",
     price: "KES 1,000",
     tagline: "Nourish. Strengthen. Grow.",
@@ -44,7 +44,7 @@ const products: ProductDetail[] = [
     hairTypes: ASK_US,
   },
   {
-    name: "JJHairCare Scalp Detox Mask",
+    name: "JJ Haircare Scalp Detox Mask",
     slug: "scalp-detox-mask",
     price: "KES 1,500",
     tagline: "Detoxify. Hydrate. Repair.",
@@ -59,7 +59,7 @@ const products: ProductDetail[] = [
     hairTypes: ASK_US,
   },
   {
-    name: "JJHairCare Hibiscus Hair Butter",
+    name: "JJ Haircare Hibiscus Hair Butter",
     slug: "hibiscus-hair-butter",
     price: "KES 1,500",
     tagline: "Deep Nourishment. Lasting Shine.",
@@ -73,7 +73,7 @@ const products: ProductDetail[] = [
     hairTypes: ASK_US,
   },
   {
-    name: "JJHairCare Moringa Hair Butter",
+    name: "JJ Haircare Moringa Hair Butter",
     slug: "moringa-hair-butter",
     price: "KES 1,500",
     tagline: "Nourish. Strengthen. Grow.",
@@ -87,7 +87,7 @@ const products: ProductDetail[] = [
     hairTypes: ASK_US,
   },
   {
-    name: "JJHairCare Hair Mist",
+    name: "JJ Haircare Hair Mist",
     slug: "hair-mist",
     price: "KES 1,500",
     tagline: "Refresh. Nourish. Shine.",
@@ -107,7 +107,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
   if (!product) return {};
-  const name = product.name.replace("JJHairCare ", "");
+  const name = product.name.replace("JJ Haircare ", "");
   const title = `${name} in Nairobi, Kenya`;
   const lead = `${name}${product.price ? ` (${product.price})` : ""}, made in Nairobi. `;
   const tail = " Order on WhatsApp.";
@@ -143,7 +143,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     description: product.description,
     brand: {
       '@type': 'Brand',
-      name: 'JJHairCare',
+      name: 'JJ Haircare',
     },
     ...(product.price
       ? {
@@ -204,7 +204,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </p>
 
               <a
-                href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name.replace("JJHairCare ", "")}.`)}
+                href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name.replace("JJ Haircare ", "")}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex w-full md:w-auto items-center justify-center gap-2.5 rounded-full bg-jj-black hover:bg-jj-olive text-white font-medium px-10 py-5 uppercase tracking-widest text-sm transition-colors duration-300 shadow-lg"

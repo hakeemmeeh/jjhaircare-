@@ -3,7 +3,7 @@ import Footer from "@/components/Footer";
 
 export const metadata = {
   title: 'Terms of Service — Using Our Website',
-  description: 'Terms and conditions for using the JJHairCare website and ordering our natural hair care products.',
+  description: 'Terms and conditions for using the JJ Haircare website and ordering our natural hair care products.',
   alternates: { canonical: '/terms' },
 };
 

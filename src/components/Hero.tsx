@@ -2,7 +2,7 @@
 
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence, useScroll, useMotionTemplate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { ChevronDown, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, ChevronDown, Phone } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -115,8 +115,8 @@ export default function Hero() {
               href="/contact#order"
               className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-6 py-4 min-h-[52px] rounded-sm uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
             >
-              <MessageCircle className="w-5 h-5" aria-hidden="true" />
-              Order on WhatsApp
+              Order now
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <a
               href={`tel:+${WHATSAPP_NUMBER}`}
