@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Droplets, Heart, Instagram, Lightbulb, PlayCircle } from "lucide-react";
+import { ArrowRight, Droplets, Heart, Instagram, Lightbulb, Play, PlayCircle } from "lucide-react";
 import { SOCIALS } from "@/data/site-config";
 
 const TIKTOK = "https://www.tiktok.com/@jj_herbal_haircare";
@@ -91,19 +91,41 @@ export default function SocialStrip() {
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group flex h-full min-h-[200px] flex-col justify-between gap-8 p-7 md:p-8 lg:min-h-[260px] transition-opacity hover:opacity-90 ${tone}`}
+                aria-label={`${label}: ${text} Watch on TikTok`}
+                className={`group relative flex h-full min-h-[260px] flex-col overflow-hidden p-7 md:p-8 lg:min-h-[340px] ${tone}`}
               >
+                {/* hover wash */}
                 <span
-                  className={`flex h-12 w-12 items-center justify-center rounded-full ${dark ? "bg-white/15" : "bg-jj-black/10"}`}
+                  aria-hidden="true"
+                  className={`pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 ${
+                    dark ? "bg-white/5" : "bg-jj-black/5"
+                  }`}
+                />
+
+                <span
+                  aria-hidden="true"
+                  className={`relative flex h-12 w-12 items-center justify-center rounded-full ${dark ? "bg-white/15" : "bg-jj-black/10"}`}
                 >
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                  <Icon className="h-5 w-5" />
                 </span>
-                <span>
+
+                {/* play button: pops in at the centre on hover, always shown on touch screens */}
+                <span aria-hidden="true" className="relative flex flex-1 items-center justify-center py-6">
+                  <span
+                    className={`flex h-16 w-16 items-center justify-center rounded-full shadow-xl transition-all duration-300 ease-out motion-reduce:transition-none lg:h-20 lg:w-20 lg:scale-50 lg:opacity-0 lg:group-hover:scale-100 lg:group-hover:opacity-100 lg:group-focus-visible:scale-100 lg:group-focus-visible:opacity-100 ${
+                      dark ? "bg-white text-jj-black" : "bg-jj-black text-white"
+                    }`}
+                  >
+                    <Play className="ml-1 h-7 w-7 fill-current lg:h-8 lg:w-8" />
+                  </span>
+                </span>
+
+                <span aria-hidden="true" className="relative">
                   <span className="block font-serif text-2xl leading-tight">{label}</span>
-                  <span className={`mt-2 block font-light leading-relaxed ${dark ? "text-white/80" : "text-jj-charcoal/80"}`}>{text}</span>
+                  <span className={`mt-2 block font-light leading-relaxed sm:min-h-[3.25rem] ${dark ? "text-white/80" : "text-jj-charcoal/80"}`}>{text}</span>
                   <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider">
                     Watch on TikTok
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </span>
               </a>
