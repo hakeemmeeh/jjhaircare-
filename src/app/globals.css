@@ -11,12 +11,20 @@
   --color-jj-charcoal: #1A1A1A;
   --color-jj-olive: #5A6A50;
 
-  --font-serif: var(--font-playfair);
+  --font-serif: var(--font-display);
   --font-sans: var(--font-inter);
 }
 
 :root {
   --background: #F7F2EC;
+}
+
+/* Cormorant Garamond is a light display face; give headings a little more weight
+   unless a weight utility (font-bold, font-light...) says otherwise. */
+@layer base {
+  .font-serif {
+    font-weight: 500;
+  }
 }
 
 body {
