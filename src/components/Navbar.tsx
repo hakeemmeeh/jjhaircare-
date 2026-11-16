@@ -2,12 +2,13 @@
 
 import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import clsx from "clsx";
 import MagneticButton from "@/components/MagneticButton";
+import { PHONE_DISPLAY, PHONE_E164 } from "@/data/site-config";
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -126,6 +127,17 @@ export default function Navbar() {
                 Shop Now
               </Link>
             </MagneticButton>
+            <a
+              href={`tel:${PHONE_E164}`}
+              className={clsx(
+                "flex items-center gap-2 font-medium uppercase tracking-wider text-[0.75rem] xl:text-[0.875rem] whitespace-nowrap transition-colors",
+                isSolid
+                  ? "text-white hover:text-jj-gold"
+                  : "text-jj-black hover:text-jj-nude"
+              )}
+            >
+              <Phone className="w-4 h-4" /> {PHONE_DISPLAY}
+            </a>
           </nav>
 
           {/* Mobile Menu Toggle */}
