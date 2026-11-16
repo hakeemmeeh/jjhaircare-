@@ -288,7 +288,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     body: <p className="text-jj-charcoal/70 font-light leading-relaxed">{product.hairTypes}</p>,
                   },
                 ].map((item, i) => (
-                  <details key={item.title} open={i === 0} className="group border-[1px] border-jj-black/10">
+                  <details key={item.title} open={i === 0} className="group border-b-[1px] border-jj-black/10">
                     <summary className="flex items-center justify-between cursor-pointer list-none py-5 min-h-[56px] font-serif text-[1.25rem] text-jj-black [&::-webkit-details-marker]:hidden">
                       {item.title}
                       <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-[9999px] border-[1px] border-jj-black/15 text-[1.25rem] text-jj-black leading-none transition-transform group-open:rotate-45">+</span>
