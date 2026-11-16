@@ -14,7 +14,7 @@ export default function DeliveryStrip() {
     <section aria-labelledby="delivery-heading" className="bg-jj-ivory px-6 md:px-12 py-14 md:py-20">
       <div className="mx-auto max-w-[90%] grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16 items-center">
         <div>
-          <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">Ordering &amp; delivery</p>
+          <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">Ordering &amp; delivery</p>
           <h2 id="delivery-heading" className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight mb-5">
             Order on WhatsApp. <span className="italic text-jj-olive">We bring it to you.</span>
           </h2>

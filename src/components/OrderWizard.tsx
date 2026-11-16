@@ -26,7 +26,7 @@ const STEP_NAMES: Record<string, string> = {
 
 const priceOf = (p: string | undefined) => (p ? Number(p.replace(/[^0-9]/g, "")) : 0);
 
-const labelCls = "block text-[0.75rem] uppercase tracking-[0.2em] font-mono text-jj-gold mb-2";
+const labelCls = "block text-[0.75rem] uppercase tracking-wider font-mono text-jj-gold mb-2";
 const inputCls =
   "w-[100%] rounded-[12px] border-[1px] border-jj-black/20 bg-white/70 px-4 py-3.5 text-[1.125rem] text-jj-black placeholder:text-jj-charcoal/50 focus:outline-none focus:border-jj-black focus:ring-2 focus:ring-jj-black/10 transition";
 const primaryBtn =

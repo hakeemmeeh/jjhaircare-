@@ -9,7 +9,7 @@ export default function JournalFull() {
         >
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="h-[1px] w-12 bg-jj-nude" />
-            <p className="text-jj-nude text-[0.875rem] uppercase tracking-[0.2em] font-medium">Our Story</p>
+            <p className="text-jj-nude text-[0.875rem] uppercase tracking-wider font-medium">Our Story</p>
             <div className="h-[1px] w-12 bg-jj-nude" />
           </div>
           

@@ -73,7 +73,7 @@ export default function About() {
                 />
               </div>
               <div className={i % 2 === 1 ? "md:order-1" : ""}>
-                <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">{row.eyebrow}</p>
+                <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">{row.eyebrow}</p>
                 <h2 className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight mb-5">{row.title}</h2>
                 <p className="text-[1.125rem] text-jj-charcoal/80 font-light leading-relaxed">{row.text}</p>
               </div>
@@ -91,7 +91,7 @@ export default function About() {
               />
             </div>
             <div>
-              <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">The collection</p>
+              <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">The collection</p>
               <h2 className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight mb-5">Complete haircare, nourish to grow</h2>
               <p className="text-[1.125rem] text-jj-charcoal/80 font-light leading-relaxed mb-8">
                 Five products, one routine: a herbal oil, a scalp detox mask, hibiscus and moringa butters, and a hair mist. Order any of them straight on WhatsApp.

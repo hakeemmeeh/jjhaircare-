@@ -24,7 +24,7 @@ export default function FeaturedProduct() {
         </div>
 
         <div className="md:order-1">
-          <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-5">Featured product</p>
+          <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-5">Featured product</p>
           <h2 className="font-serif text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] text-white leading-tight">{product.name}</h2>
           <p className="mt-4 font-mono text-[1.25rem] text-jj-gold">{product.price}</p>
           <p className="mt-6 text-[1.125rem] text-white/75 font-light leading-relaxed max-w-[40%]">{product.description}</p>

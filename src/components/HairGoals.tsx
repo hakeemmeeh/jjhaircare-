@@ -40,7 +40,7 @@ export default function HairGoals() {
       <div className="max-w-[100%] mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
           <div>
-            <p className="text-[0.75rem] uppercase tracking-[0.2em] text-jj-black/50 mb-3">
+            <p className="text-[0.75rem] uppercase tracking-wider text-jj-black/50 mb-3">
               Shop by goal
             </p>
             <h2

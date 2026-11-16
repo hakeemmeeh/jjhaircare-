@@ -38,7 +38,7 @@ export default function Features() {
     <section aria-labelledby="ingredients-heading" className="bg-[#EBE3D5] px-6 md:px-12 py-14 md:py-20">
       <div className="mx-auto max-w-[90%]">
         <div className="max-w-[53%] mb-10 md:mb-12">
-          <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-olive mb-3">The JJ Haircare difference</p>
+          <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-olive mb-3">The JJ Haircare difference</p>
           <h2 id="ingredients-heading" className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight mb-4">
             Plant-based, <span className="italic text-jj-olive">and you can name every one</span>
           </h2>

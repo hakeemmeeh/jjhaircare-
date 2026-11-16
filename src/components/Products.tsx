@@ -109,7 +109,7 @@ export default function Products() {
       <div className="max-w-[100%] mx-auto">
       <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-[1px] border-jj-black/10 pb-8">
         <div>
-          <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">The collection</p>
+          <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">The collection</p>
           <h2 className="text-[2.25rem] md:text-[3.75rem] font-serif text-jj-black mb-4 leading-tight">
             Shop natural hair products
           </h2>
