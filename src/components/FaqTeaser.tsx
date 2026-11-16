@@ -7,7 +7,7 @@ export default function FaqTeaser() {
   return (
     <section aria-labelledby="faq-heading" className="bg-[#EBE3D5] px-6 md:px-12 py-14 md:py-20">
       <div className="mx-auto max-w-[60%]">
-        <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-olive mb-3">Questions</p>
+        <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-olive mb-3">Questions</p>
         <h2 id="faq-heading" className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight mb-8">
           Quick answers
         </h2>

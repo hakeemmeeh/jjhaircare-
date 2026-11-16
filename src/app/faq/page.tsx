@@ -23,7 +23,7 @@ export default function FAQPage() {
       <div className="pt-32 pb-24 flex-1 px-6 md:px-12">
         <div className="mx-auto max-w-[90%] grid gap-12 lg:grid-cols-[0.8fr_1.4fr] lg:gap-20 items-start">
           <div className="lg:sticky lg:top-32">
-            <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">Questions</p>
+            <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">Questions</p>
             <h1 className="font-serif text-[2.25rem] md:text-[3.75rem] text-jj-black leading-tight mb-6">
               Frequently asked <span className="italic text-jj-olive">questions</span>
             </h1>

@@ -26,7 +26,7 @@ export default function TestimonialsPage() {
       <div className="pt-32 flex-1">
         <div className="px-6 md:px-12 pb-14 md:pb-20">
           <div className="mx-auto max-w-[90%]">
-            <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">Real results</p>
+            <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">Real results</p>
             <h1 className="font-serif text-[2.25rem] md:text-[3.75rem] text-jj-black leading-tight mb-6">
               See it <span className="italic text-jj-olive">on real hair</span>
             </h1>
@@ -41,7 +41,7 @@ export default function TestimonialsPage() {
         <section aria-labelledby="share-heading" className="px-6 md:px-12 py-14 md:py-20">
           <div className="mx-auto max-w-[90%] grid gap-10 lg:grid-cols-[1fr_1.4fr] lg:gap-16 items-start">
             <div>
-              <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-3">Your turn</p>
+              <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-3">Your turn</p>
               <h2 id="share-heading" className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight mb-5">
                 Used JJ Haircare? <span className="italic text-jj-olive">Show us.</span>
               </h2>

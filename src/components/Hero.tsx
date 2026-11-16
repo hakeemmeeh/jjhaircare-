@@ -220,7 +220,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30"
         aria-label="Scroll to Discover"
       >
-        <span className="text-jj-charcoal/80 font-semibold text-[0.75rem] uppercase tracking-[0.3em]">
+        <span className="text-jj-charcoal/80 font-semibold text-[0.75rem] uppercase tracking-widest">
           Scroll to Discover
         </span>
         <motion.div

@@ -207,7 +207,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </nav>
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-[1px] w-12 bg-jj-nude" />
-                <p className="text-jj-nude text-[0.875rem] uppercase tracking-[0.2em] font-medium">Natural hair care · Nairobi, Kenya</p>
+                <p className="text-jj-nude text-[0.875rem] uppercase tracking-wider font-medium">Natural hair care · Nairobi, Kenya</p>
               </div>
 
               <h1 className="font-serif text-[3rem] md:text-[3.75rem] text-jj-black mb-2">{product.name}</h1>

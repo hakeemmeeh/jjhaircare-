@@ -11,7 +11,7 @@ export default function NotFound() {
       <Navbar />
       <div className="flex-1 pt-36 pb-24 px-6 md:px-12">
         <div className="mx-auto max-w-[60%]">
-          <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">Error 404</p>
+          <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">Error 404</p>
           <h1 className="font-serif text-[2.25rem] md:text-[3.75rem] text-jj-black leading-tight mb-6">
             We can&apos;t find <span className="italic text-jj-olive">that page.</span>
           </h1>

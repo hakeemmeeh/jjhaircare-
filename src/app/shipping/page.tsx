@@ -26,7 +26,7 @@ export default function ShippingPage() {
       <Navbar />
       <div className="pt-32 pb-24 flex-1">
         <div className="container mx-auto px-6 md:px-12 max-w-[80%]">
-          <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">Delivery</p>
+          <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">Delivery</p>
           <h1 className="font-serif text-[2.25rem] md:text-[3.75rem] text-jj-black mb-6 leading-tight">
             Delivery in Nairobi <span className="italic text-jj-olive">&amp; across Kenya</span>
           </h1>

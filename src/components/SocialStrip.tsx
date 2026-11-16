@@ -54,7 +54,7 @@ export default function SocialStrip() {
       <div className="px-6 md:px-12">
         <div className="mx-auto max-w-[90%] flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
           <div>
-            <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-3">Follow along</p>
+            <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-3">Follow along</p>
             <h2 id="social-heading" className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight">
               Find us on <span className="italic text-jj-olive">Instagram and TikTok</span>
             </h2>
