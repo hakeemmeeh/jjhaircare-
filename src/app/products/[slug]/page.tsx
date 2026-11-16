@@ -172,7 +172,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   };
 
   return (
-    <main className="bg-jj-ivory min-h-screen flex flex-col">
+    <main className="bg-jj-ivory min-h-[100vw] flex flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script
         type="application/ld+json"
@@ -186,7 +186,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
             
             {/* Left: Product Image */}
-            <div className="w-full lg:w-1/2">
+            <div className="w-[100%] lg:w-1/2">
               <ProductGallery
                 images={[product.image, ...(product.gallery ?? [])]}
                 alt={product.name}
@@ -195,8 +195,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </div>
 
             {/* Right: Product Details */}
-            <div className="w-full lg:w-1/2 lg:py-10">
-              <nav aria-label="Breadcrumb" className="mb-5 text-sm text-jj-charcoal/70">
+            <div className="w-[100%] lg:w-1/2 lg:py-10">
+              <nav aria-label="Breadcrumb" className="mb-5 text-[0.875rem] text-jj-charcoal/70">
                 <ol className="flex flex-wrap items-center gap-2">
                   <li><Link href="/" className="inline-block py-1 hover:text-jj-black">Home</Link></li>
                   <li aria-hidden="true">/</li>
@@ -207,17 +207,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </nav>
               <div className="flex items-center gap-4 mb-6">
                 <div className="h-[1px] w-12 bg-jj-nude" />
-                <p className="text-jj-nude text-sm uppercase tracking-[0.2em] font-medium">Natural hair care · Nairobi, Kenya</p>
+                <p className="text-jj-nude text-[0.875rem] uppercase tracking-[0.2em] font-medium">Natural hair care · Nairobi, Kenya</p>
               </div>
 
-              <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-2">{product.name}</h1>
-              <p className="text-xl md:text-2xl text-jj-olive font-medium mb-2">{product.price ?? "Message us for price"}</p>
-              <p className="text-sm font-mono text-jj-gold uppercase tracking-widest mb-8">{product.size}</p>
+              <h1 className="font-serif text-[3rem] md:text-[3.75rem] text-jj-black mb-2">{product.name}</h1>
+              <p className="text-[1.25rem] md:text-[1.5rem] text-jj-olive font-medium mb-2">{product.price ?? "Message us for price"}</p>
+              <p className="text-[0.875rem] font-mono text-jj-gold uppercase tracking-widest mb-8">{product.size}</p>
               
-              <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-4">
+              <p className="text-[1.125rem] text-jj-charcoal/80 font-light leading-relaxed mb-4">
                 {product.description}
               </p>
-              <p className="text-base text-jj-charcoal/70 font-light leading-relaxed mb-8">
+              <p className="text-[1rem] text-jj-charcoal/70 font-light leading-relaxed mb-8">
                 Made in Nairobi, Kenya. Order on WhatsApp or call{" "}
                 <a href={`tel:+${WHATSAPP_NUMBER}`} className="underline underline-offset-4 hover:text-jj-black">
                   {PHONE_DISPLAY}
@@ -229,25 +229,25 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name.replace("JJ Haircare ", "")}.`)}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex w-full md:w-auto items-center justify-center gap-2.5 rounded-full bg-jj-black hover:bg-jj-olive text-white font-medium px-10 py-5 uppercase tracking-widest text-sm transition-colors duration-300 shadow-lg"
+                className="inline-flex w-[100%] md:w-auto items-center justify-center gap-2.5 rounded-[9999px] bg-jj-black hover:bg-jj-olive text-white font-medium px-[0.625em] py-[0.312em] uppercase tracking-widest text-[0.875rem] transition-colors duration-300 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)]"
               >
                 <MessageCircle className="h-5 w-5" aria-hidden="true" />
                 Order on WhatsApp{product.price ? ` — ${product.price}` : ""}
               </a>
 
               <ul className="mt-6 mb-10 grid gap-3 sm:grid-cols-2">
-                <li className="flex items-center gap-3 rounded-2xl border border-jj-black/10 bg-white/60 px-4 py-3">
+                <li className="flex items-center gap-3 rounded-[16px] border-[1px] border-jj-black/10 bg-white/60 px-4 py-3">
                   <Bike className="h-5 w-5 shrink-0 text-jj-gold" aria-hidden="true" />
-                  <span className="text-sm text-jj-charcoal/80"><strong className="font-medium text-jj-black">Nairobi:</strong> delivered by rider</span>
+                  <span className="text-[0.875rem] text-jj-charcoal/80"><strong className="font-medium text-jj-black">Nairobi:</strong> delivered by rider</span>
                 </li>
-                <li className="flex items-center gap-3 rounded-2xl border border-jj-black/10 bg-white/60 px-4 py-3">
+                <li className="flex items-center gap-3 rounded-[16px] border-[1px] border-jj-black/10 bg-white/60 px-4 py-3">
                   <Package className="h-5 w-5 shrink-0 text-jj-gold" aria-hidden="true" />
-                  <span className="text-sm text-jj-charcoal/80"><strong className="font-medium text-jj-black">Other towns:</strong> sent by parcel</span>
+                  <span className="text-[0.875rem] text-jj-charcoal/80"><strong className="font-medium text-jj-black">Other towns:</strong> sent by parcel</span>
                 </li>
               </ul>
 
               {/* Collapsible details */}
-              <div className="border-t border-jj-black/10">
+              <div className="border-[1px] border-jj-black/10">
                 {[
                   {
                     title: "Key Benefits",
@@ -255,7 +255,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
                         {product.benefits.map((benefit, i) => (
                           <li key={i} className="flex items-start gap-3 text-jj-charcoal/80 font-light">
-                            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-jj-black text-white">
+                            <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-[9999px] bg-jj-black text-white">
                               <Check className="h-3 w-3" aria-hidden="true" />
                             </span>
                             {benefit}
@@ -270,7 +270,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                       <ol className="space-y-3 text-jj-charcoal/80 font-light leading-relaxed">
                         {product.howToUse.split("\n").filter(Boolean).map((step, i) => (
                           <li key={i} className="flex items-start gap-3">
-                            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-full border border-jj-black/30 font-mono text-xs text-jj-black">
+                            <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-[9999px] border-[1px] border-jj-black/30 font-mono text-[0.75rem] text-jj-black">
                               {i + 1}
                             </span>
                             <span>{step.replace(/^\s*\d+[.)]\s*/, "")}</span>
@@ -288,10 +288,10 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                     body: <p className="text-jj-charcoal/70 font-light leading-relaxed">{product.hairTypes}</p>,
                   },
                 ].map((item, i) => (
-                  <details key={item.title} open={i === 0} className="group border-b border-jj-black/10">
-                    <summary className="flex items-center justify-between cursor-pointer list-none py-5 min-h-[56px] font-serif text-xl text-jj-black [&::-webkit-details-marker]:hidden">
+                  <details key={item.title} open={i === 0} className="group border-[1px] border-jj-black/10">
+                    <summary className="flex items-center justify-between cursor-pointer list-none py-5 min-h-[56px] font-serif text-[1.25rem] text-jj-black [&::-webkit-details-marker]:hidden">
                       {item.title}
-                      <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-full border border-jj-black/15 text-xl text-jj-black leading-none transition-transform group-open:rotate-45">+</span>
+                      <span aria-hidden="true" className="flex h-8 w-8 items-center justify-center rounded-[9999px] border-[1px] border-jj-black/15 text-[1.25rem] text-jj-black leading-none transition-transform group-open:rotate-45">+</span>
                     </summary>
                     <div className="pb-6">{item.body}</div>
                   </details>
@@ -302,9 +302,9 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* Cross-Sell Section */}
-          <div className="mt-32 border-t border-jj-black/10 pt-24">
+          <div className="mt-32 border-[1px] border-jj-black/10 pt-24">
             <div className="text-center mb-16">
-              <h2 className="font-serif text-4xl md:text-5xl text-jj-black mb-4">Complete Your <span className="italic text-jj-nude">Routine</span></h2>
+              <h2 className="font-serif text-[2.25rem] md:text-[3rem] text-jj-black mb-4">Complete Your <span className="italic text-jj-nude">Routine</span></h2>
               <p className="text-jj-charcoal/70">More from JJ Haircare.</p>
             </div>
             

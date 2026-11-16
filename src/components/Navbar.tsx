@@ -81,7 +81,7 @@ export default function Navbar() {
         className={clsx(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isSolid
-            ? "bg-jj-black/95 backdrop-blur-md py-4 shadow-lg"
+            ? "bg-jj-black/95 backdrop-blur-md py-4 shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)]"
             : "bg-transparent py-6"
         )}
       >
@@ -91,10 +91,10 @@ export default function Navbar() {
             href="/"
             className={clsx("flex items-center gap-3 group", textColor)}
           >
-            <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-black border border-white/10 shadow-sm">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-[9999px] overflow-hidden flex-shrink-0 bg-jj-black border-[1px] border-white/10 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]">
               <Image src="/logo.png" alt="JJ Haircare Logo" fill className="object-cover" />
             </div>
-            <span className="font-serif text-2xl md:text-3xl lg:text-2xl xl:text-3xl tracking-wider">
+            <span className="font-serif text-[1.5rem] md:text-[1.875rem] lg:text-[1.5rem] xl:text-[1.875rem] tracking-wider">
               JJ Haircare
             </span>
           </Link>
@@ -107,7 +107,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     className={clsx(
-                      "text-xs xl:text-sm uppercase tracking-wider xl:tracking-widest whitespace-nowrap transition-colors",
+                      "text-[0.75rem] xl:text-[0.875rem] uppercase tracking-wider xl:tracking-widest whitespace-nowrap transition-colors",
                       isSolid ? "text-white/80 hover:text-jj-nude" : "text-jj-black/80 hover:text-jj-black"
                     )}
                   >
@@ -118,7 +118,7 @@ export default function Navbar() {
             </ul>
             <MagneticButton>
               <Link href="/products" className={clsx(
-                "font-medium px-5 xl:px-7 py-2.5 rounded-full uppercase tracking-wider text-xs xl:text-sm transition-all cursor-pointer block whitespace-nowrap",
+                "font-medium px-[0.312em] xl:px-[0.438em] py-[0.156em] rounded-[9999px] uppercase tracking-wider text-[0.75rem] xl:text-[0.875rem] transition-all cursor-pointer block whitespace-nowrap",
                 isSolid
                   ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
                   : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"
@@ -167,7 +167,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="font-serif text-4xl md:text-5xl text-jj-black hover:text-jj-olive transition-colors block"
+                    className="font-serif text-[2.25rem] md:text-[3rem] text-jj-black hover:text-jj-olive transition-colors block"
                   >
                     {link.name}
                   </Link>
@@ -180,7 +180,7 @@ export default function Navbar() {
                 transition={{ delay: 0.1 + navLinks.length * 0.05, duration: 0.4 }}
                 className="mt-6"
               >
-                <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="bg-jj-black text-white font-medium px-10 py-4 rounded-full uppercase tracking-wider text-lg w-full hover:bg-jj-olive transition-colors cursor-pointer text-center block">
+                <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="bg-jj-black text-white font-medium px-[0.625em] py-[0.25em] rounded-[9999px] uppercase tracking-wider text-[1.125rem] w-[100%] hover:bg-jj-olive transition-colors cursor-pointer text-center block">
                   Shop Now
                 </Link>
               </motion.li>

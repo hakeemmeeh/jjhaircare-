@@ -45,20 +45,20 @@ function TikTokIcon({ className }: { className?: string }) {
 }
 
 const socialBtn =
-  "inline-flex items-center justify-center gap-2.5 rounded-full border border-jj-black/70 px-7 py-4 min-h-[52px] text-sm font-medium tracking-wide text-jj-black hover:bg-jj-black hover:text-white transition-colors";
+  "inline-flex items-center justify-center gap-2.5 rounded-[9999px] border-[1px] border-jj-black/70 px-[0.438em] py-[0.25em] min-h-[52px] text-[0.875rem] font-medium tracking-wide text-jj-black hover:bg-jj-black hover:text-white transition-colors";
 
 /** Home strip: where to find JJ Haircare on social media, with four real videos to start with. */
 export default function SocialStrip() {
   return (
     <section aria-labelledby="social-heading" className="bg-gradient-nude pt-14 md:pt-20">
       <div className="px-6 md:px-12">
-        <div className="mx-auto max-w-6xl flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
+        <div className="mx-auto max-w-[90%] flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
           <div>
-            <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-3">Follow along</p>
-            <h2 id="social-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight">
+            <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-3">Follow along</p>
+            <h2 id="social-heading" className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight">
               Find us on <span className="italic text-jj-olive">Instagram and TikTok</span>
             </h2>
-            <p className="mt-4 max-w-xl text-jj-charcoal/80 font-light leading-relaxed">
+            <p className="mt-4 max-w-[45%] text-jj-charcoal/80 font-light leading-relaxed">
               Follow JJ Haircare for how-to videos, routines and new arrivals from Nairobi.
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function SocialStrip() {
             </a>
             <Link
               href="/contact#order"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] uppercase tracking-wider text-sm hover:bg-jj-olive transition-colors"
+              className="inline-flex items-center justify-center gap-2.5 rounded-[9999px] bg-jj-black text-white font-medium px-[0.5em] py-[0.25em] min-h-[52px] uppercase tracking-wider text-[0.875rem] hover:bg-jj-olive transition-colors"
             >
               Order now
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
@@ -104,7 +104,7 @@ export default function SocialStrip() {
 
                 <span
                   aria-hidden="true"
-                  className={`relative flex h-12 w-12 items-center justify-center rounded-full ${dark ? "bg-white/15" : "bg-jj-black/10"}`}
+                  className={`relative flex h-12 w-12 items-center justify-center rounded-[9999px] ${dark ? "bg-white/15" : "bg-jj-black/10"}`}
                 >
                   <Icon className="h-5 w-5" />
                 </span>
@@ -112,7 +112,7 @@ export default function SocialStrip() {
                 {/* play button: pops in at the centre on hover, always shown on touch screens */}
                 <span aria-hidden="true" className="relative flex flex-1 items-center justify-center py-6">
                   <span
-                    className={`flex h-16 w-16 items-center justify-center rounded-full shadow-xl transition-all duration-300 ease-out motion-reduce:transition-none lg:h-20 lg:w-20 lg:scale-50 lg:opacity-0 lg:group-hover:scale-100 lg:group-hover:opacity-100 lg:group-focus-visible:scale-100 lg:group-focus-visible:opacity-100 ${
+                    className={`flex h-16 w-16 items-center justify-center rounded-[9999px] shadow-[0_20px_25px_-5px_rgba(0,0,0,0.1),0_8px_10px_-6px_rgba(0,0,0,0.1)] transition-all duration-300 ease-out motion-reduce:transition-none lg:h-20 lg:w-20 lg:scale-50 lg:opacity-0 lg:group-hover:scale-100 lg:group-hover:opacity-100 lg:group-focus-visible:scale-100 lg:group-focus-visible:opacity-100 ${
                       dark ? "bg-white text-jj-black" : "bg-jj-black text-white"
                     }`}
                   >
@@ -121,9 +121,9 @@ export default function SocialStrip() {
                 </span>
 
                 <span aria-hidden="true" className="relative">
-                  <span className="block font-serif text-2xl leading-tight">{label}</span>
+                  <span className="block font-serif text-[1.5rem] leading-tight">{label}</span>
                   <span className={`mt-2 block font-light leading-relaxed sm:min-h-[3.25rem] ${dark ? "text-white/80" : "text-jj-charcoal/80"}`}>{text}</span>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider">
+                  <span className="mt-5 inline-flex items-center gap-2 text-[0.875rem] font-medium uppercase tracking-wider">
                     Watch on TikTok
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>

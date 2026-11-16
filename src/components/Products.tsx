@@ -104,21 +104,21 @@ export default function Products() {
   return (
     <section
       id="shop"
-      className="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-jj-ivory to-jj-black/10 z-20 relative border-t border-jj-black/10"
+      className="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-jj-ivory to-jj-black/10 z-20 relative border-[1px] border-jj-black/10"
     >
-      <div className="max-w-7xl mx-auto">
-      <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
+      <div className="max-w-[100%] mx-auto">
+      <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-[1px] border-jj-black/10 pb-8">
         <div>
-          <p className="font-mono text-xs uppercase tracking-[0.3em] text-jj-gold mb-4">The collection</p>
-          <h2 className="text-4xl md:text-6xl font-serif text-jj-black mb-4 leading-tight">
+          <p className="font-mono text-[0.75rem] uppercase tracking-[0.3em] text-jj-gold mb-4">The collection</p>
+          <h2 className="text-[2.25rem] md:text-[3.75rem] font-serif text-jj-black mb-4 leading-tight">
             Shop natural hair products
           </h2>
-          <p className="font-sans text-jj-black/70 md:text-xl max-w-xl">
+          <p className="font-sans text-jj-black/70 md:text-[1.25rem] max-w-[45%]">
             Herbal hair oil, hair butters, a scalp detox mask and hair mist. From KES 1,000.
           </p>
         </div>
         <MagneticButton>
-          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-gold px-8 py-4 text-white hover:bg-transparent hover:text-jj-black rounded-full font-serif transition-colors text-center inline-block cursor-pointer self-start md:self-auto shadow-lg">
+          <Link href="/products" className="bg-jj-olive border-[1px] border-jj-olive hover:border-jj-gold px-[0.5em] py-[0.25em] text-white hover:bg-transparent hover:text-jj-black rounded-[9999px] font-serif transition-colors text-center inline-block cursor-pointer self-start md:self-auto shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)]">
             View All Products
           </Link>
         </MagneticButton>
@@ -129,9 +129,9 @@ export default function Products() {
           <div
             key={product.name}
             id={`product-${product.slug}`}
-            className={`w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] mt-2 lg:mt-4 scroll-mt-28 rounded-[2rem] transition-[box-shadow,ring] duration-300 ${
+            className={`w-[100%] sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] mt-2 lg:mt-4 scroll-mt-28 rounded-[32px] transition-[box-shadow,ring] duration-300 ${
               highlightedSlug === product.slug
-                ? "ring-2 ring-jj-gold ring-offset-2 ring-offset-jj-ivory shadow-lg"
+                ? "ring-2 ring-jj-gold ring-offset-2 ring-offset-jj-ivory shadow-[0_10px_15px_-3px_rgba(0,0,0,0.1),0_4px_6px_-4px_rgba(0,0,0,0.1)]"
                 : ""
             }`}
           >

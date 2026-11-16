@@ -34,7 +34,7 @@ export default function ProductGallery({
   };
 
   if (!many) {
-    return <ZoomImage src={images[0]} alt={alt} priority className={`${aspect} rounded-sm bg-jj-black/5`} />;
+    return <ZoomImage src={images[0]} alt={alt} priority className={`${aspect} rounded-[2px] bg-jj-black/5`} />;
   }
 
   return (
@@ -46,10 +46,10 @@ export default function ProductGallery({
           tabIndex={0}
           role="region"
           aria-label="Product images"
-          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-sm [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth rounded-[2px] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
         >
           {images.map((src, i) => (
-            <div key={src} className="min-w-full snap-center">
+            <div key={src} className="min-w-[100%] snap-center">
               <ZoomImage src={src} alt={`${alt} — photo ${i + 1}`} priority={i === 0} className={`${aspect} bg-jj-black/5`} />
             </div>
           ))}
@@ -59,7 +59,7 @@ export default function ProductGallery({
           type="button"
           onClick={() => goTo(index - 1)}
           aria-label="Previous photo"
-          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 text-jj-black shadow flex items-center justify-center hover:bg-white cursor-pointer"
+          className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-[9999px] bg-white/85 text-jj-black shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex items-center justify-center hover:bg-white cursor-pointer"
         >
           <ChevronLeft className="w-5 h-5" />
         </button>
@@ -67,7 +67,7 @@ export default function ProductGallery({
           type="button"
           onClick={() => goTo(index + 1)}
           aria-label="Next photo"
-          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 text-jj-black shadow flex items-center justify-center hover:bg-white cursor-pointer"
+          className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-[9999px] bg-white/85 text-jj-black shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex items-center justify-center hover:bg-white cursor-pointer"
         >
           <ChevronRight className="w-5 h-5" />
         </button>
@@ -76,7 +76,7 @@ export default function ProductGallery({
           {images.map((_, i) => (
             <span
               key={i}
-              className={`h-1.5 rounded-full transition-all ${i === index ? "w-6 bg-white" : "w-1.5 bg-white/60"}`}
+              className={`h-1.5 rounded-[9999px] transition-all ${i === index ? "w-6 bg-white" : "w-1.5 bg-white/60"}`}
             />
           ))}
         </div>
@@ -89,7 +89,7 @@ export default function ProductGallery({
             type="button"
             onClick={() => goTo(i)}
             aria-label={`Show photo ${i + 1} of ${images.length}`}
-            className={`relative aspect-square overflow-hidden rounded-sm bg-jj-black/5 border-2 transition-colors cursor-pointer ${
+            className={`relative aspect-square overflow-hidden rounded-[2px] bg-jj-black/5 border-[2px] transition-colors cursor-pointer ${
               i === index ? "border-jj-gold" : "border-transparent hover:border-jj-black/20"
             }`}
           >

@@ -182,11 +182,11 @@ export const CircularTestimonials = ({
   };
 
   return (
-    <div className="w-full px-4 py-8 md:px-8">
+    <div className="w-[100%] px-4 py-8 md:px-8">
       <div className="grid gap-10 md:gap-20 md:grid-cols-2">
         {/* Images */}
         <div
-          className="relative w-full h-80 md:h-96"
+          className="relative w-[100%] h-80 md:h-96"
           style={{ perspective: "1000px" }}
           ref={imageContainerRef}
         >
@@ -197,7 +197,7 @@ export const CircularTestimonials = ({
               alt={testimonial.name}
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
-              className="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
+              className="absolute inset-0 w-[100%] h-full object-cover rounded-[24px] shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               data-index={index}
               style={getImageStyle(index)}
             />
@@ -216,7 +216,7 @@ export const CircularTestimonials = ({
               transition={{ duration: 0.3, ease: "easeInOut" }}
             >
               <motion.h2
-                className="text-3xl md:text-4xl font-medium mb-1"
+                className="text-[1.875rem] md:text-[2.25rem] font-medium mb-1"
                 style={{ color: colorName, fontSize: fontSizeName }}
               >
                 {activeTestimonial.name}
@@ -263,7 +263,7 @@ export const CircularTestimonials = ({
 
           <div className="flex gap-6 pt-12 md:pt-0">
             <button
-              className="w-11 h-11 rounded-full flex items-center justify-center cursor-pointer border-none transition-colors duration-300"
+              className="w-11 h-11 rounded-[9999px] flex items-center justify-center cursor-pointer border-none transition-colors duration-300"
               onClick={handlePrev}
               style={{
                 backgroundColor: hoverPrev ? colorArrowHoverBg : colorArrowBg,
@@ -275,7 +275,7 @@ export const CircularTestimonials = ({
               <ArrowLeft size={20} color={colorArrowFg} />
             </button>
             <button
-              className="w-11 h-11 rounded-full flex items-center justify-center cursor-pointer border-none transition-colors duration-300"
+              className="w-11 h-11 rounded-[9999px] flex items-center justify-center cursor-pointer border-none transition-colors duration-300"
               onClick={handleNext}
               style={{
                 backgroundColor: hoverNext ? colorArrowHoverBg : colorArrowBg,

@@ -16,7 +16,7 @@ export default function ProductCard({
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[28px] bg-jj-black shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] transition-shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] duration-500 cursor-pointer"
     >
       {/* Full-bleed image */}
       <div className="relative aspect-square overflow-hidden">
@@ -42,16 +42,16 @@ export default function ProductCard({
         <div className="absolute inset-0 bg-jj-black/55" />
 
         <div className="relative flex items-start justify-between gap-3">
-          <h3 className="font-sans text-xl font-semibold text-white leading-tight">{product.name}</h3>
+          <h3 className="font-sans text-[1.25rem] font-semibold text-white leading-tight">{product.name}</h3>
           {product.price && (
-            <span className="shrink-0 rounded-full border border-jj-gold/60 px-3 py-1 font-mono text-xs text-jj-gold">
+            <span className="shrink-0 rounded-[9999px] border-[1px] border-jj-gold/60 px-3 py-1 font-mono text-[0.75rem] text-jj-gold">
               {product.price}
             </span>
           )}
         </div>
-        <p className="relative mt-3 text-sm leading-relaxed text-white/70 line-clamp-2">{product.description}</p>
+        <p className="relative mt-3 text-[0.875rem] leading-relaxed text-white/70 line-clamp-2">{product.description}</p>
 
-        <span className="absolute bottom-5 left-5 right-5 rounded-xl bg-white py-3.5 text-center font-sans text-sm font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
+        <span className="absolute bottom-5 left-5 right-5 rounded-[12px] bg-white py-3.5 text-center font-sans text-[0.875rem] font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
           View Details
         </span>
       </div>
