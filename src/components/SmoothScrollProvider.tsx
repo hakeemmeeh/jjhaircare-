@@ -17,10 +17,6 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
     return () => mediaQuery.removeEventListener("change", updateInputMode);
   }, []);
 
-  if (prefersReducedMotion) {
-    return <>{children}</>;
-  }
-
   const options = useMemo(
     () =>
       isCoarseOrMobile
@@ -42,6 +38,8 @@ export default function SmoothScrollProvider({ children }: { children: ReactNode
           },
     [isCoarseOrMobile]
   );
+
+  if (prefersReducedMotion) return <>{children}</>;
 
   return (
     <ReactLenis root options={options}>

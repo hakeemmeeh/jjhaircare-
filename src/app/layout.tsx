@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
 import { Inter, Cormorant_Garamond } from "next/font/google";
 import BackToTop from "@/components/BackToTop";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
+import { SITE_URL, SITE_NAME, HOME_TITLE, HOME_SHARE_DESCRIPTION } from "@/lib/seo";
+import { SOCIALS, PHONE_E164, CONTACT_EMAIL } from "@/data/site-config";
 import "./globals.css";
 
 const inter = Inter({
@@ -22,30 +23,27 @@ const organizationJsonLd = {
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://jjhaircare.vercel.app/#website",
-      name: "JJ Haircare",
+      "@id": `${SITE_URL}/#website`,
+      name: SITE_NAME,
       alternateName: ["JJHairCare", "JJ Herbal Haircare"],
-      url: "https://jjhaircare.vercel.app/",
+      url: `${SITE_URL}/`,
       inLanguage: "en-KE",
     },
     {
       "@type": "Organization",
-      "@id": "https://jjhaircare.vercel.app/#organization",
-      name: "JJ Haircare",
-      url: "https://jjhaircare.vercel.app/",
-      logo: "https://jjhaircare.vercel.app/logo.png",
+      "@id": `${SITE_URL}/#organization`,
+      name: SITE_NAME,
+      url: `${SITE_URL}/`,
+      logo: `${SITE_URL}/logo.png`,
       description: "Natural, plant-based hair care made in Nairobi, Kenya.",
-      email: "jjherbal744@gmail.com",
-      telephone: "+254743600499",
+      email: CONTACT_EMAIL,
+      telephone: PHONE_E164,
       address: { "@type": "PostalAddress", addressLocality: "Nairobi", addressCountry: "KE" },
       areaServed: [
         { "@type": "City", name: "Nairobi" },
         { "@type": "Country", name: "Kenya" },
       ],
-      sameAs: [
-        "https://www.instagram.com/jj_haircareke",
-        "https://www.tiktok.com/@jj_herbal_haircare",
-      ],
+      sameAs: [SOCIALS.instagram, SOCIALS.tiktok],
     },
   ],
 };
@@ -53,9 +51,9 @@ const organizationJsonLd = {
 export const viewport = { themeColor: '#0A0A0A' };
 
 export const metadata = {
-  metadataBase: new URL('https://jjhaircare.vercel.app'),
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: 'Natural Hair Care in Nairobi, Kenya | JJ Haircare',
+    default: HOME_TITLE,
     template: '%s | JJ Haircare',
   },
   description: 'Natural hair care from Nairobi — Herbal Hair Oil, Scalp Detox Mask, Hibiscus and Moringa Hair Butter, and Hair Mist. Order on WhatsApp.',
@@ -63,9 +61,9 @@ export const metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_KE',
-    siteName: 'JJ Haircare',
-    title: 'Natural Hair Care in Nairobi, Kenya | JJ Haircare',
-    description: 'Herbal hair oil, hair butters, scalp detox mask and hair mist, made in Nairobi. Order on WhatsApp or call 0743 600 499.',
+    siteName: SITE_NAME,
+    title: HOME_TITLE,
+    description: HOME_SHARE_DESCRIPTION,
     images: [
       {
         url: '/images/og-jjhaircare.jpg',
@@ -77,8 +75,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Natural Hair Care in Nairobi, Kenya | JJ Haircare',
-    description: 'Herbal hair oil, hair butters, scalp detox mask and hair mist, made in Nairobi. Order on WhatsApp or call 0743 600 499.',
+    title: HOME_TITLE,
+    description: HOME_SHARE_DESCRIPTION,
     images: ['/images/og-jjhaircare.jpg'],
   },
   icons: {

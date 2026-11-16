@@ -15,6 +15,19 @@ Where Nature Meets Beauty. A luxurious, natural hair care brand website built wi
 - [Lucide React](https://lucide.dev/) (Icons)
 - [Embla Carousel](https://www.embla-carousel.com/)
 
+## Ordering
+Orders happen on WhatsApp. `OrderWizard` and the order buttons build a pre-filled message and open `https://wa.me/<number>` via `whatsappOrderUrl()`.
+
+## Site Configuration
+- `src/data/site-config.ts`: WhatsApp number, phone, email and social links. Change contact details here only.
+- `src/data/products.ts`: the product catalogue (name, slug, price, image).
+- `src/data/faqs.ts`: FAQ content, also used for FAQ structured data.
+
+## SEO
+- `src/lib/seo.ts`: `SITE_URL`, shared titles, the default Open Graph image, and the `pageMeta()` helper for per-page metadata.
+- Structured data (JSON-LD) covers the organization, product list, FAQ, breadcrumbs and individual products.
+- `sitemap.ts`, `robots.ts` and `manifest.ts` live in `src/app`.
+
 ## Getting Started
 
 First, install the dependencies:

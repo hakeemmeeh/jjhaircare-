@@ -2,7 +2,7 @@
 
 import { Instagram } from "lucide-react";
 import Link from "next/link";
-import { whatsappOrderUrl } from "@/data/site-config";
+import { whatsappOrderUrl, SOCIALS } from "@/data/site-config";
 import Image from "next/image";
 
 function TikTokIcon({ className }: { className?: string }) {
@@ -33,10 +33,10 @@ export default function Footer() {
               &ldquo;Where Nature Meets Beauty&rdquo;
             </p>
             <div className="flex gap-4">
-              <a href="https://www.instagram.com/jj_haircareke" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
+              <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href="https://www.tiktok.com/@jj_herbal_haircare" target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
+              <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
                 <TikTokIcon className="w-4 h-4" />
               </a>
             </div>

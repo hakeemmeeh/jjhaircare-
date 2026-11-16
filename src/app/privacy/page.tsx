@@ -18,12 +18,12 @@ export default function PrivacyPage() {
           <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-8">Privacy <span className="italic text-jj-nude">Policy</span></h1>
           
           <div className="prose prose-lg text-jj-charcoal/80 font-sans prose-headings:font-serif prose-headings:text-jj-black prose-a:text-jj-nude hover:prose-a:text-jj-gold transition-colors">
-            <p className="text-sm tracking-widest uppercase font-mono text-jj-gold mb-12">Last updated: March 2026</p>
+            <p className="text-sm tracking-widest uppercase font-mono text-jj-gold mb-12">Last updated: November 2026</p>
 
-            <p>JJ Haircare collects your name, email, shipping address, and payment info when you place an order. We also collect basic browsing data (browser type, pages visited) via cookies and analytics.</p>
-            <p>We use this data to fulfill orders, send shipping updates, and improve our site. Marketing emails are only sent if you subscribe — unsubscribe anytime.</p>
-            <p>We never sell your data. We share it only with payment processors, shipping providers, and analytics tools (anonymized) as needed to operate.</p>
-            <p>You can request access, correction, or deletion of your data at any time by emailing <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a>. We use SSL encryption to protect your information. This policy may be updated — changes will be posted here.</p>
+            <p>This website does not currently provide online checkout or take payment details. If you contact JJ Haircare by email or WhatsApp to ask a question or place an order, you may choose to share contact, delivery, and order details so we can respond and arrange your request.</p>
+            <p>Please avoid sending payment card details by email or WhatsApp. Any delivery or payment arrangements are discussed directly with you when you place an order.</p>
+            <p>This site does not currently use analytics tools or advertising cookies. Your browser may store necessary technical data to load and secure the site.</p>
+            <p>You can request access, correction, or deletion of information you have shared with us by emailing <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a>. This policy may be updated — changes will be posted here.</p>
           </div>
         </div>
       </div>

@@ -1,8 +1,8 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Leaf } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
@@ -21,6 +21,8 @@ const navLinks = [
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const menuToggleRef = useRef<HTMLButtonElement>(null);
+  const mobileMenuRef = useRef<HTMLDivElement>(null);
   const pathname = usePathname();
   const isHomePage = pathname === "/";
 
@@ -34,12 +36,44 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+
+    const menu = mobileMenuRef.current;
+    const focusable = menu?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])');
+    focusable?.[0]?.focus();
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setMobileMenuOpen(false);
+        menuToggleRef.current?.focus();
+      }
+      if (event.key !== "Tab" || !focusable?.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [mobileMenuOpen]);
+
   // On non-home pages, the navbar is always solid unless we want it transparent over a dark section.
   // But since our subpages have varied light/dark backgrounds starting at the top,
   // making it always solid on non-home pages is safer for visibility.
   const isSolid = !isHomePage || isScrolled;
   const textColor = isSolid ? "text-white" : "text-jj-black";
-  const hoverColor = isSolid ? "hover:text-jj-nude" : "hover:text-jj-olive";
 
   return (
     <>
@@ -96,9 +130,12 @@ export default function Navbar() {
 
           {/* Mobile Menu Toggle */}
           <button
+            ref={menuToggleRef}
             className={clsx("lg:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-black" : textColor)}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle Menu"
+            aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
+            aria-expanded={mobileMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -114,6 +151,9 @@ export default function Navbar() {
             exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
             className="fixed inset-0 z-[55] bg-gradient-nude flex flex-col justify-center items-center"
+            id="mobile-navigation"
+            ref={mobileMenuRef}
+            aria-label="Mobile navigation"
           >
             <ul className="flex flex-col items-center gap-6 text-center">
               {navLinks.map((link, i) => (

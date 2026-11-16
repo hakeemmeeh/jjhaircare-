@@ -29,12 +29,10 @@ export default function Products() {
         : undefined;
     const goal = goalParam ?? goalFromUrl;
     if (!goal) {
-      setHighlightedSlug(null);
       return;
     }
     const slug = GOAL_TO_PRODUCT_SLUG[goal];
     if (!slug) {
-      setHighlightedSlug(null);
       return;
     }
 

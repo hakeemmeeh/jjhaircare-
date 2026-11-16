@@ -9,13 +9,13 @@ import JournalSnippet from "@/components/JournalSnippet";
 import Products from "@/components/Products";
 import Footer from "@/components/Footer";
 import { PRODUCTS } from "@/data/products";
-import { SITE_URL } from "@/lib/seo";
+import { SITE_URL, SITE_NAME, HOME_TITLE, HOME_SHARE_DESCRIPTION, OG_IMAGE } from "@/lib/seo";
 import DeliveryStrip from "@/components/DeliveryStrip";
 import SocialStrip from "@/components/SocialStrip";
 import FaqTeaser from "@/components/FaqTeaser";
 
 export const metadata = {
-  title: { absolute: "Natural Hair Care in Nairobi, Kenya | JJ Haircare" },
+  title: { absolute: HOME_TITLE },
   description:
     "Natural hair care made in Nairobi, Kenya: herbal hair oil, hair butters, scalp detox mask and hair mist. Order on WhatsApp or call 0743 600 499.",
   alternates: { canonical: "/" },
@@ -23,11 +23,10 @@ export const metadata = {
     type: "website",
     url: "/",
     locale: "en_KE",
-    siteName: "JJ Haircare",
-    title: "Natural Hair Care in Nairobi, Kenya | JJ Haircare",
-    description:
-      "Herbal hair oil, hair butters, scalp detox mask and hair mist, made in Nairobi. Order on WhatsApp or call 0743 600 499.",
-    images: [{ url: "/images/og-jjhaircare.jpg", width: 1200, height: 630, alt: "JJ Haircare — natural hair care made in Nairobi" }],
+    siteName: SITE_NAME,
+    title: HOME_TITLE,
+    description: HOME_SHARE_DESCRIPTION,
+    images: [OG_IMAGE],
   },
 };
 

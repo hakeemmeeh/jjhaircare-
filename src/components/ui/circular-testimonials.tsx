@@ -8,6 +8,7 @@ import React, {
 } from "react";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 interface Testimonial {
   quote: string;
@@ -190,10 +191,12 @@ export const CircularTestimonials = ({
           ref={imageContainerRef}
         >
           {testimonials.map((testimonial, index) => (
-            <img
+            <Image
               key={testimonial.src}
               src={testimonial.src}
               alt={testimonial.name}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-[0_10px_30px_rgba(0,0,0,0.2)]"
               data-index={index}
               style={getImageStyle(index)}

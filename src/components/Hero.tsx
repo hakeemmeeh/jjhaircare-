@@ -36,6 +36,11 @@ export default function Hero() {
 
   const bgTranslateX = useTransform(smoothX, [-0.5, 0.5], ["30px", "-30px"]);
   const bgTranslateY = useTransform(smoothY, [-0.5, 0.5], ["30px", "-30px"]);
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const glareX = useTransform(smoothX, [-0.5, 0.5], [0, 100]);
+  const glareY = useTransform(smoothY, [-0.5, 0.5], [0, 100]);
+  const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.4) 0%, transparent 50%)`;
 
   const { scrollY } = useScroll();
   const parallaxYBg = useTransform(scrollY, [0, 1000], [0, 200]);
@@ -152,8 +157,8 @@ export default function Hero() {
           <motion.div 
             className="relative w-full max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
             style={prefersReducedMotion ? {} : {
-              rotateX: useTransform(smoothY, [-0.5, 0.5], ["10deg", "-10deg"]),
-              rotateY: useTransform(smoothX, [-0.5, 0.5], ["-10deg", "10deg"]),
+              rotateX,
+              rotateY,
               transformStyle: "preserve-3d"
             }}
           >
@@ -161,11 +166,7 @@ export default function Hero() {
             <motion.div
               className="absolute inset-0 z-20 pointer-events-none mix-blend-overlay transition-opacity duration-300"
               style={prefersReducedMotion ? {} : {
-                background: useMotionTemplate`radial-gradient(
-                  circle at ${useTransform(smoothX, [-0.5, 0.5], [0, 100])}% ${useTransform(smoothY, [-0.5, 0.5], [0, 100])}%,
-                  rgba(255,255,255,0.4) 0%,
-                  transparent 50%
-                )`
+                background: glareBackground
               }}
             />
             <Link href={SHOWCASE[showcaseIndex].href} className="absolute inset-0 block" aria-label={`Shop ${SHOWCASE[showcaseIndex].name}`}>

@@ -18,7 +18,7 @@ export default function ContactPage() {
           <div className="mb-16 md:mb-24 flex flex-col gap-6 text-left">
             <h1 className="text-5xl md:text-7xl font-serif text-jj-black"
             >
-              Let's <span className="italic text-jj-nude">Talk.</span>
+              Let&apos;s <span className="italic text-jj-nude">Talk.</span>
             </h1>
             <p className="font-sans text-jj-black/70 text-lg md:text-xl max-w-2xl"
             >

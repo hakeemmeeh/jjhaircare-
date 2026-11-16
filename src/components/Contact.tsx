@@ -3,6 +3,7 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { useState } from "react";
+import { SOCIALS, WHATSAPP_CHAT_URL } from "@/data/site-config";
 
 export default function Contact() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,13 +58,13 @@ export default function Contact() {
                       </div>
                       <div>
                         <p className="text-jj-nude text-sm uppercase tracking-widest mb-2">Social</p>
-                        <a href="#" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
+                        <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
                           @jjhaircare
                         </a>
                       </div>
                       <div>
                         <p className="text-jj-nude text-sm uppercase tracking-widest mb-2">Phone / WhatsApp</p>
-                        <a href="https://wa.me/254743600499" target="_blank" rel="noopener noreferrer" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
+                        <a href={WHATSAPP_CHAT_URL} target="_blank" rel="noopener noreferrer" className="text-white hover:text-jj-nude transition-colors text-lg font-light">
                           +254 743 600 499
                         </a>
                       </div>
@@ -71,26 +72,26 @@ export default function Contact() {
                   </div>
 
                   <div className="md:w-2/3">
-                    <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
+                    <form className="space-y-8" action="mailto:jjherbal744@gmail.com" method="get" encType="text/plain">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                          <label className="block text-white/60 text-sm uppercase tracking-wider mb-2">Name</label>
-                          <input type="text" className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors" />
+                          <label htmlFor="contact-name" className="block text-white/60 text-sm uppercase tracking-wider mb-2">Name</label>
+                          <input id="contact-name" name="name" type="text" autoComplete="name" required className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors" />
                         </div>
                         <div>
-                          <label className="block text-white/60 text-sm uppercase tracking-wider mb-2">Email</label>
-                          <input type="email" className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors" />
+                          <label htmlFor="contact-email" className="block text-white/60 text-sm uppercase tracking-wider mb-2">Email</label>
+                          <input id="contact-email" name="email" type="email" autoComplete="email" required className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors" />
                         </div>
                       </div>
                       
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div>
-                          <label className="block text-white/60 text-sm uppercase tracking-wider mb-2">Phone (Optional)</label>
-                          <input type="tel" className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors" />
+                          <label htmlFor="contact-phone" className="block text-white/60 text-sm uppercase tracking-wider mb-2">Phone (Optional)</label>
+                          <input id="contact-phone" name="phone" type="tel" autoComplete="tel" className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors" />
                         </div>
                         <div>
-                          <label className="block text-white/60 text-sm uppercase tracking-wider mb-2">Inquiry Type</label>
-                          <select className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors appearance-none">
+                          <label htmlFor="contact-inquiry" className="block text-white/60 text-sm uppercase tracking-wider mb-2">Inquiry Type</label>
+                          <select id="contact-inquiry" name="inquiry" className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors appearance-none">
                             <option value="support" className="bg-jj-black">Customer Support</option>
                             <option value="wholesale" className="bg-jj-black">Wholesale Inquiry</option>
                             <option value="collab" className="bg-jj-black">Collaboration</option>
@@ -99,12 +100,12 @@ export default function Contact() {
                       </div>
 
                       <div>
-                        <label className="block text-white/60 text-sm uppercase tracking-wider mb-2">Message</label>
-                        <textarea rows={4} className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors resize-none"></textarea>
+                        <label htmlFor="contact-message" className="block text-white/60 text-sm uppercase tracking-wider mb-2">Message</label>
+                        <textarea id="contact-message" name="message" rows={4} required className="w-full bg-transparent border-b border-white/20 pb-2 text-white focus:outline-none focus:border-jj-nude transition-colors resize-none"></textarea>
                       </div>
 
                       <button type="submit" className="bg-jj-nude hover:bg-jj-gold text-jj-black font-medium px-10 py-4 rounded-full uppercase tracking-widest text-sm transition-colors w-full md:w-auto">
-                        Send Message
+                        Open Email Draft
                       </button>
                     </form>
                   </div>

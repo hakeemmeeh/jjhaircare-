@@ -2,7 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Droplets, Heart, Instagram, Lightbulb, Play, PlayCircle } from "lucide-react";
 import { SOCIALS } from "@/data/site-config";
 
-const TIKTOK = "https://www.tiktok.com/@jj_herbal_haircare";
+const TIKTOK = SOCIALS.tiktok;
 
 /** What we post, each tile opening a real video on our TikTok. */
 const tiles = [

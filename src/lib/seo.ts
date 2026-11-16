@@ -1,5 +1,9 @@
 export const SITE_URL = "https://jjhaircare.vercel.app";
 export const SITE_NAME = "JJ Haircare";
+export const HOME_TITLE = "Natural Hair Care in Nairobi, Kenya | JJ Haircare";
+export const HOME_SHARE_DESCRIPTION =
+  "Herbal hair oil, hair butters, scalp detox mask and hair mist, made in Nairobi. Order on WhatsApp or call 0743 600 499.";
+
 const SUFFIX = ` | ${SITE_NAME}`;
 
 /** Drops the brand suffix (added by the root title template) conceptually: returns a title object
@@ -16,7 +20,7 @@ export function clip(text: string, max = 155): string {
   return cut.slice(0, cut.lastIndexOf(" ")).replace(/[,;:—-]+$/, "") + "…";
 }
 
-const OG_IMAGE = { url: "/images/og-jjhaircare.jpg", width: 1200, height: 630, alt: "JJ Haircare — natural hair care made in Nairobi" };
+export const OG_IMAGE = { url: "/images/og-jjhaircare.jpg", width: 1200, height: 630, alt: "JJ Haircare — natural hair care made in Nairobi" };
 
 /** Title, description, canonical and matching share preview (Open Graph + Twitter) for a static page. */
 export function pageMeta({ title, description, path }: { title: string; description: string; path: string }) {

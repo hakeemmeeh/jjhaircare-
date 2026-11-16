@@ -1,4 +1,6 @@
 
+import Image from "next/image";
+
 export default function JournalFull() {
   return (
     <section className="py-32 bg-gradient-nude relative">
@@ -17,10 +19,12 @@ export default function JournalFull() {
           </h1>
           
           <div className="max-w-3xl mx-auto aspect-[1672/941] relative rounded-sm overflow-hidden border border-jj-gold/30 shadow-lg mb-16">
-            <img 
+            <Image
               src="/images/about-banner-v3.jpg" 
               alt="The JJ Haircare collection" 
-              className="w-full h-full object-cover "
+              fill
+              sizes="(max-width: 768px) 100vw, 768px"
+              className="object-cover"
             />
           </div>
         </div>
@@ -28,10 +32,10 @@ export default function JournalFull() {
         <div className="mx-auto max-w-3xl text-xl md:text-2xl text-jj-charcoal/80 font-light leading-relaxed space-y-8"
         >
           <p className="first-letter:font-serif first-letter:text-7xl first-letter:font-bold first-letter:text-jj-black first-letter:float-left first-letter:mr-4 first-letter:mt-2">
-            Long before the bottles and jars you see today, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better. 
+            Long before the bottles and jars you see today, JJ Haircare was just a collection of raw shea butter, pure oils, and a deep desire for something better.
           </p>
           <p>
-            It started with frustration. Walking down store aisles, looking at shelves filled with products that promised moisture but delivered nothing but buildup and breakage. The ingredients lists were full of words we couldn't pronounce—sulfates, silicones, parabens—things that stripped our natural hair of its life and vitality.
+            It started with frustration. Walking down store aisles, looking at shelves filled with products that promised moisture but delivered nothing but buildup and breakage. The ingredients lists were full of words we couldn&apos;t pronounce—sulfates, silicones, parabens—things that stripped our natural hair of its life and vitality.
           </p>
           
           <h3 className="font-serif text-4xl md:text-5xl text-jj-black mt-20 mb-8">Taking Matters into Our Own Hands</h3>
@@ -40,12 +44,12 @@ export default function JournalFull() {
             We realized that if we wanted products that actually nourished our coils, curls, and locs, we had to make them ourselves. We started sourcing ethical, unrefined shea butter from Ghana, cold-pressed Jamaican Black Castor oil, and pure essential oils.
           </p>
           <p>
-            Our founder's kitchen became a laboratory. There were late nights spent melting butter, whisking oils, and testing ratios to find the perfect balance. We weren't just making hair care; we were crafting food for our crowns. 
+            Our founder&apos;s kitchen became a laboratory. There were late nights spent melting butter, whisking oils, and testing ratios to find the perfect balance. We weren&apos;t just making hair care; we were crafting food for our crowns.
           </p>
 
           <blockquote className="my-16 py-8 border-y border-jj-gold/20 text-center px-4 md:px-12">
             <span className="block font-serif text-3xl md:text-4xl text-jj-black italic leading-tight">
-              "We weren't just making hair care; we were crafting food for our crowns."
+              &ldquo;We weren&apos;t just making hair care; we were crafting food for our crowns.&rdquo;
             </span>
           </blockquote>
 

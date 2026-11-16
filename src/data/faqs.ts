@@ -6,8 +6,8 @@ export const faqs: Faq[] = [
     answer: "Our products are made for natural hair. Message us on WhatsApp and we'll recommend the right routine for your hair type and goals."
   },
   {
-    question: "Are your products natural, cruelty-free, and vegan?",
-    answer: "Our products are made with 100% natural ingredients. The full ingredient list is printed on every jar, bottle and tube — or message us and we'll send it to you."
+    question: "What ingredients are in your products?",
+    answer: "The full ingredient list is printed on every jar, bottle and tube. Message us on WhatsApp if you need the ingredient list before ordering or want help checking a specific ingredient."
   },
   {
     question: "How does delivery work?",

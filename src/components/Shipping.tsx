@@ -11,6 +11,10 @@ const regions = [
   "Middle East",
   "Australia",
 ];
+const DOTS = Array.from({ length: 12 }, (_, i) => ({
+  top: `${(i * 37 + 13) % 100}%`,
+  left: `${(i * 61 + 19) % 100}%`,
+}));
 
 export default function Shipping() {
   return (
@@ -28,7 +32,7 @@ export default function Shipping() {
           <div className="absolute inset-[40%] rounded-full border border-jj-nude/10 border-dashed" />
           
           {/* Animated Dots representing shipping locations */}
-          {[...Array(12)].map((_, i) => (
+          {DOTS.map((dot, i) => (
             <motion.div
               key={i}
               animate={{ 
@@ -42,8 +46,8 @@ export default function Shipping() {
               }}
               className="absolute w-2 h-2 bg-jj-gold rounded-full shadow-[0_0_10px_#B8964E]"
               style={{
-                top: `${Math.random() * 100}%`,
-                left: `${Math.random() * 100}%`,
+                top: dot.top,
+                left: dot.left,
               }}
             />
           ))}

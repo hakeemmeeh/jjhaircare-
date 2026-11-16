@@ -25,14 +25,14 @@ export default function ReturnsPage() {
             <h3 className="text-2xl mt-12 mb-6">How it Works</h3>
             <ol className="space-y-3 mb-8">
               <li>Email <a href="mailto:jjherbal744@gmail.com">jjherbal744@gmail.com</a> with your order number.</li>
-              <li>We'll reply within 24 hours with return instructions.</li>
+              <li>We&apos;ll reply within 24 hours with return instructions.</li>
               <li>Ship the item back (tracked). Refund processes within 5–7 business days of receipt.</li>
             </ol>
 
             <p>For exchanges, initiate a return and place a new order.</p>
 
             <h3 className="text-2xl mt-12 mb-6">Damaged Products</h3>
-            <p>Email us within 7 days with a photo — we'll replace it free, no return needed. Return shipping is the customer's responsibility unless the product arrived damaged or defective.</p>
+            <p>Email us within 7 days with a photo — we&apos;ll replace it free, no return needed. Return shipping is the customer&apos;s responsibility unless the product arrived damaged or defective.</p>
           </div>
         </div>
       </div>

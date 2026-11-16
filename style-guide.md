@@ -21,15 +21,15 @@ The color system relies on a luxurious, earthy, and natural palette customized i
 - `jj-olive`: `#7A8B6F` - Natural, botanical green used for special text accents (e.g., italicized keywords) and alternate buttons.
 
 **Gradients:**
-- `bg-gradient-nude`: A linear gradient `(135deg, jj-ivory 0%, jj-nude-pink 100%)`. Used for the Hero, Testimonials, Ingredients, and FAQ sections to provide a soft, luxurious background sweep.
+- `bg-gradient-nude`: A linear gradient `(135deg, jj-ivory 0%, jj-nude-pink 100%)`. Used for the Hero, Testimonials, Products, and FAQ sections to provide a soft, luxurious background sweep.
 
 ## 2. Typography
 
 The site uses a dual-font system, leveraging Google Fonts configured via CSS variables.
 
 **Font Families:**
-- **Serif** (`var(--font-playfair)`): Playfair Display. Used exclusively for headings, brand name, and pull-quotes to convey luxury and elegance.
-- **Sans-Serif** (`var(--font-inter)`): Inter. Used for body copy, buttons, roles, and functional UI text for maximum readability and a clean, modern aesthetic.
+- **Serif** (`var(--font-display)`, exposed as `--font-serif`): Cormorant Garamond. Used for headings, brand name, and pull-quotes.
+- **Sans-Serif** (`var(--font-inter)`, exposed as `--font-sans`): Inter. Used for body copy, buttons, roles, and functional UI text for maximum readability and a clean, modern aesthetic.
 
 **Custom Typography Utilities:**
 Defined in `globals.css` to ensure consistent scaling across devices:
@@ -46,11 +46,11 @@ Defined in `globals.css` to ensure consistent scaling across devices:
 ## 3. Cards & Container Patterns
 
 **"Glassmorphism" / Rounded Translucent Cards:**
-A core pattern for displaying items (Team, Products, Ingredients, Contact Form, FAQs) over gradients:
+A core pattern for displaying items (Team, Products, Contact Form, FAQs) over gradients:
 - **Base Classes:** `bg-white/70 backdrop-blur-md border border-jj-black/5 rounded-[2rem] p-6` (or `p-8` / `p-12`)
 - **Hover State (Link/Button Cards):** `hover:bg-white hover:-translate-y-2 hover:shadow-md transition-all duration-500`
 
-**Bento Box Grid (Ingredients):**
+**Bento Box Grid (editorial grids):**
 - Uses a CSS Grid layout with varying row and column spans to create dynamic, editorial layouts.
 - Grid base: `grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6 auto-rows-[400px] md:auto-rows-[450px]`
 - Items dynamically use classes like `md:col-span-2 md:row-span-2` for larger feature items.
@@ -95,7 +95,7 @@ A core interaction pattern to add a premium feel to images:
 - **Section Padding:** Typically `pt-32 pb-24` for standard content pages (like FAQ, Shipping) to clear the fixed navbar.
 - **Container Boundaries:** `container mx-auto px-6 md:px-12` or `max-w-7xl mx-auto` to constrain maximum width and provide healthy side margins on mobile.
 
-## 7. Luxury Animations & Transitions (Iteration 2)
+## 7. Animations & Transitions
 
 The website employs advanced, high-end interactions built with `framer-motion` and `lenis`:
 
@@ -108,10 +108,8 @@ The website employs advanced, high-end interactions built with `framer-motion` a
 - As the user scrolls, the current section remains `sticky`, and the next section slides up *over* it.
 - **Implementation:** `sticky top-0 z-[X]` on the base container, with subsequent sections using `relative z-[X+1] -mt-[100vh] rounded-t-[3rem] shadow-[0_-30px_50px_rgba(0,0,0,0.1)]`.
 
-**3. 3D Circular Rotating Gallery:**
-- The Desktop Collection section uses a massive `150vh` to `250vh` scroll container.
-- Maps `scrollYProgress` to a `rotateY` 3D transform (e.g., `[0, -135]`), creating a cylindrical spinning product showcase.
-- Items are positioned in 3D space using `transform: rotateY(Xdeg) translateZ(480px)` and `transformStyle: "preserve-3d"`.
+**3. Product presentation:**
+- Product sections use the current components in `src/components/Products.tsx` and `src/components/FeaturedProduct.tsx`. Keep this guide aligned with those components when layouts change.
 
 **4. Cinematic Image Unmasking:**
 - Uses the custom `<ImageReveal>` component.
