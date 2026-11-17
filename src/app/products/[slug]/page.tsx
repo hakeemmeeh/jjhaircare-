@@ -130,12 +130,13 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const lead = `${name}${product.price ? ` (${product.price})` : ""}, made in Nairobi. `;
   const tail = " Order on WhatsApp.";
   const description = lead + clip(product.description, 155 - lead.length - tail.length) + tail;
+  const ogImage = PRODUCTS.find((p) => p.slug === product.slug)?.ogImage ?? product.image;
   return {
     title: seoTitle(title),
     description,
     alternates: { canonical: `/products/${product.slug}` },
-    openGraph: { type: "website", url: `/products/${product.slug}`, siteName: "JJ Haircare", locale: "en_KE", title, description, images: [{ url: product.image, alt: name }] },
-    twitter: { card: "summary_large_image", title, description, images: [product.image] },
+    openGraph: { type: "website", url: `/products/${product.slug}`, siteName: "JJ Haircare", locale: "en_KE", title, description, images: [{ url: ogImage, width: 1200, height: 630, alt: name }] },
+    twitter: { card: "summary_large_image", title, description, images: [ogImage] },
   };
 }
 

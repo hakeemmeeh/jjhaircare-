@@ -1,34 +1,33 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Droplet, Sparkles, Sprout, Wind } from "lucide-react";
 
 const goals = [
   {
     title: "Deep hydration",
     line: "For thirsty strands that need lasting moisture.",
     href: "/products/hibiscus-hair-butter",
-    image: "/images/hibiscus-hair-butter-card-v2.jpg",
+    icon: Droplet,
   },
   {
     title: "Growth & strength",
     line: "Edges, length, and resilience without heaviness.",
     href: "/products/herbal-hair-oil",
-    image: "/images/herbal-oil-face-v5.jpg",
+    icon: Sprout,
   },
   {
     title: "Scalp balance",
     line: "Refresh the root—clarity without stripping.",
     href: "/products/scalp-detox-mask",
-    image: "/images/scalp-detox-face-v4.jpg",
+    icon: Wind,
   },
   {
     title: "Shine & definition",
     line: "Frizz down, brilliance up—lightweight finish.",
     href: "/products/hair-mist",
-    image: "/images/hair-mist-face-v6.jpg",
+    icon: Sparkles,
   },
 ];
 
@@ -55,57 +54,42 @@ export default function HairGoals() {
           </p>
         </div>
 
-        <div className="flex gap-4 overflow-x-auto pb-6 snap-x snap-mandatory -mx-6 px-[calc((100vw-min(80vw,340px))/2)] md:mx-0 md:px-0 md:pb-0 md:grid md:grid-cols-2 lg:grid-cols-4 md:overflow-visible hide-scroll">
-          {goals.map((goal, index) => (
-            <motion.div
-              key={goal.title}
-              initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-40px" }}
-              transition={{
-                duration: 0.5,
-                delay: prefersReducedMotion ? 0 : index * 0.06,
-                ease: [0.16, 1, 0.3, 1],
-              }}
-              className="w-[80vw] max-w-[340px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink"
-            >
-              <Link
-                href={goal.href}
-                className="group relative flex flex-col h-full overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          {goals.map((goal, index) => {
+            const Icon = goal.icon;
+            return (
+              <motion.div
+                key={goal.title}
+                initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-40px" }}
+                transition={{
+                  duration: 0.5,
+                  delay: prefersReducedMotion ? 0 : index * 0.06,
+                  ease: [0.16, 1, 0.3, 1],
+                }}
               >
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={goal.image}
-                    alt={goal.title}
-                    fill
-                    sizes="(max-width: 768px) 78vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                </div>
-                <div className="relative flex-1 overflow-hidden px-5 pt-5 pb-24">
-                  <Image
-                    src={goal.image}
-                    alt=""
-                    fill
-                    sizes="25vw"
-                    aria-hidden
-                    className="object-cover scale-150 blur-2xl opacity-70"
-                  />
-                  <div className="absolute inset-0 bg-jj-black/55" />
-                  <h3 className="relative font-sans text-xl font-semibold text-white leading-tight">
+                <Link
+                  href={goal.href}
+                  className="group flex h-full flex-col rounded-2xl border border-jj-black/10 bg-white/60 p-6 hover:border-jj-black/30 hover:bg-white hover:shadow-md transition-all duration-300"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-ivory text-jj-olive group-hover:bg-jj-black group-hover:text-jj-gold transition-colors duration-300">
+                    <Icon className="h-6 w-6" aria-hidden="true" />
+                  </span>
+                  <h3 className="mt-5 font-sans text-lg font-semibold text-jj-black leading-tight">
                     {goal.title}
                   </h3>
-                  <p className="relative mt-3 text-sm text-white/70 leading-relaxed line-clamp-2">
+                  <p className="mt-2 text-sm text-jj-charcoal/70 leading-relaxed">
                     {goal.line}
                   </p>
-                  <span className="absolute bottom-5 left-5 right-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-sm font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
+                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-jj-black group-hover:text-jj-olive transition-colors">
                     Shop
-                    <ArrowRight className="h-4 w-4" aria-hidden />
+                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                   </span>
-                </div>
-              </Link>
-            </motion.div>
-          ))}
+                </Link>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>

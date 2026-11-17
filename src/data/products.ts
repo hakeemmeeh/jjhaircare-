@@ -9,6 +9,8 @@ export type Product = {
   hoverImage?: string;
   /** How the card image fits its square frame. Defaults to "cover". Use "contain" for non-square art. */
   imageFit?: "cover" | "contain";
+  /** 1200x630 social share image. Falls back to `image` if unset. */
+  ogImage?: string;
   /** Corner badge, e.g. "Best seller", "New". */
   badge?: string;
   /** Average rating out of 5. */
@@ -24,6 +26,7 @@ export const PRODUCTS: Product[] = [
     price: "KES 1,000",
     description: "Nourish. Strengthen. Grow. A 100% natural herbal oil for scalp and strands.",
     image: "/images/herbal-hair-oil-ad.png",
+    ogImage: "/images/og-herbal-hair-oil.jpg",
     hoverImage: "/images/herbal-oil-face-v5.jpg",
     badge: "Best seller",
     rating: 4.9,
@@ -35,6 +38,7 @@ export const PRODUCTS: Product[] = [
     price: "KES 1,500",
     description: "A honey and neem scalp mask that detoxifies, hydrates and repairs.",
     image: "/images/scalp-detox-face-v4.jpg",
+    ogImage: "/images/og-scalp-detox-mask.jpg",
     hoverImage: "/images/scalp-detox-for-you-v5.jpg",
     badge: "New",
     rating: 4.8,
@@ -46,6 +50,7 @@ export const PRODUCTS: Product[] = [
     price: "KES 1,500",
     description: "Deep nourishment, lasting shine — with hibiscus extract, shea butter and aloe vera.",
     image: "/images/hibiscus-hair-butter-ad.png",
+    ogImage: "/images/og-hibiscus-hair-butter.jpg",
     hoverImage: "/images/hibiscus-hair-butter-card-v2.jpg",
     imageFit: "contain",
     badge: "Best seller",
@@ -58,6 +63,7 @@ export const PRODUCTS: Product[] = [
     price: "KES 1,500",
     description: "A rich, creamy moringa butter that deeply moisturises, strengthens and leaves hair soft.",
     image: "/images/moringa-hair-butter-ad.png",
+    ogImage: "/images/og-moringa-hair-butter.jpg",
     hoverImage: "/images/moringa-hair-butter-v2.jpg",
     rating: 4.7,
     reviewCount: 132,
@@ -68,6 +74,7 @@ export const PRODUCTS: Product[] = [
     price: "KES 1,500",
     description: "A lightweight everyday mist that refreshes, adds shine and tames frizz.",
     image: "/images/hair-mist-face-v6.jpg",
+    ogImage: "/images/og-hair-mist.jpg",
     hoverImage: "/images/hair-mist-sq-v6.jpg",
     badge: "New",
     rating: 4.8,

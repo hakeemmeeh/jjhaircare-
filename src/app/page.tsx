@@ -13,6 +13,7 @@ import { SITE_URL, SITE_NAME, HOME_TITLE, HOME_SHARE_DESCRIPTION, OG_IMAGE } fro
 import DeliveryStrip from "@/components/DeliveryStrip";
 import SocialStrip from "@/components/SocialStrip";
 import FaqTeaser from "@/components/FaqTeaser";
+import RoutineBundle from "@/components/RoutineBundle";
 
 export const metadata = {
   title: { absolute: HOME_TITLE },
@@ -79,6 +80,11 @@ export default function Home() {
         <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
           <Products />
         </Suspense>
+      </div>
+
+      {/* 4c. Bundle */}
+      <div className="relative z-[32] overflow-hidden bg-gradient-nude">
+        <RoutineBundle />
       </div>
 
       {/* 4b. Ordering and delivery */}
