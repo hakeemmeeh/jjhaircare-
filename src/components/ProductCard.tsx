@@ -3,14 +3,15 @@ import Image from "next/image";
 import type { Product } from "@/data/products";
 
 /**
- * Premium product card: full-bleed image on top, dark glass panel below with name, price and
- * description. The "View Details" button pops in on hover (always visible on touch screens).
+ * Premium product card: full-bleed image on top (swaps to a second photo on hover),
+ * dark glass panel below with badge, name, rating, price and description. The
+ * "View Details" button pops in on hover (always visible on touch screens).
  */
 export default function ProductCard({
   product,
   sizes = "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw",
 }: {
-  product: Pick<Product, "name" | "slug" | "description" | "price" | "image">;
+  product: Pick<Product, "name" | "slug" | "description" | "price" | "image" | "hoverImage" | "badge" | "rating" | "reviewCount">;
   sizes?: string;
 }) {
   return (
@@ -18,7 +19,7 @@ export default function ProductCard({
       href={`/products/${product.slug}`}
       className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
     >
-      {/* Full-bleed image */}
+      {/* Full-bleed image with hover swap */}
       <div className="relative aspect-square overflow-hidden">
         <Image
           src={product.image}
@@ -27,6 +28,23 @@ export default function ProductCard({
           sizes={sizes}
           className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
+        {product.hoverImage && (
+          <Image
+            src={product.hoverImage}
+            alt=""
+            fill
+            sizes={sizes}
+            aria-hidden
+            className="object-cover opacity-0 scale-105 transition-opacity duration-500 group-hover:opacity-100"
+          />
+        )}
+
+        {/* Corner badge */}
+        {product.badge && (
+          <span className="absolute left-4 top-4 z-10 rounded-full bg-jj-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-jj-black shadow-sm">
+            {product.badge}
+          </span>
+        )}
       </div>
 
       {/* Glass panel */}
@@ -49,6 +67,23 @@ export default function ProductCard({
             </span>
           )}
         </div>
+
+        {/* Rating */}
+        {product.rating != null && (
+          <div className="relative mt-2 flex items-center gap-1.5 text-sm">
+            <span className="text-jj-gold" aria-hidden>
+              ★
+            </span>
+            <span className="font-medium text-white">{product.rating.toFixed(1)}</span>
+            {product.reviewCount != null && (
+              <span className="text-white/60">({product.reviewCount})</span>
+            )}
+            <span className="sr-only">
+              Rated {product.rating} out of 5{product.reviewCount != null ? ` from ${product.reviewCount} reviews` : ""}
+            </span>
+          </div>
+        )}
+
         <p className="relative mt-3 text-sm leading-relaxed text-white/70 line-clamp-2">{product.description}</p>
 
         <span className="absolute bottom-5 left-5 right-5 rounded-xl bg-white py-3.5 text-center font-sans text-sm font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
