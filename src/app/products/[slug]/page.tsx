@@ -173,6 +173,8 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     ],
   };
 
+  const card = PRODUCTS.find((p) => p.slug === product.slug);
+
   return (
     <main className="bg-jj-ivory min-h-screen flex flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
@@ -182,7 +184,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       />
       <Navbar />
       
-      <div className="flex-1 pt-32 pb-24">
+      <div className="flex-1 pt-32 pb-24 lg:pb-24">
         <div className="container mx-auto px-6 md:px-12">
           
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
@@ -213,6 +215,14 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </div>
 
               <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-2">{product.name}</h1>
+              {card?.rating != null && (
+                <div className="flex items-center gap-2 mb-3 text-sm">
+                  <span className="text-jj-gold" aria-hidden>★</span>
+                  <span className="font-medium text-jj-black">{card.rating.toFixed(1)}</span>
+                  {card.reviewCount != null && <span className="text-jj-charcoal/60">({card.reviewCount} reviews)</span>}
+                  <span className="sr-only">Rated {card.rating} out of 5{card.reviewCount != null ? ` from ${card.reviewCount} reviews` : ""}</span>
+                </div>
+              )}
               <p className="text-xl md:text-2xl text-jj-olive font-medium mb-2">{product.price ?? "Message us for price"}</p>
               <p className="text-sm font-mono text-jj-gold uppercase tracking-widest mb-8">{product.size}</p>
               
@@ -321,6 +331,25 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       </div>
 
       <Footer />
+
+      {/* Sticky order bar (mobile only) */}
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-jj-black/10 bg-white/95 backdrop-blur px-4 py-3 lg:hidden">
+        <div className="flex items-center justify-between gap-3 max-w-3xl mx-auto">
+          <div className="min-w-0">
+            <p className="text-sm font-semibold text-jj-black truncate">{product.name.replace("JJ Haircare ", "")}</p>
+            <p className="text-xs text-jj-charcoal/70">{product.price ?? "Message us for price"}</p>
+          </div>
+          <a
+            href={whatsappOrderUrl(`Hi JJ Haircare, I'd like to order the ${product.name.replace("JJ Haircare ", "")}.`)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center justify-center gap-2 rounded-full bg-jj-black px-6 py-3 text-sm font-medium text-white"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden="true" />
+            Order
+          </a>
+        </div>
+      </div>
     </main>
   );
 }
