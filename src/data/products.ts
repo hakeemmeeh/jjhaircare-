@@ -34,8 +34,6 @@ export type Product = {
   hairTypes: string;
 };
 
-const ASK_US = "Message us on WhatsApp and we'll guide you to the right routine for your hair.";
-
 export const PRODUCTS: Product[] = [
   {
     name: "JJ Haircare Herbal Hair Oil",
@@ -53,9 +51,9 @@ export const PRODUCTS: Product[] = [
     rating: 4.9,
     reviewCount: 214,
     benefits: ["Nourishes hair", "Strengthens hair", "Promotes hair growth", "Reduces hair breakage"],
-    ingredients: "100% natural ingredients. The full ingredient list is printed on the bottle.",
+    ingredients: "A blend of natural herbal oils — including coconut, sunflower and castor oil — infused with herbs known to nourish the scalp and strengthen strands. 100% natural, no mineral oil or parabens. The full ingredient list is printed on the bottle.",
     howToUse: "Pour a small amount into your palm and work it through your scalp and hair.",
-    hairTypes: ASK_US,
+    hairTypes: "Good for natural, curly and coily hair (3A–4C). Especially helpful for low-porosity hair that needs lightweight moisture and for high-porosity hair that needs strengthening.",
   },
   {
     name: "JJ Haircare Scalp Detox Mask",
@@ -73,9 +71,9 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 156,
     benefits: ["Detoxifies the scalp", "Removes build-up", "Hydrates", "Helps repair dry, stressed hair", "Infused with honey and neem"],
-    ingredients: "Infused with honey and neem. The full ingredient list is printed on the tube.",
+    ingredients: "Honey and neem infused with natural clays and botanical extracts that draw out impurities, soothe the scalp and hydrate. No sulphates or synthetic fragrances. The full ingredient list is printed on the tube.",
     howToUse: "1. Apply to clean scalp and hair\n2. Massage gently and leave for 20–30 minutes\n3. Rinse thoroughly with lukewarm water\n4. Use 1–2 times a week for best results",
-    hairTypes: ASK_US,
+    hairTypes: "Good for all hair types, especially those with product build-up, dry or itchy scalp, or flakiness. Safe for colour-treated hair.",
   },
   {
     name: "JJ Haircare Hibiscus Hair Butter",
@@ -94,9 +92,9 @@ export const PRODUCTS: Product[] = [
     rating: 4.9,
     reviewCount: 189,
     benefits: ["Deep moisturization", "Adds natural shine", "Reduces breakage", "Strengthens hair"],
-    ingredients: "Made with hibiscus extract, shea butter, aloe vera and natural oils — 100% natural ingredients. The full list is printed on the jar.",
+    ingredients: "Hibiscus extract, shea butter, aloe vera and natural oils — 100% natural ingredients. Hibiscus is rich in amino acids and antioxidants that strengthen hair and add shine. The full list is printed on the jar.",
     howToUse: "Warm a small amount between your palms and work it through your hair, focusing on the lengths and ends.",
-    hairTypes: ASK_US,
+    hairTypes: "Good for dry, damaged or colour-treated hair (3A–4C). Ideal for thick, high-porosity hair that needs deep, long-lasting moisture. A little goes a long way.",
   },
   {
     name: "JJ Haircare Moringa Hair Butter",
@@ -113,9 +111,9 @@ export const PRODUCTS: Product[] = [
     rating: 4.7,
     reviewCount: 132,
     benefits: ["Deeply moisturises", "Strengthens hair", "Promotes hair growth", "Leaves hair soft and manageable", "Rich, creamy texture"],
-    ingredients: "100% natural ingredients. The full ingredient list is printed on the jar.",
+    ingredients: "Moringa oil, shea butter and natural oils — 100% natural. Moringa is rich in vitamins A and E, zinc and silica, which nourish the scalp and support healthy hair growth. The full list is printed on the jar.",
     howToUse: "1. Start with clean hair, damp or dry\n2. Warm a small amount between your palms\n3. Work it through your lengths and ends, section by section\n4. Style as usual — a little goes a long way",
-    hairTypes: ASK_US,
+    hairTypes: "Good for natural, curly and coily hair (3A–4C), especially fine to medium strands that need moisture without heavy buildup. Also great for protective styling and twist-outs.",
   },
   {
     name: "JJ Haircare Hair Mist",
@@ -133,9 +131,9 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     reviewCount: 98,
     benefits: ["Nourishes hair", "Adds natural shine", "Reduces frizz", "Strengthens hair", "Refreshes hair through the day"],
-    ingredients: "The full ingredient list is printed on the bottle.",
+    ingredients: "A lightweight blend of floral waters, aloe vera juice and natural oils in a sprayable formula. No silicones or drying alcohols. The full ingredient list is printed on the bottle.",
     howToUse: "1. Hold the bottle about 15–20 cm from your hair\n2. Mist evenly over damp or dry hair\n3. Smooth through with your hands or a brush\n4. Reapply through the day whenever hair needs a refresh",
-    hairTypes: ASK_US,
+    hairTypes: "Good for all hair types — especially curly and coily hair (3A–4C) that needs daily frizz control and shine between wash days. Safe for colour-treated and heat-styled hair.",
   },
 ];
 
