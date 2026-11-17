@@ -15,17 +15,17 @@ function TikTokIcon({ className }: { className?: string }) {
 
 export default function Footer() {
   return (
-    <footer className="bg-jj-black text-white pt-16 lg:pt-24 pb-8 border-[1px] border-white/10">
+    <footer className="bg-jj-black text-white pt-16 lg:pt-24 pb-8 border-t border-white/10">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-12 lg:gap-16 mb-16 lg:mb-20">
 
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-3 group mb-6">
-              <div className="relative w-12 h-12 rounded-[9999px] overflow-hidden flex-shrink-0 bg-jj-black border-[1px] border-white/10 shadow-[0_1px_2px_0_rgba(0,0,0,0.05)]">
+              <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-black border border-white/10 shadow-sm">
                 <Image src="/logo.png" alt="JJ Haircare Logo" fill className="object-cover" />
               </div>
-              <span className="font-serif text-[1.875rem] text-white tracking-wider">
+              <span className="font-serif text-3xl text-white tracking-wider">
                 JJ Haircare
               </span>
             </Link>
@@ -33,10 +33,10 @@ export default function Footer() {
               &ldquo;Where Nature Meets Beauty&rdquo;
             </p>
             <div className="flex gap-4">
-              <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-[9999px] border-[1px] border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
+              <a href={SOCIALS.instagram} target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
                 <Instagram className="w-4 h-4" />
               </a>
-              <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className="w-10 h-10 rounded-[9999px] border-[1px] border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
+              <a href={SOCIALS.tiktok} target="_blank" rel="noopener noreferrer" aria-label="Follow us on TikTok" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center hover:border-jj-nude hover:text-jj-nude transition-colors cursor-pointer">
                 <TikTokIcon className="w-4 h-4" />
               </a>
             </div>
@@ -44,7 +44,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h2 className="font-serif text-[1.25rem] mb-6 text-white">Explore</h2>
+            <h2 className="font-serif text-xl mb-6 text-white">Explore</h2>
             <ul className="space-y-4 text-white/70 font-light">
               <li><Link href="/" className="inline-block py-2 hover:text-jj-nude transition-colors">Home</Link></li>
               <li><Link href="/about" className="inline-block py-2 hover:text-jj-nude transition-colors">About Us</Link></li>
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Support Links */}
           <div>
-            <h2 className="font-serif text-[1.25rem] mb-6 text-white">Support</h2>
+            <h2 className="font-serif text-xl mb-6 text-white">Support</h2>
             <ul className="space-y-4 text-white/70 font-light">
               <li><Link href="/faq" className="inline-block py-2 hover:text-jj-nude transition-colors">FAQ</Link></li>
               <li><Link href="/shipping" className="inline-block py-2 hover:text-jj-nude transition-colors">Delivery</Link></li>
@@ -68,7 +68,7 @@ export default function Footer() {
 
           {/* Updates via WhatsApp */}
           <div className="col-span-2 lg:col-span-1">
-            <h2 className="font-serif text-[1.25rem] mb-6 text-white">Stay in the loop</h2>
+            <h2 className="font-serif text-xl mb-6 text-white">Stay in the loop</h2>
             <p className="text-white/70 font-light mb-6">
               Message us on WhatsApp to hear first about new products and offers.
             </p>
@@ -76,7 +76,7 @@ export default function Footer() {
               href={whatsappOrderUrl("Hi JJ Haircare, please add me to your updates.")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-jj-nude hover:bg-jj-gold text-jj-black font-medium py-4 px-8 rounded-[9999px] uppercase tracking-widest text-[0.875rem] transition-colors"
+              className="inline-block bg-jj-nude hover:bg-jj-gold text-jj-black font-medium py-4 px-8 rounded-full uppercase tracking-widest text-sm transition-colors"
             >
               Join on WhatsApp
             </a>
@@ -84,7 +84,7 @@ export default function Footer() {
 
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-[1px] border-white/10 text-white/65 text-[0.875rem] font-light">
+        <div className="flex flex-col md:flex-row justify-between items-center pt-8 border-t border-white/10 text-white/65 text-sm font-light">
           <p>© {new Date().getFullYear()} JJ Haircare. All rights reserved.</p>
           <div className="flex gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="inline-block py-2 hover:text-white transition-colors">Privacy Policy</Link>

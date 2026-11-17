@@ -12,10 +12,10 @@ const steps = [
 export default function DeliveryStrip() {
   return (
     <section aria-labelledby="delivery-heading" className="bg-jj-ivory px-6 md:px-12 py-14 md:py-20">
-      <div className="mx-auto max-w-[90%] grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16 items-center">
+      <div className="mx-auto max-w-6xl grid gap-10 lg:grid-cols-[1fr_1.3fr] lg:gap-16 items-center">
         <div>
-          <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold mb-4">Ordering &amp; delivery</p>
-          <h2 id="delivery-heading" className="font-serif text-[1.875rem] md:text-[2.25rem] text-jj-black leading-tight mb-5">
+          <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Ordering &amp; delivery</p>
+          <h2 id="delivery-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight mb-5">
             Order on WhatsApp. <span className="italic text-jj-olive">We bring it to you.</span>
           </h2>
           <ul className="space-y-3 text-jj-charcoal/80 font-light mb-8">
@@ -33,12 +33,12 @@ export default function DeliveryStrip() {
               href={whatsappOrderUrl("Hi JJ Haircare, I'd like to place an order. My location is: ")}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-[0.5em] py-[0.25em] min-h-[52px] rounded-[9999px] uppercase tracking-wider text-[0.875rem] whitespace-nowrap hover:bg-jj-olive transition-colors"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors"
             >
               <MessageCircle className="w-5 h-5" aria-hidden="true" />
               Order on WhatsApp
             </a>
-            <Link href="/shipping" className="py-3 text-[0.875rem] uppercase tracking-widest text-jj-black underline underline-offset-8">
+            <Link href="/shipping" className="py-3 text-sm uppercase tracking-widest text-jj-black underline underline-offset-8">
               Delivery details
             </Link>
           </div>
@@ -47,8 +47,8 @@ export default function DeliveryStrip() {
         <ol className="grid sm:grid-cols-3 gap-6">
           {steps.map((s) => (
             <li key={s.n} className="border-t-2 border-jj-gold pt-5">
-              <span className="font-mono text-[0.875rem] text-jj-gold">{s.n}</span>
-              <h3 className="font-serif text-[1.25rem] text-jj-black mt-2 mb-2">{s.title}</h3>
+              <span className="font-mono text-sm text-jj-gold">{s.n}</span>
+              <h3 className="font-serif text-xl text-jj-black mt-2 mb-2">{s.title}</h3>
               <p className="text-jj-charcoal/80 font-light leading-relaxed">{s.text}</p>
             </li>
           ))}

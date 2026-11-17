@@ -44,12 +44,12 @@ const productListJsonLd = {
 
 export default function Home() {
   return (
-    <main className="bg-jj-ivory min-h-[100vw] relative">
+    <main className="bg-jj-ivory min-h-screen relative">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productListJsonLd) }} />
       <Navbar />
       
       {/* 1. Sticky Hero */}
-      <div className="md:sticky md:top-0 z-0 md:h-[100vw] md:overflow-hidden">
+      <div className="md:sticky md:top-0 z-0 md:h-screen md:overflow-hidden">
         <Hero />
       </div>
 

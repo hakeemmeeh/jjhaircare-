@@ -25,7 +25,7 @@ export default function Testimonials({ asPage = false }: { asPage?: boolean }) {
     <section id="testimonials" className="py-32 bg-gradient-nude relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col items-center">
         <div className="text-center mb-12 flex flex-col items-center">
-          <p className="text-[0.75rem] tracking-[3.5px] uppercase text-jj-gold mb-2 text-center font-serif">
+          <p className="text-xs tracking-[3.5px] uppercase text-jj-gold mb-2 text-center font-serif">
             Real Results
           </p>
           <Heading
@@ -33,7 +33,7 @@ export default function Testimonials({ asPage = false }: { asPage?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-[1.875rem] md:text-[2.25rem] font-medium text-jj-charcoal mb-4 text-center"
+            className="text-3xl md:text-4xl font-medium text-jj-charcoal mb-4 text-center"
           >
             See It On Real Hair
           </Heading>
@@ -42,13 +42,13 @@ export default function Testimonials({ asPage = false }: { asPage?: boolean }) {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-jj-charcoal/70 text-center max-w-[40%]"
+            className="text-jj-charcoal/70 text-center max-w-lg"
           >
             Our community shares their results every day. Follow along and see for yourself.
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[100%] max-w-[70%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-4xl">
           {channels.map((c, i) => (
             <motion.a
               key={c.name}
@@ -59,13 +59,13 @@ export default function Testimonials({ asPage = false }: { asPage?: boolean }) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 * i }}
-              className="group bg-white/70 backdrop-blur-md border-[1px] border-jj-black/5 rounded-[32px] p-8 md:p-10 hover:bg-white hover:-translate-y-2 hover:shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1)] transition-all duration-500 flex flex-col gap-3"
+              className="group bg-white/70 backdrop-blur-md border border-jj-black/5 rounded-[2rem] p-8 md:p-10 hover:bg-white hover:-translate-y-2 hover:shadow-md transition-all duration-500 flex flex-col gap-3"
             >
               <div className="flex items-center justify-between">
-                <h3 className="font-serif text-[1.875rem] text-jj-black">{c.name}</h3>
+                <h3 className="font-serif text-3xl text-jj-black">{c.name}</h3>
                 <ArrowUpRight className="w-6 h-6 text-jj-gold group-hover:rotate-12 transition-transform" />
               </div>
-              <p className="font-mono text-[0.75rem] uppercase tracking-widest text-jj-gold">{c.handle}</p>
+              <p className="font-mono text-xs uppercase tracking-widest text-jj-gold">{c.handle}</p>
               <p className="text-jj-charcoal/70 font-light">{c.blurb}</p>
             </motion.a>
           ))}

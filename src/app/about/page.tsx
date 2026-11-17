@@ -13,7 +13,7 @@ export const metadata = pageMeta({
 
 export default function AboutPage() {
   return (
-    <main className="bg-jj-ivory min-h-[100vw] flex flex-col">
+    <main className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
       <div className="flex-1">
         <AboutSection />

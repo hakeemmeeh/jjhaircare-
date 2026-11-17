@@ -64,7 +64,7 @@ export default function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative md:min-h-[100dvh] w-[100%] flex items-center justify-center overflow-hidden bg-gradient-nude"
+      className="relative md:min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude"
       style={{ perspective: prefersReducedMotion ? undefined : 1200 }}
     >
 
@@ -74,8 +74,8 @@ export default function Hero() {
         className="absolute inset-0 pointer-events-none"
       >
 
-        <div className="absolute top-[10%] right-[10%] w-[39.0625%] h-[500px] bg-white/30 rounded-[9999px] blur-[100px] pointer-events-none" />
-        <div className="absolute bottom-[10%] left-[5%] w-[46.875%] h-[600px] bg-jj-rose/15 rounded-[9999px] blur-[120px] pointer-events-none" />
+        <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-white/30 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-[10%] left-[5%] w-[600px] h-[600px] bg-jj-rose/15 rounded-full blur-[120px] pointer-events-none" />
 
         {/* Floating rings — suppressed when motion is reduced */}
         {!prefersReducedMotion && (
@@ -83,12 +83,12 @@ export default function Hero() {
             <motion.div
               animate={{ rotate: 360 }}
               transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[62.5%] h-[800px] border-[1px] border-jj-black/5 rounded-[9999px]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-jj-black/5 rounded-full"
             />
             <motion.div
               animate={{ rotate: -360 }}
               transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[46.875%] h-[600px] border-[1px] border-jj-nude/10 rounded-[9999px] border-dashed"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-jj-nude/10 rounded-full border-dashed"
             />
           </>
         )}
@@ -98,34 +98,34 @@ export default function Hero() {
       <div className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-14 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-6 lg:gap-6 items-center">
 
         {/* Left: who / what / why / how — one clear path to contact */}
-        <div className="flex flex-col items-start text-left max-w-[45%] lg:max-w-none">
+        <div className="flex flex-col items-start text-left max-w-xl lg:max-w-none">
           {/* Eyebrow: primary category + primary location */}
-          <p className="mb-5 flex items-center gap-3 font-mono text-[11px] sm:text-[0.875rem] uppercase tracking-[0.15em] sm:tracking-[0.25em] text-jj-olive">
+          <p className="mb-5 flex items-center gap-3 font-mono text-[11px] sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-jj-olive">
             <span aria-hidden="true" className="h-px w-8 bg-jj-olive/60" />
             Herbal hair care · Nairobi, Kenya
           </p>
 
-          <h1 className="font-serif font-bold text-[2.5rem] leading-[1.08] sm:text-[3.75rem] lg:text-[3rem] xl:text-[3.75rem] 2xl:text-[4.5rem] text-jj-black tracking-tight mb-6">
+          <h1 className="font-serif font-bold text-[2.5rem] leading-[1.08] sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-jj-black tracking-tight mb-6">
             Natural hair care,{" "}
             <span className="block italic text-jj-olive">made in Nairobi.</span>
           </h1>
 
-          <p className="text-[1rem] sm:text-[1.125rem] md:text-[1.25rem] text-jj-charcoal/80 font-light leading-relaxed max-w-[35%] mb-8 md:mb-10">
+          <p className="text-base sm:text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed max-w-md mb-8 md:mb-10">
             Herbal oil, butters, a scalp mask and hair mist for natural, curly and coily hair.
           </p>
 
           {/* CTAs: 1 order, 2 call, 3 browse */}
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-[100%] sm:w-auto mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
             <Link
               href="/contact#order"
-              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-[0.5em] py-[0.25em] min-h-[52px] rounded-[9999px] uppercase tracking-wider text-[0.875rem] whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
             >
               Order now
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <a
               href={`tel:+${WHATSAPP_NUMBER}`}
-              className="inline-flex items-center justify-center gap-2.5 border-[1px] border-jj-black/70 text-jj-black font-medium px-[0.5em] py-[0.25em] min-h-[52px] rounded-[9999px] uppercase tracking-wider text-[0.875rem] whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
             >
               <Phone className="w-5 h-5" aria-hidden="true" />
               Call {PHONE_DISPLAY}
@@ -134,13 +134,13 @@ export default function Hero() {
 
           <Link
             href="/products"
-            className="inline-flex items-center gap-2 py-2 text-[0.875rem] font-medium uppercase tracking-widest text-jj-black underline-offset-8 hover:underline"
+            className="inline-flex items-center gap-2 py-2 text-sm font-medium uppercase tracking-widest text-jj-black underline-offset-8 hover:underline"
           >
             Shop the collection <span aria-hidden="true">→</span>
           </Link>
 
           {/* Proof */}
-          <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[0.75rem] sm:text-[0.875rem] uppercase tracking-widest text-jj-charcoal/70">
+          <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm uppercase tracking-widest text-jj-charcoal/70">
             <li>100% natural ingredients</li>
             <li>5 signature products</li>
           </ul>
@@ -155,7 +155,7 @@ export default function Hero() {
           className="hidden lg:flex items-center justify-center"
         >
           <motion.div 
-            className="relative w-[100%] max-w-[35.9375%] xl:max-w-[43.75%] 2xl:max-w-[56.25%] aspect-square rounded-[16px] overflow-hidden shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] border-[1px] border-white/60 group"
+            className="relative w-full max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
             style={prefersReducedMotion ? {} : {
               rotateX,
               rotateY,
@@ -201,7 +201,7 @@ export default function Hero() {
                   className="flex h-6 w-6 items-center justify-center"
                 >
                   <span
-                    className={`block h-2 rounded-[9999px] transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-white/80 ring-1 ring-jj-black/20"}`}
+                    className={`block h-2 rounded-full transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-white/80 ring-1 ring-jj-black/20"}`}
                   />
                 </button>
               ))}
@@ -220,7 +220,7 @@ export default function Hero() {
         className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30"
         aria-label="Scroll to Discover"
       >
-        <span className="text-jj-charcoal/80 font-semibold text-[0.75rem] uppercase tracking-widest">
+        <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-widest">
           Scroll to Discover
         </span>
         <motion.div

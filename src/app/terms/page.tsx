@@ -11,14 +11,14 @@ export const metadata = pageMeta({
 
 export default function TermsPage() {
   return (
-    <main className="bg-jj-ivory min-h-[100vw] flex flex-col">
+    <main className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
       <div className="pt-32 pb-24 flex-1">
-        <div className="container mx-auto px-6 md:px-12 max-w-[70%]">
-          <h1 className="font-serif text-[3rem] md:text-[3.75rem] text-jj-black mb-8">Terms of <span className="italic text-jj-nude">Service</span></h1>
+        <div className="container mx-auto px-6 md:px-12 max-w-4xl">
+          <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-8">Terms of <span className="italic text-jj-nude">Service</span></h1>
           
           <div className="prose prose-lg text-jj-charcoal/80 font-sans prose-headings:font-serif prose-headings:text-jj-black prose-a:text-jj-nude hover:prose-a:text-jj-gold transition-colors">
-            <p className="text-[0.875rem] tracking-widest uppercase font-mono text-jj-gold mb-12">Last updated: November 2026</p>
+            <p className="text-sm tracking-widest uppercase font-mono text-jj-gold mb-12">Last updated: November 2026</p>
 
             <p>By using jjhaircare.com, you agree to these terms.</p>
             <p>Prices shown on this website are in Kenyan shillings (KES) and may change without notice. We may cancel orders due to pricing errors or suspected fraud. All site content (text, images, logos, design) is our intellectual property — do not reproduce without permission.</p>

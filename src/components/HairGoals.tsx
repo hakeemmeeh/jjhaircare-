@@ -37,20 +37,20 @@ export default function HairGoals() {
 
   return (
     <section className="py-20 md:py-28 px-6 md:px-12" aria-labelledby="hair-goals-heading">
-      <div className="max-w-[100%] mx-auto">
+      <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
           <div>
-            <p className="text-[0.75rem] uppercase tracking-wider text-jj-black/50 mb-3">
+            <p className="text-xs uppercase tracking-wider text-jj-black/50 mb-3">
               Shop by goal
             </p>
             <h2
               id="hair-goals-heading"
-              className="font-serif text-[2.25rem] md:text-[3rem] lg:text-[3.75rem] text-jj-black leading-tight"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl text-jj-black leading-tight"
             >
               Find what your hair <span className="italic text-jj-olive">needs today</span>
             </h2>
           </div>
-          <p className="text-jj-charcoal/75 max-w-[35%] text-[1rem] md:text-[1.125rem] font-light">
+          <p className="text-jj-charcoal/75 max-w-md text-base md:text-lg font-light">
             Pick a focus—our oils, butters, masks, and mists are built for everyday crown care.
           </p>
         </div>
@@ -67,11 +67,11 @@ export default function HairGoals() {
                 delay: prefersReducedMotion ? 0 : index * 0.06,
                 ease: [0.16, 1, 0.3, 1],
               }}
-              className="w-[80vw] max-w-[26.5625%] shrink-0 snap-center md:w-auto md:max-w-none md:shrink"
+              className="w-[80vw] max-w-[340px] shrink-0 snap-center md:w-auto md:max-w-none md:shrink"
             >
               <Link
                 href={goal.href}
-                className="group relative flex flex-col h-full overflow-hidden rounded-[28px] bg-jj-black shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1),0_2px_4px_-2px_rgba(0,0,0,0.1)] hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.25)] transition-shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] duration-500 cursor-pointer"
+                className="group relative flex flex-col h-full overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
               >
                 <div className="relative aspect-square overflow-hidden">
                   <Image
@@ -92,13 +92,13 @@ export default function HairGoals() {
                     className="object-cover scale-150 blur-2xl opacity-70"
                   />
                   <div className="absolute inset-0 bg-jj-black/55" />
-                  <h3 className="relative font-sans text-[1.25rem] font-semibold text-white leading-tight">
+                  <h3 className="relative font-sans text-xl font-semibold text-white leading-tight">
                     {goal.title}
                   </h3>
-                  <p className="relative mt-3 text-[0.875rem] text-white/70 leading-relaxed line-clamp-2">
+                  <p className="relative mt-3 text-sm text-white/70 leading-relaxed line-clamp-2">
                     {goal.line}
                   </p>
-                  <span className="absolute bottom-5 left-5 right-5 inline-flex items-center justify-center gap-2 rounded-[12px] bg-white py-3.5 text-[0.875rem] font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
+                  <span className="absolute bottom-5 left-5 right-5 inline-flex items-center justify-center gap-2 rounded-xl bg-white py-3.5 text-sm font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
                     Shop
                     <ArrowRight className="h-4 w-4" aria-hidden />
                   </span>

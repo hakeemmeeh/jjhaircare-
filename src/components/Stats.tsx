@@ -49,7 +49,7 @@ function Counter({
   }, [springValue, isDecimal]);
 
   return (
-    <div className="flex items-baseline justify-center font-serif text-[3rem] md:text-[3.75rem] text-jj-nude mb-2">
+    <div className="flex items-baseline justify-center font-serif text-5xl md:text-6xl text-jj-nude mb-2">
       <span ref={ref}>0</span>
       <span>{suffix}</span>
     </div>
@@ -58,12 +58,12 @@ function Counter({
 
 export default function Stats() {
   return (
-    <section className="py-24 bg-jj-black relative overflow-hidden border-[1px] border-jj-gold/10">
+    <section className="py-24 bg-jj-black relative overflow-hidden border-y border-jj-gold/10">
       {/* Decorative gradient */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100%] max-w-[70%] h-32 bg-jj-nude/5 blur-[80px]" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-32 bg-jj-nude/5 blur-[80px]" />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
-        <div className="grid grid-cols-2 gap-10 text-center max-w-[53%] mx-auto">
+        <div className="grid grid-cols-2 gap-10 text-center max-w-2xl mx-auto">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
@@ -77,7 +77,7 @@ export default function Stats() {
                 suffix={stat.suffix}
                 isDecimal={stat.isDecimal}
               />
-              <p className="text-white/60 text-[0.875rem] uppercase tracking-widest mt-2 font-medium">
+              <p className="text-white/60 text-sm uppercase tracking-widest mt-2 font-medium">
                 {stat.label}
               </p>
             </motion.div>

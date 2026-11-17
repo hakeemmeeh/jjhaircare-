@@ -10,14 +10,14 @@ interface ImageRevealProps {
 
 export default function ImageReveal({ children, maskColor = "bg-jj-ivory", className = "" }: ImageRevealProps) {
   return (
-    <div className={`relative overflow-hidden w-[100%] h-full ${className}`}>
+    <div className={`relative overflow-hidden w-full h-full ${className}`}>
       {/* The Image/Content scaling down */}
       <motion.div
         initial={{ scale: 1.2 }}
         whileInView={{ scale: 1 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 1.4, ease: [0.16, 1, 0.3, 1] }}
-        className="w-[100%] h-full relative"
+        className="w-full h-full relative"
       >
         {children}
       </motion.div>
