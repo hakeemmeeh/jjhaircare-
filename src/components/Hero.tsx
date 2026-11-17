@@ -114,7 +114,7 @@ export default function Hero() {
             Herbal oil, butters, a scalp mask and hair mist for natural, curly and coily hair.
           </p>
 
-          {/* CTAs: 1 order, 2 call, 3 browse */}
+          {/* CTAs: 1 order, 2 shop, 3 call */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
             <Link
               href="/contact#order"
@@ -123,26 +123,25 @@ export default function Hero() {
               Order now
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
-            <a
-              href={`tel:+${WHATSAPP_NUMBER}`}
+            <Link
+              href="/products"
               className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
             >
+              Shop the collection
+            </Link>
+            <a
+              href={`tel:+${WHATSAPP_NUMBER}`}
+              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/30 text-jj-charcoal font-medium px-6 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:border-jj-black hover:text-jj-black transition-colors duration-300"
+            >
               <Phone className="w-5 h-5" aria-hidden="true" />
-              Call {PHONE_DISPLAY}
+              {PHONE_DISPLAY}
             </a>
           </div>
-
-          <Link
-            href="/products"
-            className="inline-flex items-center gap-2 py-2 text-sm font-medium uppercase tracking-widest text-jj-black underline-offset-8 hover:underline"
-          >
-            Shop the collection <span aria-hidden="true">→</span>
-          </Link>
 
           {/* Proof */}
           <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm uppercase tracking-widest text-jj-charcoal/70">
             <li>100% natural ingredients</li>
-            <li>5 signature products</li>
+            <li>Hair oil · Butters · Scalp mask · Mist</li>
           </ul>
         </div>
 

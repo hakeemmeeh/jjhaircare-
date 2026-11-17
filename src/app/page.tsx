@@ -2,10 +2,9 @@ import { Suspense } from "react";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Marquee from "@/components/Marquee";
-import AboutSnippet from "@/components/AboutSnippet";
+import OurStory from "@/components/OurStory";
 import Features from "@/components/Features";
 import HairGoals from "@/components/HairGoals";
-import JournalSnippet from "@/components/JournalSnippet";
 import Products from "@/components/Products";
 import Footer from "@/components/Footer";
 import { PRODUCTS } from "@/data/products";
@@ -48,16 +47,16 @@ export default function Home() {
     <main id="main" className="bg-jj-ivory min-h-screen relative">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productListJsonLd) }} />
       <Navbar />
-      
+
       {/* 1. Sticky Hero */}
       <div className="md:sticky md:top-0 z-0 md:h-screen md:overflow-hidden">
         <Hero />
       </div>
 
-      {/* 1b. About */}
+      {/* 1b. Marquee + Our Story */}
       <div className="relative z-10 overflow-hidden bg-jj-ivory">
         <Marquee />
-        <AboutSnippet />
+        <OurStory />
       </div>
 
       {/* 2. Overlapping Features */}
@@ -70,24 +69,19 @@ export default function Home() {
         <HairGoals />
       </div>
 
-      {/* 3. Overlapping Journal */}
-      <div className="relative z-20 overflow-hidden bg-jj-ivory">
-        <JournalSnippet />
-      </div>
-
-      {/* 4. Overlapping Products */}
-      <div className="relative z-30 bg-[#EBE3D5]">
+      {/* 3. Overlapping Products */}
+      <div className="relative z-20 bg-[#EBE3D5]">
         <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
           <Products />
         </Suspense>
       </div>
 
-      {/* 4c. Bundle */}
-      <div className="relative z-[32] overflow-hidden bg-gradient-nude">
+      {/* 3b. Bundle */}
+      <div className="relative z-[22] overflow-hidden bg-gradient-nude">
         <RoutineBundle />
       </div>
 
-      {/* 4b. Ordering and delivery */}
+      {/* 4. Ordering and delivery */}
       <div className="relative z-[35] overflow-hidden bg-jj-ivory">
         <DeliveryStrip />
       </div>
