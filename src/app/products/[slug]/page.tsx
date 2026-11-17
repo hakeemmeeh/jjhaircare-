@@ -106,6 +106,21 @@ const products: ProductDetail[] = [
   },
 ];
 
+/** Curated 3-product routines. The current product is always first; the other two complement it. */
+const ROUTINE_FOR: Record<string, [string, string]> = {
+  "herbal-hair-oil": ["hibiscus-hair-butter", "hair-mist"],
+  "scalp-detox-mask": ["moringa-hair-butter", "hair-mist"],
+  "hibiscus-hair-butter": ["herbal-hair-oil", "hair-mist"],
+  "moringa-hair-butter": ["scalp-detox-mask", "herbal-hair-oil"],
+  "hair-mist": ["herbal-hair-oil", "hibiscus-hair-butter"],
+};
+
+const BUNDLE_DISCOUNT = 0.1; // 10% off when buying the routine
+
+function priceOf(p?: string): number {
+  return p ? Number(p.replace(/[^0-9]/g, "")) || 0 : 0;
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const product = products.find((p) => p.slug === slug);
@@ -174,6 +189,17 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
   };
 
   const card = PRODUCTS.find((p) => p.slug === product.slug);
+
+  const routineSlugs = ROUTINE_FOR[product.slug] ?? [];
+  const routineDetail = [product, ...routineSlugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean)] as ProductDetail[];
+  const routineCards = [card, ...routineSlugs.map((s) => PRODUCTS.find((p) => p.slug === s)).filter(Boolean)];
+  const individualTotal = routineDetail.reduce((sum, p) => sum + priceOf(p.price), 0);
+  const bundlePrice = Math.round(individualTotal * (1 - BUNDLE_DISCOUNT));
+  const savings = individualTotal - bundlePrice;
+  const bundleMessage =
+    `Hi JJ Haircare, I'd like to order the routine bundle:\n` +
+    routineDetail.map((p) => `• ${p.name.replace("JJ Haircare ", "")} (${p.price})`).join("\n") +
+    `\n\nIndividual total: ${individualTotal.toLocaleString()} KES\nBundle price (save ${Math.round(BUNDLE_DISCOUNT * 100)}%): ${bundlePrice.toLocaleString()} KES`;
 
   return (
     <main className="bg-jj-ivory min-h-screen flex flex-col">
@@ -313,17 +339,40 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </div>
           </div>
 
-          {/* Cross-Sell Section */}
+          {/* Bundle Section */}
           <div className="mt-32 border-t border-jj-black/10 pt-24">
-            <div className="text-center mb-16">
+            <div className="text-center mb-12">
               <h2 className="font-serif text-4xl md:text-5xl text-jj-black mb-4">Complete Your <span className="italic text-jj-nude">Routine</span></h2>
-              <p className="text-jj-charcoal/70">More from JJ Haircare.</p>
+              <p className="text-jj-charcoal/70">Buy these three together and save {Math.round(BUNDLE_DISCOUNT * 100)}%.</p>
             </div>
-            
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-              {PRODUCTS.filter((p) => p.slug !== product.slug).map((related) => (
-                <ProductCard key={related.slug} product={related} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+              {routineCards.map((related) => (
+                related && <ProductCard key={related.slug} product={related} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
               ))}
+            </div>
+
+            {/* Bundle price + CTA */}
+            <div className="mt-10 rounded-[1.75rem] border border-jj-black/10 bg-white/70 p-6 md:p-8">
+              <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+                <div>
+                  <p className="text-sm text-jj-charcoal/60 mb-1">Bundle of {routineDetail.length} products</p>
+                  <div className="flex items-baseline gap-3">
+                    <span className="font-serif text-3xl md:text-4xl text-jj-black">{bundlePrice.toLocaleString()} KES</span>
+                    <span className="text-jj-charcoal/50 line-through">{individualTotal.toLocaleString()} KES</span>
+                    <span className="rounded-full bg-jj-gold/20 text-jj-gold px-3 py-1 text-xs font-bold">Save {savings.toLocaleString()} KES</span>
+                  </div>
+                </div>
+                <a
+                  href={whatsappOrderUrl(bundleMessage)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2.5 rounded-full bg-jj-black hover:bg-jj-olive text-white font-medium px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300 shadow-lg shrink-0"
+                >
+                  <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                  Order the routine
+                </a>
+              </div>
             </div>
           </div>
 
