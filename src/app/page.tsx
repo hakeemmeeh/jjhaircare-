@@ -45,7 +45,7 @@ const productListJsonLd = {
 
 export default function Home() {
   return (
-    <main className="bg-jj-ivory min-h-screen relative">
+    <main id="main" className="bg-jj-ivory min-h-screen relative">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productListJsonLd) }} />
       <Navbar />
       

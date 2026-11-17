@@ -9,103 +9,6 @@ import { PRODUCTS } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import ProductGallery from "@/components/ProductGallery";
 
-type ProductDetail = {
-  name: string;
-  slug: string;
-  tagline: string;
-  description: string;
-  price?: string;
-  size: string;
-  image: string;
-  gallery?: string[];
-  imageAspect?: string;
-  benefits: string[];
-  ingredients: string;
-  howToUse: string;
-  hairTypes: string;
-};
-
-const ASK_US = "Message us on WhatsApp and we'll guide you to the right routine for your hair.";
-
-// Details below come from the JJ Haircare packaging and brand artwork.
-const products: ProductDetail[] = [
-  {
-    name: "JJ Haircare Herbal Hair Oil",
-    slug: "herbal-hair-oil",
-    price: "KES 1,000",
-    tagline: "Nourish. Strengthen. Grow.",
-    description: "A 100% natural herbal hair oil made to nourish and strengthen hair, support healthy growth and reduce breakage. Healthy hair, naturally.",
-    size: "200ml",
-    image: "/images/herbal-hair-oil-ad.png",
-    gallery: ["/images/herbal-hair-oil-v2.jpg", "/images/herbal-oil-pour-v5.jpg"],
-    imageAspect: "aspect-square",
-    benefits: ["Nourishes hair", "Strengthens hair", "Promotes hair growth", "Reduces hair breakage"],
-    ingredients: "100% natural ingredients. The full ingredient list is printed on the bottle.",
-    howToUse: "Pour a small amount into your palm and work it through your scalp and hair.",
-    hairTypes: ASK_US,
-  },
-  {
-    name: "JJ Haircare Scalp Detox Mask",
-    slug: "scalp-detox-mask",
-    price: "KES 1,500",
-    tagline: "Detoxify. Hydrate. Repair.",
-    description: "A scalp detox mask infused with honey and neem that cleanses build-up, hydrates and helps repair — for a healthier scalp and stronger hair.",
-    size: "100ml scalp mask",
-    image: "/images/scalp-detox-face-v4.jpg",
-    gallery: ["/images/scalp-detox-sq-1-v4.jpg", "/images/scalp-detox-for-you-v5.jpg"],
-    imageAspect: "aspect-square",
-    benefits: ["Detoxifies the scalp", "Removes build-up", "Hydrates", "Helps repair dry, stressed hair", "Infused with honey and neem"],
-    ingredients: "Infused with honey and neem. The full ingredient list is printed on the tube.",
-    howToUse: "1. Apply to clean scalp and hair\n2. Massage gently and leave for 20–30 minutes\n3. Rinse thoroughly with lukewarm water\n4. Use 1–2 times a week for best results",
-    hairTypes: ASK_US,
-  },
-  {
-    name: "JJ Haircare Hibiscus Hair Butter",
-    slug: "hibiscus-hair-butter",
-    price: "KES 1,500",
-    tagline: "Deep Nourishment. Lasting Shine.",
-    description: "A rich, creamy hair butter made with hibiscus extract, shea butter, aloe vera and natural oils for deep moisture, natural shine and stronger hair.",
-    size: "Hair butter",
-    image: "/images/hibiscus-hair-butter-ad.png",
-    gallery: ["/images/hibiscus-hair-butter-v2.jpg", "/images/hibiscus-hair-butter-card-v2.jpg"],
-    imageAspect: "aspect-[3/2]",
-    benefits: ["Deep moisturization", "Adds natural shine", "Reduces breakage", "Strengthens hair"],
-    ingredients: "Made with hibiscus extract, shea butter, aloe vera and natural oils — 100% natural ingredients. The full list is printed on the jar.",
-    howToUse: "Warm a small amount between your palms and work it through your hair, focusing on the lengths and ends.",
-    hairTypes: ASK_US,
-  },
-  {
-    name: "JJ Haircare Moringa Hair Butter",
-    slug: "moringa-hair-butter",
-    price: "KES 1,500",
-    tagline: "Nourish. Strengthen. Grow.",
-    description: "A rich, creamy hair butter made with moringa and 100% natural ingredients. It deeply moisturises dry hair, strengthens strands and supports healthy-looking growth, leaving hair soft, nourished and easy to manage.",
-    size: "Hair butter",
-    image: "/images/moringa-hair-butter-ad.png",
-    gallery: ["/images/moringa-hair-butter-v2.jpg"],
-    imageAspect: "aspect-square",
-    benefits: ["Deeply moisturises", "Strengthens hair", "Promotes hair growth", "Leaves hair soft and manageable", "Rich, creamy texture"],
-    ingredients: "100% natural ingredients. The full ingredient list is printed on the jar.",
-    howToUse: "1. Start with clean hair, damp or dry\n2. Warm a small amount between your palms\n3. Work it through your lengths and ends, section by section\n4. Style as usual — a little goes a long way",
-    hairTypes: ASK_US,
-  },
-  {
-    name: "JJ Haircare Hair Mist",
-    slug: "hair-mist",
-    price: "KES 1,500",
-    tagline: "Refresh. Nourish. Shine.",
-    description: "A lightweight everyday mist that refreshes your hair, adds natural shine and helps tame frizz — hair care, all day. Perfect for a quick refresh between wash days.",
-    size: "Hair mist",
-    image: "/images/hair-mist-face-v6.jpg",
-    gallery: ["/images/hair-mist-sq-v6.jpg"],
-    imageAspect: "aspect-square",
-    benefits: ["Nourishes hair", "Adds natural shine", "Reduces frizz", "Strengthens hair", "Refreshes hair through the day"],
-    ingredients: "The full ingredient list is printed on the bottle.",
-    howToUse: "1. Hold the bottle about 15–20 cm from your hair\n2. Mist evenly over damp or dry hair\n3. Smooth through with your hands or a brush\n4. Reapply through the day whenever hair needs a refresh",
-    hairTypes: ASK_US,
-  },
-];
-
 /** Curated 3-product routines. The current product is always first; the other two complement it. */
 const ROUTINE_FOR: Record<string, [string, string]> = {
   "herbal-hair-oil": ["hibiscus-hair-butter", "hair-mist"],
@@ -123,14 +26,14 @@ function priceOf(p?: string): number {
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const product = products.find((p) => p.slug === slug);
+  const product = PRODUCTS.find((p) => p.slug === slug);
   if (!product) return {};
   const name = product.name.replace("JJ Haircare ", "");
   const title = `${name} in Nairobi, Kenya`;
   const lead = `${name}${product.price ? ` (${product.price})` : ""}, made in Nairobi. `;
   const tail = " Order on WhatsApp.";
   const description = lead + clip(product.description, 155 - lead.length - tail.length) + tail;
-  const ogImage = PRODUCTS.find((p) => p.slug === product.slug)?.ogImage ?? product.image;
+  const ogImage = product.ogImage ?? product.image;
   return {
     title: seoTitle(title),
     description,
@@ -141,14 +44,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 }
 
 export async function generateStaticParams() {
-  return products.map((product) => ({
+  return PRODUCTS.map((product) => ({
     slug: product.slug,
   }));
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = await params;
-  const product = products.find((p) => p.slug === resolvedParams.slug);
+  const product = PRODUCTS.find((p) => p.slug === resolvedParams.slug);
 
   if (!product) {
     notFound();
@@ -189,21 +92,18 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
     ],
   };
 
-  const card = PRODUCTS.find((p) => p.slug === product.slug);
-
   const routineSlugs = ROUTINE_FOR[product.slug] ?? [];
-  const routineDetail = [product, ...routineSlugs.map((s) => products.find((p) => p.slug === s)).filter(Boolean)] as ProductDetail[];
-  const routineCards = [card, ...routineSlugs.map((s) => PRODUCTS.find((p) => p.slug === s)).filter(Boolean)];
-  const individualTotal = routineDetail.reduce((sum, p) => sum + priceOf(p.price), 0);
+  const routine = [product, ...routineSlugs.map((s) => PRODUCTS.find((p) => p.slug === s)).filter((p): p is NonNullable<typeof p> => Boolean(p))];
+  const individualTotal = routine.reduce((sum, p) => sum + priceOf(p.price), 0);
   const bundlePrice = Math.round(individualTotal * (1 - BUNDLE_DISCOUNT));
   const savings = individualTotal - bundlePrice;
   const bundleMessage =
     `Hi JJ Haircare, I'd like to order the routine bundle:\n` +
-    routineDetail.map((p) => `• ${p.name.replace("JJ Haircare ", "")} (${p.price})`).join("\n") +
+    routine.map((p) => `• ${p.name} (${p.price})`).join("\n") +
     `\n\nIndividual total: ${individualTotal.toLocaleString()} KES\nBundle price (save ${Math.round(BUNDLE_DISCOUNT * 100)}%): ${bundlePrice.toLocaleString()} KES`;
 
   return (
-    <main className="bg-jj-ivory min-h-screen flex flex-col">
+    <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script
         type="application/ld+json"
@@ -242,12 +142,12 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               </div>
 
               <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-2">{product.name}</h1>
-              {card?.rating != null && (
+              {product.rating != null && (
                 <div className="flex items-center gap-2 mb-3 text-sm">
                   <span className="text-jj-gold" aria-hidden>★</span>
-                  <span className="font-medium text-jj-black">{card.rating.toFixed(1)}</span>
-                  {card.reviewCount != null && <span className="text-jj-charcoal/60">({card.reviewCount} reviews)</span>}
-                  <span className="sr-only">Rated {card.rating} out of 5{card.reviewCount != null ? ` from ${card.reviewCount} reviews` : ""}</span>
+                  <span className="font-medium text-jj-black">{product.rating.toFixed(1)}</span>
+                  {product.reviewCount != null && <span className="text-jj-charcoal/60">({product.reviewCount} reviews)</span>}
+                  <span className="sr-only">Rated {product.rating} out of 5{product.reviewCount != null ? ` from ${product.reviewCount} reviews` : ""}</span>
                 </div>
               )}
               <p className="text-xl md:text-2xl text-jj-olive font-medium mb-2">{product.price ?? "Message us for price"}</p>
@@ -348,7 +248,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-              {routineCards.map((related) => (
+              {routine.map((related) => (
                 related && <ProductCard key={related.slug} product={related} sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw" />
               ))}
             </div>
@@ -357,7 +257,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
             <div className="mt-10 rounded-[1.75rem] border border-jj-black/10 bg-white/70 p-6 md:p-8">
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div>
-                  <p className="text-sm text-jj-charcoal/60 mb-1">Bundle of {routineDetail.length} products</p>
+                  <p className="text-sm text-jj-charcoal/60 mb-1">Bundle of {routine.length} products</p>
                   <div className="flex items-baseline gap-3">
                     <span className="font-serif text-3xl md:text-4xl text-jj-black">{bundlePrice.toLocaleString()} KES</span>
                     <span className="text-jj-charcoal/50 line-through">{individualTotal.toLocaleString()} KES</span>

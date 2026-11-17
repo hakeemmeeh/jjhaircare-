@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 
 export default function ProductsPage() {
   return (
-    <main className="min-h-screen bg-jj-ivory flex flex-col">
+    <main id="main" className="min-h-screen bg-jj-ivory flex flex-col">
       <Navbar />
       <div className="flex-1">
         <ProductGrid />

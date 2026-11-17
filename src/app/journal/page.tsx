@@ -12,7 +12,7 @@ export const metadata = pageMeta({
 
 export default function JournalPage() {
   return (
-    <main className="bg-jj-ivory min-h-screen flex flex-col">
+    <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
       <div className="pt-24 flex-1">
         <JournalFull />

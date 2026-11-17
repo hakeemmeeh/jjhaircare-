@@ -7,7 +7,7 @@ export const metadata = { title: "Page not found", robots: { index: false, follo
 
 export default function NotFound() {
   return (
-    <main className="bg-jj-ivory min-h-screen flex flex-col">
+    <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
       <div className="flex-1 pt-36 pb-24 px-6 md:px-12">
         <div className="mx-auto max-w-3xl">

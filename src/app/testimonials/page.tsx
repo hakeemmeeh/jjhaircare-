@@ -21,7 +21,7 @@ const ways = [
 
 export default function TestimonialsPage() {
   return (
-    <main className="bg-jj-ivory min-h-screen flex flex-col">
+    <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
       <div className="pt-32 flex-1">
         <div className="px-6 md:px-12 pb-14 md:pb-20">

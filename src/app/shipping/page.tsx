@@ -22,7 +22,7 @@ const steps = [
 
 export default function ShippingPage() {
   return (
-    <main className="bg-jj-ivory min-h-screen flex flex-col">
+    <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
       <div className="pt-32 pb-24 flex-1">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">

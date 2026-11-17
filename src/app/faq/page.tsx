@@ -17,7 +17,7 @@ const faqJsonLd = {
 
 export default function FAQPage() {
   return (
-    <main className="bg-jj-ivory min-h-screen flex flex-col">
+    <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Navbar />
       <div className="pt-32 pb-24 flex-1 px-6 md:px-12">
