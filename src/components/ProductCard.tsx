@@ -11,22 +11,23 @@ export default function ProductCard({
   product,
   sizes = "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw",
 }: {
-  product: Pick<Product, "name" | "slug" | "description" | "price" | "image" | "hoverImage" | "badge" | "rating" | "reviewCount">;
+  product: Pick<Product, "name" | "slug" | "description" | "price" | "image" | "hoverImage" | "imageFit" | "badge" | "rating" | "reviewCount">;
   sizes?: string;
 }) {
+  const fit = product.imageFit ?? "cover";
   return (
     <Link
       href={`/products/${product.slug}`}
       className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
     >
       {/* Full-bleed image with hover swap */}
-      <div className="relative aspect-square overflow-hidden">
+      <div className={`relative aspect-square overflow-hidden ${fit === "contain" ? "bg-jj-ivory" : ""}`}>
         <Image
           src={product.image}
           alt={product.name}
           fill
           sizes={sizes}
-          className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+          className={`${fit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-105`}
         />
         {product.hoverImage && (
           <Image
@@ -35,7 +36,7 @@ export default function ProductCard({
             fill
             sizes={sizes}
             aria-hidden
-            className="object-cover opacity-0 scale-105 transition-opacity duration-500 group-hover:opacity-100"
+            className={`${fit === "contain" ? "object-contain" : "object-cover"} opacity-0 scale-105 transition-opacity duration-500 group-hover:opacity-100`}
           />
         )}
 

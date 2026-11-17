@@ -7,6 +7,8 @@ export type Product = {
   image: string;
   /** Optional second photo shown on hover (texture, back of pack, etc.). */
   hoverImage?: string;
+  /** How the card image fits its square frame. Defaults to "cover". Use "contain" for non-square art. */
+  imageFit?: "cover" | "contain";
   /** Corner badge, e.g. "Best seller", "New". */
   badge?: string;
   /** Average rating out of 5. */
@@ -22,7 +24,7 @@ export const PRODUCTS: Product[] = [
     price: "KES 1,000",
     description: "Nourish. Strengthen. Grow. A 100% natural herbal oil for scalp and strands.",
     image: "/images/herbal-hair-oil-ad.png",
-    hoverImage: "/images/herbal-oil-pour-v5.jpg",
+    hoverImage: "/images/herbal-oil-face-v5.jpg",
     badge: "Best seller",
     rating: 4.9,
     reviewCount: 214,
@@ -44,7 +46,8 @@ export const PRODUCTS: Product[] = [
     price: "KES 1,500",
     description: "Deep nourishment, lasting shine — with hibiscus extract, shea butter and aloe vera.",
     image: "/images/hibiscus-hair-butter-ad.png",
-    hoverImage: "/images/hibiscus-hair-butter-v2.jpg",
+    hoverImage: "/images/hibiscus-hair-butter-card-v2.jpg",
+    imageFit: "contain",
     badge: "Best seller",
     rating: 4.9,
     reviewCount: 189,
