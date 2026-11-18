@@ -3,9 +3,7 @@ import Image from "next/image";
 import type { Product } from "@/data/products";
 
 /**
- * Premium product card: full-bleed image on top (swaps to a second photo on hover),
- * dark glass panel below with badge, name, rating, price and description. The
- * "View Details" button pops in on hover (always visible on touch screens).
+ * Editorial product card with a generous image, clear product details and price.
  */
 export default function ProductCard({
   product,
@@ -18,16 +16,16 @@ export default function ProductCard({
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[1.75rem] bg-jj-black shadow-md hover:shadow-2xl transition-shadow duration-500 cursor-pointer"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-jj-black/[0.08] bg-white shadow-[0_12px_35px_rgba(28,31,22,0.07)] hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(28,31,22,0.14)] transition-all duration-500 cursor-pointer"
     >
       {/* Full-bleed image with hover swap */}
-      <div className={`relative aspect-square overflow-hidden ${fit === "contain" ? "bg-jj-ivory" : ""}`}>
+      <div className={`relative aspect-[4/3] overflow-hidden ${fit === "contain" ? "bg-[#F0EEE6]" : "bg-[#F0EEE6]"}`}>
         <Image
           src={product.image}
           alt={product.name}
           fill
           sizes={sizes}
-          className={`${fit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-105`}
+          className={`${fit === "contain" ? "object-contain p-4" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-[1.04]`}
         />
         {product.hoverImage && (
           <Image
@@ -36,34 +34,23 @@ export default function ProductCard({
             fill
             sizes={sizes}
             aria-hidden
-            className={`${fit === "contain" ? "object-contain" : "object-cover"} opacity-0 scale-105 transition-opacity duration-500 group-hover:opacity-100`}
+            className={`${fit === "contain" ? "object-contain p-4" : "object-cover"} opacity-0 scale-105 transition-opacity duration-500 group-hover:opacity-100`}
           />
         )}
 
         {/* Corner badge */}
         {product.badge && (
-          <span className="absolute left-4 top-4 z-10 rounded-full bg-jj-gold px-3 py-1 text-xs font-bold uppercase tracking-wider text-jj-black shadow-sm">
+          <span className="absolute left-4 top-4 z-10 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-jj-olive shadow-sm">
             {product.badge}
           </span>
         )}
       </div>
 
-      {/* Glass panel */}
-      <div className="relative flex-1 overflow-hidden px-5 pt-5 pb-24">
-        <Image
-          src={product.image}
-          alt=""
-          fill
-          sizes="25vw"
-          aria-hidden
-          className="object-cover scale-150 blur-2xl opacity-70"
-        />
-        <div className="absolute inset-0 bg-jj-black/55" />
-
-        <div className="relative flex items-start justify-between gap-3">
-          <h3 className="font-sans text-xl font-semibold text-white leading-tight">{product.name}</h3>
+      <div className="relative flex flex-1 flex-col px-5 pb-5 pt-5 sm:px-6 sm:pb-6">
+        <div className="flex items-start justify-between gap-3">
+          <h3 className="font-serif text-lg font-semibold leading-tight text-jj-black sm:text-xl">{product.name.replace("JJ Haircare ", "")}</h3>
           {product.price && (
-            <span className="shrink-0 rounded-full border border-jj-gold/60 px-3 py-1 font-mono text-xs text-jj-gold">
+            <span className="shrink-0 pt-0.5 font-sans text-sm font-semibold text-jj-olive sm:text-base">
               {product.price}
             </span>
           )}
@@ -71,13 +58,13 @@ export default function ProductCard({
 
         {/* Rating */}
         {product.rating != null && (
-          <div className="relative mt-2 flex items-center gap-1.5 text-sm">
-            <span className="text-jj-gold" aria-hidden>
+        <div className="mt-2 flex items-center gap-1.5 text-sm">
+            <span className="text-[#B58A35]" aria-hidden>
               ★
             </span>
-            <span className="font-medium text-white">{product.rating.toFixed(1)}</span>
+            <span className="font-medium text-jj-charcoal">{product.rating.toFixed(1)}</span>
             {product.reviewCount != null && (
-              <span className="text-white/60">({product.reviewCount})</span>
+              <span className="text-jj-charcoal/50">({product.reviewCount})</span>
             )}
             <span className="sr-only">
               Rated {product.rating} out of 5{product.reviewCount != null ? ` from ${product.reviewCount} reviews` : ""}
@@ -85,10 +72,10 @@ export default function ProductCard({
           </div>
         )}
 
-        <p className="relative mt-3 text-sm leading-relaxed text-white/70 line-clamp-2">{product.description}</p>
+        <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-jj-charcoal/65">{product.tagline ?? product.description}</p>
 
-        <span className="absolute bottom-5 left-5 right-5 rounded-xl bg-white py-3.5 text-center font-sans text-sm font-bold text-jj-black translate-y-0 opacity-100 lg:translate-y-20 lg:opacity-0 lg:group-hover:translate-y-0 lg:group-hover:opacity-100 transition-all duration-500 group-hover:bg-jj-gold">
-          View Details
+        <span className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-jj-olive/35 px-5 text-xs font-semibold uppercase tracking-[0.14em] text-jj-olive transition-colors group-hover:bg-jj-olive group-hover:text-white">
+          Explore product <span aria-hidden>→</span>
         </span>
       </div>
     </Link>

@@ -18,7 +18,7 @@ export default function OurStory() {
             <div className="absolute -inset-3 border border-jj-gold/30 rounded-sm translate-x-3 translate-y-3 -z-10" />
             <div className="aspect-[1672/941] relative rounded-sm overflow-hidden shadow-xl">
               <Image
-                src="/images/about-banner-v3.jpg"
+                src="/images/complete-natural-collection.png"
                 alt="The JJ Haircare collection: scalp detox mask, hair mist, herbal hair oil, moringa and hibiscus hair butter"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"

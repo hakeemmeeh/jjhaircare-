@@ -7,9 +7,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SHOWCASE = [
-  { src: "/images/herbal-oil-face-v5.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
-  { src: "/images/scalp-detox-face-v4.jpg", alt: "JJ Haircare Scalp Detox Mask — cleanse, detox, revive", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
-  { src: "/images/moringa-hair-butter-v2.jpg", alt: "JJ Haircare Moringa Hair Butter — nourish, strengthen, grow", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
+  { src: "/images/herbal-hair-oil-marble.png", alt: "JJ Haircare Herbal Hair Oil on marble with fresh botanicals", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
+  { src: "/images/scalp-detox-studio.png", alt: "JJ Haircare Scalp Detox Mask with fresh botanicals", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
+  { src: "/images/moringa-hair-butter-mint-luxe.png", alt: "JJ Haircare Moringa Hair Butter with a fresh mint finish", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
 ];
 
 export default function Hero() {

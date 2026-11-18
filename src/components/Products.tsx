@@ -104,32 +104,32 @@ export default function Products() {
   return (
     <section
       id="shop"
-      className="py-24 md:py-32 px-6 md:px-12 bg-gradient-to-b from-jj-ivory to-jj-black/10 z-20 relative border-t border-jj-black/10"
+      className="py-20 md:py-28 px-5 md:px-10 bg-[#F5F2EA] z-20 relative border-t border-jj-black/[0.08]"
     >
-      <div className="max-w-7xl mx-auto">
-      <div className="mb-12 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
+      <div className="max-w-[1380px] mx-auto">
+      <div className="mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
         <div>
-          <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">The collection</p>
-          <h2 className="text-4xl md:text-6xl font-serif text-jj-black mb-4 leading-tight">
+          <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-jj-olive mb-4">The collection</p>
+          <h2 className="text-4xl md:text-6xl font-serif text-jj-black mb-4 leading-[1.02] tracking-tight">
             Shop natural hair products
           </h2>
-          <p className="font-sans text-jj-black/70 md:text-xl max-w-xl">
+          <p className="font-sans text-jj-black/65 md:text-lg max-w-xl">
             Herbal hair oil, hair butters, a scalp detox mask and hair mist. From KES 1,000.
           </p>
         </div>
         <MagneticButton>
-          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-gold px-8 py-4 text-white hover:bg-transparent hover:text-jj-black rounded-full font-serif transition-colors text-center inline-block cursor-pointer self-start md:self-auto shadow-lg">
+          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-olive px-8 py-4 text-white hover:bg-transparent hover:text-jj-olive rounded-full font-sans text-xs uppercase tracking-[0.12em] transition-colors text-center inline-block cursor-pointer self-start md:self-auto">
             View All Products
           </Link>
         </MagneticButton>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-8">
+      <div className="hide-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-5 sm:mx-0 sm:gap-5 sm:px-0 xl:gap-5">
         {PRODUCTS.map((product, index) => (
           <div
             key={product.name}
             id={`product-${product.slug}`}
-            className={`w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)] mt-2 lg:mt-4 scroll-mt-28 rounded-[2rem] transition-[box-shadow,ring] duration-300 ${
+            className={`w-[78vw] max-w-[340px] shrink-0 snap-start scroll-mt-28 rounded-[1.5rem] transition-[box-shadow,ring] duration-300 sm:w-[42vw] lg:w-[30vw] xl:w-[calc((100%-5rem)/5)] xl:max-w-none ${
               highlightedSlug === product.slug
                 ? "ring-2 ring-jj-gold ring-offset-2 ring-offset-jj-ivory shadow-lg"
                 : ""
