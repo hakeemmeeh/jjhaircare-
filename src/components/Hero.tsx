@@ -4,19 +4,12 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative isolate min-h-[780px] w-full overflow-hidden bg-[#e8f2ec] pt-24 sm:min-h-[840px] md:min-h-[min(920px,100dvh)] md:pt-20">
-      <Image
-        src="/images/luxury-mint-green-haircare-collection.png"
-        alt="JJ Haircare's complete natural collection arranged on a marble display"
-        fill
-        priority
-        sizes="100vw"
-        className="-z-20 object-cover object-[61%_center]"
-      />
-      <div className="absolute inset-0 -z-10 bg-[linear-gradient(90deg,rgba(235,246,239,0.98)_0%,rgba(235,246,239,0.94)_24%,rgba(235,246,239,0.78)_37%,rgba(235,246,239,0.12)_62%,rgba(235,246,239,0)_100%)] max-md:bg-[linear-gradient(90deg,rgba(235,246,239,0.97)_0%,rgba(235,246,239,0.91)_48%,rgba(235,246,239,0.45)_76%,rgba(235,246,239,0.1)_100%)]" />
+    <section className="relative isolate w-full overflow-hidden bg-[linear-gradient(125deg,#edf7f0_0%,#dcefe3_47%,#cfe6d7_100%)] pt-24 md:min-h-[min(900px,100dvh)] md:pt-20">
+      <div className="pointer-events-none absolute -right-24 top-[8%] h-[480px] w-[480px] rounded-full bg-white/45 blur-[110px]" />
+      <div className="pointer-events-none absolute -left-32 bottom-[-18%] h-[520px] w-[520px] rounded-full bg-[#b8d8c2]/45 blur-[120px]" />
 
-      <div className="relative mx-auto flex min-h-[680px] max-w-[1800px] items-center px-5 pb-16 pt-12 sm:px-10 md:min-h-[min(820px,calc(100dvh-5rem))] md:px-[clamp(2.5rem,7vw,8rem)] md:pb-20">
-        <div className="w-full max-w-[600px]">
+      <div className="relative mx-auto flex min-h-[620px] max-w-[1800px] flex-col justify-center px-5 pb-8 pt-8 sm:px-10 md:min-h-[min(820px,calc(100dvh-5rem))] md:px-[clamp(2.5rem,7vw,8rem)] md:py-14">
+        <div className="relative z-10 w-full max-w-[600px] md:w-[48%]">
           <p className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jj-olive sm:text-sm sm:tracking-[0.25em]">
             <span aria-hidden="true" className="h-px w-8 bg-jj-olive/60" />
             Herbal hair care · Nairobi, Kenya
@@ -50,6 +43,18 @@ export default function Hero() {
             <li>100% natural ingredients</li>
             <li>Hair oil · Butters · Scalp mask · Mist</li>
           </ul>
+        </div>
+
+        <div className="relative mt-8 h-[310px] overflow-hidden rounded-[1.4rem] bg-[#e0eee4]/65 sm:h-[420px] md:absolute md:inset-y-8 md:right-0 md:mt-0 md:h-auto md:w-[57%] md:rounded-l-[2rem] md:rounded-r-none">
+          <Image
+            src="/images/luxury-mint-green-haircare-collection.png"
+            alt="JJ Haircare's complete natural collection arranged on a marble display"
+            fill
+            priority
+            sizes="(min-width: 768px) 57vw, 100vw"
+            className="object-cover object-center"
+          />
+          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-[#e2f0e6]/70 to-transparent md:block" />
         </div>
       </div>
     </section>
