@@ -1,5 +1,3 @@
-"use client";
-
 import { Instagram } from "lucide-react";
 import Link from "next/link";
 import { whatsappOrderUrl, SOCIALS } from "@/data/site-config";

@@ -183,7 +183,7 @@ export default function Hero() {
                     alt={SHOWCASE[showcaseIndex].alt}
                     fill
                     className="object-cover"
-                    priority
+                    priority={showcaseIndex === 0}
                     sizes="(min-width: 1536px) 720px, (min-width: 1280px) 560px, 460px"
                   />
                 </motion.div>

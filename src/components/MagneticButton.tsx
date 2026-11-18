@@ -1,41 +1,20 @@
-"use client";
-
-import { useRef, useState } from "react";
-import { motion } from "framer-motion";
+import type { ReactNode } from "react";
 
 interface MagneticButtonProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
+/**
+ * CSS-only hover lift. Replaces the old framer-motion magnetic effect
+ * (which shipped ~219 KB of JS for a decorative hover).
+ */
 export default function MagneticButton({ children, className = "" }: MagneticButtonProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouse = (e: React.MouseEvent<HTMLDivElement>) => {
-    const { clientX, clientY } = e;
-    const { height, width, left, top } = ref.current!.getBoundingClientRect();
-    const middleX = clientX - (left + width / 2);
-    const middleY = clientY - (top + height / 2);
-    setPosition({ x: middleX * 0.1, y: middleY * 0.1 });
-  };
-
-  const reset = () => {
-    setPosition({ x: 0, y: 0 });
-  };
-
-  const { x, y } = position;
-
   return (
-    <motion.div
-      className={className}
-      ref={ref}
-      onMouseMove={handleMouse}
-      onMouseLeave={reset}
-      animate={{ x, y }}
-      transition={{ type: "spring", stiffness: 150, damping: 15, mass: 0.1 }}
+    <div
+      className={`inline-block transition-transform duration-300 ease-out hover:scale-[1.03] hover:-translate-y-0.5 motion-reduce:transition-none motion-reduce:hover:transform-none ${className}`}
     >
       {children}
-    </motion.div>
+    </div>
   );
 }
