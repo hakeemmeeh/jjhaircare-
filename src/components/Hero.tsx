@@ -180,11 +180,11 @@ export default function Hero() {
           </ul>
         </div>
 
-        {/* Right: rotating product image with 3D tilt + glare */}
-        <div className="hidden lg:flex items-center justify-center" style={{ perspective: reduceMotion ? undefined : 1200 }}>
+        {/* Right: rotating product image with 3D tilt + glare (stacked below text on mobile) */}
+        <div className="flex items-center justify-center mt-2 sm:mt-4 lg:mt-0" style={{ perspective: reduceMotion ? undefined : 1200 }}>
           <div
             ref={cardRef}
-            className="relative w-full max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/60 group will-change-transform"
+            className="relative w-full max-w-[260px] sm:max-w-[340px] md:max-w-[400px] lg:max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/60 group will-change-transform"
             style={{ transformStyle: reduceMotion ? undefined : "preserve-3d" }}
           >
             {/* Glare */}
@@ -198,13 +198,13 @@ export default function Hero() {
                   fill
                   className="object-cover"
                   priority={showcaseIndex === 0}
-                  sizes="(min-width: 1536px) 720px, (min-width: 1280px) 560px, 460px"
+                  sizes="(min-width: 1536px) 720px, (min-width: 1280px) 560px, (min-width: 1024px) 460px, (min-width: 640px) 400px, 340px"
                 />
               </div>
             </Link>
 
             {/* Dots */}
-            <div className="absolute bottom-4 left-0 right-0 z-30 flex justify-center gap-0">
+            <div className="absolute bottom-3 sm:bottom-4 left-0 right-0 z-30 flex justify-center gap-0">
               {SHOWCASE.map((item, i) => (
                 <button
                   key={item.src}
