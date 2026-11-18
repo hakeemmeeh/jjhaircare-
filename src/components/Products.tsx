@@ -111,7 +111,7 @@ export default function Products() {
   return (
     <section
       id="shop"
-      className="py-14 md:py-28 px-6 md:px-10 bg-[#F5F2EA] z-20 relative border-t border-jj-black/[0.08]"
+      className="py-14 md:py-28 px-6 md:px-12 bg-[#F5F2EA] z-20 relative border-t border-jj-black/[0.08]"
     >
       <div className="max-w-[1380px] mx-auto">
       <div className="mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
