@@ -7,9 +7,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 const SHOWCASE = [
-  { src: "/images/herbal-oil-face-v5.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
-  { src: "/images/scalp-detox-face-v4.jpg", alt: "JJ Haircare Scalp Detox Mask — cleanse, detox, revive", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
-  { src: "/images/moringa-hair-butter-v2.jpg", alt: "JJ Haircare Moringa Hair Butter — nourish, strengthen, grow", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
+  { src: "/images/luxury-mint-green-haircare-collection.png", alt: "JJ Haircare complete collection on a mint green marble display", name: "Complete Collection", href: "/products" },
+  { src: "/images/herbal-hair-oil-marble.png", alt: "JJ Haircare Herbal Hair Oil on marble with fresh botanicals", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
+  { src: "/images/scalp-detox-studio.png", alt: "JJ Haircare Scalp Detox Mask with fresh botanicals", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
+  { src: "/images/moringa-hair-butter-mint-luxe.png", alt: "JJ Haircare Moringa Hair Butter with a fresh mint finish", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
+  { src: "/images/hibiscus-hair-butter-glow.png", alt: "JJ Haircare Hibiscus Hair Butter with a rose pink cream finish", name: "Hibiscus Hair Butter", href: "/products/hibiscus-hair-butter" },
+  { src: "/images/hair-mist-mint-ad.png", alt: "JJ Haircare Hair Mist on a mint green marble display", name: "Hair Mist", href: "/products/hair-mist" },
 ];
 
 export default function Hero() {
@@ -62,7 +65,7 @@ export default function Hero() {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative md:min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude"
+      className="relative md:min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[linear-gradient(125deg,#F7F2EC_0%,#E8EFE7_42%,#DCE9DC_72%,#D4B5A0_125%)]"
       style={{ perspective: prefersReducedMotion ? undefined : 1200 }}
     >
 
