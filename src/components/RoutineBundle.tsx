@@ -46,13 +46,13 @@ export default function RoutineBundle() {
                 href={`/products/${p.slug}`}
                 className="group flex flex-col overflow-hidden rounded-[1.75rem] bg-white border border-jj-black/10 hover:shadow-lg transition-shadow duration-300"
               >
-                <div className="relative aspect-square overflow-hidden">
+                <div className={`relative aspect-square overflow-hidden ${p.imageFit === "contain" ? "bg-jj-ivory" : ""}`}>
                   <Image
                     src={p.image}
                     alt={p.name}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                    className={`${p.imageFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-700 ease-out group-hover:scale-105`}
                   />
                 </div>
                 <div className="p-5">
