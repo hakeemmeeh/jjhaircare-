@@ -19,7 +19,7 @@ export default function ProductCard({
       className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-jj-black/[0.08] bg-white shadow-[0_12px_35px_rgba(28,31,22,0.07)] hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(28,31,22,0.14)] transition-all duration-500 cursor-pointer"
     >
       {/* Full-bleed image with hover swap */}
-      <div className="relative aspect-[4/3] overflow-hidden bg-[#F0EEE6] sm:aspect-square">
+      <div className="relative aspect-square overflow-hidden bg-[#F0EEE6]">
         <Image
           src={product.image}
           alt={product.name}
