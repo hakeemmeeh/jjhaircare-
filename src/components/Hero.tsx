@@ -2,11 +2,9 @@
 
 import { motion, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence, useScroll, useMotionTemplate } from "framer-motion";
 import { useEffect, useRef, useState } from "react";
-import { ArrowRight, ChevronDown, Phone } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-
-import { WHATSAPP_NUMBER, PHONE_DISPLAY } from "@/data/site-config";
 
 const SHOWCASE = [
   { src: "/images/herbal-oil-face-v5.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
@@ -114,7 +112,7 @@ export default function Hero() {
             Herbal oil, butters, a scalp mask and hair mist for natural, curly and coily hair.
           </p>
 
-          {/* CTAs: 1 order, 2 shop, 3 call */}
+          {/* CTAs: 1 order, 2 shop */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
             <Link
               href="/contact#order"
@@ -129,13 +127,6 @@ export default function Hero() {
             >
               Shop the collection
             </Link>
-            <a
-              href={`tel:+${WHATSAPP_NUMBER}`}
-              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/30 text-jj-charcoal font-medium px-6 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:border-jj-black hover:text-jj-black transition-colors duration-300"
-            >
-              <Phone className="w-5 h-5" aria-hidden="true" />
-              {PHONE_DISPLAY}
-            </a>
           </div>
 
           {/* Proof */}
