@@ -6,40 +6,30 @@ import { useReducedMotion } from "framer-motion";
 
 export default function SmoothScrollProvider({ children }: { children: ReactNode }) {
   const prefersReducedMotion = useReducedMotion();
-  const [isCoarseOrMobile, setIsCoarseOrMobile] = useState(false);
+  const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(pointer: coarse), (max-width: 1024px)");
-    const updateInputMode = () => setIsCoarseOrMobile(mediaQuery.matches);
-
-    updateInputMode();
-    mediaQuery.addEventListener("change", updateInputMode);
-    return () => mediaQuery.removeEventListener("change", updateInputMode);
+    const mediaQuery = window.matchMedia("(pointer: fine) and (min-width: 1025px)");
+    const update = () => setIsDesktop(mediaQuery.matches);
+    update();
+    mediaQuery.addEventListener("change", update);
+    return () => mediaQuery.removeEventListener("change", update);
   }, []);
 
   const options = useMemo(
-    () =>
-      isCoarseOrMobile
-        ? {
-            // Mobile/tablet: keep scrolling close to native and responsive.
-            lerp: 0.2,
-            duration: 0.85,
-            smoothWheel: true,
-            wheelMultiplier: 1,
-            touchMultiplier: 1,
-          }
-        : {
-            // Desktop: smoother, premium glide similar to editorial sites.
-            lerp: 0.1,
-            duration: 1.35,
-            smoothWheel: true,
-            wheelMultiplier: 0.85,
-            touchMultiplier: 1,
-          },
-    [isCoarseOrMobile]
+    () => ({
+      lerp: 0.1,
+      duration: 1.35,
+      smoothWheel: true,
+      wheelMultiplier: 0.85,
+      touchMultiplier: 1,
+    }),
+    [],
   );
 
-  if (prefersReducedMotion) return <>{children}</>;
+  // Skip lenis on mobile, touch devices, and reduced-motion users.
+  // Native scroll is smoother and lighter on mobile than JS-based smooth scroll.
+  if (!isDesktop || prefersReducedMotion) return <>{children}</>;
 
   return (
     <ReactLenis root options={options}>
