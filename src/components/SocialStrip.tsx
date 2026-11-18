@@ -1,6 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight, Droplets, Heart, Instagram, Lightbulb, Play, PlayCircle } from "lucide-react";
+import { ArrowRight, Headphones, Instagram, Play } from "lucide-react";
 import { SOCIALS } from "@/data/site-config";
 
 const TIKTOK = SOCIALS.tiktok;
@@ -8,36 +7,28 @@ const TIKTOK = SOCIALS.tiktok;
 /** What we post, each tile opening a real video on our TikTok. */
 const tiles = [
   {
-    icon: PlayCircle,
-    label: "How to",
-    text: "Get more from your hair care essentials.",
+    label: "How-to guides",
+    text: "Short, practical ways to use your products.",
     href: `${TIKTOK}/video/7470204098118225157`,
-    image: "/images/scalp-detox-studio.png",
-    alt: "JJ Haircare Scalp Detox Mask on a mint green marble display",
+    tone: "bg-[#e4efe6]",
   },
   {
-    icon: Lightbulb,
-    label: "Hair tip",
-    text: "Shedding or breakage? Learn the difference.",
+    label: "Hair care tips",
+    text: "Learn how to tell shedding from breakage.",
     href: `${TIKTOK}/video/7699568326892129557`,
-    image: "/images/herbal-hair-oil-marble.png",
-    alt: "JJ Haircare Herbal Hair Oil with botanical leaves",
+    tone: "bg-[#f0e9dc]",
   },
   {
-    icon: Droplets,
-    label: "Routine",
-    text: "Why oil isn’t a moisturiser, and what comes first.",
+    label: "Routine advice",
+    text: "Find out what your hair needs before oil.",
     href: `${TIKTOK}/video/7705094188991401236`,
-    image: "/images/hair-mist-mint-ad.png",
-    alt: "JJ Haircare Hair Mist on a mint green marble display",
+    tone: "bg-[#dcebe0]",
   },
   {
-    icon: Heart,
-    label: "Our story",
-    text: "The idea and care behind JJ Haircare.",
+    label: "Behind the brand",
+    text: "Meet the people and story behind JJ Haircare.",
     href: `${TIKTOK}/video/7701399169507921172`,
-    image: "/images/herbal-oil-pour-v5.jpg",
-    alt: "JJ Haircare founder sharing the herbal hair oil",
+    tone: "bg-[#ebe9df]",
   },
 ];
 
@@ -87,31 +78,22 @@ export default function SocialStrip() {
         </div>
       </div>
 
-      <ul className="hide-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-5 sm:mx-0 sm:gap-5 sm:px-0 lg:gap-5">
-        {tiles.map(({ icon: Icon, label, text, href, image, alt }) => {
+      <ul className="hide-scroll -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-5 sm:mx-0 sm:gap-4 sm:px-0 lg:gap-4">
+        {tiles.map(({ label, text, href, tone }) => {
           return (
-            <li key={label} className="w-[82vw] max-w-[360px] shrink-0 snap-start sm:w-[48vw] lg:w-0 lg:min-w-0 lg:flex-1">
+            <li key={label} className="w-[76vw] max-w-[290px] shrink-0 snap-start sm:w-[42vw] lg:w-0 lg:min-w-0 lg:flex-1">
               <a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${label}: ${text} Watch on TikTok`}
-                className="group relative flex h-[390px] min-h-[360px] flex-col overflow-hidden rounded-[1.25rem] bg-jj-olive text-white shadow-[0_14px_35px_rgba(28,31,22,0.13)] transition-transform duration-300 hover:-translate-y-1 sm:h-[420px]"
+                className={`group relative flex min-h-[190px] h-full flex-col overflow-hidden rounded-2xl border border-jj-olive/15 p-5 text-jj-black shadow-[0_8px_24px_rgba(28,31,22,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-jj-olive/35 sm:min-h-[205px] sm:p-6 ${tone}`}
               >
-                <Image src={image} alt={alt} fill sizes="(min-width: 1024px) 25vw, 82vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
-                <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/20" />
-
-                <span className="relative flex items-center justify-between p-5">
-                  <span className="rounded-full border border-white/40 bg-black/20 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm">{label}</span>
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm"><Icon className="h-4 w-4" /></span>
-                </span>
-
-                <span aria-hidden="true" className="relative mt-auto p-5 sm:p-6">
-                  <span className="block max-w-[18rem] font-serif text-2xl leading-tight sm:text-[1.7rem]">{text}</span>
-                  <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em]">
-                    Watch guide <Play className="h-4 w-4 fill-current" />
-                  </span>
-                </span>
+                <span aria-hidden="true" className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#e5efe6] text-jj-olive"><Headphones className="h-4 w-4" /></span>
+                <span aria-hidden="true" className="font-serif text-xl leading-tight sm:text-2xl">{label}</span>
+                <span aria-hidden="true" className="mt-2 text-sm leading-relaxed text-jj-charcoal/65">{text}</span>
+                <span aria-hidden="true" className="mt-auto inline-flex items-center gap-2 pt-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-jj-olive">Watch on TikTok <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
+                <span aria-hidden="true" className="pointer-events-none absolute bottom-4 right-4 flex h-10 w-10 scale-75 items-center justify-center rounded-full bg-jj-olive text-white opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 motion-reduce:transition-none max-lg:scale-100 max-lg:opacity-100"><Play className="ml-0.5 h-4 w-4 fill-current" /></span>
               </a>
             </li>
           );
