@@ -4,11 +4,11 @@ import { ArrowRight } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative isolate w-full overflow-hidden bg-[linear-gradient(125deg,#edf7f0_0%,#dcefe3_47%,#cfe6d7_100%)] pt-24 md:min-h-[min(900px,100dvh)] md:pt-20">
+    <section className="relative isolate w-full overflow-hidden bg-[linear-gradient(125deg,#edf7f0_0%,#dcefe3_47%,#cfe6d7_100%)] pt-24 md:min-h-[min(780px,90dvh)] md:pt-0">
       <div className="pointer-events-none absolute -right-24 top-[8%] h-[480px] w-[480px] rounded-full bg-white/45 blur-[110px]" />
       <div className="pointer-events-none absolute -left-32 bottom-[-18%] h-[520px] w-[520px] rounded-full bg-[#b8d8c2]/45 blur-[120px]" />
 
-      <div className="relative mx-auto flex min-h-[620px] max-w-[1800px] flex-col justify-center px-5 pb-8 pt-8 sm:px-10 md:min-h-[min(820px,calc(100dvh-5rem))] md:px-[clamp(2.5rem,7vw,8rem)] md:py-14">
+      <div className="relative mx-auto flex min-h-[620px] max-w-[1800px] flex-col justify-center px-5 pb-8 pt-8 sm:px-10 md:min-h-[min(780px,90dvh)] md:px-[clamp(2.5rem,7vw,8rem)] md:py-10">
         <div className="relative z-10 w-full max-w-[600px] md:w-[48%]">
           <p className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jj-olive sm:text-sm sm:tracking-[0.25em]">
             <span aria-hidden="true" className="h-px w-8 bg-jj-olive/60" />
