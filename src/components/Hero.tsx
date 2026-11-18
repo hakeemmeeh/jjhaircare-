@@ -45,7 +45,7 @@ export default function Hero() {
           </ul>
         </div>
 
-        <div className="relative mt-8 h-[310px] overflow-hidden rounded-[1.4rem] bg-[#e0eee4]/65 sm:h-[420px] md:absolute md:inset-y-8 md:right-0 md:mt-0 md:h-auto md:w-[57%] md:rounded-l-[2rem] md:rounded-r-none">
+        <div className="relative mt-8 h-[310px] overflow-hidden rounded-[1.4rem] bg-[#e0eee4]/65 sm:h-[420px] md:absolute md:bottom-0 md:right-0 md:top-8 md:mt-0 md:h-auto md:w-[57%] md:rounded-l-[2rem] md:rounded-r-none">
           <Image
             src="/images/luxury-mint-green-haircare-collection.png"
             alt="JJ Haircare's complete natural collection arranged on a marble display"
