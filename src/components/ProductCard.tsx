@@ -9,7 +9,7 @@ export default function ProductCard({
   product,
   sizes = "(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw",
 }: {
-  product: Pick<Product, "name" | "slug" | "description" | "price" | "image" | "hoverImage" | "imageFit" | "badge" | "rating" | "reviewCount">;
+  product: Pick<Product, "name" | "slug" | "description" | "tagline" | "price" | "image" | "hoverImage" | "imageFit" | "badge" | "rating" | "reviewCount">;
   sizes?: string;
 }) {
   const fit = product.imageFit ?? "cover";
