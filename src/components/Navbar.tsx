@@ -82,7 +82,7 @@ export default function Navbar() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isSolid
             ? "bg-jj-black/95 backdrop-blur-md py-4 shadow-lg"
-            : "bg-transparent py-6"
+            : "bg-[#F5F2EA]/95 backdrop-blur-md py-4 shadow-sm"
         )}
       >
         <div className="container mx-auto px-6 md:px-12 flex items-center justify-between">
