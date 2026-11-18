@@ -1,7 +1,13 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { whatsappOrderUrl } from "@/data/site-config";
 
-/** Floating "chat with us" button shown on every page. */
+/** Floating "chat with us" button. Hidden on product detail pages where the sticky order bar already has a WhatsApp CTA. */
 export default function WhatsAppButton() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/products/")) return null;
+
   return (
     <a
       href={whatsappOrderUrl("Hi JJ Haircare, I have a question.")}
