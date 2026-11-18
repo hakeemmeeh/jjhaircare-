@@ -1,62 +1,226 @@
+"use client";
+
+import { motion, useMotionValue, useSpring, useTransform, useReducedMotion, AnimatePresence, useScroll, useMotionTemplate } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+
+const SHOWCASE = [
+  { src: "/images/herbal-oil-face-v5.jpg", alt: "JJ Haircare Herbal Hair Oil — nourish, strengthen, grow", name: "Herbal Hair Oil", href: "/products/herbal-hair-oil" },
+  { src: "/images/scalp-detox-face-v4.jpg", alt: "JJ Haircare Scalp Detox Mask — cleanse, detox, revive", name: "Scalp Detox Mask", href: "/products/scalp-detox-mask" },
+  { src: "/images/moringa-hair-butter-v2.jpg", alt: "JJ Haircare Moringa Hair Butter — nourish, strengthen, grow", name: "Moringa Hair Butter", href: "/products/moringa-hair-butter" },
+];
 
 export default function Hero() {
-  return (
-    <section className="relative isolate w-full overflow-hidden bg-[linear-gradient(125deg,#edf7f0_0%,#dcefe3_47%,#cfe6d7_100%)] pt-24 md:min-h-[min(780px,90dvh)] md:pt-0">
-      <div className="pointer-events-none absolute -right-24 top-[8%] h-[480px] w-[480px] rounded-full bg-white/45 blur-[110px]" />
-      <div className="pointer-events-none absolute -left-32 bottom-[-18%] h-[520px] w-[520px] rounded-full bg-[#b8d8c2]/45 blur-[120px]" />
+  const containerRef = useRef<HTMLElement>(null);
+  const prefersReducedMotion = useReducedMotion();
 
-      <div className="relative mx-auto flex min-h-[620px] max-w-[1800px] flex-col justify-center px-5 pb-8 pt-8 sm:px-10 md:min-h-[min(780px,90dvh)] md:px-[clamp(2.5rem,7vw,8rem)] md:py-10">
-        <div className="relative z-10 w-full max-w-[600px] md:w-[48%]">
-          <p className="mb-5 flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.15em] text-jj-olive sm:text-sm sm:tracking-[0.25em]">
+  const [showcaseIndex, setShowcaseIndex] = useState(0);
+
+  useEffect(() => {
+    if (prefersReducedMotion) return;
+    const id = setInterval(() => setShowcaseIndex((i) => (i + 1) % SHOWCASE.length), 4500);
+    return () => clearInterval(id);
+  }, [prefersReducedMotion]);
+
+  // 3D Parallax Mouse Tracking — disabled when user prefers reduced motion
+  const mouseX = useMotionValue(0);
+  const mouseY = useMotionValue(0);
+
+  const springConfig = { damping: 30, stiffness: 100, mass: 2 };
+  const smoothX = useSpring(mouseX, springConfig);
+  const smoothY = useSpring(mouseY, springConfig);
+
+  const bgTranslateX = useTransform(smoothX, [-0.5, 0.5], ["30px", "-30px"]);
+  const bgTranslateY = useTransform(smoothY, [-0.5, 0.5], ["30px", "-30px"]);
+  const rotateX = useTransform(smoothY, [-0.5, 0.5], ["10deg", "-10deg"]);
+  const rotateY = useTransform(smoothX, [-0.5, 0.5], ["-10deg", "10deg"]);
+  const glareX = useTransform(smoothX, [-0.5, 0.5], [0, 100]);
+  const glareY = useTransform(smoothY, [-0.5, 0.5], [0, 100]);
+  const glareBackground = useMotionTemplate`radial-gradient(circle at ${glareX}% ${glareY}%, rgba(255,255,255,0.4) 0%, transparent 50%)`;
+
+  const { scrollY } = useScroll();
+  const parallaxYBg = useTransform(scrollY, [0, 1000], [0, 200]);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    if (prefersReducedMotion || !containerRef.current) return;
+    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+    const x = (e.clientX - left) / width - 0.5;
+    const y = (e.clientY - top) / height - 0.5;
+    mouseX.set(x);
+    mouseY.set(y);
+  };
+
+  const handleMouseLeave = () => {
+    mouseX.set(0);
+    mouseY.set(0);
+  };
+
+  return (
+    <section
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+      className="relative md:min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-gradient-nude"
+      style={{ perspective: prefersReducedMotion ? undefined : 1200 }}
+    >
+
+      {/* Decorative Background Elements */}
+      <motion.div
+        style={prefersReducedMotion ? {} : { x: bgTranslateX, y: bgTranslateY, translateY: parallaxYBg }}
+        className="absolute inset-0 pointer-events-none"
+      >
+
+        <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-white/30 rounded-full blur-[100px] pointer-events-none" />
+        <div className="absolute bottom-[10%] left-[5%] w-[600px] h-[600px] bg-jj-rose/15 rounded-full blur-[120px] pointer-events-none" />
+
+        {/* Floating rings — suppressed when motion is reduced */}
+        {!prefersReducedMotion && (
+          <>
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-jj-black/5 rounded-full"
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-jj-nude/10 rounded-full border-dashed"
+            />
+          </>
+        )}
+      </motion.div>
+
+      {/* Main Content — split layout on desktop */}
+      <div className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-4 md:px-6 lg:px-12 pt-28 pb-14 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-6 lg:gap-6 items-center">
+
+        {/* Left: who / what / why / how — one clear path to contact */}
+        <div className="flex flex-col items-start text-left max-w-xl lg:max-w-none">
+          {/* Eyebrow: primary category + primary location */}
+          <p className="mb-5 flex items-center gap-3 font-mono text-[11px] sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-jj-olive">
             <span aria-hidden="true" className="h-px w-8 bg-jj-olive/60" />
             Herbal hair care · Nairobi, Kenya
           </p>
 
-          <h1 className="mb-6 font-serif text-[2.65rem] font-bold leading-[1.06] tracking-tight text-jj-black sm:text-6xl xl:text-7xl">
+          <h1 className="font-serif font-bold text-[2.5rem] leading-[1.08] sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-jj-black tracking-tight mb-6">
             Natural hair care,{" "}
             <span className="block italic text-jj-olive">made in Nairobi.</span>
           </h1>
 
-          <p className="mb-8 max-w-md text-base font-light leading-relaxed text-jj-charcoal/80 sm:text-lg md:mb-10 md:text-xl">
+          <p className="text-base sm:text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed max-w-md mb-8 md:mb-10">
             Herbal oil, butters, a scalp mask and hair mist for natural, curly and coily hair.
           </p>
 
-          <div className="mb-7 flex flex-col gap-3 sm:flex-row sm:gap-4">
+          {/* CTAs: 1 order, 2 shop */}
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
             <Link
               href="/contact#order"
-              className="inline-flex min-h-[52px] items-center justify-center gap-2.5 whitespace-nowrap rounded-full bg-jj-black px-8 py-4 text-sm font-medium uppercase tracking-wider text-white transition-colors duration-300 hover:bg-jj-olive"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
             >
-              Order now <ArrowRight className="h-5 w-5" aria-hidden="true" />
+              Order now
+              <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <Link
               href="/products"
-              className="inline-flex min-h-[52px] items-center justify-center whitespace-nowrap rounded-full border border-jj-black/70 bg-white/35 px-8 py-4 text-sm font-medium uppercase tracking-wider text-jj-black backdrop-blur-sm transition-colors duration-300 hover:bg-jj-black hover:text-white"
+              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
             >
               Shop the collection
             </Link>
           </div>
 
-          <ul className="flex flex-wrap gap-x-6 gap-y-2 text-[10px] uppercase tracking-[0.12em] text-jj-charcoal/65 sm:text-xs sm:tracking-widest">
+          {/* Proof */}
+          <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm uppercase tracking-widest text-jj-charcoal/70">
             <li>100% natural ingredients</li>
             <li>Hair oil · Butters · Scalp mask · Mist</li>
           </ul>
         </div>
 
-        <div className="relative mt-8 h-[310px] overflow-hidden rounded-[1.4rem] bg-[#e0eee4]/65 sm:h-[420px] md:absolute md:bottom-0 md:right-0 md:top-8 md:mt-0 md:h-auto md:w-[57%] md:rounded-l-[2rem] md:rounded-r-none">
-          <Image
-            src="/images/luxury-mint-green-haircare-collection.png"
-            alt="JJ Haircare's complete natural collection arranged on a marble display"
-            fill
-            priority
-            sizes="(min-width: 768px) 57vw, 100vw"
-            className="object-cover object-center"
-          />
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden w-28 bg-gradient-to-r from-[#e2f0e6]/70 to-transparent md:block" />
-        </div>
+        {/* Right: Product Image */}
+        <motion.div
+          initial={false}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: prefersReducedMotion ? 0 : 1.2, delay: prefersReducedMotion ? 0 : 0.4, ease: [0.16, 1, 0.3, 1] }}
+          style={prefersReducedMotion ? {} : { transform: "translateZ(30px)" }}
+          className="hidden lg:flex items-center justify-center"
+        >
+          <motion.div
+            className="relative w-full max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/60 group"
+            style={prefersReducedMotion ? {} : {
+              rotateX,
+              rotateY,
+              transformStyle: "preserve-3d"
+            }}
+          >
+            {/* Dynamic Glare Effect */}
+            <motion.div
+              className="absolute inset-0 z-20 pointer-events-none mix-blend-overlay transition-opacity duration-300"
+              style={prefersReducedMotion ? {} : {
+                background: glareBackground
+              }}
+            />
+            <Link href={SHOWCASE[showcaseIndex].href} className="absolute inset-0 block" aria-label={`Shop ${SHOWCASE[showcaseIndex].name}`}>
+              <AnimatePresence mode="wait" initial={false}>
+                <motion.div
+                  key={SHOWCASE[showcaseIndex].src}
+                  initial={{ opacity: prefersReducedMotion ? 1 : 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: prefersReducedMotion ? 1 : 0 }}
+                  transition={{ duration: prefersReducedMotion ? 0 : 0.6 }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={SHOWCASE[showcaseIndex].src}
+                    alt={SHOWCASE[showcaseIndex].alt}
+                    fill
+                    className="object-cover"
+                    priority={showcaseIndex === 0}
+                    sizes="(min-width: 1536px) 720px, (min-width: 1280px) 560px, 460px"
+                  />
+                </motion.div>
+              </AnimatePresence>
+            </Link>
+            {/* Dots */}
+            <div className="absolute bottom-4 left-0 right-0 z-30 flex justify-center gap-0">
+              {SHOWCASE.map((item, i) => (
+                <button
+                  key={item.src}
+                  type="button"
+                  aria-label={`Show ${item.name}`}
+                  onClick={() => setShowcaseIndex(i)}
+                  className="flex h-6 w-6 items-center justify-center"
+                >
+                  <span
+                    className={`block h-2 rounded-full transition-all ${i === showcaseIndex ? "w-6 bg-jj-black" : "w-2 bg-white/80 ring-1 ring-jj-black/20"}`}
+                  />
+                </button>
+              ))}
+            </div>
+          </motion.div>
+        </motion.div>
+
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.button
+        onClick={() => window.scrollTo({ top: window.innerHeight, behavior: "smooth" })}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: prefersReducedMotion ? 0 : 1.8, duration: prefersReducedMotion ? 0 : 1 }}
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 cursor-pointer hover:text-jj-black transition-colors z-30"
+        aria-label="Scroll to Discover"
+      >
+        <span className="text-jj-charcoal/80 font-semibold text-xs uppercase tracking-widest">
+          Scroll to Discover
+        </span>
+        <motion.div
+          animate={prefersReducedMotion ? {} : { y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        >
+          <ChevronDown className="w-6 h-6 text-jj-charcoal/80" />
+        </motion.div>
+      </motion.button>
+
     </section>
   );
 }
