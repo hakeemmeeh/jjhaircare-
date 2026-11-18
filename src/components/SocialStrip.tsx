@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Droplets, Heart, Instagram, Lightbulb, Play, PlayCircle } from "lucide-react";
 import { SOCIALS } from "@/data/site-config";
 
@@ -8,31 +9,35 @@ const TIKTOK = SOCIALS.tiktok;
 const tiles = [
   {
     icon: PlayCircle,
-    label: "How-to guides",
-    text: "A guide on how to use our products.",
+    label: "How to",
+    text: "Get more from your hair care essentials.",
     href: `${TIKTOK}/video/7470204098118225157`,
-    tone: "bg-[#26301F] text-white",
+    image: "/images/scalp-detox-studio.png",
+    alt: "JJ Haircare Scalp Detox Mask on a mint green marble display",
   },
   {
     icon: Lightbulb,
-    label: "Hair care tips",
-    text: "Is your hair shedding or breaking? How to tell the difference.",
+    label: "Hair tip",
+    text: "Shedding or breakage? Learn the difference.",
     href: `${TIKTOK}/video/7699568326892129557`,
-    tone: "bg-[#E8D8B8] text-jj-black",
+    image: "/images/herbal-hair-oil-marble.png",
+    alt: "JJ Haircare Herbal Hair Oil with botanical leaves",
   },
   {
     icon: Droplets,
-    label: "Routine advice",
-    text: "Why oil is not a moisturiser, and what your hair needs first.",
+    label: "Routine",
+    text: "Why oil isn’t a moisturiser, and what comes first.",
     href: `${TIKTOK}/video/7705094188991401236`,
-    tone: "bg-jj-black text-white",
+    image: "/images/hair-mist-mint-ad.png",
+    alt: "JJ Haircare Hair Mist on a mint green marble display",
   },
   {
     icon: Heart,
-    label: "Behind the brand",
-    text: "Lessons from building JJ Haircare, from our founder.",
+    label: "Our story",
+    text: "The idea and care behind JJ Haircare.",
     href: `${TIKTOK}/video/7701399169507921172`,
-    tone: "bg-white text-jj-black",
+    image: "/images/herbal-oil-pour-v5.jpg",
+    alt: "JJ Haircare founder sharing the herbal hair oil",
   },
 ];
 
@@ -82,50 +87,29 @@ export default function SocialStrip() {
         </div>
       </div>
 
-      <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4">
-        {tiles.map(({ icon: Icon, label, text, href, tone }) => {
-          const dark = tone.includes("text-white");
+      <ul className="hide-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-5 sm:mx-0 sm:gap-5 sm:px-0 lg:gap-5">
+        {tiles.map(({ icon: Icon, label, text, href, image, alt }) => {
           return (
-            <li key={label}>
+            <li key={label} className="w-[82vw] max-w-[360px] shrink-0 snap-start sm:w-[48vw] lg:w-0 lg:min-w-0 lg:flex-1">
               <a
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`${label}: ${text} Watch on TikTok`}
-                className={`group relative flex h-full min-h-[260px] flex-col overflow-hidden p-7 md:p-8 lg:min-h-[340px] ${tone}`}
+                className="group relative flex h-[390px] min-h-[360px] flex-col overflow-hidden rounded-[1.25rem] bg-jj-olive text-white shadow-[0_14px_35px_rgba(28,31,22,0.13)] transition-transform duration-300 hover:-translate-y-1 sm:h-[420px]"
               >
-                {/* hover wash */}
-                <span
-                  aria-hidden="true"
-                  className={`pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 ${
-                    dark ? "bg-white/5" : "bg-jj-black/5"
-                  }`}
-                />
+                <Image src={image} alt={alt} fill sizes="(min-width: 1024px) 25vw, 82vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                <span aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/15 to-black/20" />
 
-                <span
-                  aria-hidden="true"
-                  className={`relative flex h-12 w-12 items-center justify-center rounded-full ${dark ? "bg-white/15" : "bg-jj-black/10"}`}
-                >
-                  <Icon className="h-5 w-5" />
+                <span className="relative flex items-center justify-between p-5">
+                  <span className="rounded-full border border-white/40 bg-black/20 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.16em] backdrop-blur-sm">{label}</span>
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm"><Icon className="h-4 w-4" /></span>
                 </span>
 
-                {/* play button: pops in at the centre on hover, always shown on touch screens */}
-                <span aria-hidden="true" className="relative flex flex-1 items-center justify-center py-6">
-                  <span
-                    className={`flex h-16 w-16 items-center justify-center rounded-full shadow-xl transition-all duration-300 ease-out motion-reduce:transition-none lg:h-20 lg:w-20 lg:scale-50 lg:opacity-0 lg:group-hover:scale-100 lg:group-hover:opacity-100 lg:group-focus-visible:scale-100 lg:group-focus-visible:opacity-100 ${
-                      dark ? "bg-white text-jj-black" : "bg-jj-black text-white"
-                    }`}
-                  >
-                    <Play className="ml-1 h-7 w-7 fill-current lg:h-8 lg:w-8" />
-                  </span>
-                </span>
-
-                <span aria-hidden="true" className="relative">
-                  <span className="block font-serif text-2xl leading-tight">{label}</span>
-                  <span className={`mt-2 block font-light leading-relaxed sm:min-h-[3.25rem] ${dark ? "text-white/80" : "text-jj-charcoal/80"}`}>{text}</span>
-                  <span className="mt-5 inline-flex items-center gap-2 text-sm font-medium uppercase tracking-wider">
-                    Watch on TikTok
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                <span aria-hidden="true" className="relative mt-auto p-5 sm:p-6">
+                  <span className="block max-w-[18rem] font-serif text-2xl leading-tight sm:text-[1.7rem]">{text}</span>
+                  <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.14em]">
+                    Watch guide <Play className="h-4 w-4 fill-current" />
                   </span>
                 </span>
               </a>
