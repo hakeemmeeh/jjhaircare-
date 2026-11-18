@@ -79,7 +79,7 @@ export default function SocialStrip() {
       </div>
 
       <div className="px-6 md:px-12">
-        <ul className="hide-scroll -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 sm:mx-0 sm:gap-5 sm:px-0 lg:mx-auto lg:max-w-6xl lg:gap-4">
+        <ul className="hide-scroll flex snap-x snap-mandatory scroll-pl-6 gap-4 overflow-x-auto pb-5 sm:gap-5 sm:scroll-pl-0 lg:mx-auto lg:max-w-6xl lg:gap-4">
           {tiles.map(({ label, text, href, tone }) => {
             return (
               <li key={label} className="flex w-[min(78vw,18rem)] shrink-0 snap-start sm:w-[42vw] lg:w-0 lg:min-w-0 lg:flex-1">

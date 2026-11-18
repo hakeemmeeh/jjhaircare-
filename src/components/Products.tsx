@@ -131,7 +131,7 @@ export default function Products() {
         </MagneticButton>
       </div>
 
-      <div className="hide-scroll -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 sm:mx-0 sm:gap-5 sm:px-0 xl:gap-5">
+      <div className="hide-scroll flex snap-x snap-mandatory scroll-pl-6 gap-4 overflow-x-auto pb-5 sm:gap-5 sm:scroll-pl-0 xl:gap-5">
         {PRODUCTS.map((product) => (
           <div
             key={product.name}
