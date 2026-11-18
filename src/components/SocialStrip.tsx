@@ -8,25 +8,25 @@ const TIKTOK = SOCIALS.tiktok;
 const tiles = [
   {
     label: "How-to guides",
-    text: "Short, practical ways to use your products.",
+    text: "A guide on how to use our products.",
     href: `${TIKTOK}/video/7470204098118225157`,
     tone: "bg-[#e4efe6]",
   },
   {
     label: "Hair care tips",
-    text: "Learn how to tell shedding from breakage.",
+    text: "Is your hair shedding or breaking? How to tell the difference.",
     href: `${TIKTOK}/video/7699568326892129557`,
     tone: "bg-[#f0e9dc]",
   },
   {
     label: "Routine advice",
-    text: "Find out what your hair needs before oil.",
+    text: "Why oil is not a moisturiser, and what your hair needs first.",
     href: `${TIKTOK}/video/7705094188991401236`,
     tone: "bg-[#dcebe0]",
   },
   {
     label: "Behind the brand",
-    text: "Meet the people and story behind JJ Haircare.",
+    text: "Lessons from building JJ Haircare, from our founder.",
     href: `${TIKTOK}/video/7701399169507921172`,
     tone: "bg-[#ebe9df]",
   },
