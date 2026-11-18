@@ -6,7 +6,7 @@ const teamMembers = [
 
 export default function Team() {
   return (
-    <section className="py-20 px-6 md:px-12 border-t border-jj-black/10">
+    <section className="py-14 md:py-20 px-6 md:px-12 border-t border-jj-black/10">
       <div className="max-w-5xl mx-auto">
         <div className="mb-12 text-center">
           <h2 className="text-3xl md:text-5xl font-serif text-jj-black mb-3">The Founders</h2>

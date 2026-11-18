@@ -19,7 +19,7 @@ export default function ProductCard({
       className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-jj-black/[0.08] bg-white shadow-[0_12px_35px_rgba(28,31,22,0.07)] hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(28,31,22,0.14)] transition-all duration-500 cursor-pointer"
     >
       {/* Full-bleed image with hover swap */}
-      <div className="relative aspect-square overflow-hidden bg-[#F0EEE6]">
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#F0EEE6] sm:aspect-square">
         <Image
           src={product.image}
           alt={product.name}
@@ -46,9 +46,9 @@ export default function ProductCard({
         )}
       </div>
 
-      <div className="relative flex flex-1 flex-col px-5 pb-5 pt-5 sm:px-6 sm:pb-6">
-        <div className="flex items-start justify-between gap-3">
-          <h3 className="font-serif text-lg font-semibold leading-tight text-jj-black sm:text-xl">{product.name.replace("JJ Haircare ", "")}</h3>
+      <div className="relative flex flex-1 flex-col px-4 pb-4 pt-4 sm:px-6 sm:pb-6 sm:pt-5">
+        <div className="flex items-start justify-between gap-2 sm:gap-3">
+          <h3 className="min-w-0 font-serif text-lg font-semibold leading-tight text-jj-black sm:text-xl">{product.name.replace("JJ Haircare ", "")}</h3>
           {product.price && (
             <span className="shrink-0 pt-0.5 font-sans text-sm font-semibold text-jj-olive sm:text-base">
               {product.price}
@@ -57,20 +57,22 @@ export default function ProductCard({
         </div>
 
         {/* Rating */}
-        {product.rating != null && (
-        <div className="mt-2 flex items-center gap-1.5 text-sm">
-            <span className="text-[#B58A35]" aria-hidden>
-              ★
-            </span>
-            <span className="font-medium text-jj-charcoal">{product.rating.toFixed(1)}</span>
-            {product.reviewCount != null && (
-              <span className="text-jj-charcoal/50">({product.reviewCount})</span>
-            )}
-            <span className="sr-only">
-              Rated {product.rating} out of 5{product.reviewCount != null ? ` from ${product.reviewCount} reviews` : ""}
-            </span>
-          </div>
-        )}
+        <div className="mt-2 flex min-h-5 items-center gap-1.5 text-sm">
+          {product.rating != null && (
+            <>
+              <span className="text-[#B58A35]" aria-hidden>
+                ★
+              </span>
+              <span className="font-medium text-jj-charcoal">{product.rating.toFixed(1)}</span>
+              {product.reviewCount != null && (
+                <span className="text-jj-charcoal/50">({product.reviewCount})</span>
+              )}
+              <span className="sr-only">
+                Rated {product.rating} out of 5{product.reviewCount != null ? ` from ${product.reviewCount} reviews` : ""}
+              </span>
+            </>
+          )}
+        </div>
 
         <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-jj-charcoal/65">{product.tagline ?? product.description}</p>
 

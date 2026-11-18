@@ -24,7 +24,7 @@ export default function ShippingPage() {
   return (
     <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-32 pb-24 flex-1">
+      <div className="pt-28 pb-16 md:pt-32 md:pb-24 flex-1">
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
           <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Delivery</p>
           <h1 className="font-serif text-4xl md:text-6xl text-jj-black mb-6 leading-tight">

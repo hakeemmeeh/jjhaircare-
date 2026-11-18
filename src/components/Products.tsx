@@ -104,7 +104,7 @@ export default function Products() {
   return (
     <section
       id="shop"
-      className="py-20 md:py-28 px-5 md:px-10 bg-[#F5F2EA] z-20 relative border-t border-jj-black/[0.08]"
+      className="py-14 md:py-28 px-6 md:px-10 bg-[#F5F2EA] z-20 relative border-t border-jj-black/[0.08]"
     >
       <div className="max-w-[1380px] mx-auto">
       <div className="mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
@@ -124,12 +124,12 @@ export default function Products() {
         </MagneticButton>
       </div>
 
-      <div className="hide-scroll -mx-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-5 pb-5 sm:mx-0 sm:gap-5 sm:px-0 xl:gap-5">
+      <div className="hide-scroll -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 sm:mx-0 sm:gap-5 sm:px-0 xl:gap-5">
         {PRODUCTS.map((product, index) => (
           <div
             key={product.name}
             id={`product-${product.slug}`}
-            className={`w-[78vw] max-w-[340px] shrink-0 snap-start scroll-mt-28 rounded-[1.5rem] transition-[box-shadow,ring] duration-300 sm:w-[42vw] lg:w-[30vw] xl:w-[calc((100%-5rem)/5)] xl:max-w-none ${
+            className={`flex w-[min(78vw,18rem)] shrink-0 snap-start scroll-mt-28 rounded-[1.5rem] transition-[box-shadow,ring] duration-300 sm:w-[42vw] lg:w-[30vw] xl:w-[calc((100%-5rem)/5)] xl:max-w-none ${
               highlightedSlug === product.slug
                 ? "ring-2 ring-jj-gold ring-offset-2 ring-offset-jj-ivory shadow-lg"
                 : ""
@@ -140,6 +140,7 @@ export default function Products() {
               whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
+              className="h-full w-full"
               style={{ perspective: 1000 }}
             >
               <ProductCard product={product} />

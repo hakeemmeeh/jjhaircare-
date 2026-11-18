@@ -23,7 +23,7 @@ export default function TestimonialsPage() {
   return (
     <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-32 flex-1">
+      <div className="pt-28 md:pt-32 flex-1">
         <div className="px-6 md:px-12 pb-14 md:pb-20">
           <div className="mx-auto max-w-6xl">
             <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Real results</p>

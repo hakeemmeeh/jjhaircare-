@@ -31,9 +31,9 @@ const rows = [
 
 export default function About() {
   return (
-    <section id="about" className="pt-36 pb-20 bg-jj-ivory">
+    <section id="about" className="pt-28 pb-14 md:pt-36 md:pb-20 bg-jj-ivory">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="max-w-3xl mx-auto text-center mb-20">
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-20">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-jj-black mb-8 leading-tight">
             Rooted in Nature. <br />
             <span className="italic text-jj-olive">Crafted with Purpose.</span>
@@ -43,7 +43,7 @@ export default function About() {
           </p>
         </div>
 
-        <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-6 mb-20 md:mb-28">
+        <div className="max-w-5xl mx-auto grid sm:grid-cols-3 gap-4 md:gap-6 mb-14 md:mb-28">
           {pillars.map(({ icon: Icon, title, description }) => (
             <div key={title} className="text-center rounded-3xl bg-white/60 p-8 shadow-sm">
               <Icon className="mx-auto mb-4 h-8 w-8 text-jj-gold" />
@@ -53,7 +53,7 @@ export default function About() {
           ))}
         </div>
 
-        <div className="max-w-6xl mx-auto space-y-20 md:space-y-28">
+        <div className="max-w-6xl mx-auto space-y-14 md:space-y-28">
           {rows.map((row, i) => (
             <div
               key={row.title}

@@ -35,7 +35,7 @@ export default function HairGoals() {
   const prefersReducedMotion = useReducedMotion();
 
   return (
-    <section className="py-20 md:py-28 px-6 md:px-12" aria-labelledby="hair-goals-heading">
+    <section className="py-14 md:py-28 px-6 md:px-12" aria-labelledby="hair-goals-heading">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
           <div>

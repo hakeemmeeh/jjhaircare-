@@ -111,7 +111,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
       />
       <Navbar />
       
-      <div className="flex-1 pt-32 pb-24 lg:pb-24">
+      <div className="flex-1 pt-28 pb-24 md:pt-32">
         <div className="container mx-auto px-6 md:px-12">
           
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-24 items-start">
@@ -141,7 +141,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
                 <p className="text-jj-nude text-sm uppercase tracking-wider font-medium">Natural hair care · Nairobi, Kenya</p>
               </div>
 
-              <h1 className="font-serif text-5xl md:text-6xl text-jj-black mb-2">{product.name}</h1>
+              <h1 className="font-serif text-4xl md:text-6xl text-jj-black mb-2 leading-tight">{product.name}</h1>
               {product.rating != null && (
                 <div className="flex items-center gap-2 mb-3 text-sm">
                   <span className="text-jj-gold" aria-hidden>★</span>
@@ -241,7 +241,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           </div>
 
           {/* Bundle Section */}
-          <div className="mt-32 border-t border-jj-black/10 pt-24">
+          <div className="mt-16 border-t border-jj-black/10 pt-14 md:mt-32 md:pt-24">
             <div className="text-center mb-12">
               <h2 className="font-serif text-4xl md:text-5xl text-jj-black mb-4">Complete Your <span className="italic text-jj-nude">Routine</span></h2>
               <p className="text-jj-charcoal/70">Buy these three together and save {Math.round(BUNDLE_DISCOUNT * 100)}%.</p>
@@ -258,7 +258,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
                 <div>
                   <p className="text-sm text-jj-charcoal/60 mb-1">Bundle of {routine.length} products</p>
-                  <div className="flex items-baseline gap-3">
+                  <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
                     <span className="font-serif text-3xl md:text-4xl text-jj-black">{bundlePrice.toLocaleString()} KES</span>
                     <span className="text-jj-charcoal/50 line-through">{individualTotal.toLocaleString()} KES</span>
                     <span className="rounded-full bg-jj-gold/20 text-jj-gold px-3 py-1 text-xs font-bold">Save {savings.toLocaleString()} KES</span>

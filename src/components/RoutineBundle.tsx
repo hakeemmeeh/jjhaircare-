@@ -26,7 +26,7 @@ export default function RoutineBundle() {
     `\n\nIndividual total: ${individualTotal.toLocaleString()} KES\nBundle price (save ${Math.round(BUNDLE_DISCOUNT * 100)}%): ${bundlePrice.toLocaleString()} KES`;
 
   return (
-    <section className="py-20 md:py-28 px-6 md:px-12" aria-labelledby="routine-heading">
+    <section className="py-14 md:py-28 px-6 md:px-12" aria-labelledby="routine-heading">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
           <p className="text-xs uppercase tracking-wider text-jj-black/50 mb-3">The signature routine</p>
@@ -46,7 +46,7 @@ export default function RoutineBundle() {
                 href={`/products/${p.slug}`}
                 className="group flex flex-col overflow-hidden rounded-[1.75rem] bg-white border border-jj-black/10 hover:shadow-lg transition-shadow duration-300"
               >
-                <div className={`relative aspect-square overflow-hidden ${p.imageFit === "contain" ? "bg-jj-ivory" : ""}`}>
+                <div className={`relative aspect-[4/3] overflow-hidden sm:aspect-square ${p.imageFit === "contain" ? "bg-jj-ivory" : ""}`}>
                   <Image
                     src={p.image}
                     alt={p.name}
@@ -68,7 +68,7 @@ export default function RoutineBundle() {
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
               <p className="text-sm text-jj-charcoal/60 mb-1">Bundle of {routine.length} products</p>
-              <div className="flex items-baseline gap-3">
+              <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
                 <span className="font-serif text-3xl md:text-4xl text-jj-black">{bundlePrice.toLocaleString()} KES</span>
                 <span className="text-jj-charcoal/50 line-through">{individualTotal.toLocaleString()} KES</span>
                 <span className="rounded-full bg-jj-gold/20 text-jj-gold px-3 py-1 text-xs font-bold">Save {savings.toLocaleString()} KES</span>

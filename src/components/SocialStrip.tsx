@@ -46,7 +46,7 @@ const socialBtn =
 /** Home strip: where to find JJ Haircare on social media, with four real videos to start with. */
 export default function SocialStrip() {
   return (
-    <section aria-labelledby="social-heading" className="bg-gradient-nude pt-14 md:pt-20">
+    <section aria-labelledby="social-heading" className="bg-gradient-nude py-12 md:py-20">
       <div className="px-6 md:px-12">
         <div className="mx-auto max-w-6xl flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
           <div>
@@ -78,27 +78,29 @@ export default function SocialStrip() {
         </div>
       </div>
 
-      <ul className="hide-scroll -mx-5 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-5 sm:mx-0 sm:gap-4 sm:px-0 lg:gap-4">
-        {tiles.map(({ label, text, href, tone }) => {
-          return (
-            <li key={label} className="w-[76vw] max-w-[290px] shrink-0 snap-start sm:w-[42vw] lg:w-0 lg:min-w-0 lg:flex-1">
-              <a
-                href={href}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`${label}: ${text} Watch on TikTok`}
-                className={`group relative flex min-h-[190px] h-full flex-col overflow-hidden rounded-2xl border border-jj-olive/15 p-5 text-jj-black shadow-[0_8px_24px_rgba(28,31,22,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-jj-olive/35 sm:min-h-[205px] sm:p-6 ${tone}`}
-              >
-                <span aria-hidden="true" className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#e5efe6] text-jj-olive"><Headphones className="h-4 w-4" /></span>
-                <span aria-hidden="true" className="font-serif text-xl leading-tight sm:text-2xl">{label}</span>
-                <span aria-hidden="true" className="mt-2 text-sm leading-relaxed text-jj-charcoal/65">{text}</span>
-                <span aria-hidden="true" className="mt-auto inline-flex items-center gap-2 pt-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-jj-olive">Watch on TikTok <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
-                <span aria-hidden="true" className="pointer-events-none absolute bottom-4 right-4 flex h-10 w-10 scale-75 items-center justify-center rounded-full bg-jj-olive text-white opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 motion-reduce:transition-none max-lg:scale-100 max-lg:opacity-100"><Play className="ml-0.5 h-4 w-4 fill-current" /></span>
-              </a>
-            </li>
-          );
-        })}
-      </ul>
+      <div className="px-6 md:px-12">
+        <ul className="hide-scroll mx-auto flex max-w-6xl snap-x snap-mandatory gap-3 overflow-x-auto pb-5 sm:gap-4 lg:gap-4">
+          {tiles.map(({ label, text, href, tone }) => {
+            return (
+              <li key={label} className="flex w-[min(78vw,18rem)] shrink-0 snap-start sm:w-[42vw] lg:w-0 lg:min-w-0 lg:flex-1">
+                <a
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`${label}: ${text} Watch on TikTok`}
+                  className={`group relative flex min-h-[190px] h-full flex-col overflow-hidden rounded-2xl border border-jj-olive/15 p-5 text-jj-black shadow-[0_8px_24px_rgba(28,31,22,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-jj-olive/35 sm:min-h-[205px] sm:p-6 ${tone}`}
+                >
+                  <span aria-hidden="true" className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#e5efe6] text-jj-olive"><Headphones className="h-4 w-4" /></span>
+                  <span aria-hidden="true" className="font-serif text-xl leading-tight sm:text-2xl">{label}</span>
+                  <span aria-hidden="true" className="mt-2 text-sm leading-relaxed text-jj-charcoal/65">{text}</span>
+                  <span aria-hidden="true" className="mt-auto inline-flex items-center gap-2 pt-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-jj-olive">Watch on TikTok <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
+                  <span aria-hidden="true" className="pointer-events-none absolute bottom-4 right-4 flex h-10 w-10 scale-75 items-center justify-center rounded-full bg-jj-olive text-white opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 motion-reduce:transition-none max-lg:scale-100 max-lg:opacity-100"><Play className="ml-0.5 h-4 w-4 fill-current" /></span>
+                </a>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
     </section>
   );
 }

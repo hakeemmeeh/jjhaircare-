@@ -14,7 +14,7 @@ export default function JournalPage() {
   return (
     <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-24 flex-1">
+      <div className="pt-16 md:pt-24 flex-1">
         <JournalFull />
       </div>
       <Footer />

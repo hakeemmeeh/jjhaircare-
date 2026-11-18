@@ -11,12 +11,12 @@ export default function ContactPage() {
   return (
     <main id="main" className="bg-jj-ivory min-h-screen flex flex-col">
       <Navbar />
-      <div className="pt-32 pb-24 flex-1">
+      <div className="pt-28 pb-16 md:pt-32 md:pb-24 flex-1">
         <div className="container mx-auto px-6 md:px-12 max-w-7xl">
           
           {/* Hero Section */}
           <div className="mb-16 md:mb-24 flex flex-col gap-6 text-left">
-            <h1 className="text-5xl md:text-7xl font-serif text-jj-black"
+            <h1 className="text-4xl md:text-7xl font-serif text-jj-black"
             >
               Let&apos;s <span className="italic text-jj-nude">Talk.</span>
             </h1>
