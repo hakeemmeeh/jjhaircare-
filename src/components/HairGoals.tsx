@@ -1,6 +1,5 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Droplet, Sparkles, Sprout, Wind } from "lucide-react";
 
@@ -32,8 +31,6 @@ const goals = [
 ];
 
 export default function HairGoals() {
-  const prefersReducedMotion = useReducedMotion();
-
   return (
     <section className="py-14 md:py-28 px-6 md:px-12" aria-labelledby="hair-goals-heading">
       <div className="max-w-7xl mx-auto">
@@ -55,39 +52,28 @@ export default function HairGoals() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          {goals.map((goal, index) => {
+          {goals.map((goal) => {
             const Icon = goal.icon;
             return (
-              <motion.div
+              <Link
                 key={goal.title}
-                initial={prefersReducedMotion ? false : { opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-40px" }}
-                transition={{
-                  duration: 0.5,
-                  delay: prefersReducedMotion ? 0 : index * 0.06,
-                  ease: [0.16, 1, 0.3, 1],
-                }}
+                href={goal.href}
+                className="group flex h-full flex-col rounded-2xl border border-jj-black/10 bg-white/60 p-6 hover:border-jj-black/30 hover:bg-white hover:shadow-md transition-all duration-300"
               >
-                <Link
-                  href={goal.href}
-                  className="group flex h-full flex-col rounded-2xl border border-jj-black/10 bg-white/60 p-6 hover:border-jj-black/30 hover:bg-white hover:shadow-md transition-all duration-300"
-                >
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-ivory text-jj-olive group-hover:bg-jj-black group-hover:text-jj-gold transition-colors duration-300">
-                    <Icon className="h-6 w-6" aria-hidden="true" />
-                  </span>
-                  <h3 className="mt-5 font-sans text-lg font-semibold text-jj-black leading-tight">
-                    {goal.title}
-                  </h3>
-                  <p className="mt-2 text-sm text-jj-charcoal/70 leading-relaxed">
-                    {goal.line}
-                  </p>
-                  <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-jj-black group-hover:text-jj-olive transition-colors">
-                    Shop
-                    <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
-                  </span>
-                </Link>
-              </motion.div>
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-ivory text-jj-olive group-hover:bg-jj-black group-hover:text-jj-gold transition-colors duration-300">
+                  <Icon className="h-6 w-6" aria-hidden="true" />
+                </span>
+                <h3 className="mt-5 font-sans text-lg font-semibold text-jj-black leading-tight">
+                  {goal.title}
+                </h3>
+                <p className="mt-2 text-sm text-jj-charcoal/70 leading-relaxed">
+                  {goal.line}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-jj-black group-hover:text-jj-olive transition-colors">
+                  Shop
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
+                </span>
+              </Link>
             );
           })}
         </div>

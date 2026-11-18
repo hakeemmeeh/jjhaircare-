@@ -2,18 +2,25 @@
 
 import { ReactLenis } from "lenis/react";
 import { ReactNode, useEffect, useMemo, useState } from "react";
-import { useReducedMotion } from "framer-motion";
 
 export default function SmoothScrollProvider({ children }: { children: ReactNode }) {
-  const prefersReducedMotion = useReducedMotion();
   const [isDesktop, setIsDesktop] = useState(false);
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
 
   useEffect(() => {
-    const mediaQuery = window.matchMedia("(pointer: fine) and (min-width: 1025px)");
-    const update = () => setIsDesktop(mediaQuery.matches);
+    const desktop = window.matchMedia("(pointer: fine) and (min-width: 1025px)");
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => {
+      setIsDesktop(desktop.matches);
+      setPrefersReducedMotion(reduced.matches);
+    };
     update();
-    mediaQuery.addEventListener("change", update);
-    return () => mediaQuery.removeEventListener("change", update);
+    desktop.addEventListener("change", update);
+    reduced.addEventListener("change", update);
+    return () => {
+      desktop.removeEventListener("change", update);
+      reduced.removeEventListener("change", update);
+    };
   }, []);
 
   const options = useMemo(

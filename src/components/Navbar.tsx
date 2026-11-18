@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -142,52 +141,57 @@ export default function Navbar() {
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
-            animate={{ clipPath: "circle(150% at calc(100% - 2.5rem) 2.5rem)" }}
-            exit={{ clipPath: "circle(0% at calc(100% - 2.5rem) 2.5rem)" }}
-            transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[55] bg-gradient-nude flex flex-col justify-center items-center"
-            id="mobile-navigation"
-            ref={mobileMenuRef}
-            aria-label="Mobile navigation"
-          >
-            <ul className="flex flex-col items-center gap-6 text-center">
-              {navLinks.map((link, i) => (
-                <motion.li
-                  key={link.name}
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={{ opacity: 0, y: -20 }}
-                  transition={{ delay: 0.1 + i * 0.05, duration: 0.4 }}
-                >
-                  <Link
-                    href={link.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="font-serif text-4xl md:text-5xl text-jj-black hover:text-jj-olive transition-colors block"
-                  >
-                    {link.name}
-                  </Link>
-                </motion.li>
-              ))}
-              <motion.li
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ delay: 0.1 + navLinks.length * 0.05, duration: 0.4 }}
-                className="mt-6"
+      {/* Mobile Menu Overlay — CSS clip-path reveal (no JS animation lib) */}
+      <div
+        id="mobile-navigation"
+        ref={mobileMenuRef}
+        aria-label="Mobile navigation"
+        aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
+        className="fixed inset-0 z-[55] bg-gradient-nude flex flex-col justify-center items-center"
+        style={{
+          clipPath: mobileMenuOpen
+            ? "circle(150% at calc(100% - 2.5rem) 2.5rem)"
+            : "circle(0% at calc(100% - 2.5rem) 2.5rem)",
+          transition: "clip-path 0.7s cubic-bezier(0.22, 1, 0.36, 1)",
+          pointerEvents: mobileMenuOpen ? "auto" : "none",
+        }}
+      >
+        <ul className="flex flex-col items-center gap-6 text-center">
+          {navLinks.map((link, i) => (
+            <li
+              key={link.name}
+              style={{
+                opacity: mobileMenuOpen ? 1 : 0,
+                transform: mobileMenuOpen ? "translateY(0)" : "translateY(20px)",
+                transition: "opacity 0.4s ease, transform 0.4s ease",
+                transitionDelay: mobileMenuOpen ? `${0.1 + i * 0.05}s` : "0s",
+              }}
+            >
+              <Link
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-serif text-4xl md:text-5xl text-jj-black hover:text-jj-olive transition-colors block"
               >
-                <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="bg-jj-black text-white font-medium px-10 py-4 rounded-full uppercase tracking-wider text-lg w-full hover:bg-jj-olive transition-colors cursor-pointer text-center block">
-                  Shop Now
-                </Link>
-              </motion.li>
-            </ul>
-          </motion.div>
-        )}
-      </AnimatePresence>
+                {link.name}
+              </Link>
+            </li>
+          ))}
+          <li
+            className="mt-6"
+            style={{
+              opacity: mobileMenuOpen ? 1 : 0,
+              transform: mobileMenuOpen ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 0.4s ease, transform 0.4s ease",
+              transitionDelay: mobileMenuOpen ? `${0.1 + navLinks.length * 0.05}s` : "0s",
+            }}
+          >
+            <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="bg-jj-black text-white font-medium px-10 py-4 rounded-full uppercase tracking-wider text-lg w-full hover:bg-jj-olive transition-colors cursor-pointer text-center block">
+              Shop Now
+            </Link>
+          </li>
+        </ul>
+      </div>
     </>
   );
 }

@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { motion, useReducedMotion } from "framer-motion";
 import { useLenis } from "lenis/react";
 import { useSearchParams } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -16,10 +15,18 @@ export { GOAL_TO_PRODUCT_SLUG, PRODUCTS };
 
 export default function Products() {
   const searchParams = useSearchParams();
-  const prefersReducedMotion = useReducedMotion();
+  const [prefersReducedMotion, setPrefersReducedMotion] = useState(false);
   const lenis = useLenis();
   const [highlightedSlug, setHighlightedSlug] = useState<string | null>(null);
   const highlightTimeoutRef = useRef<number | null>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const update = () => setPrefersReducedMotion(mq.matches);
+    update();
+    mq.addEventListener("change", update);
+    return () => mq.removeEventListener("change", update);
+  }, []);
 
   useEffect(() => {
     const goalParam = searchParams.get("goal")?.toLowerCase();
@@ -125,7 +132,7 @@ export default function Products() {
       </div>
 
       <div className="hide-scroll -mx-6 flex snap-x snap-mandatory gap-4 overflow-x-auto px-6 pb-5 sm:mx-0 sm:gap-5 sm:px-0 xl:gap-5">
-        {PRODUCTS.map((product, index) => (
+        {PRODUCTS.map((product) => (
           <div
             key={product.name}
             id={`product-${product.slug}`}
@@ -135,16 +142,9 @@ export default function Products() {
                 : ""
             }`}
           >
-            <motion.div
-              initial={{ opacity: 0, y: 50, rotateX: 15, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, rotateX: 0, scale: 1 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.8, delay: index * 0.15, ease: [0.16, 1, 0.3, 1] }}
-              className="h-full w-full"
-              style={{ perspective: 1000 }}
-            >
+            <div className="h-full w-full">
               <ProductCard product={product} />
-            </motion.div>
+            </div>
           </div>
         ))}
       </div>
