@@ -26,14 +26,14 @@ export default function RoutineBundle() {
     `\n\nIndividual total: ${individualTotal.toLocaleString()} KES\nBundle price (save ${Math.round(BUNDLE_DISCOUNT * 100)}%): ${bundlePrice.toLocaleString()} KES`;
 
   return (
-    <section className="py-14 md:py-28 px-6 md:px-12" aria-labelledby="routine-heading">
+    <section className="py-20 md:py-28 px-6 md:px-12" aria-labelledby="routine-heading">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <p className="text-xs uppercase tracking-wider text-jj-black/50 mb-3">The signature routine</p>
-          <h2 id="routine-heading" className="font-serif text-4xl md:text-5xl lg:text-6xl text-jj-black leading-tight mb-4">
-            Complete your <span className="italic text-jj-nude">routine</span>
+        <div className="text-center mb-12 md:mb-16">
+          <p className="eyebrow mb-4">The signature routine</p>
+          <h2 id="routine-heading" className="font-serif text-4xl md:text-5xl lg:text-6xl text-jj-forest leading-[1.1] mb-5 text-balance">
+            Complete your <span className="text-jj-accent">routine.</span>
           </h2>
-          <p className="text-jj-charcoal/70 max-w-xl mx-auto">
+          <p className="text-jj-charcoal/70 max-w-xl mx-auto text-lg font-light leading-relaxed">
             Oil, butter and mist — the three-step ritual for hydrated, stronger, shinier hair. Buy together and save {Math.round(BUNDLE_DISCOUNT * 100)}%.
           </p>
         </div>
@@ -44,9 +44,9 @@ export default function RoutineBundle() {
               <Link
                 key={p.slug}
                 href={`/products/${p.slug}`}
-                className="group flex flex-col overflow-hidden rounded-[1.75rem] bg-white border border-jj-black/10 hover:shadow-lg transition-shadow duration-300"
+                className="group flex flex-col overflow-hidden rounded-[1.5rem] bg-white border border-jj-forest/[0.08] shadow-[0_16px_40px_-22px_rgba(24,60,50,0.28)] hover:-translate-y-1 hover:shadow-[0_30px_60px_-24px_rgba(24,60,50,0.35)] transition-all duration-300"
               >
-                <div className={`relative aspect-square overflow-hidden ${p.imageFit === "contain" ? "bg-jj-ivory" : ""}`}>
+                <div className={`relative aspect-square overflow-hidden ${p.imageFit === "contain" ? "bg-jj-paper" : ""}`}>
                   <Image
                     src={p.image}
                     alt={p.name}
@@ -56,29 +56,29 @@ export default function RoutineBundle() {
                   />
                 </div>
                 <div className="p-5">
-                  <h3 className="font-sans text-lg font-semibold text-jj-black">{p.name.replace("JJ Haircare ", "")}</h3>
-                  <p className="mt-1 text-sm text-jj-charcoal/60">{p.price}</p>
+                  <h3 className="font-sans text-lg font-semibold text-jj-forest">{p.name.replace("JJ Haircare ", "")}</h3>
+                  <p className="mt-1 text-sm text-jj-accent font-medium">{p.price}</p>
                 </div>
               </Link>
             )
           ))}
         </div>
 
-        <div className="mt-10 rounded-[1.75rem] border border-jj-black/10 bg-white/70 p-6 md:p-8">
+        <div className="mt-10 rounded-[1.5rem] border border-jj-forest/10 bg-stone p-6 md:p-8">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
             <div>
-              <p className="text-sm text-jj-charcoal/60 mb-1">Bundle of {routine.length} products</p>
+              <p className="text-sm text-jj-charcoal/60 mb-2 tracking-[0.04em]">Bundle of {routine.length} products</p>
               <div className="flex flex-wrap items-baseline gap-x-3 gap-y-2">
-                <span className="font-serif text-3xl md:text-4xl text-jj-black">{bundlePrice.toLocaleString()} KES</span>
-                <span className="text-jj-charcoal/50 line-through">{individualTotal.toLocaleString()} KES</span>
-                <span className="rounded-full bg-jj-gold/20 text-jj-gold px-3 py-1 text-xs font-bold">Save {savings.toLocaleString()} KES</span>
+                <span className="font-serif text-3xl md:text-4xl text-jj-forest">{bundlePrice.toLocaleString()} KES</span>
+                <span className="text-jj-charcoal/45 line-through">{individualTotal.toLocaleString()} KES</span>
+                <span className="rounded-full bg-jj-accent text-jj-forest px-3 py-1 text-xs font-bold">Save {savings.toLocaleString()} KES</span>
               </div>
             </div>
             <a
               href={whatsappOrderUrl(message)}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-jj-black hover:bg-jj-olive text-white font-medium px-8 py-4 uppercase tracking-widest text-sm transition-colors duration-300 shadow-lg shrink-0"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-jj-forest hover:bg-jj-forest-soft text-jj-paper font-medium px-8 py-4 text-sm tracking-[0.08em] transition-colors duration-300 shadow-lg shrink-0"
             >
               <MessageCircle className="h-5 w-5" aria-hidden="true" />
               Order the routine

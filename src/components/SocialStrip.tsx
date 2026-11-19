@@ -41,20 +41,20 @@ function TikTokIcon({ className }: { className?: string }) {
 }
 
 const socialBtn =
-  "inline-flex items-center justify-center gap-2.5 rounded-full border border-jj-black/70 px-7 py-4 min-h-[52px] text-sm font-medium tracking-wide text-jj-black hover:bg-jj-black hover:text-white transition-colors";
+  "inline-flex items-center justify-center gap-2.5 rounded-full border border-jj-forest/30 px-7 py-4 min-h-[52px] text-sm font-medium tracking-wide text-jj-forest hover:bg-jj-forest hover:text-jj-paper transition-colors";
 
 /** Home strip: where to find JJ Haircare on social media, with four real videos to start with. */
 export default function SocialStrip() {
   return (
-    <section aria-labelledby="social-heading" className="bg-gradient-nude py-12 md:py-20">
+    <section aria-labelledby="social-heading" className="bg-paper py-20 md:py-24">
       <div className="px-6 md:px-12">
         <div className="mx-auto max-w-6xl flex flex-col lg:flex-row lg:items-end lg:justify-between gap-8 mb-10">
           <div>
-            <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-3">Follow along</p>
-            <h2 id="social-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight">
-              Find us on <span className="italic text-jj-olive">Instagram and TikTok</span>
+            <p className="eyebrow mb-3">Follow along</p>
+            <h2 id="social-heading" className="font-serif text-3xl md:text-4xl text-jj-forest leading-[1.1] text-balance">
+              Find us on <span className="text-jj-accent">Instagram and TikTok</span>
             </h2>
-            <p className="mt-4 max-w-xl text-jj-charcoal/80 font-light leading-relaxed">
+            <p className="mt-4 max-w-xl text-jj-charcoal/70 font-light leading-relaxed">
               Follow JJ Haircare for how-to videos, routines and new arrivals from Nairobi.
             </p>
           </div>
@@ -69,7 +69,7 @@ export default function SocialStrip() {
             </a>
             <Link
               href="/contact#order"
-              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] uppercase tracking-wider text-sm hover:bg-jj-olive transition-colors"
+              className="inline-flex items-center justify-center gap-2.5 rounded-full bg-jj-forest text-jj-paper font-medium px-8 py-4 min-h-[52px] tracking-[0.08em] text-sm hover:bg-jj-forest-soft transition-colors"
             >
               Order now
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
@@ -88,13 +88,13 @@ export default function SocialStrip() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`${label}: ${text} Watch on TikTok`}
-                  className={`group relative flex min-h-[190px] h-full flex-col overflow-hidden rounded-2xl border border-jj-olive/15 p-5 text-jj-black shadow-[0_8px_24px_rgba(28,31,22,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-jj-olive/35 sm:min-h-[205px] sm:p-6 ${tone}`}
+                  className={`group relative flex min-h-[190px] h-full flex-col overflow-hidden rounded-2xl border border-jj-forest/10 p-5 text-jj-forest shadow-[0_8px_24px_rgba(24,60,50,0.06)] transition-all duration-300 hover:-translate-y-1 hover:border-jj-accent/40 hover:shadow-[0_20px_40px_-20px_rgba(24,60,50,0.3)] sm:min-h-[205px] sm:p-6 ${tone}`}
                 >
-                  <span aria-hidden="true" className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-[#e5efe6] text-jj-olive"><Headphones className="h-4 w-4" /></span>
+                  <span aria-hidden="true" className="mb-4 flex h-9 w-9 items-center justify-center rounded-full bg-jj-accent/15 text-jj-accent ring-1 ring-jj-accent/25"><Headphones className="h-4 w-4" /></span>
                   <span aria-hidden="true" className="font-serif text-xl leading-tight sm:text-2xl">{label}</span>
                   <span aria-hidden="true" className="mt-2 text-sm leading-relaxed text-jj-charcoal/65">{text}</span>
-                  <span aria-hidden="true" className="mt-auto inline-flex items-center gap-2 pt-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-jj-olive">Watch on TikTok <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
-                  <span aria-hidden="true" className="pointer-events-none absolute bottom-4 right-4 flex h-10 w-10 scale-75 items-center justify-center rounded-full bg-jj-olive text-white opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 motion-reduce:transition-none max-lg:scale-100 max-lg:opacity-100"><Play className="ml-0.5 h-4 w-4 fill-current" /></span>
+                  <span aria-hidden="true" className="mt-auto inline-flex items-center gap-2 pt-4 text-[10px] font-semibold uppercase tracking-[0.14em] text-jj-accent">Watch on TikTok <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-1" /></span>
+                  <span aria-hidden="true" className="pointer-events-none absolute bottom-4 right-4 flex h-10 w-10 scale-75 items-center justify-center rounded-full bg-jj-accent text-jj-forest opacity-0 shadow-md transition-all duration-300 group-hover:scale-100 group-hover:opacity-100 group-focus-visible:scale-100 group-focus-visible:opacity-100 motion-reduce:transition-none max-lg:scale-100 max-lg:opacity-100"><Play className="ml-0.5 h-4 w-4 fill-current" /></span>
                 </a>
               </li>
             );

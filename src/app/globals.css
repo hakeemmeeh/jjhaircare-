@@ -11,6 +11,13 @@
   --color-jj-charcoal: #1A1A1A;
   --color-jj-olive: #5A6A50;
 
+  /* Redesign palette — premium botanical luxury */
+  --color-jj-forest: #183C32;
+  --color-jj-forest-soft: #234A3E;
+  --color-jj-paper: #F3F0E7;
+  --color-jj-stone: #E7E1D3;
+  --color-jj-accent: #C4943D;
+
   --font-serif: var(--font-display);
   --font-sans: var(--font-inter);
 }
@@ -125,4 +132,48 @@ footer *,
 
 @media (prefers-reduced-motion: reduce) {
   .jj-hero-fade, .jj-hero-bob { animation: none; }
+}
+
+/* ============================================================
+   REDESIGN — premium botanical luxury surfaces & helpers
+   ============================================================ */
+
+/* Warm textured paper: layered subtle noise + soft fibre gradients */
+@utility bg-paper {
+  background-color: var(--color-jj-paper);
+  background-image:
+    radial-gradient(at 20% 15%, rgba(196, 148, 61, 0.05) 0px, transparent 55%),
+    radial-gradient(at 85% 80%, rgba(24, 60, 50, 0.04) 0px, transparent 50%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+}
+
+/* Subtle limestone / travertine surface */
+@utility bg-stone {
+  background-color: var(--color-jj-stone);
+  background-image:
+    radial-gradient(at 30% 20%, rgba(255, 255, 255, 0.5) 0px, transparent 60%),
+    radial-gradient(at 75% 85%, rgba(24, 60, 50, 0.05) 0px, transparent 55%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+/* Frosted glass panel (used sparingly) */
+@utility bg-glass {
+  background-color: rgba(243, 240, 231, 0.72);
+  backdrop-filter: blur(10px) saturate(1.05);
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
+}
+
+/* Fine gold divider */
+@utility rule-gold {
+  background: linear-gradient(90deg, transparent, var(--color-jj-accent), transparent);
+}
+
+/* Editorial eyebrow label */
+@utility eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-jj-accent);
 }

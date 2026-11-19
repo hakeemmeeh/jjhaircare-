@@ -114,18 +114,18 @@ export default function Products() {
       className="py-14 md:py-28 px-6 md:px-12 bg-[#F5F2EA] z-20 relative border-t border-jj-black/[0.08]"
     >
       <div className="max-w-[1380px] mx-auto">
-      <div className="mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-black/10 pb-8">
+      <div className="mb-10 md:mb-14 flex flex-col md:flex-row justify-between items-start md:items-end gap-6 border-b border-jj-forest/10 pb-8">
         <div>
-          <p className="font-sans text-[11px] font-semibold uppercase tracking-[0.2em] text-jj-olive mb-4">The collection</p>
-          <h2 className="text-4xl md:text-6xl font-serif text-jj-black mb-4 leading-[1.02] tracking-tight">
+          <p className="eyebrow mb-4">The collection</p>
+          <h2 className="text-4xl md:text-6xl font-serif text-jj-forest mb-4 leading-[1.05] tracking-tight text-balance">
             Shop natural hair products
           </h2>
-          <p className="font-sans text-jj-black/65 md:text-lg max-w-xl">
+          <p className="font-sans text-jj-charcoal/70 md:text-lg max-w-xl font-light leading-relaxed">
             Herbal hair oil, hair butters, a scalp detox mask and hair mist. From KES 1,000.
           </p>
         </div>
         <MagneticButton>
-          <Link href="/products" className="bg-jj-olive border border-jj-olive hover:border-jj-olive px-8 py-4 text-white hover:bg-transparent hover:text-jj-olive rounded-full font-sans text-xs uppercase tracking-[0.12em] transition-colors text-center inline-block cursor-pointer self-start md:self-auto">
+          <Link href="/products" className="bg-jj-forest border border-jj-forest hover:bg-transparent hover:text-jj-forest px-8 py-4 text-jj-paper rounded-full font-sans text-xs tracking-[0.1em] transition-colors text-center inline-block cursor-pointer self-start md:self-auto">
             View All Products
           </Link>
         </MagneticButton>

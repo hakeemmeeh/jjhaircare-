@@ -32,22 +32,22 @@ const goals = [
 
 export default function HairGoals() {
   return (
-    <section className="py-14 md:py-28 px-6 md:px-12" aria-labelledby="hair-goals-heading">
+    <section className="py-20 md:py-28 px-6 md:px-12" aria-labelledby="hair-goals-heading">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-14">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12 md:mb-16">
           <div>
-            <p className="text-xs uppercase tracking-wider text-jj-black/50 mb-3">
+            <p className="eyebrow mb-4">
               Shop by goal
             </p>
             <h2
               id="hair-goals-heading"
-              className="font-serif text-4xl md:text-5xl lg:text-6xl text-jj-black leading-tight"
+              className="font-serif text-4xl md:text-5xl lg:text-6xl text-jj-forest leading-[1.1] text-balance"
             >
-              Find what your hair <span className="italic text-jj-olive">needs today</span>
+              Find what your hair <span className="text-jj-accent">needs today.</span>
             </h2>
           </div>
-          <p className="text-jj-charcoal/75 max-w-md text-base md:text-lg font-light">
-            Pick a focus—our oils, butters, masks, and mists are built for everyday crown care.
+          <p className="text-jj-charcoal/70 max-w-md text-base md:text-lg font-light leading-relaxed">
+            Pick a focus — our oils, butters, masks and mists are built for everyday crown care.
           </p>
         </div>
 
@@ -58,18 +58,18 @@ export default function HairGoals() {
               <Link
                 key={goal.title}
                 href={goal.href}
-                className="group flex h-full flex-col rounded-2xl border border-jj-black/10 bg-white/60 p-6 hover:border-jj-black/30 hover:bg-white hover:shadow-md transition-all duration-300"
+                className="group flex h-full flex-col rounded-2xl border border-jj-forest/10 bg-white p-6 hover:-translate-y-1 hover:border-jj-accent/40 hover:shadow-[0_24px_50px_-24px_rgba(24,60,50,0.3)] transition-all duration-300"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-ivory text-jj-olive group-hover:bg-jj-black group-hover:text-jj-gold transition-colors duration-300">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-accent/12 text-jj-accent ring-1 ring-jj-accent/25 group-hover:bg-jj-forest group-hover:text-jj-accent transition-colors duration-300">
                   <Icon className="h-6 w-6" aria-hidden="true" />
                 </span>
-                <h3 className="mt-5 font-sans text-lg font-semibold text-jj-black leading-tight">
+                <h3 className="mt-5 font-sans text-lg font-semibold text-jj-forest leading-tight">
                   {goal.title}
                 </h3>
                 <p className="mt-2 text-sm text-jj-charcoal/70 leading-relaxed">
                   {goal.line}
                 </p>
-                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-jj-black group-hover:text-jj-olive transition-colors">
+                <span className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-jj-forest group-hover:text-jj-accent transition-colors">
                   Shop
                   <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </span>

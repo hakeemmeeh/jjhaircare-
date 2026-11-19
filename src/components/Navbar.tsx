@@ -72,7 +72,7 @@ export default function Navbar() {
   // But since our subpages have varied light/dark backgrounds starting at the top,
   // making it always solid on non-home pages is safer for visibility.
   const isSolid = !isHomePage || isScrolled;
-  const textColor = isSolid ? "text-white" : "text-jj-black";
+  const textColor = isSolid ? "text-jj-paper" : "text-jj-forest";
 
   return (
     <>
@@ -80,7 +80,7 @@ export default function Navbar() {
         className={clsx(
           "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
           isSolid
-            ? "bg-jj-black/95 backdrop-blur-md py-4 shadow-lg"
+            ? "bg-jj-forest/95 backdrop-blur-md py-4 shadow-lg"
             : "bg-transparent py-6"
         )}
       >
@@ -90,7 +90,7 @@ export default function Navbar() {
             href="/"
             className={clsx("flex items-center gap-3 group", textColor)}
           >
-            <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-black border border-white/10 shadow-sm">
+            <div className="relative w-10 h-10 md:w-12 md:h-12 rounded-full overflow-hidden flex-shrink-0 bg-jj-forest-soft border border-white/10 shadow-sm">
               <Image src="/logo.png" alt="JJ Haircare Logo" fill className="object-cover" />
             </div>
             <span className="font-serif text-2xl md:text-3xl lg:text-2xl xl:text-3xl tracking-wider">
@@ -107,7 +107,7 @@ export default function Navbar() {
                     href={link.href}
                     className={clsx(
                       "text-xs xl:text-sm uppercase tracking-wider xl:tracking-widest whitespace-nowrap transition-colors",
-                      isSolid ? "text-white/80 hover:text-jj-nude" : "text-jj-black/80 hover:text-jj-black"
+                      isSolid ? "text-jj-paper/80 hover:text-jj-accent" : "text-jj-forest/80 hover:text-jj-forest"
                     )}
                   >
                     {link.name}
@@ -117,10 +117,10 @@ export default function Navbar() {
             </ul>
             <MagneticButton>
               <Link href="/products" className={clsx(
-                "font-medium px-5 xl:px-7 py-2.5 rounded-full uppercase tracking-wider text-xs xl:text-sm transition-all cursor-pointer block whitespace-nowrap",
+                "font-medium px-5 xl:px-7 py-2.5 rounded-full tracking-wider text-xs xl:text-sm transition-all cursor-pointer block whitespace-nowrap",
                 isSolid
-                  ? "bg-jj-nude hover:bg-jj-gold text-jj-black hover:shadow-[0_0_15px_rgba(184,150,78,0.4)]"
-                  : "bg-jj-black hover:bg-jj-olive text-white hover:shadow-[0_0_15px_rgba(10,10,10,0.2)]"
+                  ? "bg-jj-accent hover:bg-[#d0a24a] text-jj-forest"
+                  : "bg-jj-forest hover:bg-jj-forest-soft text-jj-paper"
               )}>
                 Shop Now
               </Link>
@@ -130,7 +130,7 @@ export default function Navbar() {
           {/* Mobile Menu Toggle */}
           <button
             ref={menuToggleRef}
-            className={clsx("lg:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-black" : textColor)}
+            className={clsx("lg:hidden p-2 relative z-[60]", mobileMenuOpen ? "text-jj-forest" : textColor)}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
             aria-expanded={mobileMenuOpen}
@@ -148,7 +148,7 @@ export default function Navbar() {
         aria-label="Mobile navigation"
         aria-hidden={!mobileMenuOpen}
         inert={!mobileMenuOpen}
-        className="fixed inset-0 z-[55] bg-gradient-nude flex flex-col justify-center items-center"
+        className="fixed inset-0 z-[55] bg-paper flex flex-col justify-center items-center"
         style={{
           clipPath: mobileMenuOpen
             ? "circle(150% at calc(100% - 2.5rem) 2.5rem)"
@@ -171,7 +171,7 @@ export default function Navbar() {
               <Link
                 href={link.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="font-serif text-4xl md:text-5xl text-jj-black hover:text-jj-olive transition-colors block"
+                className="font-serif text-4xl md:text-5xl text-jj-forest hover:text-jj-accent transition-colors block"
               >
                 {link.name}
               </Link>
@@ -186,7 +186,7 @@ export default function Navbar() {
               transitionDelay: mobileMenuOpen ? `${0.1 + navLinks.length * 0.05}s` : "0s",
             }}
           >
-            <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="bg-jj-black text-white font-medium px-10 py-4 rounded-full uppercase tracking-wider text-lg w-full hover:bg-jj-olive transition-colors cursor-pointer text-center block">
+            <Link href="/products" onClick={() => setMobileMenuOpen(false)} className="bg-jj-forest text-jj-paper font-medium px-10 py-4 rounded-full tracking-wider text-lg w-full hover:bg-jj-forest-soft transition-colors cursor-pointer text-center block">
               Shop Now
             </Link>
           </li>

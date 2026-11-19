@@ -54,50 +54,50 @@ export default function Home() {
       </div>
 
       {/* 1b. Marquee + Our Story */}
-      <div className="relative z-10 overflow-hidden bg-jj-ivory">
+      <div className="relative z-10 overflow-hidden bg-paper">
         <Marquee />
         <OurStory />
       </div>
 
       {/* 2. Overlapping Features */}
-      <div className="relative z-[12] overflow-hidden bg-[#EBE3D5]">
+      <div className="relative z-[12] overflow-hidden bg-jj-forest">
         <Features />
       </div>
 
       {/* 2b. Shop by hair goal — after Features */}
-      <div className="relative z-[15] overflow-hidden bg-gradient-nude">
+      <div className="relative z-[15] overflow-hidden bg-paper">
         <HairGoals />
       </div>
 
       {/* 3. Overlapping Products */}
-      <div className="relative z-20 bg-[#EBE3D5]">
+      <div className="relative z-20 bg-paper">
         <Suspense fallback={<div className="min-h-[40vh]" aria-hidden />}>
           <Products />
         </Suspense>
       </div>
 
       {/* 3b. Bundle */}
-      <div className="relative z-[22] overflow-hidden bg-gradient-nude">
+      <div className="relative z-[22] overflow-hidden bg-paper">
         <RoutineBundle />
       </div>
 
       {/* 4. Ordering and delivery */}
-      <div className="relative z-[35] overflow-hidden bg-jj-ivory">
+      <div className="relative z-[35] overflow-hidden bg-paper">
         <DeliveryStrip />
       </div>
 
       {/* 5b. Social strip */}
-      <div className="relative z-[45] overflow-hidden bg-gradient-nude">
+      <div className="relative z-[45] overflow-hidden bg-paper">
         <SocialStrip />
       </div>
 
       {/* 5c. FAQ teaser */}
-      <div className="relative z-[48] overflow-hidden bg-[#EBE3D5]">
+      <div className="relative z-[48] overflow-hidden bg-stone">
         <FaqTeaser />
       </div>
 
       {/* 6. Footer */}
-      <div className="relative z-50 overflow-hidden bg-jj-black">
+      <div className="relative z-50 overflow-hidden bg-jj-forest">
         <Footer />
       </div>
     </main>

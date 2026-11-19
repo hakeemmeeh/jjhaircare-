@@ -124,59 +124,59 @@ export default function Hero() {
   const active = SHOWCASE[showcaseIndex];
 
   return (
-    <section className="relative md:min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-[linear-gradient(125deg,#F7F2EC_0%,#E8EFE7_42%,#DCE9DC_72%,#D4B5A0_125%)]">
+    <section className="relative md:min-h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-paper">
       {/* Decorative background: outer = scroll parallax, inner = pointer parallax + rings */}
       <div ref={bgScrollRef} className="absolute inset-0 pointer-events-none will-change-transform">
         <div ref={bgMouseRef} className="absolute inset-0 pointer-events-none will-change-transform">
-          <div className="absolute top-[10%] right-[10%] w-[500px] h-[500px] bg-white/30 rounded-full blur-[100px] pointer-events-none" />
-          <div className="absolute bottom-[10%] left-[5%] w-[600px] h-[600px] bg-jj-rose/15 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute top-[8%] right-[6%] w-[520px] h-[520px] bg-jj-accent/10 rounded-full blur-[110px] pointer-events-none" />
+          <div className="absolute bottom-[6%] left-[2%] w-[560px] h-[560px] bg-jj-forest/10 rounded-full blur-[120px] pointer-events-none" />
           {!reduceMotion && (
             <>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-jj-black/5 rounded-full animate-[spin_60s_linear_infinite]" />
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-jj-nude/10 rounded-full border-dashed animate-[spin_80s_linear_infinite_reverse]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[820px] h-[820px] border border-jj-forest/[0.06] rounded-full animate-[spin_60s_linear_infinite]" />
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-jj-accent/20 rounded-full border-dashed animate-[spin_80s_linear_infinite_reverse]" />
             </>
           )}
         </div>
       </div>
 
       {/* Main content — split layout on desktop */}
-      <div className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-6 lg:px-12 pt-28 pb-16 md:pt-24 md:pb-12 grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-6 items-center">
+      <div className="relative z-20 container max-w-7xl 2xl:max-w-[1500px] mx-auto px-6 lg:px-12 pt-28 pb-16 md:pt-28 md:pb-20 grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-10 lg:gap-6 items-center">
 
         {/* Left: message + CTAs */}
         <div className="flex flex-col items-start text-left max-w-xl lg:max-w-none">
-          <p className="mb-5 flex items-center gap-3 font-mono text-[11px] sm:text-sm uppercase tracking-[0.15em] sm:tracking-[0.25em] text-jj-olive">
-            <span aria-hidden="true" className="h-px w-8 bg-jj-olive/60" />
-            Herbal hair care · Nairobi, Kenya
+          <p className="eyebrow mb-6 flex items-center gap-3">
+            <span aria-hidden="true" className="h-px w-8 bg-jj-accent/70" />
+            Herbal hair care · Nairobi
           </p>
 
-          <h1 className="font-serif font-bold text-[2.5rem] leading-[1.08] sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-jj-black tracking-tight mb-6">
+          <h1 className="font-serif text-[2.6rem] leading-[1.06] sm:text-6xl lg:text-5xl xl:text-6xl 2xl:text-7xl text-jj-forest tracking-tight mb-7 text-balance">
             Natural hair care,{" "}
-            <span className="block italic text-jj-olive">made in Nairobi.</span>
+            <span className="block text-jj-accent">made in Nairobi.</span>
           </h1>
 
-          <p className="text-base sm:text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed max-w-md mb-8 md:mb-10">
-            Herbal oil, butters, a scalp mask and hair mist for natural, curly and coily hair.
+          <p className="text-base sm:text-lg md:text-xl text-jj-charcoal/70 leading-relaxed max-w-md mb-9 md:mb-11">
+            Herbal oil, butters, a scalp mask and hair mist — formulated for natural, curly and coily hair.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto mb-8">
             <Link
               href="/contact#order"
-              className="inline-flex items-center justify-center gap-2.5 bg-jj-black text-white font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-olive transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2.5 bg-jj-forest text-jj-paper font-medium px-8 py-4 min-h-[52px] rounded-full text-sm tracking-[0.08em] whitespace-nowrap hover:bg-jj-forest-soft transition-colors duration-300"
             >
-              Order now
+              Order on WhatsApp
               <ArrowRight className="w-5 h-5" aria-hidden="true" />
             </Link>
             <Link
               href="/products"
-              className="inline-flex items-center justify-center gap-2.5 border border-jj-black/70 text-jj-black font-medium px-8 py-4 min-h-[52px] rounded-full uppercase tracking-wider text-sm whitespace-nowrap hover:bg-jj-black hover:text-white transition-colors duration-300"
+              className="inline-flex items-center justify-center gap-2.5 border border-jj-forest/30 text-jj-forest font-medium px-8 py-4 min-h-[52px] rounded-full text-sm tracking-[0.08em] whitespace-nowrap hover:bg-jj-forest hover:text-jj-paper transition-colors duration-300"
             >
               Shop the collection
             </Link>
           </div>
 
-          <ul className="mt-8 md:mt-10 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm uppercase tracking-widest text-jj-charcoal/70">
-            <li>100% natural ingredients</li>
-            <li>Hair oil · Butters · Scalp mask · Mist</li>
+          <ul className="mt-2 md:mt-4 flex flex-wrap gap-x-6 gap-y-2 text-xs sm:text-sm tracking-[0.04em] text-jj-charcoal/60">
+            <li className="flex items-center gap-2"><span aria-hidden="true" className="h-1 w-1 rounded-full bg-jj-accent" />100% natural ingredients</li>
+            <li className="flex items-center gap-2"><span aria-hidden="true" className="h-1 w-1 rounded-full bg-jj-accent" />Oil · Butters · Scalp mask · Mist</li>
           </ul>
         </div>
 
@@ -184,7 +184,7 @@ export default function Hero() {
         <div className="flex items-center justify-center mt-2 sm:mt-4 lg:mt-0" style={{ perspective: reduceMotion ? undefined : 1200 }}>
           <div
             ref={cardRef}
-            className="relative w-full max-w-[260px] sm:max-w-[340px] md:max-w-[400px] lg:max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-2xl overflow-hidden shadow-2xl border border-white/60 group will-change-transform"
+            className="relative w-full max-w-[260px] sm:max-w-[340px] md:max-w-[400px] lg:max-w-[460px] xl:max-w-[560px] 2xl:max-w-[720px] aspect-square rounded-[1.5rem] overflow-hidden shadow-[0_30px_70px_-30px_rgba(24,60,50,0.45)] ring-1 ring-jj-forest/10 group will-change-transform"
             style={{ transformStyle: reduceMotion ? undefined : "preserve-3d" }}
           >
             {/* Glare */}

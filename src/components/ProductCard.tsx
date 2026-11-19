@@ -16,7 +16,7 @@ export default function ProductCard({
   return (
     <Link
       href={`/products/${product.slug}`}
-      className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-jj-black/[0.08] bg-white shadow-[0_12px_35px_rgba(28,31,22,0.07)] hover:-translate-y-1 hover:shadow-[0_22px_50px_rgba(28,31,22,0.14)] transition-all duration-500 cursor-pointer"
+      className="group relative flex h-full flex-col overflow-hidden rounded-[1.5rem] border border-jj-forest/[0.08] bg-white shadow-[0_16px_40px_-20px_rgba(24,60,50,0.25)] hover:-translate-y-1 hover:shadow-[0_30px_60px_-24px_rgba(24,60,50,0.35)] transition-all duration-500 cursor-pointer"
     >
       {/* Full-bleed image with hover swap */}
       <div className="relative aspect-square overflow-hidden bg-[#F0EEE6]">
@@ -40,7 +40,7 @@ export default function ProductCard({
 
         {/* Corner badge */}
         {product.badge && (
-          <span className="absolute left-4 top-4 z-10 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold uppercase tracking-[0.14em] text-jj-olive shadow-sm">
+          <span className="absolute left-4 top-4 z-10 rounded-full bg-white/95 px-3 py-1.5 text-[10px] font-bold tracking-[0.14em] text-jj-accent uppercase shadow-sm">
             {product.badge}
           </span>
         )}
@@ -48,9 +48,9 @@ export default function ProductCard({
 
       <div className="relative flex flex-1 flex-col px-4 pb-4 pt-4 sm:px-6 sm:pb-6 sm:pt-5">
         <div className="flex items-start justify-between gap-2 sm:gap-3">
-          <h3 className="min-w-0 font-serif text-lg font-semibold leading-tight text-jj-black sm:text-xl">{product.name.replace("JJ Haircare ", "")}</h3>
+          <h3 className="min-w-0 font-serif text-lg font-semibold leading-tight text-jj-forest sm:text-xl">{product.name.replace("JJ Haircare ", "")}</h3>
           {product.price && (
-            <span className="shrink-0 pt-0.5 font-sans text-sm font-semibold text-jj-olive sm:text-base">
+            <span className="shrink-0 pt-0.5 font-sans text-sm font-semibold text-jj-accent sm:text-base">
               {product.price}
             </span>
           )}
@@ -60,7 +60,7 @@ export default function ProductCard({
         <div className="mt-2 flex min-h-5 items-center gap-1.5 text-sm">
           {product.rating != null && (
             <>
-              <span className="text-[#B58A35]" aria-hidden>
+              <span className="text-jj-accent" aria-hidden>
                 ★
               </span>
               <span className="font-medium text-jj-charcoal">{product.rating.toFixed(1)}</span>
@@ -76,7 +76,7 @@ export default function ProductCard({
 
         <p className="mt-3 line-clamp-2 text-sm leading-relaxed text-jj-charcoal/65">{product.tagline ?? product.description}</p>
 
-        <span className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-jj-olive/35 px-5 text-xs font-semibold uppercase tracking-[0.14em] text-jj-olive transition-colors group-hover:bg-jj-olive group-hover:text-white">
+        <span className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-full border border-jj-forest/25 px-5 text-xs font-semibold tracking-[0.08em] text-jj-forest transition-colors group-hover:bg-jj-forest group-hover:text-jj-paper">
           Explore product <span aria-hidden>→</span>
         </span>
       </div>

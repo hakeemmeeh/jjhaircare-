@@ -35,32 +35,32 @@ const ingredients = [
 /** Home: what goes into the products, each card linking to the product it is in. */
 export default function Features() {
   return (
-    <section aria-labelledby="ingredients-heading" className="bg-[#EBE3D5] px-6 md:px-12 py-14 md:py-20">
+    <section aria-labelledby="ingredients-heading" className="bg-jj-forest px-6 md:px-12 py-20 md:py-28">
       <div className="mx-auto max-w-6xl">
-        <div className="max-w-2xl mb-10 md:mb-12">
-          <p className="font-mono text-xs uppercase tracking-widest text-jj-olive mb-3">The JJ Haircare difference</p>
-          <h2 id="ingredients-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight mb-4">
-            Plant-based, <span className="italic text-jj-olive">and you can name every one</span>
+        <div className="max-w-2xl mb-12 md:mb-16">
+          <p className="eyebrow mb-4">The JJ Haircare difference</p>
+          <h2 id="ingredients-heading" className="font-serif text-3xl md:text-5xl text-jj-paper leading-[1.1] mb-5 text-balance">
+            Plant-based, and you can <span className="text-jj-accent">name every one.</span>
           </h2>
-          <p className="text-jj-charcoal/80 font-light leading-relaxed">
+          <p className="text-jj-paper/70 text-lg font-light leading-relaxed max-w-xl">
             Our formulas start with ingredients from nature. Here is what goes into each product.
           </p>
         </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <ul className="grid gap-px sm:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl bg-jj-paper/10 ring-1 ring-jj-paper/10">
           {ingredients.map(({ icon: Icon, name, text, href, product }) => (
-            <li key={name}>
+            <li key={name} className="bg-jj-forest">
               <Link
                 href={href}
-                className="group flex h-full items-start gap-4 rounded-2xl border border-jj-black/10 bg-white/70 p-5 transition-all duration-200 hover:-translate-y-1 hover:border-jj-black/50 hover:shadow-lg lg:flex-col lg:gap-5 lg:p-6"
+                className="group flex h-full flex-col gap-5 p-6 md:p-8 transition-colors duration-300 hover:bg-jj-forest-soft"
               >
-                <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-jj-black/5 text-jj-black transition-colors group-hover:bg-jj-black group-hover:text-white">
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-accent/15 text-jj-accent ring-1 ring-jj-accent/30 transition-colors group-hover:bg-jj-accent group-hover:text-jj-forest">
                   <Icon className="h-5 w-5" aria-hidden="true" />
                 </span>
                 <span className="flex flex-1 flex-col">
-                  <span className="font-serif text-xl text-jj-black">{name}</span>
-                  <span className="mt-1.5 text-jj-charcoal/80 font-light leading-relaxed">{text}</span>
-                  <span className="mt-4 inline-flex items-center gap-2 text-sm uppercase tracking-wider text-jj-black">
+                  <span className="font-serif text-2xl text-jj-paper">{name}</span>
+                  <span className="mt-2 text-jj-paper/70 font-light leading-relaxed">{text}</span>
+                  <span className="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-medium tracking-[0.04em] text-jj-accent">
                     {product}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </span>
