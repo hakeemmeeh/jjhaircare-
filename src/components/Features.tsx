@@ -1,34 +1,35 @@
 import Link from "next/link";
-import { ArrowRight, Droplets, Flower2, Leaf, Sprout } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const ingredients = [
   {
-    icon: Flower2,
     name: "Hibiscus",
     text: "With shea butter and aloe vera in our Hibiscus Hair Butter.",
     href: "/products/hibiscus-hair-butter",
     product: "Hibiscus Hair Butter",
+    image: "/images/hibiscus-hair-butter-ad.webp",
   },
   {
-    icon: Leaf,
     name: "Moringa",
     text: "The heart of our rich, creamy Moringa Hair Butter.",
     href: "/products/moringa-hair-butter",
     product: "Moringa Hair Butter",
+    image: "/images/moringa-hair-butter-ad.webp",
   },
   {
-    icon: Sprout,
     name: "Honey & neem",
     text: "Infused in the Scalp Detox Mask to detoxify, hydrate and repair.",
     href: "/products/scalp-detox-mask",
     product: "Scalp Detox Mask",
+    image: "/images/scalp-detox-studio.png",
   },
   {
-    icon: Droplets,
     name: "Herbal oils",
     text: "A 100% natural blend in our Herbal Hair Oil, for scalp and strands.",
     href: "/products/herbal-hair-oil",
     product: "Herbal Hair Oil",
+    image: "/images/herbal-hair-oil-marble.png",
   },
 ];
 
@@ -48,14 +49,20 @@ export default function Features() {
         </div>
 
         <ul className="grid gap-px sm:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl bg-jj-paper/10 ring-1 ring-jj-paper/10">
-          {ingredients.map(({ icon: Icon, name, text, href, product }) => (
+          {ingredients.map(({ name, text, href, product, image }) => (
             <li key={name} className="bg-jj-forest">
               <Link
                 href={href}
                 className="group flex h-full flex-col gap-5 p-6 md:p-8 transition-colors duration-300 hover:bg-jj-forest-soft"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-accent/15 text-jj-accent ring-1 ring-jj-accent/30 transition-colors group-hover:bg-jj-accent group-hover:text-jj-forest">
-                  <Icon className="h-5 w-5" aria-hidden="true" />
+                <span className="relative h-14 w-14 overflow-hidden rounded-full ring-1 ring-jj-accent/40 transition-transform duration-300 group-hover:scale-105">
+                  <Image
+                    src={image}
+                    alt={name}
+                    fill
+                    sizes="56px"
+                    className="object-cover"
+                  />
                 </span>
                 <span className="flex flex-1 flex-col">
                   <span className="font-serif text-2xl text-jj-paper">{name}</span>
