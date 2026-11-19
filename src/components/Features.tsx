@@ -1,35 +1,34 @@
 import Link from "next/link";
-import Image from "next/image";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Droplets, Flower2, Leaf, Sprout } from "lucide-react";
 
 const ingredients = [
   {
+    icon: Flower2,
     name: "Hibiscus",
     text: "With shea butter and aloe vera in our Hibiscus Hair Butter.",
     href: "/products/hibiscus-hair-butter",
     product: "Hibiscus Hair Butter",
-    image: "/images/hibiscus-hair-butter-ad.webp",
   },
   {
+    icon: Leaf,
     name: "Moringa",
     text: "The heart of our rich, creamy Moringa Hair Butter.",
     href: "/products/moringa-hair-butter",
     product: "Moringa Hair Butter",
-    image: "/images/moringa-hair-butter-ad.webp",
   },
   {
+    icon: Sprout,
     name: "Honey & neem",
     text: "Infused in the Scalp Detox Mask to detoxify, hydrate and repair.",
     href: "/products/scalp-detox-mask",
     product: "Scalp Detox Mask",
-    image: "/images/scalp-detox-studio.png",
   },
   {
+    icon: Droplets,
     name: "Herbal oils",
     text: "A 100% natural blend in our Herbal Hair Oil, for scalp and strands.",
     href: "/products/herbal-hair-oil",
     product: "Herbal Hair Oil",
-    image: "/images/herbal-hair-oil-marble.png",
   },
 ];
 
@@ -48,33 +47,24 @@ export default function Features() {
           </p>
         </div>
 
-        <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {ingredients.map(({ name, text, href, product, image }, index) => (
-            <li key={name}>
+        <ul className="grid gap-px sm:grid-cols-2 lg:grid-cols-4 overflow-hidden rounded-2xl bg-jj-paper/10 ring-1 ring-jj-paper/10">
+          {ingredients.map(({ icon: Icon, name, text, href, product }) => (
+            <li key={name} className="bg-jj-forest">
               <Link
                 href={href}
-                className="group flex h-full flex-col overflow-hidden rounded-2xl bg-jj-forest-soft ring-1 ring-jj-paper/10 transition-all duration-300 hover:-translate-y-1 hover:ring-jj-accent/40"
+                className="group flex h-full flex-col gap-5 p-6 md:p-8 transition-colors duration-300 hover:bg-jj-forest-soft"
               >
-                <div className="relative aspect-square overflow-hidden">
-                  <Image
-                    src={image}
-                    alt={name}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 25vw"
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  />
-                  <span className="absolute left-4 top-4 flex h-8 w-8 items-center justify-center rounded-full bg-jj-forest/85 font-mono text-xs text-jj-accent ring-1 ring-jj-accent/40">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="flex flex-1 flex-col p-5 md:p-6">
-                  <h3 className="font-serif text-2xl text-jj-paper">{name}</h3>
-                  <p className="mt-2 text-sm text-jj-paper/70 font-light leading-relaxed">{text}</p>
+                <span className="flex h-12 w-12 items-center justify-center rounded-full bg-jj-accent/15 text-jj-accent ring-1 ring-jj-accent/30 transition-colors group-hover:bg-jj-accent group-hover:text-jj-forest">
+                  <Icon className="h-5 w-5" aria-hidden="true" />
+                </span>
+                <span className="flex flex-1 flex-col">
+                  <span className="font-serif text-2xl text-jj-paper">{name}</span>
+                  <span className="mt-2 text-jj-paper/70 font-light leading-relaxed">{text}</span>
                   <span className="mt-auto pt-5 inline-flex items-center gap-2 text-sm font-medium tracking-[0.02em] text-jj-accent">
                     {product}
                     <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
                   </span>
-                </div>
+                </span>
               </Link>
             </li>
           ))}
