@@ -13,7 +13,7 @@ export default function NotFound() {
         <div className="mx-auto max-w-3xl">
           <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Error 404</p>
           <h1 className="font-serif text-4xl md:text-6xl text-jj-black leading-tight mb-6">
-            We can&apos;t find <span className="italic text-jj-olive">that page.</span>
+            We can&apos;t find <span className="text-jj-olive">that page.</span>
           </h1>
           <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-10">
             The link may be old or mistyped. Here is where most people are headed:

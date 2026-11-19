@@ -18,7 +18,7 @@ export default function ContactPage() {
           <div className="mb-16 md:mb-24 flex flex-col gap-6 text-left">
             <h1 className="text-4xl md:text-7xl font-serif text-jj-black"
             >
-              Let&apos;s <span className="italic text-jj-nude">Talk.</span>
+              Let&apos;s <span className="text-jj-nude">Talk.</span>
             </h1>
             <p className="font-sans text-jj-black/70 text-lg md:text-xl max-w-2xl"
             >
@@ -78,7 +78,7 @@ export default function ContactPage() {
                 <div>
                   <h3 className="font-serif text-2xl text-jj-black mb-4">Business Hours</h3>
                   <p className="text-jj-charcoal/70">Monday – Friday<br/>9:00 AM – 6:00 PM (EAT)</p>
-                  <p className="text-jj-charcoal/70 mt-2 italic">We typically respond within 24 hours.</p>
+                  <p className="text-jj-charcoal/70 mt-2 ">We typically respond within 24 hours.</p>
                 </div>
               </div>
 

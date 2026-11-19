@@ -243,7 +243,7 @@ export default async function ProductPage({ params }: { params: Promise<{ slug: 
           {/* Bundle Section */}
           <div className="mt-16 border-t border-jj-black/10 pt-14 md:mt-32 md:pt-24">
             <div className="text-center mb-12">
-              <h2 className="font-serif text-4xl md:text-5xl text-jj-black mb-4">Complete Your <span className="italic text-jj-nude">Routine</span></h2>
+              <h2 className="font-serif text-4xl md:text-5xl text-jj-black mb-4">Complete Your <span className="text-jj-nude">Routine</span></h2>
               <p className="text-jj-charcoal/70">Buy these three together and save {Math.round(BUNDLE_DISCOUNT * 100)}%.</p>
             </div>
 

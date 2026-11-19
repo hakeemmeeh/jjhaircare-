@@ -1,15 +1,17 @@
 @import "tailwindcss";
 
 @theme {
-  --color-jj-black: #0A0A0A;
-  --color-jj-nude: #80623A;
+  /* Legacy tokens remapped to the premium botanical palette so every page
+     inherits forest / ivory / gold without per-file edits. */
+  --color-jj-black: #183C32; /* dark sections + headings -> forest */
+  --color-jj-nude: #C4943D; /* accent -> antique gold */
   --color-jj-nude-pink: #D4B5A0;
   --color-jj-sand: #CEAD8A;
   --color-jj-rose: #C9A99B;
-  --color-jj-gold: #86661E;
-  --color-jj-ivory: #F7F2EC;
+  --color-jj-gold: #C4943D; /* accents -> antique gold */
+  --color-jj-ivory: #F3F0E7; /* light surfaces -> warm ivory */
   --color-jj-charcoal: #1A1A1A;
-  --color-jj-olive: #5A6A50;
+  --color-jj-olive: #2E5147; /* deep muted green */
 
   /* Redesign palette — premium botanical luxury */
   --color-jj-forest: #183C32;
@@ -100,11 +102,10 @@ body {
 .bg-jj-charcoal *,
 footer *,
 [class*="bg-jj-black"] *,
-[class*="26301F"] *,
-[class*="bg-black"] * {
-  --color-jj-nude: #C4A882;
-  --color-jj-gold: #B8964E;
-  --color-jj-olive: #7A8B6F;
+[class*="26301F"] * {
+  --color-jj-nude: #D8B15A;
+  --color-jj-gold: #D8B15A;
+  --color-jj-olive: #9DB3A4;
 }
 
 /* Order form: each step eases in */

@@ -15,7 +15,7 @@ export default function JournalFull() {
           
           <h1 className="font-serif text-4xl md:text-7xl lg:text-8xl text-jj-black leading-tight mb-8 md:mb-12">
             It Began in <br className="hidden md:block" />
-            <span className="italic text-jj-olive">the Kitchen.</span>
+            <span className="text-jj-olive">the Kitchen.</span>
           </h1>
           
           <div className="max-w-3xl mx-auto aspect-[1672/941] relative rounded-sm overflow-hidden border border-jj-gold/30 shadow-lg mb-16">
@@ -48,7 +48,7 @@ export default function JournalFull() {
           </p>
 
           <blockquote className="my-16 py-8 border-y border-jj-gold/20 text-center px-4 md:px-12">
-            <span className="block font-serif text-3xl md:text-4xl text-jj-black italic leading-tight">
+            <span className="block font-serif text-3xl md:text-4xl text-jj-black leading-tight">
               &ldquo;We weren&apos;t just making hair care; we were crafting food for our crowns.&rdquo;
             </span>
           </blockquote>
@@ -64,7 +64,7 @@ export default function JournalFull() {
           
           <div className="pt-16 text-center">
             <div className="w-12 h-[1px] bg-jj-black/20 mx-auto mb-8" />
-            <p className="font-serif italic text-2xl text-jj-black">
+            <p className="font-serif text-2xl text-jj-black">
               Welcome to JJ Haircare. Where nature meets beauty.
             </p>
           </div>

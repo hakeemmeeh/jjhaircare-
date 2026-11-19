@@ -28,7 +28,7 @@ export default function TestimonialsPage() {
           <div className="mx-auto max-w-6xl">
             <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Real results</p>
             <h1 className="font-serif text-4xl md:text-6xl text-jj-black leading-tight mb-6">
-              See it <span className="italic text-jj-olive">on real hair</span>
+              See it <span className="text-jj-olive">on real hair</span>
             </h1>
             <p className="text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed max-w-2xl">
               Our customers share their routines and results on TikTok and Instagram. Have a look, then share yours.
@@ -43,7 +43,7 @@ export default function TestimonialsPage() {
             <div>
               <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-3">Your turn</p>
               <h2 id="share-heading" className="font-serif text-3xl md:text-4xl text-jj-black leading-tight mb-5">
-                Used JJ Haircare? <span className="italic text-jj-olive">Show us.</span>
+                Used JJ Haircare? <span className="text-jj-olive">Show us.</span>
               </h2>
               <p className="text-jj-charcoal/80 font-light leading-relaxed mb-8">
                 With your permission we&apos;ll feature your result here, so others can see what to expect.

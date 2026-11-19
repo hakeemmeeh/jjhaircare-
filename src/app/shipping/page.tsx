@@ -28,7 +28,7 @@ export default function ShippingPage() {
         <div className="container mx-auto px-6 md:px-12 max-w-5xl">
           <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Delivery</p>
           <h1 className="font-serif text-4xl md:text-6xl text-jj-black mb-6 leading-tight">
-            Delivery in Nairobi <span className="italic text-jj-olive">&amp; across Kenya</span>
+            Delivery in Nairobi <span className="text-jj-olive">&amp; across Kenya</span>
           </h1>
           <p className="text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed max-w-2xl mb-14">
             We deliver by rider in Nairobi and by parcel to other towns. Message us your location and we&apos;ll confirm the cost and timing before you pay.

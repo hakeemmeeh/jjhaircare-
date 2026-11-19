@@ -25,7 +25,7 @@ export default function FAQPage() {
           <div className="lg:sticky lg:top-32">
             <p className="font-mono text-xs uppercase tracking-widest text-jj-gold mb-4">Questions</p>
             <h1 className="font-serif text-4xl md:text-6xl text-jj-black leading-tight mb-6">
-              Frequently asked <span className="italic text-jj-olive">questions</span>
+              Frequently asked <span className="text-jj-olive">questions</span>
             </h1>
             <p className="text-lg text-jj-charcoal/80 font-light leading-relaxed mb-8">
               Answers about our products, ordering and delivery. Can&apos;t find yours? Ask us directly.

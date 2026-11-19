@@ -36,7 +36,7 @@ export default function About() {
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-20">
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl text-jj-black mb-8 leading-tight">
             Rooted in Nature. <br />
-            <span className="italic text-jj-olive">Crafted with Purpose.</span>
+            <span className="text-jj-olive">Crafted with Purpose.</span>
           </h1>
           <p className="text-lg md:text-xl text-jj-charcoal/80 font-light leading-relaxed">
             JJ Haircare was born from a belief that your hair deserves the purest, most powerful ingredients nature has to offer. Every product is handcrafted with ethically sourced botanicals, essential oils, and butters — free from sulfates, parabens, and silicones. We celebrate the beauty of natural hair in all its forms.
